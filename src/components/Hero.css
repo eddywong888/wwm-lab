@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  background: var(--bg);
+  background: linear-gradient(135deg, #fafaf8 0%, #fdf6e8 50%, #f5f0ff 100%);
   --mx: 0deg;
   --my: 0deg;
 }
@@ -68,8 +68,10 @@
   font-weight: 700;
   line-height: 0.9;
   letter-spacing: -0.04em;
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgba(0,0,0,0.08);
+  background: linear-gradient(135deg, rgba(0,0,0,0.07) 0%, rgba(232,150,10,0.10) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-align: right;
   user-select: none;
   animation: fade-up 0.8s var(--ease) 0.4s both;
