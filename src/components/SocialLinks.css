@@ -1,4 +1,4 @@
-/* ─── Social Links ─── */
+/* ─── Social Links — light theme ─── */
 .social-links {
   display: flex;
   align-items: center;
@@ -9,14 +9,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px; height: 32px;
+  width: 30px; height: 30px;
   color: var(--text-3);
   border-radius: var(--radius);
-  transition: color 0.18s ease, transform 0.18s ease;
+  transition: color 0.15s ease, transform 0.18s var(--ease);
 }
 
 .social-link svg {
-  width: 17px; height: 17px;
+  width: 16px; height: 16px;
 }
 
 .social-link:hover {

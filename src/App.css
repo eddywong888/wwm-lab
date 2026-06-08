@@ -1,4 +1,4 @@
-/* ─── Site Footer ─── */
+/* ─── Site Footer — Ink on Paper ─── */
 .site-footer {
   border-top: 1px solid var(--border);
   padding: var(--s5) 0;
@@ -29,12 +29,12 @@
 
 .site-footer__mono {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--amber);
-  background: var(--amber-dim);
-  border: 1px solid var(--amber-glow);
+  font-size: 0.72rem;
+  color: var(--text-1);
+  background: var(--bg-1);
+  border: 1.5px solid var(--border-2);
   border-radius: var(--radius);
-  padding: 1px 6px;
+  padding: 1px 7px;
 }
 
 .site-footer__right {
@@ -45,7 +45,7 @@
 
 .site-footer__copy {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: var(--text-3);
   white-space: nowrap;
 }

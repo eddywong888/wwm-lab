@@ -1,25 +1,25 @@
-/* ─── Signal Lab — Global Styles ─── */
+/* ─── Ink on Paper — Global Styles ─── */
 
 :root {
   /* Palette */
-  --bg:          #07080d;
-  --bg-1:        #0d0f18;
-  --bg-2:        #12141f;
-  --surface:     #1a1d2e;
-  --surface-2:   #222540;
-  --border:      rgba(255,255,255,0.07);
-  --border-2:    rgba(255,255,255,0.13);
+  --bg:          #fafaf8;
+  --bg-1:        #f4f3ef;
+  --bg-2:        #eeecea;
+  --surface:     #ffffff;
+  --surface-2:   #f0efe9;
+  --border:      rgba(0,0,0,0.08);
+  --border-2:    rgba(0,0,0,0.14);
 
-  /* Amber signal accent */
-  --amber:       #f5a623;
-  --amber-dim:   rgba(245,166,35,0.13);
-  --amber-glow:  rgba(245,166,35,0.32);
-  --amber-text:  #ffc14d;
+  /* Amber accent — darker for white bg contrast */
+  --amber:       #e8960a;
+  --amber-dim:   rgba(232,150,10,0.10);
+  --amber-glow:  rgba(232,150,10,0.25);
+  --amber-text:  #c47d00;
 
   /* Text */
-  --text-1:      #eeedf0;
-  --text-2:      #9b9bad;
-  --text-3:      #4e4e62;
+  --text-1:      #0a0a0a;
+  --text-2:      #4a4a52;
+  --text-3:      #9a9aaa;
 
   /* Type */
   --font-mono:   'JetBrains Mono', 'Fira Code', monospace;
@@ -43,6 +43,8 @@
 
   /* Motion */
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  color-scheme: light;
 }
 
 /* ── Reset ── */

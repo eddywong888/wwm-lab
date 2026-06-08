@@ -1,8 +1,9 @@
-/* ─── Projects ─── */
+/* ─── Projects — Ink on Paper ─── */
 
 .projects {
   padding: var(--s9) 0;
   border-top: 1px solid var(--border);
+  background: var(--bg);
 }
 
 .projects__header {
@@ -20,7 +21,7 @@
 
 .projects__heading {
   font-family: var(--font-mono);
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
   font-weight: 700;
   color: var(--text-1);
   letter-spacing: -0.02em;
@@ -38,10 +39,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  border: 1px solid var(--border);
+  border: 1.5px solid rgba(0,0,0,0.12);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--border);
+  background: rgba(0,0,0,0.07);
 }
 
 @media (max-width: 860px) {
@@ -53,37 +54,24 @@
 
 /* ── Card ── */
 .project-card {
-  background: var(--bg-1);
+  background: var(--surface);
   padding: var(--s6);
   display: flex;
   flex-direction: column;
   gap: var(--s4);
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
-  overflow: hidden;
-}
-
-.project-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--amber-dim) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
 .project-card:hover {
-  background: var(--bg-2);
+  background: var(--bg);
   z-index: 1;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
-}
-.project-card:hover::before {
-  opacity: 1;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10), 4px 4px 0 rgba(0,0,0,0.06);
 }
 
 .project-card--dim {
-  opacity: 0.55;
+  opacity: 0.5;
 }
 .project-card--dim:hover {
   opacity: 0.75;
@@ -98,16 +86,15 @@
 
 .project-card__title {
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-1);
   letter-spacing: -0.01em;
-  position: relative;
 }
 
 .project-card__status {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 2px 7px;
@@ -117,9 +104,9 @@
   flex-shrink: 0;
 }
 .project-card__status--live {
-  color: #4ade80;
-  border-color: rgba(74,222,128,0.35);
-  background: rgba(74,222,128,0.08);
+  color: #16a34a;
+  border-color: rgba(22,163,74,0.3);
+  background: rgba(22,163,74,0.07);
 }
 .project-card__status--wip {
   color: var(--amber);
@@ -147,9 +134,9 @@
 
 .project-card__tag {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--text-3);
-  background: var(--surface);
+  font-size: 0.66rem;
+  color: var(--text-2);
+  background: var(--bg-1);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 2px 8px;
@@ -177,5 +164,5 @@
   flex-shrink: 0;
 }
 .project-card__link:hover {
-  color: var(--amber-text);
+  color: var(--text-1);
 }
