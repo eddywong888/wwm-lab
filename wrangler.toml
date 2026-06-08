@@ -7,5 +7,5 @@ directory = "./dist"
 
 [[kv_namespaces]]
 binding = "VISITS"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
-preview_id = "REPLACE_WITH_PREVIEW_KV_ID"
+id = "ab212bd932a54603a00009f8683be443"
+preview_id = "ab212bd932a54603a00009f8683be443"
