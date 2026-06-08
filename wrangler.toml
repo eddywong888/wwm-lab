@@ -1,0 +1,13 @@
+name = "wwm-lab"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "dist"
+
+[[kv_namespaces]]
+binding = "VISITS"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+preview_id = "REPLACE_WITH_PREVIEW_KV_ID"
+
+[[ functions ]]
+
+[vars]
+ENVIRONMENT = "production"

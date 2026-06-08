@@ -1,0 +1,25 @@
+/* ─── Social Links ─── */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; height: 32px;
+  color: var(--text-3);
+  border-radius: var(--radius);
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.social-link svg {
+  width: 17px; height: 17px;
+}
+
+.social-link:hover {
+  color: var(--text-1);
+  transform: translateY(-2px);
+}

@@ -1,0 +1,30 @@
+/* ─── Visitor Counter ─── */
+.visitor-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-3);
+}
+
+.visitor-count__dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--text-3);
+  flex-shrink: 0;
+}
+
+.visitor-count__dot--live {
+  background: #4ade80;
+  animation: vc-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes vc-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0.5); }
+  50%       { box-shadow: 0 0 0 4px rgba(74,222,128,0); }
+}
+
+.visitor-count__num {
+  color: var(--text-2);
+}

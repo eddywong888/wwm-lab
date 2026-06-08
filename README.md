@@ -1,2 +1,22 @@
 # wwm-lab
-My growth pot for research, mini games, and web experiments. Build and publish small browser games. Run SEO, GEO, and traffic experiments - Test monetization ideas and grow traffic to my website - Learn web development. Goal: turn small experiments into a sustainable online presence that can eventually generate profit.
+
+My growth lab for research, mini games, and web experiments. Building and publishing small browser games, running SEO/GEO experiments, testing monetization ideas, and learning web dev along the way.
+
+**Goal:** Turn small experiments into a sustainable online presence that can eventually generate profit.
+
+## Stack
+
+- React + Vite + TypeScript
+- Cloudflare Pages (hosting)
+- Cloudflare Workers + KV (visitor counter API)
+
+## Dev
+
+```bash
+npm install
+npm run dev
+```
+
+## Deploy
+
+Connects to Cloudflare Pages via GitHub. Push to `main` → auto-deploy.
