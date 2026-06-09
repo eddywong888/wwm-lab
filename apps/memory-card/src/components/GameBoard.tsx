@@ -28,10 +28,10 @@ export const GameBoard: React.FC<GameBoardProps> = ({
 
   // Determine grid column counts based on total cards
   let columns = 4;
-  if (cards.length === 32) columns = 8;
+  if (cards.length === 24) columns = 6;
+  else if (cards.length === 32) columns = 8;
+  else if (cards.length === 40) columns = 8;
   else if (cards.length === 48) columns = 8;
-  else if (cards.length === 64) columns = 8;
-  else if (cards.length === 80) columns = 10;
 
   // Handle victory check
   useEffect(() => {

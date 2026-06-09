@@ -20,11 +20,12 @@ interface SetupScreenProps {
 }
 
 const LEVELS = [
+  { value: 6, label: '12 Cards (6 pairs)' },
   { value: 8, label: '16 Cards (8 pairs)' },
+  { value: 12, label: '24 Cards (12 pairs)' },
   { value: 16, label: '32 Cards (16 pairs)' },
+  { value: 20, label: '40 Cards (20 pairs)' },
   { value: 24, label: '48 Cards (24 pairs)' },
-  { value: 32, label: '64 Cards (32 pairs)' },
-  { value: 40, label: '80 Cards (40 pairs)' },
 ];
 
 export const SetupScreen: React.FC<SetupScreenProps> = ({
