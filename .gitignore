@@ -15,6 +15,13 @@ dist-ssr
 .wrangler
 .dev.vars
 
+# AI agent instruction files
+AGENTS.md
+CLAUDE.md
+.cursorrules
+.aider*
+.continue/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
