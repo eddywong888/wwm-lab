@@ -8,7 +8,7 @@ export default defineConfig({
     {
       name: 'dev-routing',
       configureServer(server) {
-        server.middlewares.use((req, res, next) => {
+        server.middlewares.use((req, _res, next) => {
           if (req.url) {
             const url = req.url.split('?')[0];
             if (url === '/apps/memory-card' || url === '/apps/memory-card/') {
