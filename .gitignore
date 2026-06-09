@@ -15,6 +15,17 @@ dist-ssr
 .wrangler
 .dev.vars
 
+# Environment & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+.secrets/
+
 # AI agent instruction files
 AGENTS.md
 CLAUDE.md
