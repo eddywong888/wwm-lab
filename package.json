@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && npm run build --prefix apps/memory-card",
-    "postinstall": "npm install --prefix apps/memory-card",
     "lint": "eslint .",
     "preview": "vite preview"
   },
