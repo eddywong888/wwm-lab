@@ -72,7 +72,7 @@ function ProjectCard({ project }: { project: Project }) {
       {!isSoon && (
         <div className="project-card__links">
           {project.liveUrl && (
-            <a href={project.liveUrl} className="project-card__link" target="_blank" rel="noopener noreferrer">
+            <a href={project.liveUrl} className="project-card__link project-card__link--main" target="_blank" rel="noopener noreferrer">
               <ExternalIcon />
               <span>Live</span>
             </a>

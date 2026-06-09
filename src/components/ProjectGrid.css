@@ -158,6 +158,8 @@
   font-size: 0.78rem;
   color: var(--text-2);
   transition: color 0.15s ease;
+  position: relative;
+  z-index: 2;
 }
 .project-card__link svg {
   width: 13px; height: 13px;
@@ -165,4 +167,14 @@
 }
 .project-card__link:hover {
   color: var(--text-1);
+}
+
+.project-card__link--main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }
