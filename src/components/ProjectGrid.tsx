@@ -19,10 +19,12 @@ const PROJECTS: Project[] = [
     status: 'live',
   },
   {
-    title: 'Game #1',
-    description: 'A small browser game in the works. Fast, fun, playable in 30 seconds.',
-    tags: ['game', 'javascript'],
-    status: 'soon',
+    title: 'Memory Card Match',
+    description: 'A classic card matching game. Play solo or with up to 4 players. Features multiple difficulty levels, default country flags theme, custom image uploads (persisted via IndexedDB), and procedural sound effects.',
+    tags: ['game', 'react', 'indexeddb', 'webaudio'],
+    liveUrl: '/apps/memory-card/',
+    sourceUrl: 'https://github.com/eddywong888/wwm-lab/tree/main/apps/memory-card',
+    status: 'live',
   },
   {
     title: 'Experiment #1',

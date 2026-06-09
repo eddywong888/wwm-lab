@@ -1,0 +1,345 @@
+.game-board-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s4);
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: var(--s4) var(--s4) var(--s6);
+  min-height: 100dvh;
+}
+
+/* HUD Header styling */
+.game-hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--text-1);
+  padding-bottom: var(--s3);
+  flex-wrap: wrap;
+  gap: var(--s3);
+}
+
+.hud-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+}
+
+.hud-logo {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--bg);
+  background: var(--text-1);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  letter-spacing: -1.5px;
+}
+
+.hud-title {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+.hud-actions {
+  display: flex;
+  gap: var(--s2);
+  align-items: center;
+}
+
+.hud-btn {
+  padding: var(--s2) var(--s3);
+  border: 1px solid var(--text-1);
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  background: var(--surface);
+}
+
+.hud-btn:hover {
+  background: var(--bg-1);
+}
+
+.hud-btn.primary {
+  background: var(--text-1);
+  color: var(--bg);
+}
+
+.hud-btn.primary:hover {
+  background: var(--text-2);
+}
+
+.mute-hud-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.mute-hud-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Scoreboard */
+.game-scoreboard {
+  display: flex;
+  gap: var(--s3);
+  flex-wrap: wrap;
+}
+
+.score-card {
+  flex: 1;
+  min-width: 140px;
+  background: var(--surface);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius);
+  padding: var(--s2) var(--s3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: all 0.3s var(--ease);
+}
+
+.score-card.active {
+  background: var(--surface);
+  border-color: var(--text-1);
+  box-shadow: 0 4px 10px var(--amber-glow);
+  transform: translateY(-2px);
+}
+
+.score-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin-bottom: var(--s1);
+}
+
+.player-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.player-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-score {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-1);
+}
+
+.active-turn-indicator {
+  position: absolute;
+  right: var(--s3);
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--amber-text);
+  background: var(--amber-dim);
+  padding: 2px 6px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Game Status bar */
+.game-status-bar {
+  text-align: center;
+  background: var(--bg-1);
+  border: 1px dashed var(--border-2);
+  border-radius: var(--radius);
+  padding: var(--s2);
+}
+
+.game-status-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+.active-player-name {
+  font-weight: 700;
+}
+
+/* Card Grid Layout */
+.card-grid-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  gap: var(--s3);
+  width: 100%;
+  max-width: 900px;
+  justify-content: center;
+}
+
+/* Victory Overlay Modal styles */
+.victory-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 10, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--s4);
+}
+
+.victory-modal {
+  background: var(--surface);
+  border: 2px solid var(--text-1);
+  border-radius: var(--radius-lg);
+  box-shadow: 8px 8px 0px var(--text-1);
+  padding: var(--s6);
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  animation: modalPop 0.4s var(--ease);
+}
+
+@keyframes modalPop {
+  from { opacity: 0; transform: scale(0.9) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.victory-logo {
+  font-size: 3rem;
+  margin-bottom: var(--s2);
+}
+
+.victory-title {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  margin-bottom: var(--s1);
+}
+
+.victory-scores {
+  font-size: 0.95rem;
+  color: var(--text-2);
+  margin-bottom: var(--s4);
+}
+
+.victory-scoreboard {
+  background: var(--bg-1);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius);
+  padding: var(--s3);
+  margin-bottom: var(--s5);
+}
+
+.victory-scoreboard h3 {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-3);
+  letter-spacing: 1px;
+  margin-bottom: var(--s2);
+}
+
+.victory-rank-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--s1) 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.victory-rank-row:last-child {
+  border-bottom: none;
+}
+
+.rank-num {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--amber-text);
+  width: 24px;
+  text-align: left;
+}
+
+.rank-name {
+  font-weight: 600;
+  flex: 1;
+  text-align: left;
+}
+
+.rank-score {
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.victory-actions {
+  display: flex;
+  gap: var(--s3);
+}
+
+.victory-btn {
+  flex: 1;
+  padding: var(--s2) var(--s4);
+  border: 1.5px solid var(--text-1);
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 2px 2px 0 var(--text-1);
+  transition: all 0.2s ease;
+  background: var(--surface);
+}
+
+.victory-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--text-1);
+}
+
+.victory-btn.primary {
+  background: var(--amber);
+}
+
+/* Responsiveness tweaks for grid columns */
+@media (max-width: 600px) {
+  .game-hud {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hud-actions {
+    justify-content: space-between;
+  }
+  
+  /* Force grid columns to be smaller on small viewports so we don't break aspect ratios */
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}

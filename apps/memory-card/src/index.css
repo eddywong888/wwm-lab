@@ -1,0 +1,112 @@
+/* ─── Ink on Paper — Memory Card Styles ─── */
+
+:root {
+  /* Palette */
+  --bg:          #fafaf8;
+  --bg-1:        #f4f3ef;
+  --bg-2:        #eeecea;
+  --surface:     #ffffff;
+  --surface-2:   #f0efe9;
+  --border:      rgba(0,0,0,0.08);
+  --border-2:    rgba(0,0,0,0.14);
+
+  /* Amber accent — darker for white bg contrast */
+  --amber:       #e8960a;
+  --amber-dim:   rgba(232,150,10,0.10);
+  --amber-glow:  rgba(232,150,10,0.25);
+  --amber-text:  #c47d00;
+
+  /* Text */
+  --text-1:      #0a0a0a;
+  --text-2:      #4a4a52;
+  --text-3:      #9a9aaa;
+
+  /* Type */
+  --font-mono:   'JetBrains Mono', 'Fira Code', monospace;
+  --font-sans:   'DM Sans', system-ui, sans-serif;
+
+  /* Spacing */
+  --s1: 0.25rem;
+  --s2: 0.5rem;
+  --s3: 0.75rem;
+  --s4: 1rem;
+  --s5: 1.5rem;
+  --s6: 2rem;
+  --s7: 3rem;
+  --s8: 4.5rem;
+
+  /* Layout */
+  --max-w: 1200px;
+  --radius: 4px;
+  --radius-lg: 8px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  
+  color-scheme: light;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-1);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ── Utility ── */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+}
+
+/* ── Custom Scrollbars ── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-1);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-3);
+  border-radius: var(--radius);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-2);
+}

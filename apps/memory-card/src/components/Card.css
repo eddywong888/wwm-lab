@@ -1,0 +1,150 @@
+.memory-card-wrapper {
+  aspect-ratio: 3 / 4;
+  perspective: 1000px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  width: 100%;
+}
+
+.memory-card-wrapper:focus-visible {
+  outline: none;
+}
+
+.memory-card-wrapper:focus-visible .memory-card-inner {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+.memory-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-2);
+}
+
+.memory-card-wrapper.flipped .memory-card-inner {
+  transform: rotateY(180deg);
+}
+
+.memory-card-wrapper.matched .memory-card-inner {
+  opacity: 0.6;
+  border-color: var(--amber-glow);
+  box-shadow: 0 0 8px var(--amber-glow);
+  transform: rotateY(180deg) scale(0.95);
+  cursor: default;
+}
+
+.memory-card-front,
+.memory-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+/* Card Back Design */
+.memory-card-back {
+  background-color: var(--bg-1);
+  padding: var(--s2);
+}
+
+.card-back-pattern {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed var(--border-2);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: 
+    radial-gradient(var(--border) 1px, transparent 1px),
+    radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+  transition: border-color 0.2s ease;
+}
+
+.memory-card-wrapper:hover .card-back-pattern {
+  border-color: var(--amber);
+}
+
+.card-back-logo {
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  color: var(--text-1);
+  letter-spacing: -1px;
+  border-bottom: 2px solid var(--amber);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.card-back-sub {
+  font-size: 8px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+
+/* Card Front Design */
+.memory-card-front {
+  transform: rotateY(180deg);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--s2);
+}
+
+.card-image {
+  flex: 1;
+  width: 100%;
+  object-fit: contain;
+  background: var(--bg-1);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  min-height: 0; /* allows flex shrinking on small screens */
+}
+
+.card-label {
+  margin-top: var(--s2);
+  font-family: var(--font-sans);
+  font-size: clamp(0.7rem, 1.8vw, 0.85rem);
+  font-weight: 600;
+  color: var(--text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Match pop-out animation */
+@keyframes matchPop {
+  0% { transform: rotateY(180deg) scale(0.95); }
+  50% { transform: rotateY(180deg) scale(1.15); box-shadow: 0 0 16px var(--amber-glow); }
+  100% { transform: rotateY(180deg) scale(0.95); }
+}
+
+.memory-card-wrapper.matched {
+  animation: matchPop 0.5s var(--ease);
+}
