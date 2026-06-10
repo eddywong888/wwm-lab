@@ -45,7 +45,7 @@ export const Card: React.FC<CardProps> = ({
         {/* Card Back */}
         <div className="memory-card-back">
           <div className="card-back-pattern">
-            <div className="card-back-logo">MC</div>
+            <div className="card-back-logo">WWM</div>
             <div className="card-back-sub">wwm-lab</div>
           </div>
         </div>

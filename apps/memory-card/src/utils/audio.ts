@@ -52,12 +52,33 @@ export function playFlip() {
   osc.stop(ctx.currentTime + 0.08);
 }
 
-export function playMatch() {
+export function playMatch(streak: number = 1) {
   if (isMuted) return;
   const ctx = getAudioContext();
   if (!ctx) return;
 
-  const notes = [261.63, 329.63, 392.00, 523.25]; // C4, E4, G4, C5
+  let notes: number[] = [];
+  let noteDelay = 0.06;
+  let noteDuration = 0.35;
+  const type: OscillatorType = 'triangle';
+
+  if (streak === 1) {
+    notes = [261.63, 329.63, 392.00, 523.25]; // C4, E4, G4, C5
+  } else if (streak === 2) {
+    notes = [329.63, 392.00, 493.88, 659.25]; // E4, G4, B4, E5 (Bright major arpeggio)
+    noteDelay = 0.05;
+  } else if (streak === 3) {
+    notes = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25]; // C4, D4, E4, G4, A4, C5 (Pentatonic rise)
+    noteDelay = 0.04;
+  } else {
+    // Streak >= 4 (Mega Streak)
+    notes = [261.63, 329.63, 392.00, 523.25, 659.25, 783.99, 1046.50]; // C4, E4, G4, C5, E5, G5, C6 (Full arpeggio run)
+    noteDelay = 0.035;
+    noteDuration = 0.45;
+  }
+
+  const time = ctx.currentTime;
+
   notes.forEach((freq, index) => {
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
@@ -65,16 +86,39 @@ export function playMatch() {
     osc.connect(gain);
     gain.connect(ctx.destination);
 
-    osc.type = 'triangle';
-    osc.frequency.setValueAtTime(freq, ctx.currentTime + index * 0.06);
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, time + index * noteDelay);
 
-    gain.gain.setValueAtTime(0, ctx.currentTime);
-    gain.gain.linearRampToValueAtTime(0.1, ctx.currentTime + index * 0.06 + 0.02);
-    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + index * 0.06 + 0.35);
+    gain.gain.setValueAtTime(0, time);
+    gain.gain.linearRampToValueAtTime(0.08, time + index * noteDelay + 0.015);
+    gain.gain.exponentialRampToValueAtTime(0.001, time + index * noteDelay + noteDuration);
 
-    osc.start(ctx.currentTime + index * 0.06);
-    osc.stop(ctx.currentTime + index * 0.06 + 0.45);
+    osc.start(time + index * noteDelay);
+    osc.stop(time + index * noteDelay + noteDuration + 0.1);
   });
+
+  // For streak >= 4, play a harmonized final chord on top of the arpeggio
+  if (streak >= 4) {
+    const chordNotes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+    const chordTime = time + notes.length * noteDelay + 0.05;
+    chordNotes.forEach((freq) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, chordTime);
+
+      gain.gain.setValueAtTime(0, chordTime);
+      gain.gain.linearRampToValueAtTime(0.06, chordTime + 0.03);
+      gain.gain.exponentialRampToValueAtTime(0.001, chordTime + 0.6);
+
+      osc.start(chordTime);
+      osc.stop(chordTime + 0.7);
+    });
+  }
 }
 
 export function playMismatch() {

@@ -85,7 +85,7 @@ export const SetupScreen: React.FC<SetupScreenProps> = ({
   return (
     <div className="setup-screen">
       <header className="setup-header">
-        <div className="setup-logo">MC</div>
+        <div className="setup-logo">WWM</div>
         <h1 className="setup-title">Memory Card</h1>
         <p className="setup-subtitle">Challenge your mind. Match pairs. Win the board.</p>
       </header>

@@ -1,8 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import type { CardItem, Player } from '../App';
 import { Card } from './Card';
 import { playFlip, playMatch, playMismatch, playVictory, getMuteState, toggleMute } from '../utils/audio';
 import './GameBoard.css';
+
+const SHOUTOUTS = {
+  1: ['Well done!', 'Nice!', 'Correct!', 'Match!', 'Good job!'],
+  2: ['Awesome!', 'Great job!', 'Spot on!', 'On a roll!', 'Sweet!'],
+  3: ['Fantastic!', 'Unstoppable!', 'Brilliant!', 'Memory Master!', 'Sharp!'],
+  4: ['Incredible!', 'Mind-blowing!', 'Flawless!', 'Legendary!', 'Phenomenal!']
+};
 
 interface GameBoardProps {
   cards: CardItem[];
@@ -25,6 +32,19 @@ export const GameBoard: React.FC<GameBoardProps> = ({
   const [boardLocked, setBoardLocked] = useState<boolean>(false);
   const [isMuted, setIsMuted] = useState<boolean>(getMuteState());
   const [showVictory, setShowVictory] = useState<boolean>(false);
+  const [currentStreak, setCurrentStreak] = useState<number>(0);
+  const [shoutout, setShoutout] = useState<{ text: string; level: number; streak: number } | null>(null);
+
+  const shoutoutTimeoutRef = useRef<number | null>(null);
+
+  // Clear timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (shoutoutTimeoutRef.current !== null) {
+        window.clearTimeout(shoutoutTimeoutRef.current);
+      }
+    };
+  }, []);
 
   // Determine grid column counts based on total cards
   let columns = 4;
@@ -61,9 +81,28 @@ export const GameBoard: React.FC<GameBoardProps> = ({
       if (firstCard.pairKey === secondCard.pairKey) {
         // MATCH FOUND
         setTimeout(() => {
-          playMatch();
+          const nextStreak = currentStreak + 1;
+          setCurrentStreak(nextStreak);
+
+          // Play custom sound melody matching streak
+          playMatch(nextStreak);
+
           setMatchedKeys((prev) => [...prev, firstCard.pairKey]);
           setFlippedIndices([]);
+
+          // Select shoutout text and show badge
+          if (shoutoutTimeoutRef.current !== null) {
+            window.clearTimeout(shoutoutTimeoutRef.current);
+          }
+          const levelKey = Math.min(nextStreak, 4) as 1 | 2 | 3 | 4;
+          const options = SHOUTOUTS[levelKey];
+          const randomText = options[Math.floor(Math.random() * options.length)];
+          setShoutout({ text: randomText, level: levelKey, streak: nextStreak });
+
+          shoutoutTimeoutRef.current = window.setTimeout(() => {
+            setShoutout(null);
+            shoutoutTimeoutRef.current = null;
+          }, 1600);
           
           // Increment score for current player
           setPlayers((prevPlayers) =>
@@ -83,6 +122,9 @@ export const GameBoard: React.FC<GameBoardProps> = ({
           playMismatch();
           setFlippedIndices([]);
           
+          // Reset streak
+          setCurrentStreak(0);
+          
           // Turn passes to next player
           setCurrentPlayerIdx((prevIdx) => (prevIdx + 1) % players.length);
           setBoardLocked(false);
@@ -101,6 +143,8 @@ export const GameBoard: React.FC<GameBoardProps> = ({
     setFlippedIndices([]);
     setMatchedKeys([]);
     setCurrentPlayerIdx(0);
+    setCurrentStreak(0);
+    setShoutout(null);
     setBoardLocked(false);
     setShowVictory(false);
     // Reset scores
@@ -142,7 +186,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
       {/* HUD Header */}
       <header className="game-hud">
         <div className="hud-brand" onClick={onNewGame} style={{ cursor: 'pointer' }}>
-          <span className="hud-logo">MC</span>
+          <span className="hud-logo">WWM</span>
           <span className="hud-title">Memory Card</span>
         </div>
 
@@ -236,6 +280,16 @@ export const GameBoard: React.FC<GameBoardProps> = ({
           })}
         </div>
       </div>
+
+      {/* Shoutout Badge Overlay */}
+      {shoutout && (
+        <div className={`streak-badge streak-level-${shoutout.level}`} key={`${shoutout.streak}-${shoutout.text}`}>
+          <div className="streak-badge-title">{shoutout.text}</div>
+          <div className="streak-badge-sub">
+            <span className="streak-fire-icon">🔥</span> Streak x{shoutout.streak}
+          </div>
+        </div>
+      )}
 
       {/* Victory Overlay Modal */}
       {showVictory && (
