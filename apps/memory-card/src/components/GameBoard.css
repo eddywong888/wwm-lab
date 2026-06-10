@@ -395,6 +395,14 @@
 }
 
 /* Color levels matching streaks */
+.streak-level-0 {
+  background: var(--bg-1);
+  border-color: var(--border-2);
+  box-shadow: 4px 4px 0 var(--border);
+}
+.streak-level-0 .streak-badge-title {
+  color: var(--text-2);
+}
 .streak-level-1 {
   border-color: var(--border-2);
   box-shadow: 4px 4px 0 var(--border-2);

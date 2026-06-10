@@ -11,6 +11,18 @@ const SHOUTOUTS = {
   4: ['Incredible!', 'Mind-blowing!', 'Flawless!', 'Legendary!', 'Phenomenal!']
 };
 
+const MISMATCH_SHOUTOUTS = [
+  'Not that one!',
+  'Nice try!',
+  'Ah, so close!',
+  'Keep looking!',
+  'Peek-a-boo!',
+  'Oops!',
+  'Almost!',
+  'Try again!',
+  'Where was it?'
+];
+
 interface GameBoardProps {
   cards: CardItem[];
   players: Player[];
@@ -118,8 +130,23 @@ export const GameBoard: React.FC<GameBoardProps> = ({
         }, 500);
       } else {
         // NO MATCH
+        // Play mismatch sound immediately
+        playMismatch();
+
+        // Select playful mismatch shoutout text
+        const randomText = MISMATCH_SHOUTOUTS[Math.floor(Math.random() * MISMATCH_SHOUTOUTS.length)];
+        
+        if (shoutoutTimeoutRef.current !== null) {
+          window.clearTimeout(shoutoutTimeoutRef.current);
+        }
+        setShoutout({ text: randomText, level: 0, streak: 0 });
+        
+        shoutoutTimeoutRef.current = window.setTimeout(() => {
+          setShoutout(null);
+          shoutoutTimeoutRef.current = null;
+        }, 1100);
+
         setTimeout(() => {
-          playMismatch();
           setFlippedIndices([]);
           
           // Reset streak
@@ -285,9 +312,11 @@ export const GameBoard: React.FC<GameBoardProps> = ({
       {shoutout && (
         <div className={`streak-badge streak-level-${shoutout.level}`} key={`${shoutout.streak}-${shoutout.text}`}>
           <div className="streak-badge-title">{shoutout.text}</div>
-          <div className="streak-badge-sub">
-            <span className="streak-fire-icon">🔥</span> Streak x{shoutout.streak}
-          </div>
+          {shoutout.level > 0 && (
+            <div className="streak-badge-sub">
+              <span className="streak-fire-icon">🔥</span> Streak x{shoutout.streak}
+            </div>
+          )}
         </div>
       )}
 
