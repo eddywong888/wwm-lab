@@ -191,30 +191,60 @@ export function playMismatch() {
   const ctx = getAudioContext();
   if (!ctx) return;
 
-  const osc = ctx.createOscillator();
-  const gain = ctx.createGain();
+  const time = ctx.currentTime;
+  const duration = 0.65;
 
-  osc.connect(gain);
-  gain.connect(ctx.destination);
+  // Crowd "ohhh" — 4 slightly detuned sawtooth voices through an 'O' vowel formant filter
+  // Falling pitch contour = crowd disappointment intonation
+  [278, 293, 308, 321].forEach((baseFreq, i) => {
+    const osc = ctx.createOscillator();
+    const formant = ctx.createBiquadFilter();
+    const gain = ctx.createGain();
 
-  osc.type = 'sawtooth';
-  osc.frequency.setValueAtTime(150, ctx.currentTime);
-  osc.frequency.linearRampToValueAtTime(100, ctx.currentTime + 0.25);
+    formant.type = 'bandpass';
+    formant.frequency.value = 440; // F1 of the 'O' vowel
+    formant.Q.value = 4;
 
-  gain.gain.setValueAtTime(0.08, ctx.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
+    osc.connect(formant);
+    formant.connect(gain);
+    gain.connect(ctx.destination);
 
-  // Simple lowpass filter to make it less harsh
-  const filter = ctx.createBiquadFilter();
-  filter.type = 'lowpass';
-  filter.frequency.setValueAtTime(400, ctx.currentTime);
-  
-  osc.disconnect(gain);
-  osc.connect(filter);
-  filter.connect(gain);
+    osc.type = 'sawtooth';
+    const startDelay = i * 0.012;
+    osc.frequency.setValueAtTime(baseFreq * 1.08, time + startDelay);
+    osc.frequency.linearRampToValueAtTime(baseFreq * 0.87, time + startDelay + duration);
 
-  osc.start();
-  osc.stop(ctx.currentTime + 0.25);
+    gain.gain.setValueAtTime(0, time + startDelay);
+    gain.gain.linearRampToValueAtTime(0.032, time + startDelay + 0.055);
+    gain.gain.setValueAtTime(0.032, time + startDelay + duration - 0.12);
+    gain.gain.exponentialRampToValueAtTime(0.001, time + startDelay + duration);
+
+    osc.start(time + startDelay);
+    osc.stop(time + startDelay + duration + 0.1);
+  });
+
+  // Low crowd noise bed underneath
+  const bufSize = Math.ceil(ctx.sampleRate * (duration + 0.1));
+  const buf = ctx.createBuffer(1, bufSize, ctx.sampleRate);
+  const data = buf.getChannelData(0);
+  for (let i = 0; i < bufSize; i++) data[i] = Math.random() * 2 - 1;
+
+  const noise = ctx.createBufferSource();
+  noise.buffer = buf;
+
+  const noiseFilter = ctx.createBiquadFilter();
+  noiseFilter.type = 'lowpass';
+  noiseFilter.frequency.value = 480;
+
+  const noiseGain = ctx.createGain();
+  noiseGain.gain.setValueAtTime(0.018, time);
+  noiseGain.gain.exponentialRampToValueAtTime(0.001, time + duration);
+
+  noise.connect(noiseFilter);
+  noiseFilter.connect(noiseGain);
+  noiseGain.connect(ctx.destination);
+  noise.start(time);
+  noise.stop(time + duration + 0.1);
 }
 
 export function playVictory() {
