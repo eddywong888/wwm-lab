@@ -23,12 +23,32 @@ const MISMATCH_SHOUTOUTS = [
   'Where was it?'
 ];
 
+const CONFETTI_COLORS = ['#e8960a', '#2b7de9', '#1aa053', '#a01a91', '#e84a4a', '#f5a623'];
+
 interface GameBoardProps {
   cards: CardItem[];
   players: Player[];
   setPlayers: React.Dispatch<React.SetStateAction<Player[]>>;
   onNewGame: () => void;
   onRestartGame: () => void;
+}
+
+function formatTime(seconds: number): string {
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
+function generateConfetti() {
+  return Array.from({ length: 24 }, (_, i) => ({
+    id: i,
+    left: 4 + (i / 24) * 92 + (Math.random() * 4 - 2),
+    delay: Math.random() * 1.4,
+    duration: 2.2 + Math.random() * 1.8,
+    color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
+    size: 7 + Math.random() * 8,
+    rotate: Math.random() * 360,
+  }));
 }
 
 export const GameBoard: React.FC<GameBoardProps> = ({
@@ -47,16 +67,17 @@ export const GameBoard: React.FC<GameBoardProps> = ({
   const [currentStreak, setCurrentStreak] = useState<number>(0);
   const [shoutout, setShoutout] = useState<{ text: string; level: number; streak: number } | null>(null);
 
-  const shoutoutTimeoutRef = useRef<number | null>(null);
+  // New state for game refinements
+  const [moves, setMoves] = useState<number>(0);
+  const [elapsedSeconds, setElapsedSeconds] = useState<number>(0);
+  const [peekActive, setPeekActive] = useState<boolean>(false);
+  const [peekCountdown, setPeekCountdown] = useState<number>(3);
+  const [showFirstPlayerDraw, setShowFirstPlayerDraw] = useState<boolean>(false);
+  const [firstPlayerName, setFirstPlayerName] = useState<string>('');
+  const [confettiPieces] = useState(generateConfetti);
 
-  // Clear timeout on unmount
-  useEffect(() => {
-    return () => {
-      if (shoutoutTimeoutRef.current !== null) {
-        window.clearTimeout(shoutoutTimeoutRef.current);
-      }
-    };
-  }, []);
+  const shoutoutTimeoutRef = useRef<number | null>(null);
+  const sequenceTimeoutRef = useRef<number | null>(null);
 
   // Determine grid column counts based on total cards
   let columns = 4;
@@ -65,7 +86,61 @@ export const GameBoard: React.FC<GameBoardProps> = ({
   else if (cards.length === 40) columns = 8;
   else if (cards.length === 48) columns = 8;
 
-  // Handle victory check
+  const rows = cards.length / columns;
+
+  // Launch the initial draw + peek sequence
+  const startSequence = (playerList: Player[]) => {
+    setPeekActive(false);
+    setPeekCountdown(3);
+
+    if (sequenceTimeoutRef.current !== null) {
+      window.clearTimeout(sequenceTimeoutRef.current);
+    }
+
+    if (playerList.length > 1) {
+      const randomIdx = Math.floor(Math.random() * playerList.length);
+      setCurrentPlayerIdx(randomIdx);
+      setFirstPlayerName(playerList[randomIdx].name);
+      setShowFirstPlayerDraw(true);
+      sequenceTimeoutRef.current = window.setTimeout(() => {
+        setShowFirstPlayerDraw(false);
+        setPeekActive(true);
+        sequenceTimeoutRef.current = null;
+      }, 1800);
+    } else {
+      setCurrentPlayerIdx(0);
+      setPeekActive(true);
+    }
+  };
+
+  // On mount: kick off the opening sequence
+  useEffect(() => {
+    startSequence(players);
+    return () => {
+      if (sequenceTimeoutRef.current !== null) window.clearTimeout(sequenceTimeoutRef.current);
+      if (shoutoutTimeoutRef.current !== null) window.clearTimeout(shoutoutTimeoutRef.current);
+    };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Peek countdown tick
+  useEffect(() => {
+    if (!peekActive) return;
+    if (peekCountdown <= 0) {
+      setPeekActive(false);
+      return;
+    }
+    const tid = window.setTimeout(() => setPeekCountdown((c) => c - 1), 1000);
+    return () => window.clearTimeout(tid);
+  }, [peekActive, peekCountdown]);
+
+  // Elapsed timer — runs only when game is active
+  useEffect(() => {
+    if (peekActive || showVictory || showFirstPlayerDraw) return;
+    const id = setInterval(() => setElapsedSeconds((s) => s + 1), 1000);
+    return () => clearInterval(id);
+  }, [peekActive, showVictory, showFirstPlayerDraw]);
+
+  // Victory check
   useEffect(() => {
     if (matchedKeys.length > 0 && matchedKeys.length === cards.length / 2) {
       setShowVictory(true);
@@ -74,7 +149,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
   }, [matchedKeys, cards]);
 
   const handleCardClick = (index: number) => {
-    if (boardLocked || flippedIndices.includes(index) || matchedKeys.includes(cards[index].pairKey)) {
+    if (boardLocked || peekActive || showFirstPlayerDraw || flippedIndices.includes(index) || matchedKeys.includes(cards[index].pairKey)) {
       return;
     }
 
@@ -83,26 +158,22 @@ export const GameBoard: React.FC<GameBoardProps> = ({
     const newFlipped = [...flippedIndices, index];
     setFlippedIndices(newFlipped);
 
-    // If 2 cards are now flipped, evaluate match
     if (newFlipped.length === 2) {
       setBoardLocked(true);
+      setMoves((m) => m + 1);
       const [firstIdx, secondIdx] = newFlipped;
       const firstCard = cards[firstIdx];
       const secondCard = cards[secondIdx];
 
       if (firstCard.pairKey === secondCard.pairKey) {
-        // MATCH FOUND
+        // MATCH
         setTimeout(() => {
           const nextStreak = currentStreak + 1;
           setCurrentStreak(nextStreak);
-
-          // Play custom sound melody matching streak
           playMatch(nextStreak);
-
           setMatchedKeys((prev) => [...prev, firstCard.pairKey]);
           setFlippedIndices([]);
 
-          // Select shoutout text and show badge
           if (shoutoutTimeoutRef.current !== null) {
             window.clearTimeout(shoutoutTimeoutRef.current);
           }
@@ -115,32 +186,24 @@ export const GameBoard: React.FC<GameBoardProps> = ({
             setShoutout(null);
             shoutoutTimeoutRef.current = null;
           }, 1600);
-          
-          // Increment score for current player
+
           setPlayers((prevPlayers) =>
             prevPlayers.map((player, idx) => {
-              if (idx === currentPlayerIdx) {
-                return { ...player, score: player.score + 1 };
-              }
+              if (idx === currentPlayerIdx) return { ...player, score: player.score + 1 };
               return player;
             })
           );
-          
           setBoardLocked(false);
         }, 500);
       } else {
-        // NO MATCH
-        // Play mismatch sound immediately
+        // MISMATCH
         playMismatch();
-
-        // Select playful mismatch shoutout text
         const randomText = MISMATCH_SHOUTOUTS[Math.floor(Math.random() * MISMATCH_SHOUTOUTS.length)];
-        
+
         if (shoutoutTimeoutRef.current !== null) {
           window.clearTimeout(shoutoutTimeoutRef.current);
         }
         setShoutout({ text: randomText, level: 0, streak: 0 });
-        
         shoutoutTimeoutRef.current = window.setTimeout(() => {
           setShoutout(null);
           shoutoutTimeoutRef.current = null;
@@ -148,11 +211,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
 
         setTimeout(() => {
           setFlippedIndices([]);
-          
-          // Reset streak
           setCurrentStreak(0);
-          
-          // Turn passes to next player
           setCurrentPlayerIdx((prevIdx) => (prevIdx + 1) % players.length);
           setBoardLocked(false);
         }, 1200);
@@ -161,25 +220,25 @@ export const GameBoard: React.FC<GameBoardProps> = ({
   };
 
   const handleMuteToggle = () => {
-    const isMuted = toggleMute();
-    setIsMuted(isMuted);
-    if (!isMuted) playFlip();
+    const muted = toggleMute();
+    setIsMuted(muted);
+    if (!muted) playFlip();
   };
 
   const handleRestartClick = () => {
     setFlippedIndices([]);
     setMatchedKeys([]);
-    setCurrentPlayerIdx(0);
     setCurrentStreak(0);
     setShoutout(null);
     setBoardLocked(false);
     setShowVictory(false);
-    // Reset scores
+    setMoves(0);
+    setElapsedSeconds(0);
     setPlayers((prev) => prev.map((p) => ({ ...p, score: 0 })));
     onRestartGame();
+    startSequence(players);
   };
 
-  // Find winner(s)
   const getWinnersInfo = () => {
     if (players.length === 1) return { text: 'Congratulations! You matched all pairs!', scores: '' };
 
@@ -194,19 +253,19 @@ export const GameBoard: React.FC<GameBoardProps> = ({
       }
     });
 
-    if (winners.length === players.length && players.every(p => p.score === players[0].score)) {
+    if (winners.length === players.length && players.every((p) => p.score === players[0].score)) {
       return { text: "It's a tie!", scores: `All players scored ${maxScore} points.` };
     }
-
     if (winners.length > 1) {
       const names = winners.map((w) => w.name).join(' & ');
       return { text: `It's a Tie between ${names}!`, scores: `With ${maxScore} points each.` };
     }
-
     return { text: `${winners[0].name} wins the match!`, scores: `Scored ${maxScore} points.` };
   };
 
   const winners = getWinnersInfo();
+  const totalPairs = cards.length / 2;
+  const efficiency = moves > 0 ? (moves / totalPairs).toFixed(1) : '-';
 
   return (
     <div className="game-board-container">
@@ -251,9 +310,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
             <div
               key={player.id}
               className={`score-card ${isActive ? 'active' : ''}`}
-              style={{
-                borderLeft: `4px solid var(--player-${idx + 1}, var(--amber))`,
-              }}
+              style={{ borderLeft: `4px solid var(--player-${idx + 1}, var(--amber))` }}
             >
               <div className="score-card-header">
                 <span className="player-indicator-dot" style={{ backgroundColor: `var(--player-${idx + 1}, var(--amber))` }} />
@@ -266,7 +323,7 @@ export const GameBoard: React.FC<GameBoardProps> = ({
         })}
       </div>
 
-      {/* Game Message */}
+      {/* Game Status + Stats Bar */}
       <div className="game-status-bar">
         {players.length > 1 && !showVictory ? (
           <p className="game-status-text">
@@ -274,20 +331,29 @@ export const GameBoard: React.FC<GameBoardProps> = ({
           </p>
         ) : (
           <p className="game-status-text">
-            Match pairs to clear the board. {matchedKeys.length} / {cards.length / 2} pairs found.
+            Match pairs to clear the board. {matchedKeys.length} / {totalPairs} pairs found.
           </p>
+        )}
+        {!showVictory && !peekActive && !showFirstPlayerDraw && (
+          <div className="game-stats-row">
+            <span className="stat-item">⏱ {formatTime(elapsedSeconds)}</span>
+            <span className="stat-divider">·</span>
+            <span className="stat-item">🎯 {moves} moves</span>
+          </div>
         )}
       </div>
 
       {/* Card Grid Container */}
       <div className="card-grid-wrapper">
+        {peekActive && (
+          <div className="peek-banner">
+            <span className="peek-text">Memorise!</span>
+            <span className="peek-countdown">{peekCountdown}</span>
+          </div>
+        )}
         <div
           className="card-grid"
-          style={
-            {
-              '--cols': columns,
-            } as React.CSSProperties
-          }
+          style={{ '--cols': columns, '--rows': rows } as React.CSSProperties}
         >
           {cards.map((card, index) => {
             const isFlipped = flippedIndices.includes(index);
@@ -298,10 +364,10 @@ export const GameBoard: React.FC<GameBoardProps> = ({
                 id={card.id}
                 name={card.name}
                 image={card.image}
-                isFlipped={isFlipped}
+                isFlipped={isFlipped || peekActive}
                 isMatched={isMatched}
                 onClick={() => handleCardClick(index)}
-                disabled={boardLocked || isMatched}
+                disabled={boardLocked || isMatched || peekActive || showFirstPlayerDraw}
               />
             );
           })}
@@ -320,36 +386,88 @@ export const GameBoard: React.FC<GameBoardProps> = ({
         </div>
       )}
 
-      {/* Victory Overlay Modal */}
-      {showVictory && (
-        <div className="victory-overlay">
-          <div className="victory-modal">
-            <div className="victory-logo">🏆</div>
-            <h2 className="victory-title">{winners.text}</h2>
-            <p className="victory-scores">{winners.scores}</p>
-            <div className="victory-scoreboard">
-              <h3>Final Standings</h3>
-              {players
-                .slice()
-                .sort((a, b) => b.score - a.score)
-                .map((p, idx) => (
-                  <div key={p.id} className="victory-rank-row">
-                    <span className="rank-num">#{idx + 1}</span>
-                    <span className="rank-name">{p.name}</span>
-                    <span className="rank-score">{p.score} pairs</span>
-                  </div>
-                ))}
-            </div>
-            <div className="victory-actions">
-              <button type="button" className="victory-btn" onClick={handleRestartClick}>
-                Play Again
-              </button>
-              <button type="button" className="victory-btn primary" onClick={onNewGame}>
-                Change Settings
-              </button>
-            </div>
+      {/* Who Goes First overlay (multiplayer only) */}
+      {showFirstPlayerDraw && (
+        <div className="first-player-overlay">
+          <div className="first-player-modal">
+            <div className="first-player-dice">🎲</div>
+            <p className="first-player-text">
+              <strong>{firstPlayerName}</strong> goes first!
+            </p>
           </div>
         </div>
+      )}
+
+      {/* Victory Overlay Modal */}
+      {showVictory && (
+        <>
+          <div className="confetti-container" aria-hidden="true">
+            {confettiPieces.map((piece) => (
+              <span
+                key={piece.id}
+                className="confetti-piece"
+                style={{
+                  left: `${piece.left}%`,
+                  animationDelay: `${piece.delay}s`,
+                  animationDuration: `${piece.duration}s`,
+                  backgroundColor: piece.color,
+                  width: `${piece.size}px`,
+                  height: `${piece.size}px`,
+                  '--rotate': `${piece.rotate}deg`,
+                } as React.CSSProperties}
+              />
+            ))}
+          </div>
+          <div className="victory-overlay">
+            <div className="victory-modal">
+              <div className="victory-logo">🏆</div>
+              <h2 className="victory-title">{winners.text}</h2>
+              <p className="victory-scores">{winners.scores}</p>
+
+              <div className="victory-game-stats">
+                <div className="victory-stat">
+                  <span className="victory-stat-icon">⏱</span>
+                  <span className="victory-stat-value">{formatTime(elapsedSeconds)}</span>
+                  <span className="victory-stat-label">time</span>
+                </div>
+                <div className="victory-stat">
+                  <span className="victory-stat-icon">🎯</span>
+                  <span className="victory-stat-value">{moves}</span>
+                  <span className="victory-stat-label">moves</span>
+                </div>
+                {players.length === 1 && (
+                  <div className="victory-stat">
+                    <span className="victory-stat-icon">⚡</span>
+                    <span className="victory-stat-value">{efficiency}×</span>
+                    <span className="victory-stat-label">efficiency</span>
+                  </div>
+                )}
+              </div>
+
+              <div className="victory-scoreboard">
+                <h3>Final Standings</h3>
+                {players
+                  .slice()
+                  .sort((a, b) => b.score - a.score)
+                  .map((p, idx) => (
+                    <div key={p.id} className="victory-rank-row">
+                      <span className="rank-num">#{idx + 1}</span>
+                      <span className="rank-name">{p.name}</span>
+                      <span className="rank-score">{p.score} pairs</span>
+                    </div>
+                  ))}
+              </div>
+              <div className="victory-actions">
+                <button type="button" className="victory-btn" onClick={handleRestartClick}>
+                  Play Again
+                </button>
+                <button type="button" className="victory-btn primary" onClick={onNewGame}>
+                  Change Settings
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
       )}
     </div>
   );

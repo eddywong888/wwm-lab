@@ -53,8 +53,12 @@ export const Card: React.FC<CardProps> = ({
         {/* Card Front */}
         <div className="memory-card-front">
           <div className="card-front-content">
-            <img src={image} alt={name} className="card-image" loading="lazy" />
-            <div className="card-label" title={name}>{name}</div>
+            {image.startsWith('http') || image.startsWith('data:') || image.startsWith('/') ? (
+              <img src={image} alt={name} className="card-image" loading="lazy" />
+            ) : (
+              <div className="card-emoji" aria-label={name}>{image}</div>
+            )}
+            {name && <div className="card-label" title={name}>{name}</div>}
           </div>
         </div>
       </div>

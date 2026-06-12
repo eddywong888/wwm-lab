@@ -1,11 +1,12 @@
 .game-board-container {
   display: flex;
   flex-direction: column;
-  gap: var(--s4);
+  gap: var(--s3);
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: var(--s4) var(--s4) var(--s6);
-  min-height: 100dvh;
+  padding: var(--s3) var(--s4);
+  height: 100dvh;
+  overflow: hidden;
 }
 
 /* HUD Header styling */
@@ -169,7 +170,11 @@
   background: var(--bg-1);
   border: 1px dashed var(--border-2);
   border-radius: var(--radius);
-  padding: var(--s2);
+  padding: var(--s2) var(--s3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+  align-items: center;
 }
 
 .game-status-text {
@@ -182,19 +187,75 @@
   font-weight: 700;
 }
 
+.game-stats-row {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-3);
+}
+
+.stat-item {
+  white-space: nowrap;
+}
+
+.stat-divider {
+  color: var(--border-2);
+}
+
+/* Peek banner overlay */
+.peek-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s3);
+  background: var(--text-1);
+  color: var(--bg);
+  border-radius: var(--radius);
+  padding: var(--s2) var(--s4);
+  margin-bottom: var(--s3);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  animation: peekBannerIn 0.3s var(--ease);
+}
+
+.peek-text {
+  font-size: 0.95rem;
+  text-transform: lowercase;
+  letter-spacing: -0.5px;
+}
+
+.peek-countdown {
+  font-size: 1.4rem;
+  color: var(--amber);
+  min-width: 1.5rem;
+  text-align: center;
+  transition: all 0.3s var(--ease);
+}
+
+@keyframes peekBannerIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Card Grid Layout */
 .card-grid-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex: 1;
+  min-height: 0;
   width: 100%;
 }
 
 .card-grid {
   display: grid;
   grid-template-columns: repeat(var(--cols), 1fr);
-  gap: var(--s3);
+  grid-auto-rows: clamp(55px, calc((100dvh - 260px) / var(--rows)), 160px);
+  gap: var(--s2);
   width: 100%;
   max-width: 900px;
   justify-content: center;
@@ -328,6 +389,122 @@
   background: var(--amber);
 }
 
+/* Victory game stats row */
+.victory-game-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--s4);
+  margin-bottom: var(--s4);
+  padding: var(--s3);
+  background: var(--bg-1);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius);
+}
+
+.victory-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.victory-stat-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.victory-stat-value {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-1);
+  line-height: 1;
+}
+
+.victory-stat-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Who Goes First overlay */
+.first-player-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 10, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.first-player-modal {
+  background: var(--surface);
+  border: 2px solid var(--text-1);
+  border-radius: var(--radius-lg);
+  box-shadow: 8px 8px 0px var(--text-1);
+  padding: var(--s6) var(--s7);
+  text-align: center;
+  animation: firstPlayerPop 0.35s var(--ease);
+}
+
+.first-player-dice {
+  font-size: 3rem;
+  margin-bottom: var(--s3);
+  animation: diceRoll 0.6s var(--ease);
+}
+
+.first-player-text {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: -0.5px;
+  color: var(--text-1);
+}
+
+@keyframes firstPlayerPop {
+  from { opacity: 0; transform: scale(0.8) translateY(16px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes diceRoll {
+  0%   { transform: rotate(0deg) scale(0.5); opacity: 0; }
+  60%  { transform: rotate(720deg) scale(1.2); opacity: 1; }
+  100% { transform: rotate(720deg) scale(1); opacity: 1; }
+}
+
+/* Confetti */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -20px;
+  border-radius: 2px;
+  animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translateY(105vh) rotate(var(--rotate, 360deg)); opacity: 0; }
+}
+
 /* Responsiveness tweaks for grid columns */
 @media (max-width: 600px) {
   .game-hud {
@@ -338,10 +515,6 @@
     justify-content: space-between;
   }
   
-  /* Force grid columns to be smaller on small viewports so we don't break aspect ratios */
-  .card-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
-  }
 }
 
 /* Streak Shoutout Badge Overlay */

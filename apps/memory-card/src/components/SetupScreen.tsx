@@ -80,7 +80,7 @@ export const SetupScreen: React.FC<SetupScreenProps> = ({
     if (!isMuted) playFlip();
   };
 
-  const isUploadThemeValid = theme === 'flags' || customImages.length >= level;
+  const isUploadThemeValid = theme === 'flags' || theme === 'emojis' || customImages.length >= level;
 
   return (
     <div className="setup-screen">
@@ -150,6 +150,13 @@ export const SetupScreen: React.FC<SetupScreenProps> = ({
               onClick={() => handleThemeChange('flags')}
             >
               Country Flags
+            </button>
+            <button
+              type="button"
+              className={`setup-btn ${theme === 'emojis' ? 'active' : ''}`}
+              onClick={() => handleThemeChange('emojis')}
+            >
+              🐾 Animals
             </button>
             <button
               type="button"

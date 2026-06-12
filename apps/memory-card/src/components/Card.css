@@ -1,5 +1,4 @@
 .memory-card-wrapper {
-  aspect-ratio: 3 / 4;
   perspective: 1000px;
   cursor: pointer;
   position: relative;
@@ -128,6 +127,18 @@
   border-radius: var(--radius);
   border: 1px solid var(--border);
   min-height: 0; /* allows flex shrinking on small screens */
+}
+
+.card-emoji {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(2rem, 8vw, 4rem);
+  background: var(--bg-1);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  user-select: none;
 }
 
 .card-label {

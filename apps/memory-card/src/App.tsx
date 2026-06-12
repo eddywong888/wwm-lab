@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import { SetupScreen } from './components/SetupScreen';
 import { GameBoard } from './components/GameBoard';
 import { COUNTRIES, getFlagUrl } from './data/countries';
+import { ANIMALS } from './data/emojis';
 import { getCustomImages } from './utils/db';
 import type { CustomImage } from './utils/db';
 import './App.css';
 
-export type GameTheme = 'flags' | 'uploads';
+export type GameTheme = 'flags' | 'uploads' | 'emojis';
 
 export interface Player {
   id: number;
@@ -61,9 +62,15 @@ export default function App() {
         name: c.name,
         image: getFlagUrl(c.code),
       }));
+    } else if (theme === 'emojis') {
+      const shuffledAnimals = shuffle(ANIMALS).slice(0, level);
+      selectedPairs = shuffledAnimals.map((a) => ({
+        pairKey: a.emoji,
+        name: a.name,
+        image: a.emoji,
+      }));
     } else {
       // custom uploads theme
-      // Take first 'level' custom uploads
       const selectedUploads = customImages.slice(0, level);
       selectedPairs = selectedUploads.map((img) => ({
         pairKey: img.id,
