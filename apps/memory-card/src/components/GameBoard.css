@@ -191,18 +191,23 @@
   display: flex;
   align-items: center;
   gap: var(--s2);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-3);
 }
 
 .stat-item {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-1);
+  background: var(--surface);
+  border: 1.5px solid var(--border-2);
+  border-radius: var(--radius);
+  padding: 2px var(--s3);
   white-space: nowrap;
 }
 
 .stat-divider {
   color: var(--border-2);
+  font-size: 0.75rem;
 }
 
 /* Peek banner overlay */
