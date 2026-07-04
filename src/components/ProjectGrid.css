@@ -77,6 +77,28 @@
   opacity: 0.75;
 }
 
+.project-card__preview {
+  /* full-bleed against the card padding */
+  margin: calc(var(--s6) * -1) calc(var(--s6) * -1) 0;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background: #14120e;
+}
+
+.project-card__preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-card__preview img {
+  transform: scale(1.04);
+}
+
 .project-card__header {
   display: flex;
   align-items: flex-start;

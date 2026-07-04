@@ -7,6 +7,7 @@ interface Project {
   liveUrl?: string;
   sourceUrl?: string;
   downloadUrl?: string;
+  previewImage?: string;
   status?: 'live' | 'wip' | 'soon';
 }
 
@@ -17,6 +18,7 @@ const PROJECTS: Project[] = [
     tags: ['meta', 'react', 'cloudflare'],
     liveUrl: '#',
     sourceUrl: 'https://github.com/eddywong888/wwm-lab',
+    previewImage: '/previews/wwm-lab.jpg',
     status: 'live',
   },
   {
@@ -25,6 +27,7 @@ const PROJECTS: Project[] = [
     tags: ['game', 'react', 'indexeddb', 'webaudio'],
     liveUrl: '/apps/memory-card/',
     sourceUrl: 'https://github.com/eddywong888/wwm-lab/tree/main/apps/memory-card',
+    previewImage: '/previews/memory-card.jpg',
     status: 'live',
   },
   {
@@ -34,6 +37,7 @@ const PROJECTS: Project[] = [
     tags: ['game', 'rts', 'canvas', 'webaudio'],
     liveUrl: '/apps/thane-war/',
     downloadUrl: '/downloads/thane-war',
+    previewImage: '/previews/thane-war.jpg',
     status: 'live',
   },
   {
@@ -72,6 +76,11 @@ function ProjectCard({ project }: { project: Project }) {
   const isSoon = project.status === 'soon';
   return (
     <article className={`project-card ${isSoon ? 'project-card--dim' : ''}`}>
+      {project.previewImage && (
+        <div className="project-card__preview">
+          <img src={project.previewImage} alt={`${project.title} screenshot`} loading="lazy" />
+        </div>
+      )}
       <header className="project-card__header">
         <h3 className="project-card__title">{project.title}</h3>
         <StatusBadge status={project.status} />
