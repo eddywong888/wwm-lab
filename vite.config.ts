@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { existsSync, readFileSync } from 'node:fs'
+import { join } from 'node:path'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -8,11 +10,24 @@ export default defineConfig({
     {
       name: 'dev-routing',
       configureServer(server) {
-        server.middlewares.use((req, _res, next) => {
+        const apps = ['memory-card', 'thane-war'];
+        server.middlewares.use((req, res, next) => {
           if (req.url) {
             const url = req.url.split('?')[0];
-            if (url === '/apps/memory-card' || url === '/apps/memory-card/') {
-              req.url = '/apps/memory-card/index.html' + (req.url.includes('?') ? '?' + req.url.split('?')[1] : '');
+            for (const app of apps) {
+              if (url === `/apps/${app}` || url === `/apps/${app}/`) {
+                req.url = `/apps/${app}/index.html` + (req.url.includes('?') ? '?' + req.url.split('?')[1] : '');
+              }
+            }
+            // Committed prebuilt downloads: serve raw, bypassing Vite's HTML
+            // transform so the file stays self-contained in dev too.
+            if (url.startsWith('/downloads/') && !url.includes('..')) {
+              const file = join(server.config.root, 'prebuilt', url);
+              if (existsSync(file)) {
+                res.setHeader('Content-Type', 'text/html; charset=utf-8');
+                res.end(readFileSync(file));
+                return;
+              }
             }
           }
           next();

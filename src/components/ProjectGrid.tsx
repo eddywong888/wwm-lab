@@ -6,6 +6,7 @@ interface Project {
   tags: string[];
   liveUrl?: string;
   sourceUrl?: string;
+  downloadUrl?: string;
   status?: 'live' | 'wip' | 'soon';
 }
 
@@ -27,6 +28,15 @@ const PROJECTS: Project[] = [
     status: 'live',
   },
   {
+    title: 'Thane War: Shadow of the Horde',
+    description:
+      'A retro real-time strategy game in the spirit of the 1994 classics. Gather gold and lumber, lay roads, raise farms and barracks, and crush the Gharok Horde. Canvas engine with A* pathfinding, fog of war, minimap, and procedural chiptune sound. Play in the browser, or download the single-file version to play offline.',
+    tags: ['game', 'rts', 'canvas', 'webaudio'],
+    liveUrl: '/apps/thane-war/',
+    downloadUrl: '/downloads/thane-war.html',
+    status: 'live',
+  },
+  {
     title: 'Experiment #1',
     description: 'Testing an idea around SEO + interactivity. Details soon.',
     tags: ['seo', 'experiment'],
@@ -37,6 +47,12 @@ const PROJECTS: Project[] = [
 const ExternalIcon = () => (
   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
     <path d="M3 13L13 3M13 3H7.5M13 3V8.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const DownloadIcon = () => (
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+    <path d="M8 2v8M4.5 6.5L8 10l3.5-3.5M3 13h10" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -81,6 +97,12 @@ function ProjectCard({ project }: { project: Project }) {
             <a href={project.sourceUrl} className="project-card__link" target="_blank" rel="noopener noreferrer">
               <GithubIcon />
               <span>Source</span>
+            </a>
+          )}
+          {project.downloadUrl && (
+            <a href={project.downloadUrl} className="project-card__link" download>
+              <DownloadIcon />
+              <span>Download</span>
             </a>
           )}
         </div>

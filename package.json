@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && npm run build --prefix apps/memory-card",
+    "build": "tsc -b && vite build && npm run build --prefix apps/memory-card && node scripts/copy-prebuilt.mjs",
+    "pack:thane-war": "npm run build --prefix apps/thane-war && node scripts/pack-thane-war.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

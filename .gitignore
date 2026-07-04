@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Thane War game source stays private (local only); the site ships the
+# prebuilt bundle committed under prebuilt/. Rebuild with: npm run pack:thane-war
+apps/thane-war/src/
+
 .wrangler
 .dev.vars
 
