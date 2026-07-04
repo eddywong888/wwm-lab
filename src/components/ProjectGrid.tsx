@@ -33,7 +33,7 @@ const PROJECTS: Project[] = [
       'A retro real-time strategy game in the spirit of the 1994 classics. Gather gold and lumber, lay roads, raise farms and barracks, and crush the Gharok Horde. Canvas engine with A* pathfinding, fog of war, minimap, and procedural chiptune sound. Play in the browser, or download the single-file version to play offline.',
     tags: ['game', 'rts', 'canvas', 'webaudio'],
     liveUrl: '/apps/thane-war/',
-    downloadUrl: '/downloads/thane-war.html',
+    downloadUrl: '/downloads/thane-war',
     status: 'live',
   },
   {
