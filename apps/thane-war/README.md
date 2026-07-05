@@ -2,6 +2,8 @@
 
 A retro real-time strategy game (canvas + WebAudio, no external assets).
 
+Development history and roadmap: see [DEVLOG.md](./DEVLOG.md).
+
 **The game source (`src/`) is intentionally not committed** — it lives only on the
 development machine. The public site serves the compiled bundle committed under
 `/prebuilt`:

@@ -1,0 +1,80 @@
+# Thane War — Development Log
+
+A running record of what shipped, when, and what's next. Newest first.
+Commits reference this repo's `main` branch; the playable build lives at
+`/apps/thane-war/` and updates automatically on push via Cloudflare Pages.
+
+## 2026-07-05 — Graphics push III: tall buildings & living scenery (`9415215`)
+
+- All 7 building types redrawn at **32×48** with a 16px overhang above the
+  2×2 footprint — crenellated barracks keep, ember-topped smithy chimney,
+  saw-gable lumber mill, and a Watchtower that finally looks like a tower.
+- Buildings and units merged into a single **y-sorted draw pass**: units
+  walking behind a tall structure are occluded by its roofline.
+- Farm and Smithy chimneys puff drifting smoke particles.
+- Grass tiles seeded with sparse wildflowers and pebbles.
+- Scaffold redrawn taller with a hoist crane.
+
+## 2026-07-05 — Graphics push II: 24×24 units (`3be5c47`)
+
+- Units re-authored at **24×24** (from 16×16), feet anchored to the tile so
+  they stand ~1.5 tiles tall like the mid-90s classics.
+- Laborer: hooded peasant with shouldered axe. Spearman: full helm,
+  team-colored round shield, full-length spear (leveled when side-facing).
+  Archer: studded tunic, curved bow, back quiver with steel arrow tips.
+- Corpse/bones death stages redrawn to match.
+
+## 2026-07-05 — Visible gear, chop animation, crowd pathing (`56ff170`)
+
+- **Research shows on units**: 9 gear-tier sprite variants per unit —
+  weapons steel → gleaming → gilded (Horde: dark iron → honed → smoldering
+  red); armor steel → polished → gold-trimmed (Horde: crude → banded →
+  blood-lacquered). Applies to the enemy too, so wave strength is readable.
+- Chopping is animated: axe swings with wood-chip particles; carried loot
+  is a gold sack / shouldered log.
+- Pathing fix: units blocked by other units now stop adjacent when the
+  destination itself is occupied, or detour around standing units — no more
+  workers idling in traffic jams.
+
+## 2026-07-05 — Phase 2: tech buildings & control groups (`7ab5926`)
+
+- **Lumber Mill** — second lumber drop-off; required to train Archers.
+- **Smithy** — research Forged Weapons (+2 dmg/level) and Tempered Armor
+  (−1 dmg taken/level), two levels each.
+- **Watchtower** — defensive structure that shoots the nearest enemy.
+- **Control groups** — Ctrl/Cmd+1–9 assigns, digit recalls, double-tap
+  centers the camera.
+- Enemy AI builds all of the above, gates its archers on its own mill, and
+  researches upgrades from mid-game.
+
+## 2026-07-04 — Play/download analytics (`a6486f8`)
+
+- Cloudflare KV counters via Pages Functions: `thane-war-play` (once per
+  session, real site only) and `thane-war-download` (counted at the
+  `/downloads/thane-war` route). Stats visible at `/api/hits`.
+
+## 2026-07-04 — Phase 1 release (`a0dab99`)
+
+The initial playable skirmish, built in one long session:
+
+- **Engine**: Canvas 2D at 640×400 (pixel-scaled), fixed 10 Hz simulation
+  with interpolated 60 fps rendering; A* pathfinding on a 64×64 tile map;
+  fog of war (unexplored / shroud / visible); minimap with click-to-jump.
+- **Classic rules**: road-adjacency building placement, farm-based pop cap,
+  gold mining round-trips, tree chopping with deforestation.
+- **Combat**: melee + ranged with projectiles, attack-move, HP bars,
+  staged deaths (fall → corpse → bones).
+- **Content**: Aldermark vs Gharok Horde skirmish with a scripted AI
+  (economy, build order, 4 escalating attack waves, base defense).
+- **Audio**: procedural WebAudio chiptune SFX, no asset files.
+- **Distribution**: source kept private; site serves a committed prebuilt
+  bundle plus a self-contained single-file offline download (~84 KB gzipped).
+
+## Roadmap
+
+- **Phase 2 leftovers**: worker-built construction (buildings currently
+  self-construct), siege unit, healer, gold mine occupancy limit, leaner
+  unit proportions.
+- **Phase 3 — campaign**: 5-mission human campaign with briefings, mission
+  select, objectives and tech gating; chiptune music loop; mid-mission
+  saves (IndexedDB); orc campaign as a stretch goal.
