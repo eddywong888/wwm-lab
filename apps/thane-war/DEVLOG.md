@@ -4,6 +4,67 @@ A running record of what shipped, when, and what's next. Newest first.
 Commits reference this repo's `main` branch; the playable build lives at
 `/apps/thane-war/` and updates automatically on push via Cloudflare Pages.
 
+## 2026-07-05 — Phase 4a: siege, healers, difficulty
+
+- **Catapult** (`'catapult'`, Gharok: "Skull Lobber"): siege unit trained at the
+  Barracks (hotkey C), gated on a completed **Smithy** — same pattern as the
+  archer/lumbermill gate, enforced in `game.train`, the CommandCard button
+  lock+hint, and the AI's wave training. Stats: 50 hp, speed 0.3, 24 dmg,
+  range 6, cooldown 25, 300g/200l, 140 train ticks. Shots are big slow rocks
+  (`Projectile` gained optional `splash`/`size` fields; catapult shots fly at
+  0.55 with splash 1.6): on impact the direct target takes full damage and
+  every OTHER enemy *unit* within the splash radius takes 50% (rounded);
+  buildings only ever take the direct hit, own units are never harmed
+  (`updateProjectiles` in combat.ts). New SFX `catapultFire` (low 90Hz square
+  thunk + noise) and `rockHit` (heavy 400Hz crash + low saw), picked
+  kind-aware in `spawnProjectile` — archer sounds untouched. Art: authored
+  S/N/E 24x24 frames (wheel pair, wooden frame, throwing arm with `b` metal
+  fittings and an `m` bucket, team pennant); it has no legs, so
+  spritesheet.ts bakes its `_alt` walk frames as the same pose.
+- **Cleric** (`'cleric'`, Gharok: "Bone Shaman"): support healer trained at
+  the Barracks (hotkey E), gated on a completed Lumber Mill. Stats: 35 hp,
+  speed 0.5, 2 dmg melee, 140g, 100 train ticks. No mana: when idle or
+  attack-moving, a cleric seeks the nearest injured friendly unit in sight
+  (new `game/heal.ts`), paths within 1.5 tiles, and mends +3 hp per 10 ticks
+  (cooldown doubles as the heal timer, `attackedAt` gives a cast pose).
+  Each pulse emits sfx `heal` (soft two-note triangle chime) and a new
+  `{ t:'healed' }` GameEvent that the renderer turns into 3-4 rising green
+  motes (`spawnHeal`, #78e878/#b8f0b8). Clerics are excluded from
+  `autoAcquire` so they never pick fights, but an explicit attack order still
+  works (feeble 2 dmg, no special-casing). Art: hooded robe in team colors
+  with a `b`-tipped staff; the robe hides the legs, so its walk `_alt`
+  frames are also baked as the same pose (side views keep the renderer bob).
+- **Difficulty (Easy/Normal/Hard)**: chosen on the briefing screen (three
+  buttons, both campaign and skirmish), default = last used, persisted in a
+  new `thanewar_settings` localStorage key (separate from `thanewar_progress`
+  so old saves are untouched). Applied at Game construction via
+  `applyDifficulty()` in mission.ts, which **deep-copies** the enemy config —
+  MissionDef singletons are never mutated. Easy: enemy gold/lumber x0.6 and
+  wave counts ceil(x0.7); Hard: x1.5 / ceil(x1.4) and the AI's
+  smithy-research start tick drops 2500→1500 (now an `AIState` field).
+  The chosen difficulty shows on the briefing (selected button state) and as
+  a small label chip in the ResourceBar next to the objective.
+- **Campaign integration**: M3 adds `'cleric'` to allowedUnits (M2
+  unchanged; M4/M5 omit allowedUnits so everything incl. catapult is
+  allowed — verified absence means allowed). M4's late waves add clerics;
+  M5's late waves add catapults+clerics; skirmish's final wave adds 1
+  catapult. The AI gates cleric on its lumbermill and catapult on its smithy
+  (both prebuilt in M4/M5/skirmish-late). Wave army maps list
+  catapult/cleric FIRST: the AI trains armies in key order and can stall at
+  its pop ceiling partway down the list, which would otherwise starve the
+  new kinds out (verified in-sim: with them first, the freed-pop queue slot
+  goes to a catapult/cleric before more spearmen).
+- Exhaustive-map sweeps for the new kinds: UNIT_PLURAL (game.ts), UNIT_ROLES
+  (SelectionPanel), train hotkey/lock maps (CommandCard), spritesheet `kinds`
+  array (icons derive automatically), and the renderer's per-kind maxHp map
+  replaced with `UNIT_DEFS[u.kind].hp`. Verified via Playwright: tech-gate
+  messages before/after smithy+lumbermill (including re-locking after the
+  smithy was razed), splash numbers (24 direct to a building, 12 to each
+  clustered unit), heal climb 5→41 hp with 12 `healed` events, Hard=1.5x /
+  Easy=0.6x enemy gold with persistence across reloads, 4 iconed train
+  buttons on the barracks card, M1 train-objective flow to victory, and an
+  M5 6000+-tick fast-forward with zero exceptions.
+
 ## 2026-07-05 — Minimap orders & richer HUD
 
 - **Minimap move/attack orders**: right-clicking the minimap now issues the
