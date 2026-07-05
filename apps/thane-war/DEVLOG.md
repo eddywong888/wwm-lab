@@ -4,6 +4,25 @@ A running record of what shipped, when, and what's next. Newest first.
 Commits reference this repo's `main` branch; the playable build lives at
 `/apps/thane-war/` and updates automatically on push via Cloudflare Pages.
 
+## 2026-07-05 — Rank titles, visible mine gold, worker-built construction
+
+- **Rank titles**: smithy research now shows on unit names, not just stats —
+  Trained / Veteran / Elite / Legendary prefixes stack with combined weapon
+  + armor levels (0-4 total), for every unit kind on both factions.
+- **Gold mines show their gold**: selecting a mine reports remaining gold
+  in the panel, and the sprite now has a pile of ore spilling out of the
+  dark entrance so a near-empty mine is visible at a glance.
+- **Villagers build buildings**: Laborers are renamed Villagers (Aldermark
+  only — Gharok keeps Toiler; the internal unit id is unchanged) and
+  construction is no longer self-driven. Placing a building sends the
+  selected workers to walk over and hammer on it (with a new hammer SFX);
+  progress only advances while a worker is actually adjacent, so pulling
+  the builder away mid-job freezes the site until someone resumes it via
+  right-click. The scripted AI now steals a worker for each build-order
+  building too, with a periodic re-check so a building that missed its
+  initial assignment (all workers busy) still eventually gets one instead
+  of stalling forever.
+
 ## 2026-07-05 — HD update: 960×600, baked lighting, richer animation
 
 - **Resolution** raised from 640×400 to 960×600 — ~50% more battlefield on
