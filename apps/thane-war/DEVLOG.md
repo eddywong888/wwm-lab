@@ -4,6 +4,18 @@ A running record of what shipped, when, and what's next. Newest first.
 Commits reference this repo's `main` branch; the playable build lives at
 `/apps/thane-war/` and updates automatically on push via Cloudflare Pages.
 
+## 2026-07-05 — Rally points, living buildings, voice barks
+
+- **Rally points**: select a production building and right-click the ground —
+  a fluttering flag marks the spot and newly trained units walk there.
+- **Building animation**: banners flutter, the smithy forge breathes orange
+  light and its chimney ember blinks, the lumber mill saw glints as it spins,
+  the watchtower fire flickers, gold veins twinkle; buildings also cast a
+  soft east-side shadow for depth.
+- **Voice-style acknowledgments**: chiptune barks distinguish workers
+  ("hm?" / "okey-doke") from soldiers ("sir!" / "hup!"), with an aggressive
+  battle shout on attack orders and random detune so barks vary.
+
 ## 2026-07-05 — Command hotkeys, unit stat panel, group badges
 
 - **Keyboard commands**: with units selected — M move, A attack-move,
