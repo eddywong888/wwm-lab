@@ -47,3 +47,4 @@ CLAUDE.md
 *.njsproj
 *.sln
 *.sw?
+*.tsbuildinfo
