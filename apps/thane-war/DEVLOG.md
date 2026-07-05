@@ -4,6 +4,20 @@ A running record of what shipped, when, and what's next. Newest first.
 Commits reference this repo's `main` branch; the playable build lives at
 `/apps/thane-war/` and updates automatically on push via Cloudflare Pages.
 
+## 2026-07-05 — HD update: 960×600, baked lighting, richer animation
+
+- **Resolution** raised from 640×400 to 960×600 — ~50% more battlefield on
+  screen, crisper at fullscreen. Still 60 fps.
+- **Baked relief lighting** on every sprite: vertical sky-light ramp plus
+  lit top edges / shaded bottom-right contours give buildings and units
+  fake-3D volume.
+- **Terrain relief**: broad light/shade patches roll across the ground;
+  open water shimmers between wave frames; corner vignette adds depth.
+- **Animation**: real second stride frames for east/west walking (legs
+  actually pass now), idle units breathe with a slow desynced bob, unit
+  shadows are soft radial gradients, and construction sites hoist a
+  bobbing crane load.
+
 ## 2026-07-05 — Rally points, living buildings, voice barks
 
 - **Rally points**: select a production building and right-click the ground —
