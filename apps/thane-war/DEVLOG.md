@@ -4,6 +4,21 @@ A running record of what shipped, when, and what's next. Newest first.
 Commits reference this repo's `main` branch; the playable build lives at
 `/apps/thane-war/` and updates automatically on push via Cloudflare Pages.
 
+## 2026-07-05 — Command hotkeys, unit stat panel, group badges
+
+- **Keyboard commands**: with units selected — M move, A attack-move,
+  S stop (M/A arm the order; next left-click issues it). With a worker
+  selected — R road, F farm, B barracks, L lumber mill, K smithy,
+  W watchtower, H town hall. Buildings: L laborer (Town Hall),
+  S spearman / A archer (Barracks), W weapons / D armor (Smithy).
+  All command-card buttons show their hotkey.
+- **Selection info**: the panel now shows a stat block for units — damage
+  (including weapons research), armor, range, sight — plus a role line
+  ("Worker — builds, mines gold, chops lumber"); buildings describe what
+  they provide (food, drop-off, tower damage/range).
+- **Group badges**: units and buildings assigned to a control group wear a
+  small numbered tag on the battlefield.
+
 ## 2026-07-05 — Graphics push III: tall buildings & living scenery (`9415215`)
 
 - All 7 building types redrawn at **32×48** with a 16px overhang above the
