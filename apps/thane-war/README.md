@@ -1,6 +1,7 @@
 # Thane War: Shadow of the Horde
 
-A retro real-time strategy game (canvas + WebAudio, no external assets).
+A retro real-time strategy game (canvas + WebAudio, no external assets). Play the
+5-mission Aldermark campaign or jump into the free-play Skirmish.
 
 Development history and roadmap: see [DEVLOG.md](./DEVLOG.md).
 

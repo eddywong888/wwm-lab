@@ -4,6 +4,61 @@ A running record of what shipped, when, and what's next. Newest first.
 Commits reference this repo's `main` branch; the playable build lives at
 `/apps/thane-war/` and updates automatically on push via Cloudflare Pages.
 
+## 2026-07-05 — Phase 3 — Campaign
+
+- **5-mission campaign**: a full Aldermark-vs-Gharok story arc from muster
+  field to the Horde's own war camp, replacing the single skirmish as the
+  primary way to play (skirmish stays as free play). Each mission has its
+  own deterministically-generated map (unique seed, size, and terrain
+  mix — from M1's small, safe 40×40 muster field to M5's sprawling 64×64
+  final battlefield), a tailored enemy AI (economy, build order, wave
+  schedule), and 2-3 paragraphs of briefing text continuing the story.
+  Difficulty escalates mission to mission: M1 "Mustering Ground" (train an
+  army, no threat), M2 "Hold the Crossing" (defensive, survive a wave
+  gauntlet at a river ford), M3 "Timber and Steel" (destroy a fortified
+  outpost, smithy unlocked), M4 "The Vanguard" (full tech, larger base,
+  4 waves), M5 "Shadow of the Horde" (finale — a rich two-goldmine enemy
+  base and an aggressive 6-wave schedule).
+- **New objective types**: the objective engine (`game.ts` / `mission.ts`)
+  now supports `survive` (hold out until a tick count) and `trainUnits`
+  (raise N of a given unit) alongside the original `destroyAllEnemies`.
+  Victory requires every objective on the mission to be satisfied at once;
+  annihilation is still an instant loss regardless of mission type. A
+  compact objective line now renders in the resource bar — a live
+  mm:ss countdown for survive missions, an X/Y counter for training
+  objectives, or a short destroy-target label.
+- **Per-mission tech gating**: `MissionDef` gained optional
+  `allowedBuildings` / `allowedUnits` lists (absent = everything unlocked).
+  Early missions restrict the tech tree to match the story (M1: town hall/
+  farm/barracks/spearman/laborer only; M2 adds lumber mill, archer,
+  watchtower; M3 adds the smithy; M4/M5 and skirmish are unrestricted).
+  Gating is enforced in the simulation itself (`startPlacing`,
+  `confirmPlacement`, `train`) rather than only in the UI, so hotkeys and
+  direct calls can't bypass it; the command card also disables locked
+  entries with a "Not unlocked in this mission" hint.
+- **Mission select & flow**: a new mission-select screen lists all five
+  missions, unlocking each one as the previous is completed (persisted in
+  the existing `thanewar_progress` localStorage key) and marking finished
+  missions with a check. The title screen now offers Campaign or Skirmish;
+  briefing rendering is shared between both modes. On victory, the game-
+  over overlay offers a "Next mission" button straight into the next
+  briefing (or "Back to missions" on the finale); on defeat it offers
+  Retry or Back to missions. Skirmish keeps its original Play again/Title
+  screen buttons.
+- **Procedural background music**: a short chiptune loop (square-wave
+  melody, triangle bass, soft noise percussion, ~8 bars) now plays at low
+  volume during missions, scheduled with a lookahead AudioContext
+  scheduler so timing stays tight. It shares the existing SFX
+  AudioContext, starts on the Begin click (first user gesture), and
+  respects both the existing 🔊 sound mute and a new independent 🎵 music
+  toggle in the sidebar (both persisted in localStorage).
+- Simplified: M5's "AI already researches" late-wave flavor relies on the
+  existing scripted smithy-research AI (well-funded, pre-built smithy)
+  rather than new plumbing to seed starting tech levels — by the later
+  waves the Horde has naturally researched its way to Veteran/Elite ranks.
+  No mid-mission saves, orc campaign, new unit kinds, or map editor were
+  added — all explicitly out of scope for this phase.
+
 ## 2026-07-05 — Rank titles, visible mine gold, worker-built construction
 
 - **Rank titles**: smithy research now shows on unit names, not just stats —
