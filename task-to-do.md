@@ -26,3 +26,15 @@
       state that walks them to the site and hammers, progress only advances
       while a builder is adjacent, and the AI now assigns/retries builders
       for its own build-order buildings too
+[x] make the selected unit able to move to desired place by clicking the mini map
+    → right-click the minimap issues the same move/attack/harvest context
+      order as right-clicking the main map (pixel→tile conversion via the
+      canvas's bounding rect); left-click still recenters the camera unless
+      an M/A order is armed, in which case left-click issues that order instead
+[x] redesign the menu bar, side panel menu, need images to make it infomative, attractive menu and side bar
+    → new hud/icons.ts rasterizes the game's own procedural sprites into
+      icon/portrait <img> dataURLs (units, buildings, plus hand-drawn gold/
+      lumber/food glyphs); resource bar, selection panel, and command card
+      all swapped emoji for real art, sidebar gained framed section headers
+      and grew to 220px
+[]

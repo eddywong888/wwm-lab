@@ -4,6 +4,34 @@ A running record of what shipped, when, and what's next. Newest first.
 Commits reference this repo's `main` branch; the playable build lives at
 `/apps/thane-war/` and updates automatically on push via Cloudflare Pages.
 
+## 2026-07-05 — Minimap orders & richer HUD
+
+- **Minimap move/attack orders**: right-clicking the minimap now issues the
+  same context order as right-clicking the main map — `Minimap` converts the
+  click's pixel position to a world tile (accounting for the canvas's CSS
+  scaling, the same way `Input.toCanvas` does) and calls `game.rightClick(x,
+  y)`; the browser context menu is suppressed on the minimap canvas. If a
+  move/attack-move order is armed (M/A hotkey), a plain left-click on the
+  minimap issues it via `game.issuePendingOrder(x, y)` instead of panning the
+  camera. Plain left-click/drag still recenters the camera as before.
+- **HUD art pass**: replaced the emoji-and-text HUD with real game art. New
+  `hud/icons.ts` module scales the existing procedural sprites (from
+  `buildSprites()`, initialized once via `initIcons(sprites)` in
+  `GameScreen`) into crisp upscaled `<img>` dataURLs — unit icons/portraits,
+  building icons — plus three small hand-drawn resource glyphs (gold pile,
+  log, wheat sheaf) drawn directly with canvas primitives. `ResourceBar` now
+  shows icon+number chips instead of emoji; `SelectionPanel` shows a framed
+  unit/building portrait next to name/HP for single selection, and small
+  unit-icon chips with 2px HP slivers for multi-selection; `CommandCard`
+  build/train buttons show the actual building/unit art instead of 🔨/⛏/🗡/🏹
+  (research buttons keep their emoji, per plan). The sidebar got subtle
+  panel framing (Map / Selection / Commands section headers) and grew to
+  220px to fit portraits comfortably; the mini title got a gold underline.
+  Verified via Playwright: portraits/icons render with non-empty `<img>`
+  src, campaign M1 and skirmish both still load and simulate cleanly, and a
+  sidebar screenshot confirms the new layout reads as distinct, aligned
+  panels.
+
 ## 2026-07-05 — Phase 3 — Campaign
 
 - **5-mission campaign**: a full Aldermark-vs-Gharok story arc from muster
