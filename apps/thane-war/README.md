@@ -6,9 +6,9 @@ Development history and roadmap: see [DEVLOG.md](./DEVLOG.md).
 
 **The game source (`src/`) is intentionally not committed** — it lives only on the
 development machine. The public site serves the compiled bundle committed under
-`/prebuilt`:
+`prebuilt/` in this folder:
 
-- `prebuilt/apps/thane-war/` — the live game at `/apps/thane-war/`
+- `prebuilt/web/` — the live game, deployed to `/apps/thane-war/`
 - `prebuilt/downloads/thane-war.html` — self-contained single-file download
   (all JS/CSS inlined; runs offline straight from `file://`)
 
@@ -18,8 +18,8 @@ development machine. The public site serves the compiled bundle committed under
 npm run pack:thane-war   # from the repo root
 ```
 
-This builds the app, refreshes `prebuilt/apps/thane-war/`, and regenerates the
-single-file download. Commit the `prebuilt/` changes to deploy.
+This builds the app (via `scripts/pack.mjs`), refreshes `prebuilt/web/`, and
+regenerates the single-file download. Commit the `prebuilt/` changes to deploy.
 
 The root `npm run build` (used by Cloudflare Pages) does **not** need the game
 source — it just copies `prebuilt/` into `dist/`.

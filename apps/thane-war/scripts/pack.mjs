@@ -1,19 +1,20 @@
 /**
  * Packs the Thane War build for publishing without its source code:
- *  1. copies dist/apps/thane-war → prebuilt/apps/thane-war  (served live on the site)
+ *  1. copies dist/apps/thane-war → apps/thane-war/prebuilt/web  (served live on the site)
  *  2. inlines the JS + CSS into a single self-contained HTML file at
- *     prebuilt/downloads/thane-war.html  (works offline from file://)
+ *     apps/thane-war/prebuilt/downloads/thane-war.html  (works offline from file://)
  *
- * Run after building the game: npm run pack:thane-war
+ * Run after building the game: npm run pack:thane-war  (from the repo root)
  * The prebuilt/ folder is committed; apps/thane-war/src/ is gitignored.
  */
 import { cpSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const root = new URL('..', import.meta.url).pathname;
+const root = new URL('../../..', import.meta.url).pathname;
+const appDir = new URL('..', import.meta.url).pathname;
 const built = join(root, 'dist/apps/thane-war');
-const prebuiltApp = join(root, 'prebuilt/apps/thane-war');
-const downloadDir = join(root, 'prebuilt/downloads');
+const prebuiltApp = join(appDir, 'prebuilt/web');
+const downloadDir = join(appDir, 'prebuilt/downloads');
 
 // 1. Refresh the prebuilt live bundle.
 rmSync(prebuiltApp, { recursive: true, force: true });
@@ -41,5 +42,5 @@ mkdirSync(downloadDir, { recursive: true });
 writeFileSync(join(downloadDir, 'thane-war.html'), html);
 
 const size = (Buffer.byteLength(html) / 1024).toFixed(0);
-console.log(`✓ prebuilt/apps/thane-war refreshed`);
-console.log(`✓ prebuilt/downloads/thane-war.html written (${size} kB, self-contained)`);
+console.log(`✓ apps/thane-war/prebuilt/web refreshed`);
+console.log(`✓ apps/thane-war/prebuilt/downloads/thane-war.html written (${size} kB, self-contained)`);

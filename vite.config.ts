@@ -22,7 +22,11 @@ export default defineConfig({
             // Committed prebuilt downloads: serve raw, bypassing Vite's HTML
             // transform so the file stays self-contained in dev too.
             if (url.startsWith('/downloads/') && !url.includes('..')) {
-              const base = join(server.config.root, 'prebuilt', url);
+              const base = join(
+                server.config.root,
+                'apps/thane-war/prebuilt',
+                url.replace('/downloads/', 'downloads/'),
+              );
               const file = existsSync(base) ? base : existsSync(base + '.html') ? base + '.html' : null;
               if (file) {
                 res.setHeader('Content-Type', 'text/html; charset=utf-8');
