@@ -37,4 +37,6 @@
       lumber/food glyphs); resource bar, selection panel, and command card
       all swapped emoji for real art, sidebar gained framed section headers
       and grew to 220px
-[]
+[] village able to use resources to repair damage building
+[] use shift to add unit in to group 
+[] villagers has weak attack ability
