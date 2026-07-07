@@ -179,7 +179,7 @@ def extract():
     # laborer: 14, spearman: 8, archer: 9, cleric: 11
     
     mapping = {
-        'laborer_0': 12, 'spearman_0': 0, 'archer_0': 1, 'cleric_0': 4,
+        'laborer_0': 13, 'spearman_0': 0, 'archer_0': 1, 'cleric_0': 4,
         'laborer_1': 14, 'spearman_1': 8, 'archer_1': 9, 'cleric_1': 11
     }
     
