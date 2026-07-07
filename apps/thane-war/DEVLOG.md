@@ -4,6 +4,45 @@ A running record of what shipped, when, and what's next. Newest first.
 Commits reference this repo's `main` branch; the playable build lives at
 `/apps/thane-war/` and updates automatically on push via Cloudflare Pages.
 
+## 2026-07-07 — Phase 4b refinement: touch controls (tablet-first)
+
+The game now plays on touch screens. Additive touch layer on top of the
+existing mouse/keyboard input — desktop behavior unchanged.
+
+- **Gestures** (`engine/input.ts`): tap = select / confirm placement / issue
+  armed order; one-finger drag past 9 CSS px = camera pan; 350ms stationary
+  long-press = context order (the right-click equivalent: move/attack/
+  harvest); two-finger drag always pans, with anchor re-baselining on 1↔2
+  finger transitions so the camera never jumps. Thresholds measured in
+  client (CSS) pixels, not canvas pixels, so they survive letterbox scaling.
+  Synthetic mouse events after touch are suppressed (preventDefault + a
+  500ms guard in `onMouseDown`).
+- **Box select**: ⛶ toggle button overlaying the viewport (rendered only
+  when `(pointer: coarse)` matches); arms the next one-finger drag to drive
+  the existing marquee instead of panning, auto-disarms after use.
+- **Minimap** (`engine/minimap.ts`): tap = camera jump (or issue an armed
+  order), drag = scrub, long-press = context order.
+- **Mobile hardening**: viewport meta `user-scalable=no` + `viewport-fit=
+  cover`, `touch-action:none` + `user-select:none` on both canvases,
+  `overscroll-behavior:none`, iOS `gesturestart` preventDefault, and a
+  `(pointer: coarse)` media block bumping command/footer buttons to 40px.
+- Built collaboratively: Gemini reviewed the gesture design and the diff
+  (caught a stuck `drag.active` when a second finger interrupts box-select),
+  a Sonnet agent implemented, verified via Playwright touch emulation
+  (tap/pan/long-press/two-finger/box-select + full mouse regression).
+- Also closed the pending 4b verification: an existing Mission 5 save loads
+  cleanly ("Continue" restores units/buildings/resources, sim runs on).
+
+## 2026-07-06 — Phase 4b: saves, random skirmish, mine limits (`2c9eb05`)
+
+(Entry added retroactively — missed in the original commit.)
+
+- Mid-mission **save/load** via IndexedDB (`utils/saves.ts`): one slot per
+  mission, autosave every 1500 ticks, cleared on game over; briefing screen
+  offers "Continue" when a save exists.
+- **Random skirmish maps**: `makeSkirmish(seed)` + mapgen helpers.
+- **Gold mine occupancy limits** and crash hardening.
+
 ## 2026-07-05 — Phase 4a: siege, healers, difficulty
 
 - **Catapult** (`'catapult'`, Gharok: "Skull Lobber"): siege unit trained at the

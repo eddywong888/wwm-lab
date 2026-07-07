@@ -40,3 +40,8 @@
 [] village able to use resources to repair damage building
 [] use shift to add unit in to group 
 [] villagers has weak attack ability
+[] add extra public gold mine
+[] tower can be upgrade
+[] Low priority(wait my instruction): Orc campaign — 5 more missions playing as the Gharok Horde
+[x] Touch/mobile controls — the game is desktop-mouse-only right now → landed as Phase 4b refinement (tablet-first): tap = select, drag = pan, 350ms long-press = context order, two-finger pan, ⛶ box-select toggle button (shows on touch devices only), minimap tap/hold, iOS pinch/overscroll suppression, bigger buttons on coarse pointers. Desktop mouse/keyboard unchanged. Designed w/ Gemini review, implemented by Sonnet agent, verified via Playwright touch emulation.
+[] Low priority(wait my instruction): KV leaderboards — fastest mission-clear times, using the Cloudflare KV setup your site already has for visit counters
