@@ -37,7 +37,7 @@
       lumber/food glyphs); resource bar, selection panel, and command card
       all swapped emoji for real art, sidebar gained framed section headers
       and grew to 220px
-[] village able to use resources to repair damage building
+[x] village able to use resources to repair damage building → landed: right-click a damaged friendly building with villagers selected to repair it (2 hp/tick, hammering like construction); full repair costs 50% of the building's build cost, drained gradually, and pauses if you run out of gold/lumber. Coded by Gemini, verified in-browser.
 [] use shift to add unit in to group 
 [] villagers has weak attack ability
 [] add extra public gold mine

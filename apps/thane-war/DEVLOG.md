@@ -4,6 +4,23 @@ A running record of what shipped, when, and what's next. Newest first.
 Commits reference this repo's `main` branch; the playable build lives at
 `/apps/thane-war/` and updates automatically on push via Cloudflare Pages.
 
+## 2026-07-07 — Building repair
+
+Villagers can now repair damaged friendly buildings, WC2-style.
+
+- Right-click a damaged, completed friendly building with workers selected
+  → new `repair` unit state (`game/units.ts updateRepair`): walk adjacent,
+  hammer (same cadence/animation as construction), restore 2 hp per tick.
+- **Cost**: a full 0→max repair costs 50% of the building's build cost,
+  charged smoothly via fractional gold/lumber accumulators on the player;
+  if the stockpile can't cover the next whole coin, the repair pauses
+  (worker keeps hammering, no hp, no charge) and resumes when resources
+  arrive. Worker idles when the building reaches full hp or vanishes.
+- Player-only for now; the AI is untouched (verified: 2500-tick fast-forward
+  still completes all enemy buildings and spawns attack waves).
+- Implemented by Gemini from a spec brief; verified in-browser: 300 hp
+  town-hall repair cost exactly 120g/75l (= 0.5 × 400g/250l × 300/500).
+
 ## 2026-07-07 — Phase 4b refinement: touch controls (tablet-first)
 
 The game now plays on touch screens. Additive touch layer on top of the
