@@ -4,6 +4,30 @@ The HD-remastered sequel to Thane War. Same classic RTS rules; a new engine-leve
 graphics pass and visual identity. Source is private like the original — the site
 ships the committed `prebuilt/` bundle (`npm run pack:thane-war-2` from the repo root).
 
+## 2026-07-07 — Bitmap character sprites + visible gear tiers
+
+Unit art replaced with characters extracted from an owner-supplied 48×48
+fantasy pixel-art sheet. Factions finally look different:
+
+- **Aldermark**: Villager (laborer), armored Footman (spearman), Elven
+  Archer (archer), Sorceress (cleric). **Gharok Horde**: Orc Peon, Orc
+  Grunt, Troll Headhunter, Goblin Sapper. Catapults keep the original art.
+- **Gear tiers (visible!)**: weapon/armor research now changes the sprite —
+  normal → elite (steel-blue armor re-shade, brightened weapons) →
+  legendary (gold armor, glowing weapons, royal-gold outline). Tier =
+  max(weapon, armor) level, baked at extraction time.
+- Pipeline: `scripts/extract-sprites.py` (committed) crops the sheet with
+  measured grid bands, keys out the checkerboard with a neutral-gray rule
+  (keeps the Footman's blue-tinted armor), largest-component + hole-fill
+  masking, fits 48×48 feet-anchored, bakes the 3 tiers, and emits raw-RGBA
+  base64 into `src/assets/units48.ts` (decoded synchronously at load).
+  `spritesheet.ts` serves the full key contract (dirs mirrored from the
+  single pose, alt = base, flash silhouettes); corpse/bones/buildings/
+  terrain unchanged. Single-file download grew to ~624 kB.
+- Built with Gemini 3.1 Pro (integration, tier styling, script skeleton);
+  extraction geometry/keying corrected by sighted review after the
+  first pass kept caption text and checkerboard remnants.
+
 ## 2026-07-07 — Initial release: the HD remaster
 
 Forked from Thane War at feature-complete Phase 4b+ (touch controls, building
