@@ -219,9 +219,9 @@ def extract():
         cropped_rgba[cropped_fg, :3] = cell_data[min_y:max_y+1, min_x:max_x+1][cropped_fg]
         cropped_rgba[cropped_fg, 3] = 255
         
-        # Scale to fit 48x48
-        # "height 48"
-        scale = 48.0 / crop_h
+        # Scale to fit max height (43 for laborer_0, 48 for others)
+        max_h = 43.0 if key.startswith('laborer_0') else 48.0
+        scale = max_h / crop_h
         new_w = int(crop_w * scale)
         if new_w > 48:
             scale = 48.0 / crop_w

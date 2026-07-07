@@ -4,6 +4,24 @@ The HD-remastered sequel to Thane War. Same classic RTS rules; a new engine-leve
 graphics pass and visual identity. Source is private like the original — the site
 ships the committed `prebuilt/` bundle (`npm run pack:thane-war-2` from the repo root).
 
+## 2026-07-07 — Day/night lighting, chopping axe, villager tune-up
+
+- **Dynamic lighting** (`engine/lighting.ts`, render-only, reads world.tick):
+  6000-tick day/night cycle — day (no overlay, zero cost), warm dusk ramp,
+  night (cool dark-blue at 0.45 alpha), dawn. Light sources punch warm
+  radial glows out of the darkness: smithy forge, flickering watchtower
+  brazier (deterministic sin flicker), townhall/farm windows, mine
+  entrances, and catapult rocks in flight. Quarter-res offscreen canvas,
+  no per-frame allocations. (One fix after Gemini's pass: the overlay
+  canvas wasn't cleared between frames, accumulating to pitch black.)
+- **Chopping axe**: laborers now carry a baked steel axe prop to the tree
+  and swing it (rotates forward on each chop pulse) — pairs with the
+  existing slash arc. The female villager's wheat-sheaf art no longer
+  undersells the work.
+- **Villager proportions**: the extraction script gained per-character
+  height overrides; the Aldermark villager now caps at 43px so she stands
+  properly shorter than the armored spearman.
+
 ## 2026-07-07 — Native-res buildings + laborer work props
 
 - **Buildings redrawn at native 64×96** (no more 2× upscaling) in the same
