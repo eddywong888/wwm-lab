@@ -38,10 +38,10 @@
       all swapped emoji for real art, sidebar gained framed section headers
       and grew to 220px
 [x] village able to use resources to repair damage building → landed: right-click a damaged friendly building with villagers selected to repair it (2 hp/tick, hammering like construction); full repair costs 50% of the building's build cost, drained gradually, and pauses if you run out of gold/lumber. Coded by Gemini, verified in-browser.
-[] use shift to add unit in to group 
-[] villagers has weak attack ability
-[] add extra public gold mine
-[] tower can be upgrade
+[x] use shift to add unit in to group → landed: Shift+click/drag adds units to the current selection (shift-click a selected unit to drop it); Shift+1-9 appends the selection to that control group. Coded by Gemini 3.1 Pro, verified via real mouse events.
+[x] villagers has weak attack ability → landed: villagers hit in melee while idle/walking now fight back with their 3-damage attack; busy villagers (mining/chopping/building/repairing) are never interrupted; A attack-move works for villagers too.
+[x] add extra public gold mine → landed: every random skirmish map has a third contested gold mine at the map center on a guaranteed clearing — both you and the AI will mine it.
+[x] tower can be upgrade → landed: "Tower Fortification" research at the Smithy (hotkey T): +4 tower damage and +1 range per level, 2 levels. AI doesn't get it. Old saves still load.
 [] Low priority(wait my instruction): Orc campaign — 5 more missions playing as the Gharok Horde
 [x] Touch/mobile controls — the game is desktop-mouse-only right now → landed as Phase 4b refinement (tablet-first): tap = select, drag = pan, 350ms long-press = context order, two-finger pan, ⛶ box-select toggle button (shows on touch devices only), minimap tap/hold, iOS pinch/overscroll suppression, bigger buttons on coarse pointers. Desktop mouse/keyboard unchanged. Designed w/ Gemini review, implemented by Sonnet agent, verified via Playwright touch emulation.
 [] Low priority(wait my instruction): KV leaderboards — fastest mission-clear times, using the Cloudflare KV setup your site already has for visit counters

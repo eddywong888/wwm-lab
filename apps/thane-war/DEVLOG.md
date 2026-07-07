@@ -4,6 +4,28 @@ A running record of what shipped, when, and what's next. Newest first.
 Commits reference this repo's `main` branch; the playable build lives at
 `/apps/thane-war/` and updates automatically on push via Cloudflare Pages.
 
+## 2026-07-07 — Refinement batch II: shift-select, villager defense, center mine, tower research
+
+Four quality-of-life/balance features, all coded by Gemini 3.1 Pro from spec
+briefs (via the Antigravity CLI) and verified in-browser by the main session.
+
+- **Shift-select**: Shift+click or Shift+drag ADDS units to the current
+  selection (dedup, 12 cap) instead of replacing it; shift-clicking an
+  already-selected unit removes it. Shift+1-9 appends the selection to that
+  control group (Ctrl+digit still assigns, digit still recalls).
+- **Villager self-defense**: a villager hit in melee while idle or walking
+  now fights back (their existing 3-damage attack); villagers busy
+  harvesting/building/repairing are never interrupted. `dealDamage` gained
+  an optional attacker param, threaded from the melee hit site only —
+  projectiles carry no source. Explicit attack-move (A) works for villagers.
+- **Contested center mine**: every random skirmish map now has a third
+  public gold mine at the map center (30,31) on a deterministic 9×9
+  clearing — both sides' workers will use it; fight for it.
+- **Tower Fortification**: new smithy research (hotkey T, 🗼): +4 tower
+  damage and +1 range per level, two levels (150g/150l then 300g/250l).
+  Player-only — the AI doesn't research it. Old saves load fine
+  (towerLevel defaults to 0 on hydration).
+
 ## 2026-07-07 — Building repair
 
 Villagers can now repair damaged friendly buildings, WC2-style.
