@@ -4,6 +4,23 @@ The HD-remastered sequel to Thane War. Same classic RTS rules; a new engine-leve
 graphics pass and visual identity. Source is private like the original — the site
 ships the committed `prebuilt/` bundle (`npm run pack:thane-war-2` from the repo root).
 
+## 2026-07-07 — Native-res buildings + laborer work props
+
+- **Buildings redrawn at native 64×96** (no more 2× upscaling) in the same
+  visual language as the new character sprites: 1px outlines, per-pixel
+  shading, and storytelling details — tiered shingle roof and brick tower on
+  the town hall, portcullis + weapon rack on the barracks, glowing forge and
+  ember chimney on the smithy, combed thatch + hay bales on the farm, log
+  walls + saw blade on the lumbermill, crenellated watchtower, timber-framed
+  goldmine with spilled coins; scaffold matched. Faction theming preserved
+  (blue/gold vs red/iron); renderer overlay anchors unchanged.
+- **Laborers show their work**: hauling gold now draws a chunky overflowing
+  gold stack held in front (facing-aware, occluded correctly when walking
+  north); hauling lumber draws a shouldered log at an angle; chopping gets a
+  visible axe-swing slash arc + deeper lunge on each chop pulse. All
+  render-layer only — the sim is untouched.
+- Coded by Gemini 3.1 Pro; verified with in-game close-up screenshots.
+
 ## 2026-07-07 — Bitmap character sprites + visible gear tiers
 
 Unit art replaced with characters extracted from an owner-supplied 48×48
