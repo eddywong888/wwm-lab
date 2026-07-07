@@ -14,6 +14,8 @@ const dist = join(root, 'dist');
 const BUNDLES = [
   ['apps/thane-war/prebuilt/web', 'apps/thane-war'],
   ['apps/thane-war/prebuilt/downloads', 'downloads'],
+  ['apps/thane-war-2/prebuilt/web', 'apps/thane-war-2'],
+  ['apps/thane-war-2/prebuilt/downloads', 'downloads'],
 ];
 
 for (const [from, to] of BUNDLES) {

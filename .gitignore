@@ -16,6 +16,8 @@ dist-ssr
 # prebuilt bundle committed under apps/thane-war/prebuilt/.
 # Rebuild with: npm run pack:thane-war
 apps/thane-war/src/
+# Same for the Thane War II remaster: npm run pack:thane-war-2
+apps/thane-war-2/src/
 
 # Browser-automation scratch output
 .playwright-mcp/

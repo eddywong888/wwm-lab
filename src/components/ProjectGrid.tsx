@@ -41,6 +41,16 @@ const PROJECTS: Project[] = [
     status: 'live',
   },
   {
+    title: 'Thane War II: Shadow of the Horde HD',
+    description:
+      'The remastered sequel to Thane War — the same classic RTS rebuilt in HD pixel art: double-resolution sprites, richer terrain, particle effects, and a fully redesigned interface. Play in the browser, or download the single-file version to play offline.',
+    tags: ['game', 'rts', 'canvas', 'hd remaster'],
+    liveUrl: '/apps/thane-war-2/',
+    downloadUrl: '/downloads/thane-war-2',
+    previewImage: '/previews/thane-war-2.jpg',
+    status: 'live',
+  },
+  {
     title: 'Experiment #1',
     description: 'Testing an idea around SEO + interactivity. Details soon.',
     tags: ['seo', 'experiment'],

@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build && npm run build --prefix apps/memory-card && node scripts/copy-prebuilt.mjs",
     "pack:thane-war": "npm run build --prefix apps/thane-war && node apps/thane-war/scripts/pack.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "pack:thane-war-2": "npm run build --prefix apps/thane-war-2 && node apps/thane-war-2/scripts/pack.mjs"
   },
   "dependencies": {
     "react": "^19.2.6",

@@ -3,7 +3,7 @@ interface Env {
 }
 
 /** Counters that may be incremented via POST /api/hits?k=<key>. */
-const ALLOWED_KEYS = ['thane-war-play', 'thane-war-download'];
+const ALLOWED_KEYS = ['thane-war-play', 'thane-war-download', 'thane-war-2-play', 'thane-war-2-download'];
 
 /**
  * GET  /api/hits          → all counters (plus the landing-page visit count)

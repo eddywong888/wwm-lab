@@ -10,7 +10,7 @@ export default defineConfig({
     {
       name: 'dev-routing',
       configureServer(server) {
-        const apps = ['memory-card', 'thane-war'];
+        const apps = ['memory-card', 'thane-war', 'thane-war-2'];
         server.middlewares.use((req, res, next) => {
           if (req.url) {
             const url = req.url.split('?')[0];
