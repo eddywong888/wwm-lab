@@ -1,5 +1,34 @@
 # Thane War II — Development Log
 
+## 2026-07-08 — Gameplay divergence: per-unit tech, the Gharok Raider, sun shadows
+
+The sequel now plays differently from Thane War, not just prettier.
+
+- **Per-unit-type weapon research at dedicated buildings**: Honed Spears at
+  the Barracks (W), Barbed Arrows at the Lumber Mill (W), Heavy Payloads at
+  the Smithy (G); armor (D) and Tower Fortification (T) stay at the Smithy.
+  `PlayerState.attackLevel` became `weaponLevels{spearman,archer,catapult,
+  raider}` — each upgrade boosts (+2 dmg/level) and visually tiers ONLY its
+  own unit type. Villagers no longer turn elite when you sharpen spears;
+  their tier now reflects armor research only. Old saves hydrate the legacy
+  attackLevel into all four levels. The AI keeps one research action that
+  raises its levels horde-wide.
+- **The Gharok Raider**: orcs no longer field catapults. Their new
+  building-wrecker (Tauren art from the sprite sheet) is fast (0.72 tiles/
+  tick) and deals ×3 damage to buildings (verified: 24/hit vs 8 vs units).
+  Enemy-only — the player cannot train it. Replaces catapults in all orc
+  waves (raiders listed first per the pop-cap training quirk).
+- **Speed differentiation**: archer 0.6, cleric 0.55, catapult 0.28,
+  raider 0.72, laborer/spearman 0.5.
+- **Directional sun shadows**: units and buildings cast soft blue-tinted
+  shadows that follow the day/night cycle — long west at dawn, short at
+  noon, long east at dusk, faint at night (sunInfo in engine/lighting.ts);
+  tree shadows are baked noon-angle into the terrain canvas.
+- Coded by Gemini 3.1 Pro across two briefs; verified: research isolation
+  (upgraded spearman hits 10, villager stays 3), tier visuals (legendary
+  spearman beside plain villagers), raider wave training + building
+  assault, legacy-save hydration, 7000-tick sim stability.
+
 The HD-remastered sequel to Thane War. Same classic RTS rules; a new engine-level
 graphics pass and visual identity. Source is private like the original — the site
 ships the committed `prebuilt/` bundle (`npm run pack:thane-war-2` from the repo root).
