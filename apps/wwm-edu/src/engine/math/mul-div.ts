@@ -7,6 +7,7 @@ export const meta: GeneratorMeta = {
   id: 'mul-div',
   name: { en: 'Multiplication & Division', zh: '乘法与除法' },
   icon: '✖️',
+  term: 1,
 };
 
 function multiplyQuestion(rng: Rng, difficulty: Difficulty): Question {

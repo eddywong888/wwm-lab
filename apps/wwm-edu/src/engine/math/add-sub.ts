@@ -7,6 +7,7 @@ export const meta: GeneratorMeta = {
   id: 'add-sub',
   name: { en: 'Addition & Subtraction', zh: '加法与减法' },
   icon: '➕',
+  term: 1,
 };
 
 const NAMES: { en: string; zh: string }[] = [

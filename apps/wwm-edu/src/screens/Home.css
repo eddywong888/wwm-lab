@@ -88,10 +88,24 @@
   color: white;
 }
 
+.home__section-heading {
+  font-family: var(--edu-font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--edu-ink-soft);
+  margin: 1.5rem 0 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 3px dashed var(--edu-border);
+}
+
 .home__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+}
+
+.home__grid--mixed {
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 560px) {

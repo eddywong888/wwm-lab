@@ -28,4 +28,6 @@ export const UI_STRINGS = {
   encourageGood: { en: 'Great job! Keep practicing!', zh: '做得好！继续加油！' } satisfies Bilingual,
   encourageOk: { en: 'Good try! Practice makes perfect.', zh: '不错的尝试！熟能生巧。' } satisfies Bilingual,
   encourageTryAgain: { en: 'Keep going, you can do it!', zh: '继续努力，你可以的！' } satisfies Bilingual,
+  termOne: { en: 'First Half Year', zh: '上半年' } satisfies Bilingual,
+  termTwo: { en: 'Second Half Year', zh: '下半年' } satisfies Bilingual,
 };

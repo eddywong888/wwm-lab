@@ -24,6 +24,8 @@ export interface GeneratorMeta {
   name: Bilingual;
   /** Emoji icon representing the topic */
   icon: string;
+  /** Which half of the KSSR Standard 4 school year this topic belongs to. */
+  term?: 1 | 2;
 }
 
 export interface Generator {

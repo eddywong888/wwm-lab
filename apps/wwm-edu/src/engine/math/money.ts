@@ -7,6 +7,7 @@ export const meta: GeneratorMeta = {
   id: 'money',
   name: { en: 'Money (RM)', zh: '金钱（RM）' },
   icon: '💰',
+  term: 1,
 };
 
 const NAMES: { en: string; zh: string }[] = [

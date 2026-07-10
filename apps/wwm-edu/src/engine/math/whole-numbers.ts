@@ -7,6 +7,7 @@ export const meta: GeneratorMeta = {
   id: 'whole-numbers',
   name: { en: 'Whole Numbers', zh: '整数' },
   icon: '🔢',
+  term: 1,
 };
 
 type Place = 'ones' | 'tens' | 'hundreds' | 'thousands' | 'ten-thousands' | 'hundred-thousands';

@@ -17,6 +17,8 @@ interface HomeProps {
 
 export default function Home({ state, onChangeLang, onChangeDifficulty, onSelectTopic, onMuteChange }: HomeProps) {
   const { lang, difficulty, perTopic, muted } = state;
+  const termOneGenerators = MATH_GENERATORS.filter((g) => g.meta.term !== 2);
+  const termTwoGenerators = MATH_GENERATORS.filter((g) => g.meta.term === 2);
 
   function handleToggleMute() {
     const next = toggleMuted();
@@ -60,7 +62,7 @@ export default function Home({ state, onChangeLang, onChangeDifficulty, onSelect
         </button>
       </div>
 
-      <div className="home__grid">
+      <div className="home__grid home__grid--mixed">
         <TopicCard
           icon="🎲"
           name={UI_STRINGS.mixedPractice}
@@ -69,7 +71,29 @@ export default function Home({ state, onChangeLang, onChangeDifficulty, onSelect
           lang={lang}
           accent="mixed"
         />
-        {MATH_GENERATORS.map((g) => (
+      </div>
+
+      <h2 className="home__section-heading">
+        {UI_STRINGS.termOne.en} / {UI_STRINGS.termOne.zh}
+      </h2>
+      <div className="home__grid">
+        {termOneGenerators.map((g) => (
+          <TopicCard
+            key={g.meta.id}
+            icon={g.meta.icon}
+            name={g.meta.name}
+            bestStreak={perTopic[g.meta.id]?.bestStreak ?? 0}
+            onClick={() => onSelectTopic(g.meta.id)}
+            lang={lang}
+          />
+        ))}
+      </div>
+
+      <h2 className="home__section-heading">
+        {UI_STRINGS.termTwo.en} / {UI_STRINGS.termTwo.zh}
+      </h2>
+      <div className="home__grid">
+        {termTwoGenerators.map((g) => (
           <TopicCard
             key={g.meta.id}
             icon={g.meta.icon}

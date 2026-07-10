@@ -11,8 +11,8 @@ export default function App() {
     <>
       <Hero />
       <main>
-        <ProjectGrid />
         <EduSection />
+        <ProjectGrid />
       </main>
       <footer className="site-footer">
         <div className="container site-footer__inner">
