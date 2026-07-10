@@ -1,0 +1,97 @@
+.question-card {
+  background: var(--edu-surface);
+  border-radius: 28px;
+  padding: 1.75rem 1.5rem 2rem;
+  box-shadow: 0 10px 0 var(--edu-shadow), 0 16px 40px rgba(44,36,64,0.12);
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.question-card__prompt {
+  font-family: var(--edu-font-display);
+  font-size: clamp(1.15rem, 3vw, 1.5rem);
+  font-weight: 700;
+  color: var(--edu-ink);
+  line-height: 1.4;
+  text-align: center;
+  margin: 0 0 1.5rem;
+}
+
+.question-card__choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.question-card__choice {
+  font-family: var(--edu-font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 1.1rem 0.5rem;
+  border-radius: 18px;
+  border: none;
+  background: var(--edu-bg-2);
+  color: var(--edu-ink);
+  box-shadow: 0 4px 0 var(--edu-shadow);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease;
+}
+
+.question-card__choice:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.question-card__choice:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--edu-shadow);
+}
+
+.question-card__choice:disabled {
+  cursor: default;
+}
+
+.question-card__choice--correct {
+  background: var(--edu-success-bg);
+  color: var(--edu-success);
+  box-shadow: 0 4px 0 var(--edu-success);
+}
+
+.question-card__choice--wrong {
+  background: var(--edu-danger-bg);
+  color: var(--edu-danger);
+  box-shadow: 0 4px 0 var(--edu-danger);
+}
+
+.question-card__feedback {
+  margin-top: 1.5rem;
+  text-align: center;
+  border-radius: 18px;
+  padding: 0.9rem 1rem;
+  animation: edu-pop-in 0.25s ease;
+}
+
+.question-card__feedback--correct {
+  background: var(--edu-success-bg);
+}
+
+.question-card__feedback--wrong {
+  background: var(--edu-danger-bg);
+}
+
+.question-card__feedback-title {
+  font-family: var(--edu-font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  margin: 0 0 0.35rem;
+}
+
+.question-card__feedback--correct .question-card__feedback-title { color: var(--edu-success); }
+.question-card__feedback--wrong .question-card__feedback-title { color: var(--edu-danger); }
+
+.question-card__feedback-answer,
+.question-card__feedback-explain {
+  margin: 0.15rem 0 0;
+  font-size: 0.95rem;
+  color: var(--edu-ink-soft);
+}

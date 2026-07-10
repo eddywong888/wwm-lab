@@ -1,0 +1,101 @@
+.home {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+.home__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.home__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.home__mascot {
+  font-size: 3rem;
+  filter: drop-shadow(0 4px 0 var(--edu-shadow));
+}
+
+.home__title {
+  font-family: var(--edu-font-display);
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  font-weight: 800;
+  color: var(--edu-primary-dark);
+  margin: 0;
+}
+
+.home__tagline {
+  margin: 0.15rem 0 0;
+  color: var(--edu-ink-soft);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.home__controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.home__lang-toggle,
+.home__mute-toggle {
+  font-family: var(--edu-font-display);
+  font-weight: 700;
+  border: none;
+  border-radius: 14px;
+  background: var(--edu-surface);
+  box-shadow: 0 3px 0 var(--edu-shadow);
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.home__lang-toggle:active,
+.home__mute-toggle:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--edu-shadow);
+}
+
+.home__difficulty {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.home__difficulty-btn {
+  flex: 1;
+  font-family: var(--edu-font-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  padding: 0.85rem;
+  border-radius: 18px;
+  border: 3px solid var(--edu-border);
+  background: var(--edu-surface);
+  color: var(--edu-ink-soft);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.home__difficulty-btn--active {
+  background: var(--edu-primary);
+  border-color: var(--edu-primary);
+  color: white;
+}
+
+.home__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 560px) {
+  .home__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

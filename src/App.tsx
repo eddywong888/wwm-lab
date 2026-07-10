@@ -1,6 +1,7 @@
 import './index.css';
 import Hero from './components/Hero';
 import ProjectGrid from './components/ProjectGrid';
+import EduSection from './components/EduSection';
 import SocialLinks from './components/SocialLinks';
 import VisitorCount from './components/VisitorCount';
 import './App.css';
@@ -11,6 +12,7 @@ export default function App() {
       <Hero />
       <main>
         <ProjectGrid />
+        <EduSection />
       </main>
       <footer className="site-footer">
         <div className="container site-footer__inner">

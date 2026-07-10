@@ -1,0 +1,23 @@
+.streak-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--edu-surface);
+  border-radius: 100px;
+  padding: 0.3rem 0.75rem;
+  box-shadow: 0 3px 0 var(--edu-shadow);
+  font-family: var(--edu-font-display);
+  font-weight: 800;
+}
+
+.streak-badge__flame {
+  font-size: 1.1rem;
+}
+
+.streak-badge--medium .streak-badge__flame { font-size: 1.3rem; }
+.streak-badge--big .streak-badge__flame { font-size: 1.5rem; }
+
+.streak-badge__count {
+  color: var(--edu-secondary);
+  font-size: 1.1rem;
+}

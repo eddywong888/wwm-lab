@@ -1,0 +1,50 @@
+.topic-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--edu-surface);
+  border: none;
+  border-radius: 24px;
+  padding: 1.5rem 1rem 1.25rem;
+  box-shadow: 0 6px 0 var(--edu-shadow);
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.topic-card:hover {
+  transform: translateY(-3px);
+}
+
+.topic-card:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 var(--edu-shadow);
+}
+
+.topic-card--mixed {
+  background: linear-gradient(135deg, var(--edu-primary), var(--edu-secondary));
+  color: white;
+}
+
+.topic-card__icon {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.topic-card__name {
+  font-family: var(--edu-font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.topic-card__streak {
+  font-family: var(--edu-font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--edu-secondary);
+}
+
+.topic-card--mixed .topic-card__streak {
+  color: white;
+}

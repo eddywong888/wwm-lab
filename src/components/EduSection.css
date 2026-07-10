@@ -1,0 +1,56 @@
+/* ─── Education Lab — reuses the ProjectGrid "Ink on Paper" card language ─── */
+
+.edu-section {
+  padding: var(--s9) 0;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.edu-section__header {
+  margin-bottom: var(--s7);
+}
+
+.edu-section__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--amber);
+  display: block;
+  margin-bottom: var(--s3);
+}
+
+.edu-section__heading {
+  font-family: var(--font-mono);
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  color: var(--text-1);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--s3);
+}
+
+.edu-section__sub {
+  font-size: 0.95rem;
+  color: var(--text-2);
+  max-width: 480px;
+}
+
+.edu-section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  border: 1.5px solid rgba(0,0,0,0.12);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: rgba(0,0,0,0.07);
+}
+
+@media (max-width: 860px) {
+  .edu-section__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px) {
+  .edu-section__grid { grid-template-columns: 1fr; }
+}
+
+.edu-card {
+  background: var(--surface);
+}

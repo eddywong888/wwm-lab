@@ -1,0 +1,68 @@
+:root {
+  --edu-bg: #fff6e5;
+  --edu-bg-2: #ffe9c7;
+  --edu-surface: #ffffff;
+  --edu-ink: #2c2440;
+  --edu-ink-soft: #6b6280;
+  --edu-border: #e4d9ff;
+  --edu-shadow: rgba(44, 36, 64, 0.18);
+
+  --edu-primary: #7c5cff;
+  --edu-primary-dark: #5c3ce6;
+  --edu-secondary: #ff8a3d;
+  --edu-accent: #22c1a4;
+  --edu-success: #2fbf6f;
+  --edu-success-bg: #e3fbef;
+  --edu-danger: #ff5470;
+  --edu-danger-bg: #ffe6ea;
+  --edu-warn-bg: #ffd8d8;
+  --edu-star: #ffc93c;
+
+  --edu-font-display: 'Baloo 2', 'Nunito', system-ui, sans-serif;
+  --edu-font-body: 'Nunito', system-ui, sans-serif;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 10% 0%, var(--edu-bg-2), var(--edu-bg) 60%);
+  font-family: var(--edu-font-body);
+  color: var(--edu-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
+
+@keyframes edu-bounce {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.08); }
+  55% { transform: scale(0.96); }
+  100% { transform: scale(1); }
+}
+
+@keyframes edu-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+}
+
+@keyframes edu-pop-in {
+  0% { transform: scale(0.85); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.edu-bounce { animation: edu-bounce 0.4s ease; }
+.edu-shake { animation: edu-shake 0.4s ease; }

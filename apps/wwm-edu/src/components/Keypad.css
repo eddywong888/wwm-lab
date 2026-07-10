@@ -1,0 +1,62 @@
+.keypad {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.keypad__display {
+  font-family: var(--edu-font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  background: var(--edu-surface);
+  border: 3px solid var(--edu-border);
+  border-radius: 16px;
+  padding: 0.5rem 1rem;
+  min-height: 3.2rem;
+  color: var(--edu-ink);
+}
+
+.keypad__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+}
+
+.keypad__key {
+  font-family: var(--edu-font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 0.85rem 0;
+  border-radius: 14px;
+  border: none;
+  background: var(--edu-surface);
+  box-shadow: 0 3px 0 var(--edu-shadow);
+  color: var(--edu-ink);
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.keypad__key:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--edu-shadow);
+}
+
+.keypad__key:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.keypad__key--wide {
+  grid-column: span 2;
+  background: var(--edu-warn-bg);
+}
+
+.keypad__key--ok {
+  grid-column: span 2;
+  background: var(--edu-primary);
+  color: white;
+}
