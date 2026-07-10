@@ -30,4 +30,7 @@ export const UI_STRINGS = {
   encourageTryAgain: { en: 'Keep going, you can do it!', zh: '继续努力，你可以的！' } satisfies Bilingual,
   termOne: { en: 'First Half Year', zh: '上半年' } satisfies Bilingual,
   termTwo: { en: 'Second Half Year', zh: '下半年' } satisfies Bilingual,
+  englishSection: { en: 'English', zh: '英语' } satisfies Bilingual,
+  dailyChallenge: { en: 'Daily Challenge', zh: '每日挑战' } satisfies Bilingual,
+  playedToday: { en: 'Played today', zh: '今日已完成' } satisfies Bilingual,
 };

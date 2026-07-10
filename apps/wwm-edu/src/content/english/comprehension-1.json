@@ -1,0 +1,1152 @@
+{
+  "id": "english-comprehension-1",
+  "subject": "english",
+  "topic": "comprehension",
+  "title": {
+    "en": "Comprehension",
+    "zh": "阅读理解"
+  },
+  "version": 1,
+  "questions": [
+    {
+      "id": "comprehension1-001",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Mei Ling woke up early on Saturday morning. She helped her mother water the plants in the garden. After that, she rode her bicycle to the park with her brother. What did Mei Ling do after watering the plants?",
+        "zh": "阅读短文，选出正确的答案。Mei Ling woke up early on Saturday morning. She helped her mother water the plants in the garden. After that, she rode her bicycle to the park with her brother. What did Mei Ling do after watering the plants?"
+      },
+      "choices": [
+        "She rode her bicycle to the park.",
+        "She cooked breakfast.",
+        "She went to school.",
+        "She read a book."
+      ],
+      "answer": "She rode her bicycle to the park.",
+      "explain": {
+        "en": "The passage directly states that \"She rode her bicycle to the park.\".",
+        "zh": "正确答案是 \"She rode her bicycle to the park.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-002",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Mei Ling woke up early on Saturday morning. She helped her mother water the plants in the garden. After that, she rode her bicycle to the park with her brother. What is this passage mainly about?",
+        "zh": "阅读短文，选出正确的答案。Mei Ling woke up early on Saturday morning. She helped her mother water the plants in the garden. After that, she rode her bicycle to the park with her brother. What is this passage mainly about?"
+      },
+      "choices": [
+        "Mei Ling's Saturday morning activities.",
+        "A trip to another country.",
+        "A birthday party.",
+        "A school examination."
+      ],
+      "answer": "Mei Ling's Saturday morning activities.",
+      "explain": {
+        "en": "\"Mei Ling's Saturday morning activities.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"Mei Ling's Saturday morning activities.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-003",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Mei Ling woke up early on Saturday morning. She helped her mother water the plants in the garden. After that, she rode her bicycle to the park with her brother. In this passage, the word \"helped\" is closest in meaning to",
+        "zh": "阅读短文，选出正确的答案。Mei Ling woke up early on Saturday morning. She helped her mother water the plants in the garden. After that, she rode her bicycle to the park with her brother. In this passage, the word \"helped\" is closest in meaning to"
+      },
+      "choices": [
+        "assisted",
+        "stopped",
+        "forgot",
+        "refused"
+      ],
+      "answer": "assisted",
+      "explain": {
+        "en": "\"assisted\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"assisted\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-004",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The school canteen was very crowded during recess. Ali could not find a seat, so his friend Kumar shared his table with him. They ate fried rice together and talked about their homework. Why could Ali not find a seat?",
+        "zh": "阅读短文，选出正确的答案。The school canteen was very crowded during recess. Ali could not find a seat, so his friend Kumar shared his table with him. They ate fried rice together and talked about their homework. Why could Ali not find a seat?"
+      },
+      "choices": [
+        "The canteen was very crowded.",
+        "The canteen was closed.",
+        "He arrived too late.",
+        "He was not hungry."
+      ],
+      "answer": "The canteen was very crowded.",
+      "explain": {
+        "en": "The passage directly states that \"The canteen was very crowded.\".",
+        "zh": "正确答案是 \"The canteen was very crowded.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-005",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The school canteen was very crowded during recess. Ali could not find a seat, so his friend Kumar shared his table with him. They ate fried rice together and talked about their homework. What does this passage show about Kumar?",
+        "zh": "阅读短文，选出正确的答案。The school canteen was very crowded during recess. Ali could not find a seat, so his friend Kumar shared his table with him. They ate fried rice together and talked about their homework. What does this passage show about Kumar?"
+      },
+      "choices": [
+        "He is a kind and helpful friend.",
+        "He is always late for class.",
+        "He dislikes fried rice.",
+        "He never talks to anyone."
+      ],
+      "answer": "He is a kind and helpful friend.",
+      "explain": {
+        "en": "\"He is a kind and helpful friend.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"He is a kind and helpful friend.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-006",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The school canteen was very crowded during recess. Ali could not find a seat, so his friend Kumar shared his table with him. They ate fried rice together and talked about their homework. In this passage, the word \"shared\" means",
+        "zh": "阅读短文，选出正确的答案。The school canteen was very crowded during recess. Ali could not find a seat, so his friend Kumar shared his table with him. They ate fried rice together and talked about their homework. In this passage, the word \"shared\" means"
+      },
+      "choices": [
+        "let someone use something together",
+        "kept something away from others",
+        "sold something",
+        "lost something"
+      ],
+      "answer": "let someone use something together",
+      "explain": {
+        "en": "\"let someone use something together\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"let someone use something together\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-007",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "A heavy storm hit the village last night. Many trees fell across the road, and some houses lost electricity. This morning, the villagers worked together to clear the fallen branches. What happened to some houses during the storm?",
+        "zh": "阅读短文，选出正确的答案。A heavy storm hit the village last night. Many trees fell across the road, and some houses lost electricity. This morning, the villagers worked together to clear the fallen branches. What happened to some houses during the storm?"
+      },
+      "choices": [
+        "They lost electricity.",
+        "They were painted.",
+        "They were sold.",
+        "They were rebuilt."
+      ],
+      "answer": "They lost electricity.",
+      "explain": {
+        "en": "The passage directly states that \"They lost electricity.\".",
+        "zh": "正确答案是 \"They lost electricity.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-008",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "A heavy storm hit the village last night. Many trees fell across the road, and some houses lost electricity. This morning, the villagers worked together to clear the fallen branches. What can we infer about the villagers?",
+        "zh": "阅读短文，选出正确的答案。A heavy storm hit the village last night. Many trees fell across the road, and some houses lost electricity. This morning, the villagers worked together to clear the fallen branches. What can we infer about the villagers?"
+      },
+      "choices": [
+        "They cooperate to solve problems together.",
+        "They ignored the damage.",
+        "They moved away from the village.",
+        "They were angry at each other."
+      ],
+      "answer": "They cooperate to solve problems together.",
+      "explain": {
+        "en": "\"They cooperate to solve problems together.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"They cooperate to solve problems together.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-009",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "A heavy storm hit the village last night. Many trees fell across the road, and some houses lost electricity. This morning, the villagers worked together to clear the fallen branches. In this passage, the word \"cleared\" is closest in meaning to",
+        "zh": "阅读短文，选出正确的答案。A heavy storm hit the village last night. Many trees fell across the road, and some houses lost electricity. This morning, the villagers worked together to clear the fallen branches. In this passage, the word \"cleared\" is closest in meaning to"
+      },
+      "choices": [
+        "removed",
+        "planted",
+        "painted",
+        "hid"
+      ],
+      "answer": "removed",
+      "explain": {
+        "en": "\"removed\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"removed\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-010",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Puan Aminah is a nurse at the local clinic. Every day, she checks on patients, gives them medicine, and comforts those who are worried. Her patients often say she has a gentle voice. What is Puan Aminah's job?",
+        "zh": "阅读短文，选出正确的答案。Puan Aminah is a nurse at the local clinic. Every day, she checks on patients, gives them medicine, and comforts those who are worried. Her patients often say she has a gentle voice. What is Puan Aminah's job?"
+      },
+      "choices": [
+        "She is a nurse.",
+        "She is a teacher.",
+        "She is a farmer.",
+        "She is a driver."
+      ],
+      "answer": "She is a nurse.",
+      "explain": {
+        "en": "The passage directly states that \"She is a nurse.\".",
+        "zh": "正确答案是 \"She is a nurse.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-011",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Puan Aminah is a nurse at the local clinic. Every day, she checks on patients, gives them medicine, and comforts those who are worried. Her patients often say she has a gentle voice. What kind of person does this passage suggest Puan Aminah is?",
+        "zh": "阅读短文，选出正确的答案。Puan Aminah is a nurse at the local clinic. Every day, she checks on patients, gives them medicine, and comforts those who are worried. Her patients often say she has a gentle voice. What kind of person does this passage suggest Puan Aminah is?"
+      },
+      "choices": [
+        "Caring and gentle.",
+        "Strict and unfriendly.",
+        "Lazy and careless.",
+        "Shy and quiet."
+      ],
+      "answer": "Caring and gentle.",
+      "explain": {
+        "en": "\"Caring and gentle.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"Caring and gentle.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-012",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Puan Aminah is a nurse at the local clinic. Every day, she checks on patients, gives them medicine, and comforts those who are worried. Her patients often say she has a gentle voice. In this passage, the word \"comforts\" is closest in meaning to",
+        "zh": "阅读短文，选出正确的答案。Puan Aminah is a nurse at the local clinic. Every day, she checks on patients, gives them medicine, and comforts those who are worried. Her patients often say she has a gentle voice. In this passage, the word \"comforts\" is closest in meaning to"
+      },
+      "choices": [
+        "soothes",
+        "scolds",
+        "ignores",
+        "confuses"
+      ],
+      "answer": "soothes",
+      "explain": {
+        "en": "\"soothes\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"soothes\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-013",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "During the school holidays, Danial visited his grandparents in Kampung Pandan. He helped his grandfather feed the chickens and learned how to plant vegetables in the garden. What did Danial learn to do at his grandparents' house?",
+        "zh": "阅读短文，选出正确的答案。During the school holidays, Danial visited his grandparents in Kampung Pandan. He helped his grandfather feed the chickens and learned how to plant vegetables in the garden. What did Danial learn to do at his grandparents' house?"
+      },
+      "choices": [
+        "Plant vegetables.",
+        "Ride a motorcycle.",
+        "Cook curry.",
+        "Play the piano."
+      ],
+      "answer": "Plant vegetables.",
+      "explain": {
+        "en": "The passage directly states that \"Plant vegetables.\".",
+        "zh": "正确答案是 \"Plant vegetables.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-014",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "During the school holidays, Danial visited his grandparents in Kampung Pandan. He helped his grandfather feed the chickens and learned how to plant vegetables in the garden. What is the main idea of this passage?",
+        "zh": "阅读短文，选出正确的答案。During the school holidays, Danial visited his grandparents in Kampung Pandan. He helped his grandfather feed the chickens and learned how to plant vegetables in the garden. What is the main idea of this passage?"
+      },
+      "choices": [
+        "Danial spent his holiday learning new things at his grandparents' home.",
+        "Danial was bored during the holidays.",
+        "Danial's grandparents moved to the city.",
+        "Danial did not like visiting the village."
+      ],
+      "answer": "Danial spent his holiday learning new things at his grandparents' home.",
+      "explain": {
+        "en": "\"Danial spent his holiday learning new things at his grandparents' home.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"Danial spent his holiday learning new things at his grandparents' home.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-015",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "During the school holidays, Danial visited his grandparents in Kampung Pandan. He helped his grandfather feed the chickens and learned how to plant vegetables in the garden. In this passage, the word \"feed\" means to",
+        "zh": "阅读短文，选出正确的答案。During the school holidays, Danial visited his grandparents in Kampung Pandan. He helped his grandfather feed the chickens and learned how to plant vegetables in the garden. In this passage, the word \"feed\" means to"
+      },
+      "choices": [
+        "give food to",
+        "take away from",
+        "wash",
+        "chase"
+      ],
+      "answer": "give food to",
+      "explain": {
+        "en": "\"give food to\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"give food to\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-016",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The class was excited about the upcoming Sports Day. Coach Lim reminded the students to drink enough water and warm up properly before every event to avoid injuries. What did Coach Lim remind the students to do?",
+        "zh": "阅读短文，选出正确的答案。The class was excited about the upcoming Sports Day. Coach Lim reminded the students to drink enough water and warm up properly before every event to avoid injuries. What did Coach Lim remind the students to do?"
+      },
+      "choices": [
+        "Drink enough water and warm up.",
+        "Skip breakfast.",
+        "Arrive late.",
+        "Stay indoors."
+      ],
+      "answer": "Drink enough water and warm up.",
+      "explain": {
+        "en": "The passage directly states that \"Drink enough water and warm up.\".",
+        "zh": "正确答案是 \"Drink enough water and warm up.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-017",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The class was excited about the upcoming Sports Day. Coach Lim reminded the students to drink enough water and warm up properly before every event to avoid injuries. Why is Coach Lim giving these reminders?",
+        "zh": "阅读短文，选出正确的答案。The class was excited about the upcoming Sports Day. Coach Lim reminded the students to drink enough water and warm up properly before every event to avoid injuries. Why is Coach Lim giving these reminders?"
+      },
+      "choices": [
+        "To help the students stay safe and healthy during Sports Day.",
+        "To stop the students from taking part.",
+        "To cancel Sports Day.",
+        "To punish the students."
+      ],
+      "answer": "To help the students stay safe and healthy during Sports Day.",
+      "explain": {
+        "en": "\"To help the students stay safe and healthy during Sports Day.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"To help the students stay safe and healthy during Sports Day.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-018",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The class was excited about the upcoming Sports Day. Coach Lim reminded the students to drink enough water and warm up properly before every event to avoid injuries. In this passage, the word \"avoid\" is closest in meaning to",
+        "zh": "阅读短文，选出正确的答案。The class was excited about the upcoming Sports Day. Coach Lim reminded the students to drink enough water and warm up properly before every event to avoid injuries. In this passage, the word \"avoid\" is closest in meaning to"
+      },
+      "choices": [
+        "prevent",
+        "cause",
+        "enjoy",
+        "ignore"
+      ],
+      "answer": "prevent",
+      "explain": {
+        "en": "\"prevent\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"prevent\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-019",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Siti loves reading storybooks. Every Friday, she visits the school library and borrows two new books. She finishes reading them by the following Friday and returns them on time. How many books does Siti borrow each week?",
+        "zh": "阅读短文，选出正确的答案。Siti loves reading storybooks. Every Friday, she visits the school library and borrows two new books. She finishes reading them by the following Friday and returns them on time. How many books does Siti borrow each week?"
+      },
+      "choices": [
+        "Two.",
+        "One.",
+        "Three.",
+        "Four."
+      ],
+      "answer": "Two.",
+      "explain": {
+        "en": "The passage directly states that \"Two.\".",
+        "zh": "正确答案是 \"Two.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-020",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Siti loves reading storybooks. Every Friday, she visits the school library and borrows two new books. She finishes reading them by the following Friday and returns them on time. What does this passage tell us about Siti?",
+        "zh": "阅读短文，选出正确的答案。Siti loves reading storybooks. Every Friday, she visits the school library and borrows two new books. She finishes reading them by the following Friday and returns them on time. What does this passage tell us about Siti?"
+      },
+      "choices": [
+        "She is a responsible and enthusiastic reader.",
+        "She dislikes reading.",
+        "She forgets to return her books.",
+        "She never visits the library."
+      ],
+      "answer": "She is a responsible and enthusiastic reader.",
+      "explain": {
+        "en": "\"She is a responsible and enthusiastic reader.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"She is a responsible and enthusiastic reader.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-021",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Siti loves reading storybooks. Every Friday, she visits the school library and borrows two new books. She finishes reading them by the following Friday and returns them on time. In this passage, the word \"borrows\" means",
+        "zh": "阅读短文，选出正确的答案。Siti loves reading storybooks. Every Friday, she visits the school library and borrows two new books. She finishes reading them by the following Friday and returns them on time. In this passage, the word \"borrows\" means"
+      },
+      "choices": [
+        "takes something to use and return later",
+        "buys something to keep",
+        "gives something away",
+        "loses something"
+      ],
+      "answer": "takes something to use and return later",
+      "explain": {
+        "en": "\"takes something to use and return later\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"takes something to use and return later\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-022",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The weather forecast predicted heavy rain for the weekend. Instead of going to the beach as planned, the Lee family decided to visit the museum, where they learned about Malaysia's history. Where did the Lee family go instead of the beach?",
+        "zh": "阅读短文，选出正确的答案。The weather forecast predicted heavy rain for the weekend. Instead of going to the beach as planned, the Lee family decided to visit the museum, where they learned about Malaysia's history. Where did the Lee family go instead of the beach?"
+      },
+      "choices": [
+        "The museum.",
+        "The zoo.",
+        "The cinema.",
+        "The market."
+      ],
+      "answer": "The museum.",
+      "explain": {
+        "en": "The passage directly states that \"The museum.\".",
+        "zh": "正确答案是 \"The museum.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-023",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The weather forecast predicted heavy rain for the weekend. Instead of going to the beach as planned, the Lee family decided to visit the museum, where they learned about Malaysia's history. Why did the Lee family change their plan?",
+        "zh": "阅读短文，选出正确的答案。The weather forecast predicted heavy rain for the weekend. Instead of going to the beach as planned, the Lee family decided to visit the museum, where they learned about Malaysia's history. Why did the Lee family change their plan?"
+      },
+      "choices": [
+        "Because heavy rain was forecast.",
+        "Because the beach was closed forever.",
+        "Because they disliked the beach.",
+        "Because the museum was free that day."
+      ],
+      "answer": "Because heavy rain was forecast.",
+      "explain": {
+        "en": "\"Because heavy rain was forecast.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"Because heavy rain was forecast.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-024",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The weather forecast predicted heavy rain for the weekend. Instead of going to the beach as planned, the Lee family decided to visit the museum, where they learned about Malaysia's history. In this passage, the word \"predicted\" is closest in meaning to",
+        "zh": "阅读短文，选出正确的答案。The weather forecast predicted heavy rain for the weekend. Instead of going to the beach as planned, the Lee family decided to visit the museum, where they learned about Malaysia's history. In this passage, the word \"predicted\" is closest in meaning to"
+      },
+      "choices": [
+        "forecast",
+        "remembered",
+        "painted",
+        "ignored"
+      ],
+      "answer": "forecast",
+      "explain": {
+        "en": "\"forecast\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"forecast\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-025",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Uncle Chong owns a small bakery near the school. Every morning, the smell of fresh bread fills the street, and students often stop by to buy buns before class begins. What does Uncle Chong sell?",
+        "zh": "阅读短文，选出正确的答案。Uncle Chong owns a small bakery near the school. Every morning, the smell of fresh bread fills the street, and students often stop by to buy buns before class begins. What does Uncle Chong sell?"
+      },
+      "choices": [
+        "Bread and buns.",
+        "Vegetables.",
+        "Toys.",
+        "Shoes."
+      ],
+      "answer": "Bread and buns.",
+      "explain": {
+        "en": "The passage directly states that \"Bread and buns.\".",
+        "zh": "正确答案是 \"Bread and buns.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-026",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Uncle Chong owns a small bakery near the school. Every morning, the smell of fresh bread fills the street, and students often stop by to buy buns before class begins. What is this passage mainly describing?",
+        "zh": "阅读短文，选出正确的答案。Uncle Chong owns a small bakery near the school. Every morning, the smell of fresh bread fills the street, and students often stop by to buy buns before class begins. What is this passage mainly describing?"
+      },
+      "choices": [
+        "A popular bakery near the school.",
+        "A school sports event.",
+        "A rainy afternoon.",
+        "A trip to another town."
+      ],
+      "answer": "A popular bakery near the school.",
+      "explain": {
+        "en": "\"A popular bakery near the school.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"A popular bakery near the school.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-027",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Uncle Chong owns a small bakery near the school. Every morning, the smell of fresh bread fills the street, and students often stop by to buy buns before class begins. In this passage, the word \"fills\" means to",
+        "zh": "阅读短文，选出正确的答案。Uncle Chong owns a small bakery near the school. Every morning, the smell of fresh bread fills the street, and students often stop by to buy buns before class begins. In this passage, the word \"fills\" means to"
+      },
+      "choices": [
+        "spreads through",
+        "empties",
+        "blocks",
+        "removes"
+      ],
+      "answer": "spreads through",
+      "explain": {
+        "en": "\"spreads through\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"spreads through\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-028",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Farid found a lost kitten near the bus stop. It was shivering and hungry. He gently carried it home, gave it some milk, and posted pictures online to find its owner. What did Farid give the kitten?",
+        "zh": "阅读短文，选出正确的答案。Farid found a lost kitten near the bus stop. It was shivering and hungry. He gently carried it home, gave it some milk, and posted pictures online to find its owner. What did Farid give the kitten?"
+      },
+      "choices": [
+        "Milk.",
+        "Rice.",
+        "Bread.",
+        "Fish."
+      ],
+      "answer": "Milk.",
+      "explain": {
+        "en": "The passage directly states that \"Milk.\".",
+        "zh": "正确答案是 \"Milk.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-029",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Farid found a lost kitten near the bus stop. It was shivering and hungry. He gently carried it home, gave it some milk, and posted pictures online to find its owner. What does Farid's action show about him?",
+        "zh": "阅读短文，选出正确的答案。Farid found a lost kitten near the bus stop. It was shivering and hungry. He gently carried it home, gave it some milk, and posted pictures online to find its owner. What does Farid's action show about him?"
+      },
+      "choices": [
+        "He is caring and responsible.",
+        "He is careless and unkind.",
+        "He dislikes animals.",
+        "He is afraid of kittens."
+      ],
+      "answer": "He is caring and responsible.",
+      "explain": {
+        "en": "\"He is caring and responsible.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"He is caring and responsible.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-030",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Farid found a lost kitten near the bus stop. It was shivering and hungry. He gently carried it home, gave it some milk, and posted pictures online to find its owner. In this passage, the word \"shivering\" suggests the kitten was",
+        "zh": "阅读短文，选出正确的答案。Farid found a lost kitten near the bus stop. It was shivering and hungry. He gently carried it home, gave it some milk, and posted pictures online to find its owner. In this passage, the word \"shivering\" suggests the kitten was"
+      },
+      "choices": [
+        "cold or frightened",
+        "happy and playful",
+        "asleep",
+        "hungry only"
+      ],
+      "answer": "cold or frightened",
+      "explain": {
+        "en": "\"cold or frightened\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"cold or frightened\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-031",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Every year, the school holds a recycling competition. Last year, Class 4 Bestari collected the most cans and bottles, and won a trophy for their effort in protecting the environment. What did Class 4 Bestari win?",
+        "zh": "阅读短文，选出正确的答案。Every year, the school holds a recycling competition. Last year, Class 4 Bestari collected the most cans and bottles, and won a trophy for their effort in protecting the environment. What did Class 4 Bestari win?"
+      },
+      "choices": [
+        "A trophy.",
+        "A holiday.",
+        "A new classroom.",
+        "A book."
+      ],
+      "answer": "A trophy.",
+      "explain": {
+        "en": "The passage directly states that \"A trophy.\".",
+        "zh": "正确答案是 \"A trophy.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-032",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Every year, the school holds a recycling competition. Last year, Class 4 Bestari collected the most cans and bottles, and won a trophy for their effort in protecting the environment. What is the main purpose of the recycling competition?",
+        "zh": "阅读短文，选出正确的答案。Every year, the school holds a recycling competition. Last year, Class 4 Bestari collected the most cans and bottles, and won a trophy for their effort in protecting the environment. What is the main purpose of the recycling competition?"
+      },
+      "choices": [
+        "To encourage students to protect the environment.",
+        "To raise money for a trip.",
+        "To choose the best artist.",
+        "To test students' maths skills."
+      ],
+      "answer": "To encourage students to protect the environment.",
+      "explain": {
+        "en": "\"To encourage students to protect the environment.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"To encourage students to protect the environment.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-033",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Every year, the school holds a recycling competition. Last year, Class 4 Bestari collected the most cans and bottles, and won a trophy for their effort in protecting the environment. In this passage, the word \"collected\" is closest in meaning to",
+        "zh": "阅读短文，选出正确的答案。Every year, the school holds a recycling competition. Last year, Class 4 Bestari collected the most cans and bottles, and won a trophy for their effort in protecting the environment. In this passage, the word \"collected\" is closest in meaning to"
+      },
+      "choices": [
+        "gathered",
+        "threw away",
+        "sold",
+        "hid"
+      ],
+      "answer": "gathered",
+      "explain": {
+        "en": "\"gathered\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"gathered\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-034",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Nurul was nervous before her piano exam. Her teacher told her to take a deep breath and remember all the hours she had practised. Nurul closed her eyes, smiled, and walked into the exam room. What did Nurul's teacher tell her to do?",
+        "zh": "阅读短文，选出正确的答案。Nurul was nervous before her piano exam. Her teacher told her to take a deep breath and remember all the hours she had practised. Nurul closed her eyes, smiled, and walked into the exam room. What did Nurul's teacher tell her to do?"
+      },
+      "choices": [
+        "Take a deep breath and remember her practice.",
+        "Give up the exam.",
+        "Play a different song.",
+        "Cry before the exam."
+      ],
+      "answer": "Take a deep breath and remember her practice.",
+      "explain": {
+        "en": "The passage directly states that \"Take a deep breath and remember her practice.\".",
+        "zh": "正确答案是 \"Take a deep breath and remember her practice.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-035",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Nurul was nervous before her piano exam. Her teacher told her to take a deep breath and remember all the hours she had practised. Nurul closed her eyes, smiled, and walked into the exam room. What can we infer about Nurul at the end of the passage?",
+        "zh": "阅读短文，选出正确的答案。Nurul was nervous before her piano exam. Her teacher told her to take a deep breath and remember all the hours she had practised. Nurul closed her eyes, smiled, and walked into the exam room. What can we infer about Nurul at the end of the passage?"
+      },
+      "choices": [
+        "She felt more confident after her teacher's advice.",
+        "She refused to take the exam.",
+        "She forgot how to play the piano.",
+        "She was angry with her teacher."
+      ],
+      "answer": "She felt more confident after her teacher's advice.",
+      "explain": {
+        "en": "\"She felt more confident after her teacher's advice.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"She felt more confident after her teacher's advice.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-036",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Nurul was nervous before her piano exam. Her teacher told her to take a deep breath and remember all the hours she had practised. Nurul closed her eyes, smiled, and walked into the exam room. In this passage, the word \"nervous\" is closest in meaning to",
+        "zh": "阅读短文，选出正确的答案。Nurul was nervous before her piano exam. Her teacher told her to take a deep breath and remember all the hours she had practised. Nurul closed her eyes, smiled, and walked into the exam room. In this passage, the word \"nervous\" is closest in meaning to"
+      },
+      "choices": [
+        "anxious",
+        "delighted",
+        "confident",
+        "bored"
+      ],
+      "answer": "anxious",
+      "explain": {
+        "en": "\"anxious\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"anxious\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-037",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The fishermen in the small coastal town left before sunrise every day. They spent hours at sea before returning in the afternoon to sell their catch at the local market. When did the fishermen leave for the sea?",
+        "zh": "阅读短文，选出正确的答案。The fishermen in the small coastal town left before sunrise every day. They spent hours at sea before returning in the afternoon to sell their catch at the local market. When did the fishermen leave for the sea?"
+      },
+      "choices": [
+        "Before sunrise.",
+        "At noon.",
+        "At midnight.",
+        "After dinner."
+      ],
+      "answer": "Before sunrise.",
+      "explain": {
+        "en": "The passage directly states that \"Before sunrise.\".",
+        "zh": "正确答案是 \"Before sunrise.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-038",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The fishermen in the small coastal town left before sunrise every day. They spent hours at sea before returning in the afternoon to sell their catch at the local market. What is the main idea of this passage?",
+        "zh": "阅读短文，选出正确的答案。The fishermen in the small coastal town left before sunrise every day. They spent hours at sea before returning in the afternoon to sell their catch at the local market. What is the main idea of this passage?"
+      },
+      "choices": [
+        "It describes the daily routine of the fishermen.",
+        "It describes a festival in the town.",
+        "It describes a storm at sea.",
+        "It describes a new fishing boat."
+      ],
+      "answer": "It describes the daily routine of the fishermen.",
+      "explain": {
+        "en": "\"It describes the daily routine of the fishermen.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"It describes the daily routine of the fishermen.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-039",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The fishermen in the small coastal town left before sunrise every day. They spent hours at sea before returning in the afternoon to sell their catch at the local market. In this passage, the word \"catch\" refers to",
+        "zh": "阅读短文，选出正确的答案。The fishermen in the small coastal town left before sunrise every day. They spent hours at sea before returning in the afternoon to sell their catch at the local market. In this passage, the word \"catch\" refers to"
+      },
+      "choices": [
+        "the fish that were caught",
+        "a type of net",
+        "the boat",
+        "the market"
+      ],
+      "answer": "the fish that were caught",
+      "explain": {
+        "en": "\"the fish that were caught\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"the fish that were caught\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-040",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "When the fire alarm rang suddenly during class, the students remained calm. They followed their teacher's instructions and walked quickly but quietly to the assembly area outside. Where did the students go when the alarm rang?",
+        "zh": "阅读短文，选出正确的答案。When the fire alarm rang suddenly during class, the students remained calm. They followed their teacher's instructions and walked quickly but quietly to the assembly area outside. Where did the students go when the alarm rang?"
+      },
+      "choices": [
+        "The assembly area outside.",
+        "The canteen.",
+        "The library.",
+        "The school gate."
+      ],
+      "answer": "The assembly area outside.",
+      "explain": {
+        "en": "The passage directly states that \"The assembly area outside.\".",
+        "zh": "正确答案是 \"The assembly area outside.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-041",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "When the fire alarm rang suddenly during class, the students remained calm. They followed their teacher's instructions and walked quickly but quietly to the assembly area outside. What does this passage suggest about the students' training?",
+        "zh": "阅读短文，选出正确的答案。When the fire alarm rang suddenly during class, the students remained calm. They followed their teacher's instructions and walked quickly but quietly to the assembly area outside. What does this passage suggest about the students' training?"
+      },
+      "choices": [
+        "They had been well-prepared for emergencies.",
+        "They had never practised a fire drill before.",
+        "They ignored their teacher completely.",
+        "They panicked and ran randomly."
+      ],
+      "answer": "They had been well-prepared for emergencies.",
+      "explain": {
+        "en": "\"They had been well-prepared for emergencies.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"They had been well-prepared for emergencies.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-042",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "When the fire alarm rang suddenly during class, the students remained calm. They followed their teacher's instructions and walked quickly but quietly to the assembly area outside. In this passage, the word \"remained\" is closest in meaning to",
+        "zh": "阅读短文，选出正确的答案。When the fire alarm rang suddenly during class, the students remained calm. They followed their teacher's instructions and walked quickly but quietly to the assembly area outside. In this passage, the word \"remained\" is closest in meaning to"
+      },
+      "choices": [
+        "stayed",
+        "became",
+        "left",
+        "changed"
+      ],
+      "answer": "stayed",
+      "explain": {
+        "en": "\"stayed\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"stayed\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-043",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Grandmother's recipe for chicken curry has been passed down for three generations. Every Hari Raya, the whole family gathers in the kitchen to help prepare it together. How long has the recipe been passed down?",
+        "zh": "阅读短文，选出正确的答案。Grandmother's recipe for chicken curry has been passed down for three generations. Every Hari Raya, the whole family gathers in the kitchen to help prepare it together. How long has the recipe been passed down?"
+      },
+      "choices": [
+        "Three generations.",
+        "One year.",
+        "Ten years.",
+        "One generation."
+      ],
+      "answer": "Three generations.",
+      "explain": {
+        "en": "The passage directly states that \"Three generations.\".",
+        "zh": "正确答案是 \"Three generations.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-044",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Grandmother's recipe for chicken curry has been passed down for three generations. Every Hari Raya, the whole family gathers in the kitchen to help prepare it together. What does this passage mainly describe?",
+        "zh": "阅读短文，选出正确的答案。Grandmother's recipe for chicken curry has been passed down for three generations. Every Hari Raya, the whole family gathers in the kitchen to help prepare it together. What does this passage mainly describe?"
+      },
+      "choices": [
+        "A family tradition of cooking together.",
+        "A recipe competition.",
+        "A trip to a restaurant.",
+        "A new kitchen renovation."
+      ],
+      "answer": "A family tradition of cooking together.",
+      "explain": {
+        "en": "\"A family tradition of cooking together.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"A family tradition of cooking together.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-045",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Grandmother's recipe for chicken curry has been passed down for three generations. Every Hari Raya, the whole family gathers in the kitchen to help prepare it together. In this passage, the phrase \"passed down\" means",
+        "zh": "阅读短文，选出正确的答案。Grandmother's recipe for chicken curry has been passed down for three generations. Every Hari Raya, the whole family gathers in the kitchen to help prepare it together. In this passage, the phrase \"passed down\" means"
+      },
+      "choices": [
+        "handed on from one generation to the next",
+        "thrown away",
+        "sold to a shop",
+        "forgotten completely"
+      ],
+      "answer": "handed on from one generation to the next",
+      "explain": {
+        "en": "\"handed on from one generation to the next\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"handed on from one generation to the next\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-046",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The new student, Wei Jie, felt shy on his first day. But when his classmates invited him to join their game during recess, he slowly began to smile and joined in happily. What did Wei Jie's classmates do?",
+        "zh": "阅读短文，选出正确的答案。The new student, Wei Jie, felt shy on his first day. But when his classmates invited him to join their game during recess, he slowly began to smile and joined in happily. What did Wei Jie's classmates do?"
+      },
+      "choices": [
+        "They invited him to join their game.",
+        "They ignored him.",
+        "They laughed at him.",
+        "They left the school early."
+      ],
+      "answer": "They invited him to join their game.",
+      "explain": {
+        "en": "The passage directly states that \"They invited him to join their game.\".",
+        "zh": "正确答案是 \"They invited him to join their game.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-047",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The new student, Wei Jie, felt shy on his first day. But when his classmates invited him to join their game during recess, he slowly began to smile and joined in happily. What lesson does this passage teach?",
+        "zh": "阅读短文，选出正确的答案。The new student, Wei Jie, felt shy on his first day. But when his classmates invited him to join their game during recess, he slowly began to smile and joined in happily. What lesson does this passage teach?"
+      },
+      "choices": [
+        "Kindness can help someone feel welcome.",
+        "New students should stay quiet.",
+        "Games are not important at school.",
+        "Teachers should not help new students."
+      ],
+      "answer": "Kindness can help someone feel welcome.",
+      "explain": {
+        "en": "\"Kindness can help someone feel welcome.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"Kindness can help someone feel welcome.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-048",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The new student, Wei Jie, felt shy on his first day. But when his classmates invited him to join their game during recess, he slowly began to smile and joined in happily. In this passage, the word \"shy\" is closest in meaning to",
+        "zh": "阅读短文，选出正确的答案。The new student, Wei Jie, felt shy on his first day. But when his classmates invited him to join their game during recess, he slowly began to smile and joined in happily. In this passage, the word \"shy\" is closest in meaning to"
+      },
+      "choices": [
+        "timid",
+        "confident",
+        "excited",
+        "angry"
+      ],
+      "answer": "timid",
+      "explain": {
+        "en": "\"timid\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"timid\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-049",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Every evening, Mr. Tan walks his dog around the neighbourhood park. He greets his neighbours, picks up litter along the way, and returns home just before it gets dark. What does Mr. Tan do while walking his dog?",
+        "zh": "阅读短文，选出正确的答案。Every evening, Mr. Tan walks his dog around the neighbourhood park. He greets his neighbours, picks up litter along the way, and returns home just before it gets dark. What does Mr. Tan do while walking his dog?"
+      },
+      "choices": [
+        "He picks up litter and greets neighbours.",
+        "He reads a newspaper.",
+        "He rides a bicycle.",
+        "He plays football."
+      ],
+      "answer": "He picks up litter and greets neighbours.",
+      "explain": {
+        "en": "The passage directly states that \"He picks up litter and greets neighbours.\".",
+        "zh": "正确答案是 \"He picks up litter and greets neighbours.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-050",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Every evening, Mr. Tan walks his dog around the neighbourhood park. He greets his neighbours, picks up litter along the way, and returns home just before it gets dark. What does this passage suggest about Mr. Tan?",
+        "zh": "阅读短文，选出正确的答案。Every evening, Mr. Tan walks his dog around the neighbourhood park. He greets his neighbours, picks up litter along the way, and returns home just before it gets dark. What does this passage suggest about Mr. Tan?"
+      },
+      "choices": [
+        "He is friendly and cares about his neighbourhood.",
+        "He dislikes his neighbours.",
+        "He never leaves his house.",
+        "He works at night."
+      ],
+      "answer": "He is friendly and cares about his neighbourhood.",
+      "explain": {
+        "en": "\"He is friendly and cares about his neighbourhood.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"He is friendly and cares about his neighbourhood.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-051",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Every evening, Mr. Tan walks his dog around the neighbourhood park. He greets his neighbours, picks up litter along the way, and returns home just before it gets dark. In this passage, the word \"litter\" means",
+        "zh": "阅读短文，选出正确的答案。Every evening, Mr. Tan walks his dog around the neighbourhood park. He greets his neighbours, picks up litter along the way, and returns home just before it gets dark. In this passage, the word \"litter\" means"
+      },
+      "choices": [
+        "rubbish left in a public place",
+        "a type of flower",
+        "a small animal",
+        "a piece of furniture"
+      ],
+      "answer": "rubbish left in a public place",
+      "explain": {
+        "en": "\"rubbish left in a public place\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"rubbish left in a public place\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-052",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The museum guide explained that the old clay pots on display were more than one hundred years old. Visitors were reminded not to touch the fragile exhibits. How old were the clay pots?",
+        "zh": "阅读短文，选出正确的答案。The museum guide explained that the old clay pots on display were more than one hundred years old. Visitors were reminded not to touch the fragile exhibits. How old were the clay pots?"
+      },
+      "choices": [
+        "More than one hundred years old.",
+        "About ten years old.",
+        "One year old.",
+        "Fifty days old."
+      ],
+      "answer": "More than one hundred years old.",
+      "explain": {
+        "en": "The passage directly states that \"More than one hundred years old.\".",
+        "zh": "正确答案是 \"More than one hundred years old.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-053",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The museum guide explained that the old clay pots on display were more than one hundred years old. Visitors were reminded not to touch the fragile exhibits. Why were visitors reminded not to touch the exhibits?",
+        "zh": "阅读短文，选出正确的答案。The museum guide explained that the old clay pots on display were more than one hundred years old. Visitors were reminded not to touch the fragile exhibits. Why were visitors reminded not to touch the exhibits?"
+      },
+      "choices": [
+        "Because the exhibits were old and fragile.",
+        "Because the museum was closing.",
+        "Because the exhibits were for sale.",
+        "Because touching was allowed only on weekends."
+      ],
+      "answer": "Because the exhibits were old and fragile.",
+      "explain": {
+        "en": "\"Because the exhibits were old and fragile.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"Because the exhibits were old and fragile.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-054",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The museum guide explained that the old clay pots on display were more than one hundred years old. Visitors were reminded not to touch the fragile exhibits. In this passage, the word \"fragile\" is closest in meaning to",
+        "zh": "阅读短文，选出正确的答案。The museum guide explained that the old clay pots on display were more than one hundred years old. Visitors were reminded not to touch the fragile exhibits. In this passage, the word \"fragile\" is closest in meaning to"
+      },
+      "choices": [
+        "easily broken",
+        "very heavy",
+        "very colourful",
+        "waterproof"
+      ],
+      "answer": "easily broken",
+      "explain": {
+        "en": "\"easily broken\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"easily broken\"（短文中该词的意思）。"
+      }
+    },
+    {
+      "id": "comprehension1-055",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "After weeks of practice, the school choir finally performed at the state competition. Although they were nervous backstage, they sang confidently and were awarded second place. What award did the choir receive?",
+        "zh": "阅读短文，选出正确的答案。After weeks of practice, the school choir finally performed at the state competition. Although they were nervous backstage, they sang confidently and were awarded second place. What award did the choir receive?"
+      },
+      "choices": [
+        "Second place.",
+        "First place.",
+        "No award.",
+        "Third place."
+      ],
+      "answer": "Second place.",
+      "explain": {
+        "en": "The passage directly states that \"Second place.\".",
+        "zh": "正确答案是 \"Second place.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-056",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "After weeks of practice, the school choir finally performed at the state competition. Although they were nervous backstage, they sang confidently and were awarded second place. What does this passage suggest about the choir's hard work?",
+        "zh": "阅读短文，选出正确的答案。After weeks of practice, the school choir finally performed at the state competition. Although they were nervous backstage, they sang confidently and were awarded second place. What does this passage suggest about the choir's hard work?"
+      },
+      "choices": [
+        "Their practice helped them perform well despite their nerves.",
+        "Their practice was a waste of time.",
+        "They did not need to practise at all.",
+        "They performed poorly because of nerves."
+      ],
+      "answer": "Their practice helped them perform well despite their nerves.",
+      "explain": {
+        "en": "\"Their practice helped them perform well despite their nerves.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"Their practice helped them perform well despite their nerves.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-057",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "After weeks of practice, the school choir finally performed at the state competition. Although they were nervous backstage, they sang confidently and were awarded second place. In this passage, the word \"confidently\" is closest in meaning to",
+        "zh": "阅读短文，选出正确的答案。After weeks of practice, the school choir finally performed at the state competition. Although they were nervous backstage, they sang confidently and were awarded second place. In this passage, the word \"confidently\" is closest in meaning to"
+      },
+      "choices": [
+        "feeling sure of themselves",
+        "feeling afraid",
+        "feeling angry",
+        "feeling confused"
+      ],
+      "answer": "feeling sure of themselves",
+      "explain": {
+        "en": "Singing confidently means singing while feeling sure of yourself.",
+        "zh": "正确答案是 \"feeling sure of themselves\"（confidently 意思是自信地、对自己有把握地）。"
+      }
+    },
+    {
+      "id": "comprehension1-058",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The river near the village had become polluted with rubbish. A group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. What did the students start?",
+        "zh": "阅读短文，选出正确的答案。The river near the village had become polluted with rubbish. A group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. What did the students start?"
+      },
+      "choices": [
+        "A weekend clean-up club.",
+        "A swimming club.",
+        "A fishing competition.",
+        "A cooking class."
+      ],
+      "answer": "A weekend clean-up club.",
+      "explain": {
+        "en": "The passage directly states that \"A weekend clean-up club.\".",
+        "zh": "正确答案是 \"A weekend clean-up club.\"（短文中明确提到的细节）。"
+      }
+    },
+    {
+      "id": "comprehension1-059",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The river near the village had become polluted with rubbish. A group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. What can we infer from the passage's ending?",
+        "zh": "阅读短文，选出正确的答案。The river near the village had become polluted with rubbish. A group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. What can we infer from the passage's ending?"
+      },
+      "choices": [
+        "The students' efforts successfully improved the river.",
+        "The river became more polluted over time.",
+        "The fish left the river permanently.",
+        "The clean-up club was cancelled."
+      ],
+      "answer": "The students' efforts successfully improved the river.",
+      "explain": {
+        "en": "\"The students' efforts successfully improved the river.\" best captures the overall idea of the passage.",
+        "zh": "正确答案是 \"The students' efforts successfully improved the river.\"（短文的主旨）。"
+      }
+    },
+    {
+      "id": "comprehension1-060",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The river near the village had become polluted with rubbish. A group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. In this passage, the word \"polluted\" is closest in meaning to",
+        "zh": "阅读短文，选出正确的答案。The river near the village had become polluted with rubbish. A group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. In this passage, the word \"polluted\" is closest in meaning to"
+      },
+      "choices": [
+        "dirtied",
+        "cleaned",
+        "frozen",
+        "emptied"
+      ],
+      "answer": "dirtied",
+      "explain": {
+        "en": "\"dirtied\" is the meaning of the highlighted word as used in this passage.",
+        "zh": "正确答案是 \"dirtied\"（短文中该词的意思）。"
+      }
+    }
+  ]
+}

@@ -5,9 +5,16 @@
 import { makeRng } from '../src/engine/rng';
 import { MATH_GENERATORS } from '../src/engine/math';
 import type { Difficulty, Question } from '../src/engine/types';
+import { validatePack } from '../src/content/schema';
+
+import grammar1 from '../src/content/english/grammar-1.json';
+import vocabulary1 from '../src/content/english/vocabulary-1.json';
+import sentences1 from '../src/content/english/sentences-1.json';
+import comprehension1 from '../src/content/english/comprehension-1.json';
 
 const ITERATIONS = 1000;
 const DIFFICULTIES: Difficulty[] = ['standard', 'advanced'];
+const MIN_QUESTIONS_PER_PACK = 60;
 
 let failures = 0;
 let totalChecked = 0;
@@ -76,6 +83,43 @@ for (const generator of MATH_GENERATORS) {
 }
 
 console.log(`Checked ${totalChecked} generated questions across ${MATH_GENERATORS.length} generators x ${DIFFICULTIES.length} difficulties.`);
+
+// --- English question banks -------------------------------------------
+console.log('\nValidating English question banks...');
+
+const RAW_PACKS: { file: string; data: unknown }[] = [
+  { file: 'grammar-1.json', data: grammar1 },
+  { file: 'vocabulary-1.json', data: vocabulary1 },
+  { file: 'sentences-1.json', data: sentences1 },
+  { file: 'comprehension-1.json', data: comprehension1 },
+];
+
+let totalBankQuestions = 0;
+let totalStandard = 0;
+let totalAdvanced = 0;
+
+for (const { file, data } of RAW_PACKS) {
+  const result = validatePack(data);
+  if (!result.ok) {
+    fail(`${file}: pack failed validation:\n  ${result.errors.join('\n  ')}`);
+    continue;
+  }
+  const { pack } = result;
+  const count = pack.questions.length;
+  const standardCount = pack.questions.filter((q) => q.difficulty === 'standard').length;
+  const advancedCount = pack.questions.filter((q) => q.difficulty === 'advanced').length;
+  totalBankQuestions += count;
+  totalStandard += standardCount;
+  totalAdvanced += advancedCount;
+
+  if (count < MIN_QUESTIONS_PER_PACK) {
+    fail(`${file}: only ${count} questions, expected at least ${MIN_QUESTIONS_PER_PACK}`);
+  }
+
+  console.log(`  ${file} (topic=${pack.topic}): ${count} questions (${standardCount} standard / ${advancedCount} advanced)`);
+}
+
+console.log(`\nEnglish banks total: ${RAW_PACKS.length} packs, ${totalBankQuestions} questions (${totalStandard} standard / ${totalAdvanced} advanced).`);
 
 if (failures > 0) {
   console.error(`\n${failures} failure(s) found.`);

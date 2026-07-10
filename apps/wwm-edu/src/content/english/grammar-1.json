@@ -1,0 +1,1247 @@
+{
+  "id": "english-grammar-tenses-1",
+  "subject": "english",
+  "topic": "grammar",
+  "title": {
+    "en": "Grammar",
+    "zh": "语法"
+  },
+  "version": 1,
+  "questions": [
+    {
+      "id": "grammar1-001",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "She ___ to school every day.",
+        "zh": "选出正确的答案。She ___ to school every day."
+      },
+      "choices": [
+        "goes",
+        "go",
+        "going",
+        "gone"
+      ],
+      "answer": "goes",
+      "explain": {
+        "en": "The verb must agree with the subject, so \"goes\" is correct.",
+        "zh": "正确答案是 \"goes\"（主谓一致：动词形式要与主语配合）。"
+      }
+    },
+    {
+      "id": "grammar1-002",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "They ___ football on Saturdays.",
+        "zh": "选出正确的答案。They ___ football on Saturdays."
+      },
+      "choices": [
+        "play",
+        "plays",
+        "playing",
+        "played"
+      ],
+      "answer": "play",
+      "explain": {
+        "en": "The verb must agree with the subject, so \"play\" is correct.",
+        "zh": "正确答案是 \"play\"（主谓一致：动词形式要与主语配合）。"
+      }
+    },
+    {
+      "id": "grammar1-003",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "My brother ___ his homework after dinner.",
+        "zh": "选出正确的答案。My brother ___ his homework after dinner."
+      },
+      "choices": [
+        "does",
+        "do",
+        "doing",
+        "did"
+      ],
+      "answer": "does",
+      "explain": {
+        "en": "The verb must agree with the subject, so \"does\" is correct.",
+        "zh": "正确答案是 \"does\"（主谓一致：动词形式要与主语配合）。"
+      }
+    },
+    {
+      "id": "grammar1-004",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "I ___ breakfast at seven o'clock every morning.",
+        "zh": "选出正确的答案。I ___ breakfast at seven o'clock every morning."
+      },
+      "choices": [
+        "eat",
+        "eats",
+        "eating",
+        "ate"
+      ],
+      "answer": "eat",
+      "explain": {
+        "en": "The verb must agree with the subject, so \"eat\" is correct.",
+        "zh": "正确答案是 \"eat\"（主谓一致：动词形式要与主语配合）。"
+      }
+    },
+    {
+      "id": "grammar1-005",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The cat ___ milk every morning.",
+        "zh": "选出正确的答案。The cat ___ milk every morning."
+      },
+      "choices": [
+        "drinks",
+        "drink",
+        "drinking",
+        "drank"
+      ],
+      "answer": "drinks",
+      "explain": {
+        "en": "The verb must agree with the subject, so \"drinks\" is correct.",
+        "zh": "正确答案是 \"drinks\"（主谓一致：动词形式要与主语配合）。"
+      }
+    },
+    {
+      "id": "grammar1-006",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "We ___ our teeth twice a day.",
+        "zh": "选出正确的答案。We ___ our teeth twice a day."
+      },
+      "choices": [
+        "brush",
+        "brushes",
+        "brushing",
+        "brushed"
+      ],
+      "answer": "brush",
+      "explain": {
+        "en": "The verb must agree with the subject, so \"brush\" is correct.",
+        "zh": "正确答案是 \"brush\"（主谓一致：动词形式要与主语配合）。"
+      }
+    },
+    {
+      "id": "grammar1-007",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Each of the boys ___ ready for the test.",
+        "zh": "选出正确的答案。Each of the boys ___ ready for the test."
+      },
+      "choices": [
+        "is",
+        "are",
+        "am",
+        "be"
+      ],
+      "answer": "is",
+      "explain": {
+        "en": "The verb must agree with the subject, so \"is\" is correct.",
+        "zh": "正确答案是 \"is\"（主谓一致：动词形式要与主语配合）。"
+      }
+    },
+    {
+      "id": "grammar1-008",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Each of the students ___ a book to read.",
+        "zh": "选出正确的答案。Each of the students ___ a book to read."
+      },
+      "choices": [
+        "has",
+        "have",
+        "having",
+        "had"
+      ],
+      "answer": "has",
+      "explain": {
+        "en": "The verb must agree with the subject, so \"has\" is correct.",
+        "zh": "正确答案是 \"has\"（主谓一致：动词形式要与主语配合）。"
+      }
+    },
+    {
+      "id": "grammar1-009",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Yesterday, I ___ an apple for breakfast.",
+        "zh": "选出正确的答案。Yesterday, I ___ an apple for breakfast."
+      },
+      "choices": [
+        "ate",
+        "eat",
+        "eating",
+        "eats"
+      ],
+      "answer": "ate",
+      "explain": {
+        "en": "This sentence describes a completed past action, so \"ate\" is correct.",
+        "zh": "正确答案是 \"ate\"（一般过去式，表示已完成的动作）。"
+      }
+    },
+    {
+      "id": "grammar1-010",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "She ___ to the market last Sunday.",
+        "zh": "选出正确的答案。She ___ to the market last Sunday."
+      },
+      "choices": [
+        "went",
+        "go",
+        "goes",
+        "going"
+      ],
+      "answer": "went",
+      "explain": {
+        "en": "This sentence describes a completed past action, so \"went\" is correct.",
+        "zh": "正确答案是 \"went\"（一般过去式，表示已完成的动作）。"
+      }
+    },
+    {
+      "id": "grammar1-011",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "We ___ a movie last night.",
+        "zh": "选出正确的答案。We ___ a movie last night."
+      },
+      "choices": [
+        "watched",
+        "watch",
+        "watches",
+        "watching"
+      ],
+      "answer": "watched",
+      "explain": {
+        "en": "This sentence describes a completed past action, so \"watched\" is correct.",
+        "zh": "正确答案是 \"watched\"（一般过去式，表示已完成的动作）。"
+      }
+    },
+    {
+      "id": "grammar1-012",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "He ___ his bicycle to school yesterday.",
+        "zh": "选出正确的答案。He ___ his bicycle to school yesterday."
+      },
+      "choices": [
+        "rode",
+        "ride",
+        "rides",
+        "riding"
+      ],
+      "answer": "rode",
+      "explain": {
+        "en": "This sentence describes a completed past action, so \"rode\" is correct.",
+        "zh": "正确答案是 \"rode\"（一般过去式，表示已完成的动作）。"
+      }
+    },
+    {
+      "id": "grammar1-013",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "They ___ a beautiful sandcastle at the beach.",
+        "zh": "选出正确的答案。They ___ a beautiful sandcastle at the beach."
+      },
+      "choices": [
+        "built",
+        "build",
+        "builds",
+        "building"
+      ],
+      "answer": "built",
+      "explain": {
+        "en": "This sentence describes a completed past action, so \"built\" is correct.",
+        "zh": "正确答案是 \"built\"（一般过去式，表示已完成的动作）。"
+      }
+    },
+    {
+      "id": "grammar1-014",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "I ___ my homework before dinner last night.",
+        "zh": "选出正确的答案。I ___ my homework before dinner last night."
+      },
+      "choices": [
+        "finished",
+        "finish",
+        "finishes",
+        "finishing"
+      ],
+      "answer": "finished",
+      "explain": {
+        "en": "This sentence describes a completed past action, so \"finished\" is correct.",
+        "zh": "正确答案是 \"finished\"（一般过去式，表示已完成的动作）。"
+      }
+    },
+    {
+      "id": "grammar1-015",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "By the time we arrived, the movie ___ already started.",
+        "zh": "选出正确的答案。By the time we arrived, the movie ___ already started."
+      },
+      "choices": [
+        "had",
+        "has",
+        "have",
+        "was"
+      ],
+      "answer": "had",
+      "explain": {
+        "en": "This sentence describes a completed past action, so \"had\" is correct.",
+        "zh": "正确答案是 \"had\"（一般过去式，表示已完成的动作）。"
+      }
+    },
+    {
+      "id": "grammar1-016",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "She ___ swimming when it began to rain.",
+        "zh": "选出正确的答案。She ___ swimming when it began to rain."
+      },
+      "choices": [
+        "was",
+        "is",
+        "were",
+        "be"
+      ],
+      "answer": "was",
+      "explain": {
+        "en": "This sentence describes a completed past action, so \"was\" is correct.",
+        "zh": "正确答案是 \"was\"（一般过去式，表示已完成的动作）。"
+      }
+    },
+    {
+      "id": "grammar1-017",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Look! The dog ___ in the park.",
+        "zh": "选出正确的答案。Look! The dog ___ in the park."
+      },
+      "choices": [
+        "is running",
+        "run",
+        "runs",
+        "ran"
+      ],
+      "answer": "is running",
+      "explain": {
+        "en": "This describes an action happening now (or a fixed future plan), so \"is running\" is correct.",
+        "zh": "正确答案是 \"is running\"（现在进行式：be 动词 + 动词-ing）。"
+      }
+    },
+    {
+      "id": "grammar1-018",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Listen! The birds ___ outside.",
+        "zh": "选出正确的答案。Listen! The birds ___ outside."
+      },
+      "choices": [
+        "are singing",
+        "sing",
+        "sings",
+        "sang"
+      ],
+      "answer": "are singing",
+      "explain": {
+        "en": "This describes an action happening now (or a fixed future plan), so \"are singing\" is correct.",
+        "zh": "正确答案是 \"are singing\"（现在进行式：be 动词 + 动词-ing）。"
+      }
+    },
+    {
+      "id": "grammar1-019",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Right now, I ___ my homework.",
+        "zh": "选出正确的答案。Right now, I ___ my homework."
+      },
+      "choices": [
+        "am doing",
+        "do",
+        "does",
+        "did"
+      ],
+      "answer": "am doing",
+      "explain": {
+        "en": "This describes an action happening now (or a fixed future plan), so \"am doing\" is correct.",
+        "zh": "正确答案是 \"am doing\"（现在进行式：be 动词 + 动词-ing）。"
+      }
+    },
+    {
+      "id": "grammar1-020",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "She ___ a letter to her grandmother at the moment.",
+        "zh": "选出正确的答案。She ___ a letter to her grandmother at the moment."
+      },
+      "choices": [
+        "is writing",
+        "writes",
+        "write",
+        "wrote"
+      ],
+      "answer": "is writing",
+      "explain": {
+        "en": "This describes an action happening now (or a fixed future plan), so \"is writing\" is correct.",
+        "zh": "正确答案是 \"is writing\"（现在进行式：be 动词 + 动词-ing）。"
+      }
+    },
+    {
+      "id": "grammar1-021",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "While I ___ dinner, my sister was setting the table.",
+        "zh": "选出正确的答案。While I ___ dinner, my sister was setting the table."
+      },
+      "choices": [
+        "was cooking",
+        "cooked",
+        "cook",
+        "cooks"
+      ],
+      "answer": "was cooking",
+      "explain": {
+        "en": "This describes an action happening now (or a fixed future plan), so \"was cooking\" is correct.",
+        "zh": "正确答案是 \"was cooking\"（现在进行式：be 动词 + 动词-ing）。"
+      }
+    },
+    {
+      "id": "grammar1-022",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "They ___ to Penang next week for a holiday.",
+        "zh": "选出正确的答案。They ___ to Penang next week for a holiday."
+      },
+      "choices": [
+        "are travelling",
+        "travel",
+        "travelled",
+        "travels"
+      ],
+      "answer": "are travelling",
+      "explain": {
+        "en": "This describes an action happening now (or a fixed future plan), so \"are travelling\" is correct.",
+        "zh": "正确答案是 \"are travelling\"（现在进行式：be 动词 + 动词-ing）。"
+      }
+    },
+    {
+      "id": "grammar1-023",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "I saw ___ elephant at the zoo.",
+        "zh": "选出正确的答案。I saw ___ elephant at the zoo."
+      },
+      "choices": [
+        "an",
+        "a",
+        "the",
+        "one"
+      ],
+      "answer": "an",
+      "explain": {
+        "en": "\"an\" is the correct article for this word or context.",
+        "zh": "正确答案是 \"an\"（冠词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-024",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "She wants to be ___ doctor when she grows up.",
+        "zh": "选出正确的答案。She wants to be ___ doctor when she grows up."
+      },
+      "choices": [
+        "a",
+        "an",
+        "the",
+        "one"
+      ],
+      "answer": "a",
+      "explain": {
+        "en": "\"a\" is the correct article for this word or context.",
+        "zh": "正确答案是 \"a\"（冠词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-025",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "___ sun rises in the east.",
+        "zh": "选出正确的答案。___ sun rises in the east."
+      },
+      "choices": [
+        "The",
+        "A",
+        "An",
+        "One"
+      ],
+      "answer": "The",
+      "explain": {
+        "en": "\"The\" is the correct article for this word or context.",
+        "zh": "正确答案是 \"The\"（冠词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-026",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "He bought ___ umbrella because it was raining.",
+        "zh": "选出正确的答案。He bought ___ umbrella because it was raining."
+      },
+      "choices": [
+        "an",
+        "a",
+        "the",
+        "one"
+      ],
+      "answer": "an",
+      "explain": {
+        "en": "\"an\" is the correct article for this word or context.",
+        "zh": "正确答案是 \"an\"（冠词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-027",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "___ Petronas Towers are located in Kuala Lumpur.",
+        "zh": "选出正确的答案。___ Petronas Towers are located in Kuala Lumpur."
+      },
+      "choices": [
+        "The",
+        "A",
+        "An",
+        "One"
+      ],
+      "answer": "The",
+      "explain": {
+        "en": "\"The\" is the correct article for this word or context.",
+        "zh": "正确答案是 \"The\"（冠词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-028",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "I need ___ hour to finish my homework.",
+        "zh": "选出正确的答案。I need ___ hour to finish my homework."
+      },
+      "choices": [
+        "an",
+        "a",
+        "the",
+        "one"
+      ],
+      "answer": "an",
+      "explain": {
+        "en": "\"an\" is the correct article for this word or context.",
+        "zh": "正确答案是 \"an\"（冠词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-029",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "My birthday is ___ May.",
+        "zh": "选出正确的答案。My birthday is ___ May."
+      },
+      "choices": [
+        "in",
+        "on",
+        "at",
+        "for"
+      ],
+      "answer": "in",
+      "explain": {
+        "en": "\"in\" is the correct preposition of time here.",
+        "zh": "正确答案是 \"in\"（表示时间的介词）。"
+      }
+    },
+    {
+      "id": "grammar1-030",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "We go to school ___ Monday.",
+        "zh": "选出正确的答案。We go to school ___ Monday."
+      },
+      "choices": [
+        "on",
+        "in",
+        "at",
+        "for"
+      ],
+      "answer": "on",
+      "explain": {
+        "en": "\"on\" is the correct preposition of time here.",
+        "zh": "正确答案是 \"on\"（表示时间的介词）。"
+      }
+    },
+    {
+      "id": "grammar1-031",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The class starts ___ 8 o'clock.",
+        "zh": "选出正确的答案。The class starts ___ 8 o'clock."
+      },
+      "choices": [
+        "at",
+        "on",
+        "in",
+        "for"
+      ],
+      "answer": "at",
+      "explain": {
+        "en": "\"at\" is the correct preposition of time here.",
+        "zh": "正确答案是 \"at\"（表示时间的介词）。"
+      }
+    },
+    {
+      "id": "grammar1-032",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "I was born ___ 2015.",
+        "zh": "选出正确的答案。I was born ___ 2015."
+      },
+      "choices": [
+        "in",
+        "on",
+        "at",
+        "for"
+      ],
+      "answer": "in",
+      "explain": {
+        "en": "\"in\" is the correct preposition of time here.",
+        "zh": "正确答案是 \"in\"（表示时间的介词）。"
+      }
+    },
+    {
+      "id": "grammar1-033",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The shop closes ___ night during Ramadan.",
+        "zh": "选出正确的答案。The shop closes ___ night during Ramadan."
+      },
+      "choices": [
+        "at",
+        "on",
+        "in",
+        "for"
+      ],
+      "answer": "at",
+      "explain": {
+        "en": "\"at\" is the correct preposition of time here.",
+        "zh": "正确答案是 \"at\"（表示时间的介词）。"
+      }
+    },
+    {
+      "id": "grammar1-034",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "She always visits her grandmother ___ Sunday.",
+        "zh": "选出正确的答案。She always visits her grandmother ___ Sunday."
+      },
+      "choices": [
+        "at",
+        "on",
+        "in",
+        "for"
+      ],
+      "answer": "on",
+      "explain": {
+        "en": "\"on\" is used with days of the week: on Sunday, on Monday.",
+        "zh": "正确答案是 \"on\"（星期前用介词 on：on Sunday、on Monday）。"
+      }
+    },
+    {
+      "id": "grammar1-035",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The cat is sleeping ___ the box.",
+        "zh": "选出正确的答案。The cat is sleeping ___ the box."
+      },
+      "choices": [
+        "in",
+        "on",
+        "under",
+        "behind"
+      ],
+      "answer": "in",
+      "explain": {
+        "en": "\"in\" is the correct preposition of place here.",
+        "zh": "正确答案是 \"in\"（表示地点的介词）。"
+      }
+    },
+    {
+      "id": "grammar1-036",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The book is ___ the table.",
+        "zh": "选出正确的答案。The book is ___ the table."
+      },
+      "choices": [
+        "on",
+        "in",
+        "under",
+        "behind"
+      ],
+      "answer": "on",
+      "explain": {
+        "en": "\"on\" is the correct preposition of place here.",
+        "zh": "正确答案是 \"on\"（表示地点的介词）。"
+      }
+    },
+    {
+      "id": "grammar1-037",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The ball rolled ___ the sofa.",
+        "zh": "选出正确的答案。The ball rolled ___ the sofa."
+      },
+      "choices": [
+        "under",
+        "on",
+        "in",
+        "behind"
+      ],
+      "answer": "under",
+      "explain": {
+        "en": "\"under\" is the correct preposition of place here.",
+        "zh": "正确答案是 \"under\"（表示地点的介词）。"
+      }
+    },
+    {
+      "id": "grammar1-038",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The dog is hiding ___ the tree.",
+        "zh": "选出正确的答案。The dog is hiding ___ the tree."
+      },
+      "choices": [
+        "behind",
+        "on",
+        "in",
+        "under"
+      ],
+      "answer": "behind",
+      "explain": {
+        "en": "\"behind\" is the correct preposition of place here.",
+        "zh": "正确答案是 \"behind\"（表示地点的介词）。"
+      }
+    },
+    {
+      "id": "grammar1-039",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The park is ___ the school and the library.",
+        "zh": "选出正确的答案。The park is ___ the school and the library."
+      },
+      "choices": [
+        "between",
+        "behind",
+        "under",
+        "in"
+      ],
+      "answer": "between",
+      "explain": {
+        "en": "\"between\" is the correct preposition of place here.",
+        "zh": "正确答案是 \"between\"（表示地点的介词）。"
+      }
+    },
+    {
+      "id": "grammar1-040",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Put the picture ___ the wall.",
+        "zh": "选出正确的答案。Put the picture ___ the wall."
+      },
+      "choices": [
+        "on",
+        "in",
+        "under",
+        "between"
+      ],
+      "answer": "on",
+      "explain": {
+        "en": "\"on\" is the correct preposition of place here.",
+        "zh": "正确答案是 \"on\"（表示地点的介词）。"
+      }
+    },
+    {
+      "id": "grammar1-041",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Ali is my friend. ___ is very kind.",
+        "zh": "选出正确的答案。Ali is my friend. ___ is very kind."
+      },
+      "choices": [
+        "He",
+        "She",
+        "It",
+        "They"
+      ],
+      "answer": "He",
+      "explain": {
+        "en": "\"He\" is the correct pronoun to replace the noun(s) mentioned.",
+        "zh": "正确答案是 \"He\"（代词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-042",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "This is Mei Ling's bag. It is ___ bag.",
+        "zh": "选出正确的答案。This is Mei Ling's bag. It is ___ bag."
+      },
+      "choices": [
+        "her",
+        "his",
+        "their",
+        "its"
+      ],
+      "answer": "her",
+      "explain": {
+        "en": "\"her\" is the correct pronoun to replace the noun(s) mentioned.",
+        "zh": "正确答案是 \"her\"（代词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-043",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The children are playing. ___ are happy.",
+        "zh": "选出正确的答案。The children are playing. ___ are happy."
+      },
+      "choices": [
+        "They",
+        "He",
+        "She",
+        "It"
+      ],
+      "answer": "They",
+      "explain": {
+        "en": "\"They\" is the correct pronoun to replace the noun(s) mentioned.",
+        "zh": "正确答案是 \"They\"（代词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-044",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "This pencil is mine. It is ___ pencil.",
+        "zh": "选出正确的答案。This pencil is mine. It is ___ pencil."
+      },
+      "choices": [
+        "my",
+        "your",
+        "our",
+        "its"
+      ],
+      "answer": "my",
+      "explain": {
+        "en": "\"my\" is the correct pronoun to replace the noun(s) mentioned.",
+        "zh": "正确答案是 \"my\"（代词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-045",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "My parents and I went to the fair. ___ had a great time.",
+        "zh": "选出正确的答案。My parents and I went to the fair. ___ had a great time."
+      },
+      "choices": [
+        "We",
+        "They",
+        "It",
+        "You"
+      ],
+      "answer": "We",
+      "explain": {
+        "en": "\"We\" is the correct pronoun to replace the noun(s) mentioned.",
+        "zh": "正确答案是 \"We\"（代词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-046",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The teacher gave the students ___ homework before the bell rang.",
+        "zh": "选出正确的答案。The teacher gave the students ___ homework before the bell rang."
+      },
+      "choices": [
+        "their",
+        "its",
+        "his",
+        "her"
+      ],
+      "answer": "their",
+      "explain": {
+        "en": "\"their\" is the correct pronoun to replace the noun(s) mentioned.",
+        "zh": "正确答案是 \"their\"（代词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-047",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "I like apples ___ oranges.",
+        "zh": "选出正确的答案。I like apples ___ oranges."
+      },
+      "choices": [
+        "and",
+        "but",
+        "because",
+        "so"
+      ],
+      "answer": "and",
+      "explain": {
+        "en": "\"and\" correctly joins the two ideas in this sentence.",
+        "zh": "正确答案是 \"and\"（连接词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-048",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "She was tired, ___ she went to sleep early.",
+        "zh": "选出正确的答案。She was tired, ___ she went to sleep early."
+      },
+      "choices": [
+        "so",
+        "but",
+        "and",
+        "because"
+      ],
+      "answer": "so",
+      "explain": {
+        "en": "\"so\" correctly joins the two ideas in this sentence.",
+        "zh": "正确答案是 \"so\"（连接词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-049",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "He wanted to play outside, ___ it was raining.",
+        "zh": "选出正确的答案。He wanted to play outside, ___ it was raining."
+      },
+      "choices": [
+        "but",
+        "and",
+        "so",
+        "because"
+      ],
+      "answer": "but",
+      "explain": {
+        "en": "\"but\" correctly joins the two ideas in this sentence.",
+        "zh": "正确答案是 \"but\"（连接词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-050",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "I stayed home ___ I was sick.",
+        "zh": "选出正确的答案。I stayed home ___ I was sick."
+      },
+      "choices": [
+        "because",
+        "but",
+        "and",
+        "so"
+      ],
+      "answer": "because",
+      "explain": {
+        "en": "\"because\" correctly joins the two ideas in this sentence.",
+        "zh": "正确答案是 \"because\"（连接词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-051",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The exam was difficult, ___ Aisyah still scored full marks.",
+        "zh": "选出正确的答案。The exam was difficult, ___ Aisyah still scored full marks."
+      },
+      "choices": [
+        "but",
+        "so",
+        "because",
+        "and"
+      ],
+      "answer": "but",
+      "explain": {
+        "en": "\"but\" correctly joins the two ideas in this sentence.",
+        "zh": "正确答案是 \"but\"（连接词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-052",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Not only did she finish her homework, ___ she also helped her brother.",
+        "zh": "选出正确的答案。Not only did she finish her homework, ___ she also helped her brother."
+      },
+      "choices": [
+        "but",
+        "so",
+        "and",
+        "because"
+      ],
+      "answer": "but",
+      "explain": {
+        "en": "\"but\" correctly joins the two ideas in this sentence.",
+        "zh": "正确答案是 \"but\"（连接词的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-053",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "One child, two ___.",
+        "zh": "选出正确的答案。One child, two ___."
+      },
+      "choices": [
+        "children",
+        "childs",
+        "childes",
+        "child"
+      ],
+      "answer": "children",
+      "explain": {
+        "en": "The plural form of this noun is \"children\".",
+        "zh": "正确答案是 \"children\"（名词复数形式）。"
+      }
+    },
+    {
+      "id": "grammar1-054",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "One mouse, two ___.",
+        "zh": "选出正确的答案。One mouse, two ___."
+      },
+      "choices": [
+        "mice",
+        "mouses",
+        "mices",
+        "mouse"
+      ],
+      "answer": "mice",
+      "explain": {
+        "en": "The plural form of this noun is \"mice\".",
+        "zh": "正确答案是 \"mice\"（名词复数形式）。"
+      }
+    },
+    {
+      "id": "grammar1-055",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "One tooth, two ___.",
+        "zh": "选出正确的答案。One tooth, two ___."
+      },
+      "choices": [
+        "teeth",
+        "tooths",
+        "toothes",
+        "tooth"
+      ],
+      "answer": "teeth",
+      "explain": {
+        "en": "The plural form of this noun is \"teeth\".",
+        "zh": "正确答案是 \"teeth\"（名词复数形式）。"
+      }
+    },
+    {
+      "id": "grammar1-056",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "One foot, two ___.",
+        "zh": "选出正确的答案。One foot, two ___."
+      },
+      "choices": [
+        "feet",
+        "foots",
+        "footes",
+        "foot"
+      ],
+      "answer": "feet",
+      "explain": {
+        "en": "The plural form of this noun is \"feet\".",
+        "zh": "正确答案是 \"feet\"（名词复数形式）。"
+      }
+    },
+    {
+      "id": "grammar1-057",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "One box, two ___.",
+        "zh": "选出正确的答案。One box, two ___."
+      },
+      "choices": [
+        "boxes",
+        "boxs",
+        "box",
+        "boxies"
+      ],
+      "answer": "boxes",
+      "explain": {
+        "en": "The plural form of this noun is \"boxes\".",
+        "zh": "正确答案是 \"boxes\"（名词复数形式）。"
+      }
+    },
+    {
+      "id": "grammar1-058",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "One sheep, two ___.",
+        "zh": "选出正确的答案。One sheep, two ___."
+      },
+      "choices": [
+        "sheep",
+        "sheeps",
+        "sheepes",
+        "sheep's"
+      ],
+      "answer": "sheep",
+      "explain": {
+        "en": "The plural form of this noun is \"sheep\".",
+        "zh": "正确答案是 \"sheep\"（名词复数形式）。"
+      }
+    },
+    {
+      "id": "grammar1-059",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "One man, two ___.",
+        "zh": "选出正确的答案。One man, two ___."
+      },
+      "choices": [
+        "men",
+        "mans",
+        "manes",
+        "man"
+      ],
+      "answer": "men",
+      "explain": {
+        "en": "The plural form of this noun is \"men\".",
+        "zh": "正确答案是 \"men\"（名词复数形式）。"
+      }
+    },
+    {
+      "id": "grammar1-060",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "An elephant is ___ than a mouse. (big)",
+        "zh": "选出正确的答案。An elephant is ___ than a mouse. (big)"
+      },
+      "choices": [
+        "bigger",
+        "biggest",
+        "big",
+        "more big"
+      ],
+      "answer": "bigger",
+      "explain": {
+        "en": "\"bigger\" is the correct comparative/superlative form here.",
+        "zh": "正确答案是 \"bigger\"（比较级/最高级的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-061",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "This is the ___ book I have ever read. (good)",
+        "zh": "选出正确的答案。This is the ___ book I have ever read. (good)"
+      },
+      "choices": [
+        "best",
+        "better",
+        "good",
+        "goodest"
+      ],
+      "answer": "best",
+      "explain": {
+        "en": "\"best\" is the correct comparative/superlative form here.",
+        "zh": "正确答案是 \"best\"（比较级/最高级的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-062",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "My sister is ___ than me. (tall)",
+        "zh": "选出正确的答案。My sister is ___ than me. (tall)"
+      },
+      "choices": [
+        "taller",
+        "tallest",
+        "tall",
+        "more tall"
+      ],
+      "answer": "taller",
+      "explain": {
+        "en": "\"taller\" is the correct comparative/superlative form here.",
+        "zh": "正确答案是 \"taller\"（比较级/最高级的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-063",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "That was the ___ day of my life! (bad)",
+        "zh": "选出正确的答案。That was the ___ day of my life! (bad)"
+      },
+      "choices": [
+        "worst",
+        "worse",
+        "bad",
+        "baddest"
+      ],
+      "answer": "worst",
+      "explain": {
+        "en": "\"worst\" is the correct comparative/superlative form here.",
+        "zh": "正确答案是 \"worst\"（比较级/最高级的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-064",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "This puzzle is ___ than the last one. (difficult)",
+        "zh": "选出正确的答案。This puzzle is ___ than the last one. (difficult)"
+      },
+      "choices": [
+        "more difficult",
+        "difficulter",
+        "most difficult",
+        "difficult"
+      ],
+      "answer": "more difficult",
+      "explain": {
+        "en": "\"more difficult\" is the correct comparative/superlative form here.",
+        "zh": "正确答案是 \"more difficult\"（比较级/最高级的正确用法）。"
+      }
+    },
+    {
+      "id": "grammar1-065",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Of all the students, Hafiz is the ___. (careful)",
+        "zh": "选出正确的答案。Of all the students, Hafiz is the ___. (careful)"
+      },
+      "choices": [
+        "most careful",
+        "carefuller",
+        "more careful",
+        "carefulest"
+      ],
+      "answer": "most careful",
+      "explain": {
+        "en": "\"most careful\" is the correct comparative/superlative form here.",
+        "zh": "正确答案是 \"most careful\"（比较级/最高级的正确用法）。"
+      }
+    }
+  ]
+}

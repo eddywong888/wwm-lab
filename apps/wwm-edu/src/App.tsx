@@ -3,9 +3,10 @@ import './App.css';
 import Home from './screens/Home';
 import Exercise from './screens/Exercise';
 import Results from './screens/Results';
-import { loadState, updateState, recordSession } from './store/local';
+import { loadState, updateState, recordSession, recordDailyResult } from './store/local';
 import type { Difficulty, Lang } from './engine/types';
 import { unlockAudio } from './audio/sfx';
+import { DAILY_TOPIC_ID, todayDateString } from './engine/session';
 
 type Screen = 'home' | 'exercise' | 'results';
 
@@ -36,7 +37,9 @@ export default function App() {
   }
 
   function finishExercise(correctCount: number, totalCount: number, bestStreak: number) {
-    if (topicId) {
+    if (topicId === DAILY_TOPIC_ID) {
+      setState(recordDailyResult(todayDateString(), correctCount, bestStreak));
+    } else if (topicId) {
       setState(recordSession(topicId, correctCount, totalCount, bestStreak));
     }
     setLastResult({ correct: correctCount, total: totalCount, bestStreak });
@@ -67,7 +70,7 @@ export default function App() {
       {screen === 'exercise' && topicId && (
         <Exercise
           topicId={topicId}
-          difficulty={state.difficulty}
+          difficulty={topicId === DAILY_TOPIC_ID ? 'standard' : state.difficulty}
           lang={state.lang}
           onFinish={finishExercise}
           sessionKey={sessionKey}

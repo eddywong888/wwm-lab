@@ -1,7 +1,8 @@
 import './Home.css';
 import type { Difficulty, Lang } from '../engine/types';
 import { MATH_GENERATORS } from '../engine/math';
-import { MIXED_TOPIC_ID } from '../engine/session';
+import { ENGLISH_TOPICS } from '../engine/english';
+import { DAILY_TOPIC_ID, MIXED_TOPIC_ID, QUESTIONS_PER_SESSION, todayDateString } from '../engine/session';
 import { t, UI_STRINGS } from '../engine/i18n';
 import TopicCard from '../components/TopicCard';
 import type { EduState } from '../store/local';
@@ -15,10 +16,19 @@ interface HomeProps {
   onMuteChange: (muted: boolean) => void;
 }
 
+function starsForScore(score: number): number {
+  if (score >= 9) return 3;
+  if (score >= 7) return 2;
+  if (score >= 5) return 1;
+  return 0;
+}
+
 export default function Home({ state, onChangeLang, onChangeDifficulty, onSelectTopic, onMuteChange }: HomeProps) {
   const { lang, difficulty, perTopic, muted } = state;
   const termOneGenerators = MATH_GENERATORS.filter((g) => g.meta.term !== 2);
   const termTwoGenerators = MATH_GENERATORS.filter((g) => g.meta.term === 2);
+  const today = todayDateString();
+  const todayResult = state.dailyResults?.[today];
 
   function handleToggleMute() {
     const next = toggleMuted();
@@ -62,6 +72,23 @@ export default function Home({ state, onChangeLang, onChangeDifficulty, onSelect
         </button>
       </div>
 
+      <button type="button" className="home__daily-card" onClick={() => { playButtonTap(); onSelectTopic(DAILY_TOPIC_ID); }}>
+        <div className="home__daily-top">
+          <span className="home__daily-icon" aria-hidden="true">🗓️</span>
+          <div>
+            <p className="home__daily-title">{t(UI_STRINGS.dailyChallenge, lang)}</p>
+            <p className="home__daily-date">{today}</p>
+          </div>
+        </div>
+        {todayResult ? (
+          <p className="home__daily-status">
+            {t(UI_STRINGS.playedToday, lang)}: {todayResult.score}/{QUESTIONS_PER_SESSION} {'⭐'.repeat(starsForScore(todayResult.score))}
+          </p>
+        ) : (
+          <p className="home__daily-status home__daily-status--cta">{t(UI_STRINGS.start, lang)} →</p>
+        )}
+      </button>
+
       <div className="home__grid home__grid--mixed">
         <TopicCard
           icon="🎲"
@@ -100,6 +127,22 @@ export default function Home({ state, onChangeLang, onChangeDifficulty, onSelect
             name={g.meta.name}
             bestStreak={perTopic[g.meta.id]?.bestStreak ?? 0}
             onClick={() => onSelectTopic(g.meta.id)}
+            lang={lang}
+          />
+        ))}
+      </div>
+
+      <h2 className="home__section-heading">
+        {UI_STRINGS.englishSection.en} / {UI_STRINGS.englishSection.zh}
+      </h2>
+      <div className="home__grid">
+        {ENGLISH_TOPICS.map((g) => (
+          <TopicCard
+            key={g.id}
+            icon={g.icon}
+            name={g.name}
+            bestStreak={perTopic[g.id]?.bestStreak ?? 0}
+            onClick={() => onSelectTopic(g.id)}
             lang={lang}
           />
         ))}

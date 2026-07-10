@@ -1,0 +1,1152 @@
+{
+  "id": "english-vocabulary-1",
+  "subject": "english",
+  "topic": "vocabulary",
+  "title": {
+    "en": "Vocabulary",
+    "zh": "词汇"
+  },
+  "version": 1,
+  "questions": [
+    {
+      "id": "vocab1-001",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word means \"a place where you buy food and other goods\"?",
+        "zh": "选出正确的答案。Which word means \"a place where you buy food and other goods\"?"
+      },
+      "choices": [
+        "market",
+        "hospital",
+        "library",
+        "stadium"
+      ],
+      "answer": "market",
+      "explain": {
+        "en": "\"market\" matches the given meaning.",
+        "zh": "正确答案是 \"market\"（符合题目给出的意思）。"
+      }
+    },
+    {
+      "id": "vocab1-002",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word means \"a young dog\"?",
+        "zh": "选出正确的答案。Which word means \"a young dog\"?"
+      },
+      "choices": [
+        "puppy",
+        "kitten",
+        "cub",
+        "chick"
+      ],
+      "answer": "puppy",
+      "explain": {
+        "en": "\"puppy\" matches the given meaning.",
+        "zh": "正确答案是 \"puppy\"（符合题目给出的意思）。"
+      }
+    },
+    {
+      "id": "vocab1-003",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word means \"the first meal of the day\"?",
+        "zh": "选出正确的答案。Which word means \"the first meal of the day\"?"
+      },
+      "choices": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "supper"
+      ],
+      "answer": "breakfast",
+      "explain": {
+        "en": "\"breakfast\" matches the given meaning.",
+        "zh": "正确答案是 \"breakfast\"（符合题目给出的意思）。"
+      }
+    },
+    {
+      "id": "vocab1-004",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word means \"a person who teaches students\"?",
+        "zh": "选出正确的答案。Which word means \"a person who teaches students\"?"
+      },
+      "choices": [
+        "teacher",
+        "doctor",
+        "farmer",
+        "driver"
+      ],
+      "answer": "teacher",
+      "explain": {
+        "en": "\"teacher\" matches the given meaning.",
+        "zh": "正确答案是 \"teacher\"（符合题目给出的意思）。"
+      }
+    },
+    {
+      "id": "vocab1-005",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word means \"a building where books are kept for people to read or borrow\"?",
+        "zh": "选出正确的答案。Which word means \"a building where books are kept for people to read or borrow\"?"
+      },
+      "choices": [
+        "library",
+        "canteen",
+        "clinic",
+        "factory"
+      ],
+      "answer": "library",
+      "explain": {
+        "en": "\"library\" matches the given meaning.",
+        "zh": "正确答案是 \"library\"（符合题目给出的意思）。"
+      }
+    },
+    {
+      "id": "vocab1-006",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word means \"not heavy\"?",
+        "zh": "选出正确的答案。Which word means \"not heavy\"?"
+      },
+      "choices": [
+        "light",
+        "dark",
+        "thick",
+        "wide"
+      ],
+      "answer": "light",
+      "explain": {
+        "en": "\"light\" matches the given meaning.",
+        "zh": "正确答案是 \"light\"（符合题目给出的意思）。"
+      }
+    },
+    {
+      "id": "vocab1-007",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word means \"a place where sick people are treated\"?",
+        "zh": "选出正确的答案。Which word means \"a place where sick people are treated\"?"
+      },
+      "choices": [
+        "hospital",
+        "school",
+        "market",
+        "park"
+      ],
+      "answer": "hospital",
+      "explain": {
+        "en": "\"hospital\" matches the given meaning.",
+        "zh": "正确答案是 \"hospital\"（符合题目给出的意思）。"
+      }
+    },
+    {
+      "id": "vocab1-008",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Which word means \"willing to give freely\"?",
+        "zh": "选出正确的答案。Which word means \"willing to give freely\"?"
+      },
+      "choices": [
+        "generous",
+        "selfish",
+        "careless",
+        "nervous"
+      ],
+      "answer": "generous",
+      "explain": {
+        "en": "\"generous\" matches the given meaning.",
+        "zh": "正确答案是 \"generous\"（符合题目给出的意思）。"
+      }
+    },
+    {
+      "id": "vocab1-009",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Which word means \"careful about danger\"?",
+        "zh": "选出正确的答案。Which word means \"careful about danger\"?"
+      },
+      "choices": [
+        "cautious",
+        "careless",
+        "curious",
+        "furious"
+      ],
+      "answer": "cautious",
+      "explain": {
+        "en": "\"cautious\" matches the given meaning.",
+        "zh": "正确答案是 \"cautious\"（符合题目给出的意思）。"
+      }
+    },
+    {
+      "id": "vocab1-010",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Which word means \"a strong feeling of wanting to know something\"?",
+        "zh": "选出正确的答案。Which word means \"a strong feeling of wanting to know something\"?"
+      },
+      "choices": [
+        "curiosity",
+        "honesty",
+        "laziness",
+        "jealousy"
+      ],
+      "answer": "curiosity",
+      "explain": {
+        "en": "\"curiosity\" matches the given meaning.",
+        "zh": "正确答案是 \"curiosity\"（符合题目给出的意思）。"
+      }
+    },
+    {
+      "id": "vocab1-011",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word is closest in meaning to \"happy\"?",
+        "zh": "选出正确的答案。Which word is closest in meaning to \"happy\"?"
+      },
+      "choices": [
+        "glad",
+        "sad",
+        "angry",
+        "tired"
+      ],
+      "answer": "glad",
+      "explain": {
+        "en": "\"glad\" has a meaning that is closest to the given word.",
+        "zh": "正确答案是 \"glad\"（与题目单词意思最接近）。"
+      }
+    },
+    {
+      "id": "vocab1-012",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word is closest in meaning to \"big\"?",
+        "zh": "选出正确的答案。Which word is closest in meaning to \"big\"?"
+      },
+      "choices": [
+        "large",
+        "small",
+        "short",
+        "thin"
+      ],
+      "answer": "large",
+      "explain": {
+        "en": "\"large\" has a meaning that is closest to the given word.",
+        "zh": "正确答案是 \"large\"（与题目单词意思最接近）。"
+      }
+    },
+    {
+      "id": "vocab1-013",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word is closest in meaning to \"fast\"?",
+        "zh": "选出正确的答案。Which word is closest in meaning to \"fast\"?"
+      },
+      "choices": [
+        "quick",
+        "slow",
+        "lazy",
+        "weak"
+      ],
+      "answer": "quick",
+      "explain": {
+        "en": "\"quick\" has a meaning that is closest to the given word.",
+        "zh": "正确答案是 \"quick\"（与题目单词意思最接近）。"
+      }
+    },
+    {
+      "id": "vocab1-014",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word is closest in meaning to \"begin\"?",
+        "zh": "选出正确的答案。Which word is closest in meaning to \"begin\"?"
+      },
+      "choices": [
+        "start",
+        "finish",
+        "stop",
+        "end"
+      ],
+      "answer": "start",
+      "explain": {
+        "en": "\"start\" has a meaning that is closest to the given word.",
+        "zh": "正确答案是 \"start\"（与题目单词意思最接近）。"
+      }
+    },
+    {
+      "id": "vocab1-015",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word is closest in meaning to \"smart\"?",
+        "zh": "选出正确的答案。Which word is closest in meaning to \"smart\"?"
+      },
+      "choices": [
+        "clever",
+        "dull",
+        "silly",
+        "shy"
+      ],
+      "answer": "clever",
+      "explain": {
+        "en": "\"clever\" has a meaning that is closest to the given word.",
+        "zh": "正确答案是 \"clever\"（与题目单词意思最接近）。"
+      }
+    },
+    {
+      "id": "vocab1-016",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word is closest in meaning to \"afraid\"?",
+        "zh": "选出正确的答案。Which word is closest in meaning to \"afraid\"?"
+      },
+      "choices": [
+        "scared",
+        "brave",
+        "calm",
+        "proud"
+      ],
+      "answer": "scared",
+      "explain": {
+        "en": "\"scared\" has a meaning that is closest to the given word.",
+        "zh": "正确答案是 \"scared\"（与题目单词意思最接近）。"
+      }
+    },
+    {
+      "id": "vocab1-017",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word is closest in meaning to \"pretty\"?",
+        "zh": "选出正确的答案。Which word is closest in meaning to \"pretty\"?"
+      },
+      "choices": [
+        "beautiful",
+        "ugly",
+        "plain",
+        "messy"
+      ],
+      "answer": "beautiful",
+      "explain": {
+        "en": "\"beautiful\" has a meaning that is closest to the given word.",
+        "zh": "正确答案是 \"beautiful\"（与题目单词意思最接近）。"
+      }
+    },
+    {
+      "id": "vocab1-018",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Which word is closest in meaning to \"enormous\"?",
+        "zh": "选出正确的答案。Which word is closest in meaning to \"enormous\"?"
+      },
+      "choices": [
+        "huge",
+        "tiny",
+        "narrow",
+        "shallow"
+      ],
+      "answer": "huge",
+      "explain": {
+        "en": "\"huge\" has a meaning that is closest to the given word.",
+        "zh": "正确答案是 \"huge\"（与题目单词意思最接近）。"
+      }
+    },
+    {
+      "id": "vocab1-019",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Which word is closest in meaning to \"assist\"?",
+        "zh": "选出正确的答案。Which word is closest in meaning to \"assist\"?"
+      },
+      "choices": [
+        "help",
+        "ignore",
+        "refuse",
+        "block"
+      ],
+      "answer": "help",
+      "explain": {
+        "en": "\"help\" has a meaning that is closest to the given word.",
+        "zh": "正确答案是 \"help\"（与题目单词意思最接近）。"
+      }
+    },
+    {
+      "id": "vocab1-020",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Which word is closest in meaning to \"brave\"?",
+        "zh": "选出正确的答案。Which word is closest in meaning to \"brave\"?"
+      },
+      "choices": [
+        "courageous",
+        "timid",
+        "anxious",
+        "weary"
+      ],
+      "answer": "courageous",
+      "explain": {
+        "en": "\"courageous\" has a meaning that is closest to the given word.",
+        "zh": "正确答案是 \"courageous\"（与题目单词意思最接近）。"
+      }
+    },
+    {
+      "id": "vocab1-021",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "What is the opposite of \"hot\"?",
+        "zh": "选出正确的答案。What is the opposite of \"hot\"?"
+      },
+      "choices": [
+        "cold",
+        "warm",
+        "wet",
+        "dry"
+      ],
+      "answer": "cold",
+      "explain": {
+        "en": "\"cold\" means the opposite of the given word.",
+        "zh": "正确答案是 \"cold\"（与题目单词意思相反）。"
+      }
+    },
+    {
+      "id": "vocab1-022",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "What is the opposite of \"big\"?",
+        "zh": "选出正确的答案。What is the opposite of \"big\"?"
+      },
+      "choices": [
+        "small",
+        "tall",
+        "long",
+        "wide"
+      ],
+      "answer": "small",
+      "explain": {
+        "en": "\"small\" means the opposite of the given word.",
+        "zh": "正确答案是 \"small\"（与题目单词意思相反）。"
+      }
+    },
+    {
+      "id": "vocab1-023",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "What is the opposite of \"fast\"?",
+        "zh": "选出正确的答案。What is the opposite of \"fast\"?"
+      },
+      "choices": [
+        "slow",
+        "quick",
+        "loud",
+        "soft"
+      ],
+      "answer": "slow",
+      "explain": {
+        "en": "\"slow\" means the opposite of the given word.",
+        "zh": "正确答案是 \"slow\"（与题目单词意思相反）。"
+      }
+    },
+    {
+      "id": "vocab1-024",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "What is the opposite of \"happy\"?",
+        "zh": "选出正确的答案。What is the opposite of \"happy\"?"
+      },
+      "choices": [
+        "sad",
+        "glad",
+        "calm",
+        "proud"
+      ],
+      "answer": "sad",
+      "explain": {
+        "en": "\"sad\" means the opposite of the given word.",
+        "zh": "正确答案是 \"sad\"（与题目单词意思相反）。"
+      }
+    },
+    {
+      "id": "vocab1-025",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "What is the opposite of \"open\"?",
+        "zh": "选出正确的答案。What is the opposite of \"open\"?"
+      },
+      "choices": [
+        "closed",
+        "empty",
+        "full",
+        "new"
+      ],
+      "answer": "closed",
+      "explain": {
+        "en": "\"closed\" means the opposite of the given word.",
+        "zh": "正确答案是 \"closed\"（与题目单词意思相反）。"
+      }
+    },
+    {
+      "id": "vocab1-026",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "What is the opposite of \"clean\"?",
+        "zh": "选出正确的答案。What is the opposite of \"clean\"?"
+      },
+      "choices": [
+        "dirty",
+        "neat",
+        "tidy",
+        "fresh"
+      ],
+      "answer": "dirty",
+      "explain": {
+        "en": "\"dirty\" means the opposite of the given word.",
+        "zh": "正确答案是 \"dirty\"（与题目单词意思相反）。"
+      }
+    },
+    {
+      "id": "vocab1-027",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "What is the opposite of \"strong\"?",
+        "zh": "选出正确的答案。What is the opposite of \"strong\"?"
+      },
+      "choices": [
+        "weak",
+        "brave",
+        "tall",
+        "young"
+      ],
+      "answer": "weak",
+      "explain": {
+        "en": "\"weak\" means the opposite of the given word.",
+        "zh": "正确答案是 \"weak\"（与题目单词意思相反）。"
+      }
+    },
+    {
+      "id": "vocab1-028",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "What is the opposite of \"difficult\"?",
+        "zh": "选出正确的答案。What is the opposite of \"difficult\"?"
+      },
+      "choices": [
+        "easy",
+        "hard",
+        "complex",
+        "tough"
+      ],
+      "answer": "easy",
+      "explain": {
+        "en": "\"easy\" means the opposite of the given word.",
+        "zh": "正确答案是 \"easy\"（与题目单词意思相反）。"
+      }
+    },
+    {
+      "id": "vocab1-029",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "What is the opposite of \"ancient\"?",
+        "zh": "选出正确的答案。What is the opposite of \"ancient\"?"
+      },
+      "choices": [
+        "modern",
+        "old",
+        "antique",
+        "historic"
+      ],
+      "answer": "modern",
+      "explain": {
+        "en": "\"modern\" means the opposite of the given word.",
+        "zh": "正确答案是 \"modern\"（与题目单词意思相反）。"
+      }
+    },
+    {
+      "id": "vocab1-030",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "What is the opposite of \"generous\"?",
+        "zh": "选出正确的答案。What is the opposite of \"generous\"?"
+      },
+      "choices": [
+        "stingy",
+        "kind",
+        "giving",
+        "polite"
+      ],
+      "answer": "stingy",
+      "explain": {
+        "en": "\"stingy\" means the opposite of the given word.",
+        "zh": "正确答案是 \"stingy\"（与题目单词意思相反）。"
+      }
+    },
+    {
+      "id": "vocab1-031",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word does NOT belong with the others?",
+        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+      },
+      "choices": [
+        "carrot",
+        "apple",
+        "banana",
+        "mango"
+      ],
+      "answer": "carrot",
+      "explain": {
+        "en": "\"carrot\" belongs to a different category from the other three words.",
+        "zh": "正确答案是 \"carrot\"（与其他三个词不属于同一类别）。"
+      }
+    },
+    {
+      "id": "vocab1-032",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word does NOT belong with the others?",
+        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+      },
+      "choices": [
+        "lion",
+        "tiger",
+        "sofa",
+        "elephant"
+      ],
+      "answer": "sofa",
+      "explain": {
+        "en": "\"sofa\" belongs to a different category from the other three words.",
+        "zh": "正确答案是 \"sofa\"（与其他三个词不属于同一类别）。"
+      }
+    },
+    {
+      "id": "vocab1-033",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word does NOT belong with the others?",
+        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+      },
+      "choices": [
+        "pencil",
+        "ruler",
+        "eraser",
+        "banana"
+      ],
+      "answer": "banana",
+      "explain": {
+        "en": "\"banana\" belongs to a different category from the other three words.",
+        "zh": "正确答案是 \"banana\"（与其他三个词不属于同一类别）。"
+      }
+    },
+    {
+      "id": "vocab1-034",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word does NOT belong with the others?",
+        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+      },
+      "choices": [
+        "bus",
+        "train",
+        "car",
+        "chair"
+      ],
+      "answer": "chair",
+      "explain": {
+        "en": "\"chair\" belongs to a different category from the other three words.",
+        "zh": "正确答案是 \"chair\"（与其他三个词不属于同一类别）。"
+      }
+    },
+    {
+      "id": "vocab1-035",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word does NOT belong with the others?",
+        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+      },
+      "choices": [
+        "red",
+        "blue",
+        "green",
+        "happy"
+      ],
+      "answer": "happy",
+      "explain": {
+        "en": "\"happy\" belongs to a different category from the other three words.",
+        "zh": "正确答案是 \"happy\"（与其他三个词不属于同一类别）。"
+      }
+    },
+    {
+      "id": "vocab1-036",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word does NOT belong with the others?",
+        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+      },
+      "choices": [
+        "mother",
+        "father",
+        "teacher",
+        "sister"
+      ],
+      "answer": "teacher",
+      "explain": {
+        "en": "\"teacher\" belongs to a different category from the other three words.",
+        "zh": "正确答案是 \"teacher\"（与其他三个词不属于同一类别）。"
+      }
+    },
+    {
+      "id": "vocab1-037",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which word does NOT belong with the others?",
+        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+      },
+      "choices": [
+        "Monday",
+        "Tuesday",
+        "January",
+        "Friday"
+      ],
+      "answer": "January",
+      "explain": {
+        "en": "\"January\" belongs to a different category from the other three words.",
+        "zh": "正确答案是 \"January\"（与其他三个词不属于同一类别）。"
+      }
+    },
+    {
+      "id": "vocab1-038",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Which word does NOT belong with the others?",
+        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+      },
+      "choices": [
+        "football",
+        "basketball",
+        "badminton",
+        "library"
+      ],
+      "answer": "library",
+      "explain": {
+        "en": "\"library\" belongs to a different category from the other three words.",
+        "zh": "正确答案是 \"library\"（与其他三个词不属于同一类别）。"
+      }
+    },
+    {
+      "id": "vocab1-039",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Which word does NOT belong with the others?",
+        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+      },
+      "choices": [
+        "whale",
+        "dolphin",
+        "shark",
+        "eagle"
+      ],
+      "answer": "eagle",
+      "explain": {
+        "en": "\"eagle\" belongs to a different category from the other three words.",
+        "zh": "正确答案是 \"eagle\"（与其他三个词不属于同一类别）。"
+      }
+    },
+    {
+      "id": "vocab1-040",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Which word does NOT belong with the others?",
+        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+      },
+      "choices": [
+        "triangle",
+        "square",
+        "circle",
+        "orange"
+      ],
+      "answer": "orange",
+      "explain": {
+        "en": "\"orange\" belongs to a different category from the other three words.",
+        "zh": "正确答案是 \"orange\"（与其他三个词不属于同一类别）。"
+      }
+    },
+    {
+      "id": "vocab1-041",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "\"___ your bed every morning.\"",
+        "zh": "选出正确的答案。\"___ your bed every morning.\""
+      },
+      "choices": [
+        "Make",
+        "Do",
+        "Take",
+        "Have"
+      ],
+      "answer": "Make",
+      "explain": {
+        "en": "\"Make\" is the word that is normally used together with the rest of the phrase.",
+        "zh": "正确答案是 \"Make\"（固定搭配用法）。"
+      }
+    },
+    {
+      "id": "vocab1-042",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "\"___ the dishes after dinner.\"",
+        "zh": "选出正确的答案。\"___ the dishes after dinner.\""
+      },
+      "choices": [
+        "Do",
+        "Make",
+        "Take",
+        "Have"
+      ],
+      "answer": "Do",
+      "explain": {
+        "en": "\"Do\" is the word that is normally used together with the rest of the phrase.",
+        "zh": "正确答案是 \"Do\"（固定搭配用法）。"
+      }
+    },
+    {
+      "id": "vocab1-043",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "\"___ a photo of the sunset.\"",
+        "zh": "选出正确的答案。\"___ a photo of the sunset.\""
+      },
+      "choices": [
+        "Take",
+        "Make",
+        "Do",
+        "Have"
+      ],
+      "answer": "Take",
+      "explain": {
+        "en": "\"Take\" is the word that is normally used together with the rest of the phrase.",
+        "zh": "正确答案是 \"Take\"（固定搭配用法）。"
+      }
+    },
+    {
+      "id": "vocab1-044",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "\"___ breakfast before school.\"",
+        "zh": "选出正确的答案。\"___ breakfast before school.\""
+      },
+      "choices": [
+        "Have",
+        "Make",
+        "Do",
+        "Take"
+      ],
+      "answer": "Have",
+      "explain": {
+        "en": "\"Have\" is the word that is normally used together with the rest of the phrase.",
+        "zh": "正确答案是 \"Have\"（固定搭配用法）。"
+      }
+    },
+    {
+      "id": "vocab1-045",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "\"___ a mistake in the exam.\"",
+        "zh": "选出正确的答案。\"___ a mistake in the exam.\""
+      },
+      "choices": [
+        "Make",
+        "Do",
+        "Take",
+        "Have"
+      ],
+      "answer": "Make",
+      "explain": {
+        "en": "\"Make\" is the word that is normally used together with the rest of the phrase.",
+        "zh": "正确答案是 \"Make\"（固定搭配用法）。"
+      }
+    },
+    {
+      "id": "vocab1-046",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "\"___ your best in the competition.\"",
+        "zh": "选出正确的答案。\"___ your best in the competition.\""
+      },
+      "choices": [
+        "Do",
+        "Make",
+        "Take",
+        "Have"
+      ],
+      "answer": "Do",
+      "explain": {
+        "en": "\"Do\" is the word that is normally used together with the rest of the phrase.",
+        "zh": "正确答案是 \"Do\"（固定搭配用法）。"
+      }
+    },
+    {
+      "id": "vocab1-047",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "\"___ a shower before bed.\"",
+        "zh": "选出正确的答案。\"___ a shower before bed.\""
+      },
+      "choices": [
+        "Take",
+        "Make",
+        "Do",
+        "Put"
+      ],
+      "answer": "Take",
+      "explain": {
+        "en": "\"Take\" is the word that is normally used together with the rest of the phrase.",
+        "zh": "正确答案是 \"Take\"（固定搭配用法）。"
+      }
+    },
+    {
+      "id": "vocab1-048",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "\"___ a rest after playing football.\"",
+        "zh": "选出正确的答案。\"___ a rest after playing football.\""
+      },
+      "choices": [
+        "Have",
+        "Make",
+        "Do",
+        "Go"
+      ],
+      "answer": "Have",
+      "explain": {
+        "en": "\"Have\" is the word that is normally used together with the rest of the phrase.",
+        "zh": "正确答案是 \"Have\"（固定搭配用法）。"
+      }
+    },
+    {
+      "id": "vocab1-049",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"___ attention in class.\"",
+        "zh": "选出正确的答案。\"___ attention in class.\""
+      },
+      "choices": [
+        "Pay",
+        "Make",
+        "Do",
+        "Take"
+      ],
+      "answer": "Pay",
+      "explain": {
+        "en": "\"Pay\" is the word that is normally used together with the rest of the phrase.",
+        "zh": "正确答案是 \"Pay\"（固定搭配用法）。"
+      }
+    },
+    {
+      "id": "vocab1-050",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"___ care of your younger sibling.\"",
+        "zh": "选出正确的答案。\"___ care of your younger sibling.\""
+      },
+      "choices": [
+        "Take",
+        "Make",
+        "Do",
+        "Have"
+      ],
+      "answer": "Take",
+      "explain": {
+        "en": "\"Take\" is the word that is normally used together with the rest of the phrase.",
+        "zh": "正确答案是 \"Take\"（固定搭配用法）。"
+      }
+    },
+    {
+      "id": "vocab1-051",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "What do we call a place where people buy fresh vegetables and fish in the morning?",
+        "zh": "选出正确的答案。What do we call a place where people buy fresh vegetables and fish in the morning?"
+      },
+      "choices": [
+        "wet market",
+        "supermarket",
+        "bookshop",
+        "playground"
+      ],
+      "answer": "wet market",
+      "explain": {
+        "en": "\"wet market\" is the correct word for this everyday Malaysian context.",
+        "zh": "正确答案是 \"wet market\"（马来西亚日常生活常用词）。"
+      }
+    },
+    {
+      "id": "vocab1-052",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "\"Nasi lemak\" is a Malaysian ___.",
+        "zh": "选出正确的答案。\"Nasi lemak\" is a Malaysian ___."
+      },
+      "choices": [
+        "rice dish",
+        "fruit",
+        "drink",
+        "vegetable"
+      ],
+      "answer": "rice dish",
+      "explain": {
+        "en": "\"rice dish\" is the correct word for this everyday Malaysian context.",
+        "zh": "正确答案是 \"rice dish\"（马来西亚日常生活常用词）。"
+      }
+    },
+    {
+      "id": "vocab1-053",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which animal appears on the Malaysian coat of arms as a symbol of courage?",
+        "zh": "选出正确的答案。Which animal appears on the Malaysian coat of arms as a symbol of courage?"
+      },
+      "choices": [
+        "tiger",
+        "elephant",
+        "monkey",
+        "eagle"
+      ],
+      "answer": "tiger",
+      "explain": {
+        "en": "\"tiger\" is the correct word for this everyday Malaysian context.",
+        "zh": "正确答案是 \"tiger\"（马来西亚日常生活常用词）。"
+      }
+    },
+    {
+      "id": "vocab1-054",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "What do you call your father's brother?",
+        "zh": "选出正确的答案。What do you call your father's brother?"
+      },
+      "choices": [
+        "uncle",
+        "aunt",
+        "cousin",
+        "nephew"
+      ],
+      "answer": "uncle",
+      "explain": {
+        "en": "\"uncle\" is the correct word for this everyday Malaysian context.",
+        "zh": "正确答案是 \"uncle\"（马来西亚日常生活常用词）。"
+      }
+    },
+    {
+      "id": "vocab1-055",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Where do students go in school to borrow books?",
+        "zh": "选出正确的答案。Where do students go in school to borrow books?"
+      },
+      "choices": [
+        "library",
+        "canteen",
+        "hall",
+        "office"
+      ],
+      "answer": "library",
+      "explain": {
+        "en": "\"library\" is the correct word for this everyday Malaysian context.",
+        "zh": "正确答案是 \"library\"（马来西亚日常生活常用词）。"
+      }
+    },
+    {
+      "id": "vocab1-056",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Which fruit is known as the \"King of Fruits\" in Malaysia?",
+        "zh": "选出正确的答案。Which fruit is known as the \"King of Fruits\" in Malaysia?"
+      },
+      "choices": [
+        "durian",
+        "mango",
+        "rambutan",
+        "papaya"
+      ],
+      "answer": "durian",
+      "explain": {
+        "en": "\"durian\" is the correct word for this everyday Malaysian context.",
+        "zh": "正确答案是 \"durian\"（马来西亚日常生活常用词）。"
+      }
+    },
+    {
+      "id": "vocab1-057",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "What do you call the place in school where students eat during recess?",
+        "zh": "选出正确的答案。What do you call the place in school where students eat during recess?"
+      },
+      "choices": [
+        "canteen",
+        "library",
+        "laboratory",
+        "hall"
+      ],
+      "answer": "canteen",
+      "explain": {
+        "en": "\"canteen\" is the correct word for this everyday Malaysian context.",
+        "zh": "正确答案是 \"canteen\"（马来西亚日常生活常用词）。"
+      }
+    },
+    {
+      "id": "vocab1-058",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "What does the Malay word \"kampung\" mean in English?",
+        "zh": "选出正确的答案。What does the Malay word \"kampung\" mean in English?"
+      },
+      "choices": [
+        "village",
+        "city",
+        "island",
+        "factory"
+      ],
+      "answer": "village",
+      "explain": {
+        "en": "\"village\" is the correct word for this everyday Malaysian context.",
+        "zh": "正确答案是 \"village\"（马来西亚日常生活常用词）。"
+      }
+    },
+    {
+      "id": "vocab1-059",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "What do we call a small neighbourhood shop that sells daily necessities and snacks?",
+        "zh": "选出正确的答案。What do we call a small neighbourhood shop that sells daily necessities and snacks?"
+      },
+      "choices": [
+        "sundry shop",
+        "shopping mall",
+        "factory",
+        "warehouse"
+      ],
+      "answer": "sundry shop",
+      "explain": {
+        "en": "\"sundry shop\" is the correct word for this everyday Malaysian context.",
+        "zh": "正确答案是 \"sundry shop\"（马来西亚日常生活常用词）。"
+      }
+    },
+    {
+      "id": "vocab1-060",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "What is the English word for \"raya\", as in \"Hari Raya\", a major festival in Malaysia?",
+        "zh": "选出正确的答案。What is the English word for \"raya\", as in \"Hari Raya\", a major festival in Malaysia?"
+      },
+      "choices": [
+        "celebration",
+        "holiday homework",
+        "examination",
+        "weather"
+      ],
+      "answer": "celebration",
+      "explain": {
+        "en": "\"celebration\" is the correct word for this everyday Malaysian context.",
+        "zh": "正确答案是 \"celebration\"（马来西亚日常生活常用词）。"
+      }
+    }
+  ]
+}

@@ -2,6 +2,9 @@ import type { Difficulty, Lang } from '../engine/types';
 
 const STORAGE_KEY = 'wwm-edu:v1';
 
+/** How many recently-served English question ids to remember for anti-repeat. */
+const ENGLISH_HISTORY_LIMIT = 200;
+
 export interface TopicProgress {
   attempts: number;
   correct: number;
@@ -9,11 +12,23 @@ export interface TopicProgress {
   stars: number;
 }
 
+export interface DailyResult {
+  date: string; // YYYY-MM-DD (local date)
+  score: number;
+  bestStreak: number;
+}
+
 export interface EduState {
   lang: Lang;
   difficulty: Difficulty;
   muted: boolean;
   perTopic: Record<string, TopicProgress>;
+  /** Recently-served English bank question ids, most-recent-last, capped at
+   * ENGLISH_HISTORY_LIMIT. Optional/defaulted so old saved blobs still load. */
+  englishServedIds?: string[];
+  /** Best result for each day's Daily Challenge, keyed by date. Optional/
+   * defaulted so old saved blobs still load. */
+  dailyResults?: Record<string, DailyResult>;
 }
 
 const DEFAULT_STATE: EduState = {
@@ -21,6 +36,8 @@ const DEFAULT_STATE: EduState = {
   difficulty: 'standard',
   muted: false,
   perTopic: {},
+  englishServedIds: [],
+  dailyResults: {},
 };
 
 function isTopicProgress(v: unknown): v is TopicProgress {
@@ -30,8 +47,14 @@ function isTopicProgress(v: unknown): v is TopicProgress {
     && typeof o.bestStreak === 'number' && typeof o.stars === 'number';
 }
 
+function isDailyResult(v: unknown): v is DailyResult {
+  if (!v || typeof v !== 'object') return false;
+  const o = v as Record<string, unknown>;
+  return typeof o.date === 'string' && typeof o.score === 'number' && typeof o.bestStreak === 'number';
+}
+
 function sanitize(raw: unknown): EduState {
-  if (!raw || typeof raw !== 'object') return { ...DEFAULT_STATE, perTopic: {} };
+  if (!raw || typeof raw !== 'object') return { ...DEFAULT_STATE, perTopic: {}, englishServedIds: [], dailyResults: {} };
   const o = raw as Record<string, unknown>;
   const lang: Lang = o.lang === 'zh' ? 'zh' : 'en';
   const difficulty: Difficulty = o.difficulty === 'advanced' ? 'advanced' : 'standard';
@@ -42,16 +65,25 @@ function sanitize(raw: unknown): EduState {
       if (isTopicProgress(val)) perTopic[topic] = val;
     }
   }
-  return { lang, difficulty, muted, perTopic };
+  const englishServedIds: string[] = Array.isArray(o.englishServedIds)
+    ? o.englishServedIds.filter((id): id is string => typeof id === 'string').slice(-ENGLISH_HISTORY_LIMIT)
+    : [];
+  const dailyResults: Record<string, DailyResult> = {};
+  if (o.dailyResults && typeof o.dailyResults === 'object') {
+    for (const [date, val] of Object.entries(o.dailyResults as Record<string, unknown>)) {
+      if (isDailyResult(val)) dailyResults[date] = val;
+    }
+  }
+  return { lang, difficulty, muted, perTopic, englishServedIds, dailyResults };
 }
 
 export function loadState(): EduState {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return { ...DEFAULT_STATE, perTopic: {} };
+    if (!raw) return { ...DEFAULT_STATE, perTopic: {}, englishServedIds: [], dailyResults: {} };
     return sanitize(JSON.parse(raw));
   } catch {
-    return { ...DEFAULT_STATE, perTopic: {} };
+    return { ...DEFAULT_STATE, perTopic: {}, englishServedIds: [], dailyResults: {} };
   }
 }
 
@@ -81,6 +113,37 @@ export function recordSession(topicId: string, correctCount: number, totalCount:
     stars: Math.max(prev.stars, stars),
   };
   const next: EduState = { ...state, perTopic: { ...state.perTopic, [topicId]: updated } };
+  saveState(next);
+  return next;
+}
+
+/** Recently-served English question ids, oldest first, for the anti-repeat sampler. */
+export function getEnglishServedIds(): string[] {
+  return loadState().englishServedIds ?? [];
+}
+
+/** Append newly-served English question ids, trimming to ENGLISH_HISTORY_LIMIT. */
+export function recordEnglishServedIds(ids: readonly string[]): EduState {
+  const state = loadState();
+  const merged = [...(state.englishServedIds ?? []), ...ids].slice(-ENGLISH_HISTORY_LIMIT);
+  const next: EduState = { ...state, englishServedIds: merged };
+  saveState(next);
+  return next;
+}
+
+/** Today's Daily Challenge result, if already played, for the given local date. */
+export function getDailyResult(date: string): DailyResult | undefined {
+  return loadState().dailyResults?.[date];
+}
+
+/** Store a Daily Challenge result, keeping the better score if replayed. */
+export function recordDailyResult(date: string, score: number, bestStreak: number): EduState {
+  const state = loadState();
+  const prev = state.dailyResults?.[date];
+  const updated: DailyResult = prev && prev.score >= score
+    ? { date, score: prev.score, bestStreak: Math.max(prev.bestStreak, bestStreak) }
+    : { date, score, bestStreak: prev ? Math.max(prev.bestStreak, bestStreak) : bestStreak };
+  const next: EduState = { ...state, dailyResults: { ...(state.dailyResults ?? {}), [date]: updated } };
   saveState(next);
   return next;
 }
