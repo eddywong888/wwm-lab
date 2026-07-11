@@ -5,6 +5,37 @@ Version scheme: `0.<phase>.<patch>` until the full 4-phase plan is complete, the
 
 ---
 
+## v0.5.1 — Phase 4 (partial): mascot & feedback animations (2026-07-11)
+
+- **`Mascot` component** (`src/components/Mascot.tsx`) — the 🦉 owl with four moods (idle,
+  happy, sad, celebrate), each a distinct animation plus a small accessory emoji (✨/💧/🎉).
+  Mood changes remount via `key={mood}` (same restart-the-CSS-animation trick already used by
+  `StreakBadge`), and all animation is skipped under `prefers-reduced-motion: reduce`.
+- Wired in three places: gentle idle float on the Home header owl; happy/sad reaction next to
+  the per-question feedback title; celebrate/happy/sad on the Results screen based on the
+  star tier earned.
+- Post-review fix: the Results-screen mascot's accessory rendered off in the card's top-right
+  corner — `display: block` on `.results__mascot` collided with the component's own
+  `inline-block` sizing, so the absolutely-positioned accessory measured itself against the
+  full-width block box instead of the owl glyph. Removed the redundant `display: block`.
+- Verified via `npm run build` and a scripted browser run with screenshots of the idle, sad
+  (feedback + results), and badge-unlock states; no new console errors/warnings.
+
+## v0.5.0 — Phase 4 (partial): badges & streak rewards (2026-07-11)
+
+- **14 badges** (`src/engine/badges.ts`) derived entirely from existing progress data (no new
+  storage or sync needed): milestones for first session, topic variety, mastery (3-star topics),
+  answer-streaks (5/10/20 in a row), total-correct counts (100/500/1000), and Daily Challenge
+  play-streaks (3/7/30 consecutive days, computed from `dailyResults` dates).
+- **Unlock moment** — Results screen shows a "🎉 Badge Unlocked!" banner (with a distinct
+  arpeggio sound) for any badge newly earned by that session, found by diffing the badge set
+  before/after the session updates state.
+- **Badges gallery** — new 🎖️ screen from Home (earned/locked grid, bilingual name+description
+  per badge); Home header shows an `earned/total` counter, and the Daily Challenge card shows
+  the player's current day-streak when active.
+- Verified via `npm run build`, `npm run check`, and a scripted browser run (topic session →
+  badge unlock banner → gallery reflects the new count).
+
 ## v0.4.0 — Phase 3: online backend (2026-07-11)
 
 - **Accounts** — nickname + 4-6 digit PIN, hashed client-side (SHA-256) into an anonymous
@@ -67,9 +98,6 @@ Version scheme: `0.<phase>.<patch>` until the full 4-phase plan is complete, the
 
 ## Planned
 
-- **v0.4.0 — Phase 3 (in progress):** nickname + PIN accounts, online progress sync (KV),
-  weekly leaderboard from Daily Challenge scores, KV content-override packs + hidden `#admin`
-  upload page. Requires `EDU_ADMIN_KEY` env var in the Cloudflare Pages dashboard for admin
-  uploads.
-- **v0.5.0 — Phase 4:** polish — mascot/feedback animations, badges & streak rewards, more
-  advanced-tier content, accessibility audit; landing card flips from "in progress" to "live".
+- **v0.5.0 — Phase 4 (in progress):** badges & streak rewards, mascot & feedback animations
+  shipped; still open: more advanced-tier content, accessibility audit; landing card flips
+  from "in progress" to "live" once Phase 4 is complete.

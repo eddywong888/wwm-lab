@@ -5,8 +5,10 @@ import { MATH_GENERATORS } from '../engine/math';
 import { ENGLISH_TOPICS } from '../engine/english';
 import { DAILY_TOPIC_ID, MIXED_TOPIC_ID, QUESTIONS_PER_SESSION, todayDateString } from '../engine/session';
 import { t, UI_STRINGS } from '../engine/i18n';
+import { BADGES, computeDailyStreak, computeEarnedBadgeIds } from '../engine/badges';
 import TopicCard from '../components/TopicCard';
 import AccountModal from '../components/AccountModal';
+import Mascot from '../components/Mascot';
 import type { EduState } from '../store/local';
 import { playButtonTap, toggleMuted } from '../audio/sfx';
 
@@ -19,6 +21,7 @@ interface HomeProps {
   onSignIn: (nickname: string, pin: string) => Promise<void>;
   onSignOut: () => void;
   onOpenLeaderboard: () => void;
+  onOpenBadges: () => void;
 }
 
 function starsForScore(score: number): number {
@@ -37,6 +40,7 @@ export default function Home({
   onSignIn,
   onSignOut,
   onOpenLeaderboard,
+  onOpenBadges,
 }: HomeProps) {
   const { lang, difficulty, perTopic, muted, account } = state;
   const [showAccountModal, setShowAccountModal] = useState(false);
@@ -44,6 +48,8 @@ export default function Home({
   const termTwoGenerators = MATH_GENERATORS.filter((g) => g.meta.term === 2);
   const today = todayDateString();
   const todayResult = state.dailyResults?.[today];
+  const earnedBadgeCount = computeEarnedBadgeIds(state).size;
+  const dailyStreak = computeDailyStreak(state.dailyResults, today);
 
   function handleToggleMute() {
     const next = toggleMuted();
@@ -54,7 +60,7 @@ export default function Home({
     <div className="home">
       <header className="home__header">
         <div className="home__brand">
-          <span className="home__mascot" aria-hidden="true">🦉</span>
+          <Mascot mood="idle" className="home__mascot" />
           <div>
             <h1 className="home__title">{t(UI_STRINGS.appTitle, lang)}</h1>
             <p className="home__tagline">{t(UI_STRINGS.tagline, lang)}</p>
@@ -76,6 +82,14 @@ export default function Home({
             aria-label={t(UI_STRINGS.leaderboard, lang)}
           >
             🏆
+          </button>
+          <button
+            type="button"
+            className="home__badges-toggle"
+            onClick={() => { playButtonTap(); onOpenBadges(); }}
+            aria-label={t(UI_STRINGS.badges, lang)}
+          >
+            🎖️{earnedBadgeCount > 0 && <span className="home__badges-count">{earnedBadgeCount}/{BADGES.length}</span>}
           </button>
           <button type="button" className="home__lang-toggle" onClick={() => { playButtonTap(); onChangeLang(lang === 'en' ? 'zh' : 'en'); }}>
             {lang === 'en' ? '中文' : 'EN'}
@@ -127,6 +141,9 @@ export default function Home({
           </p>
         ) : (
           <p className="home__daily-status home__daily-status--cta">{t(UI_STRINGS.start, lang)} →</p>
+        )}
+        {dailyStreak.current > 0 && (
+          <p className="home__daily-streak">🔥 {dailyStreak.current} {t(UI_STRINGS.dailyStreakLabel, lang)}</p>
         )}
       </button>
 

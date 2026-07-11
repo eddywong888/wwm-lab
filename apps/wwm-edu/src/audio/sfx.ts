@@ -96,6 +96,28 @@ export function playWrongBuzz(): void {
   osc.stop(time + 0.32);
 }
 
+export function playBadgeUnlock(): void {
+  if (muted) return;
+  const ctx = getAudioContext();
+  if (!ctx) return;
+  const arpeggio = [523.25, 659.25, 783.99, 1046.5, 1318.51]; // C5 E5 G5 C6 E6
+  let time = ctx.currentTime;
+  arpeggio.forEach((freq) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(freq, time);
+    gain.gain.setValueAtTime(0, time);
+    gain.gain.linearRampToValueAtTime(0.11, time + 0.015);
+    gain.gain.exponentialRampToValueAtTime(0.001, time + 0.22);
+    osc.start(time);
+    osc.stop(time + 0.25);
+    time += 0.07;
+  });
+}
+
 export function playSessionFanfare(): void {
   if (muted) return;
   const ctx = getAudioContext();

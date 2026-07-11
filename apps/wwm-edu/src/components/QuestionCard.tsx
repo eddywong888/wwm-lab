@@ -3,6 +3,7 @@ import './QuestionCard.css';
 import type { Lang, Question } from '../engine/types';
 import { t, UI_STRINGS } from '../engine/i18n';
 import Keypad from './Keypad';
+import Mascot from './Mascot';
 import { playButtonTap } from '../audio/sfx';
 
 interface QuestionCardProps {
@@ -81,6 +82,7 @@ export default function QuestionCard({ question, lang, onAnswer }: QuestionCardP
       {feedback !== 'none' && (
         <div className={`question-card__feedback question-card__feedback--${feedback}`}>
           <p className="question-card__feedback-title">
+            <Mascot mood={feedback === 'correct' ? 'happy' : 'sad'} className="question-card__feedback-mascot" />
             {feedback === 'correct' ? t(UI_STRINGS.correct, lang) : t(UI_STRINGS.incorrect, lang)}
           </p>
           {feedback === 'wrong' && (
