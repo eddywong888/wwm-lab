@@ -16,6 +16,11 @@
   text-align: center;
 }
 
+.results__mascot {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .results__label {
   font-weight: 700;
   color: var(--edu-ink-soft);

@@ -5,6 +5,22 @@ Version scheme: `0.<phase>.<patch>` until the full 4-phase plan is complete, the
 
 ---
 
+## v0.5.1 — Phase 4 (partial): mascot & feedback animations (2026-07-11)
+
+- **`Mascot` component** (`src/components/Mascot.tsx`) — the 🦉 owl with four moods (idle,
+  happy, sad, celebrate), each a distinct animation plus a small accessory emoji (✨/💧/🎉).
+  Mood changes remount via `key={mood}` (same restart-the-CSS-animation trick already used by
+  `StreakBadge`), and all animation is skipped under `prefers-reduced-motion: reduce`.
+- Wired in three places: gentle idle float on the Home header owl; happy/sad reaction next to
+  the per-question feedback title; celebrate/happy/sad on the Results screen based on the
+  star tier earned.
+- Post-review fix: the Results-screen mascot's accessory rendered off in the card's top-right
+  corner — `display: block` on `.results__mascot` collided with the component's own
+  `inline-block` sizing, so the absolutely-positioned accessory measured itself against the
+  full-width block box instead of the owl glyph. Removed the redundant `display: block`.
+- Verified via `npm run build` and a scripted browser run with screenshots of the idle, sad
+  (feedback + results), and badge-unlock states; no new console errors/warnings.
+
 ## v0.5.0 — Phase 4 (partial): badges & streak rewards (2026-07-11)
 
 - **14 badges** (`src/engine/badges.ts`) derived entirely from existing progress data (no new
@@ -82,6 +98,6 @@ Version scheme: `0.<phase>.<patch>` until the full 4-phase plan is complete, the
 
 ## Planned
 
-- **v0.5.0 — Phase 4 (in progress):** badges & streak rewards shipped; still open:
-  mascot/feedback animations, more advanced-tier content, accessibility audit; landing card
-  flips from "in progress" to "live" once Phase 4 is complete.
+- **v0.5.0 — Phase 4 (in progress):** badges & streak rewards, mascot & feedback animations
+  shipped; still open: more advanced-tier content, accessibility audit; landing card flips
+  from "in progress" to "live" once Phase 4 is complete.

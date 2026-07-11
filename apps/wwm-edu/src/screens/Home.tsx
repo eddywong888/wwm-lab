@@ -8,6 +8,7 @@ import { t, UI_STRINGS } from '../engine/i18n';
 import { BADGES, computeDailyStreak, computeEarnedBadgeIds } from '../engine/badges';
 import TopicCard from '../components/TopicCard';
 import AccountModal from '../components/AccountModal';
+import Mascot from '../components/Mascot';
 import type { EduState } from '../store/local';
 import { playButtonTap, toggleMuted } from '../audio/sfx';
 
@@ -59,7 +60,7 @@ export default function Home({
     <div className="home">
       <header className="home__header">
         <div className="home__brand">
-          <span className="home__mascot" aria-hidden="true">🦉</span>
+          <Mascot mood="idle" className="home__mascot" />
           <div>
             <h1 className="home__title">{t(UI_STRINGS.appTitle, lang)}</h1>
             <p className="home__tagline">{t(UI_STRINGS.tagline, lang)}</p>

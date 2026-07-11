@@ -4,6 +4,7 @@ import type { Lang } from '../engine/types';
 import { t, UI_STRINGS } from '../engine/i18n';
 import { playSessionFanfare, playBadgeUnlock } from '../audio/sfx';
 import type { BadgeDef } from '../engine/badges';
+import Mascot, { type MascotMood } from '../components/Mascot';
 
 interface ResultsProps {
   lang: Lang;
@@ -29,6 +30,12 @@ function encouragement(stars: number) {
   return UI_STRINGS.encourageTryAgain;
 }
 
+function moodForStars(stars: number): MascotMood {
+  if (stars >= 3) return 'celebrate';
+  if (stars >= 1) return 'happy';
+  return 'sad';
+}
+
 export default function Results({ lang, correctCount, totalCount, bestStreak, newBadges, onRetry, onBackHome }: ResultsProps) {
   const stars = starsFor(correctCount);
 
@@ -44,6 +51,7 @@ export default function Results({ lang, correctCount, totalCount, bestStreak, ne
   return (
     <div className="results">
       <div className="results__card edu-pop-in">
+        <Mascot mood={moodForStars(stars)} className="results__mascot" />
         <p className="results__label">{t(UI_STRINGS.yourScore, lang)}</p>
         <p className="results__score">{correctCount} / {totalCount}</p>
 
