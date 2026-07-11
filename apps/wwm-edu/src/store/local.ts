@@ -18,6 +18,14 @@ export interface DailyResult {
   bestStreak: number;
 }
 
+/** Phase 3 nickname+PIN account. No PII: userKey is a one-way hex-SHA-256
+ * of nickname+PIN (see src/store/account.ts); the PIN itself is never
+ * stored anywhere, locally or on the server. */
+export interface Account {
+  nickname: string;
+  userKey: string;
+}
+
 export interface EduState {
   lang: Lang;
   difficulty: Difficulty;
@@ -29,6 +37,9 @@ export interface EduState {
   /** Best result for each day's Daily Challenge, keyed by date. Optional/
    * defaulted so old saved blobs still load. */
   dailyResults?: Record<string, DailyResult>;
+  /** Signed-in account, if any. Optional/defaulted so old saved blobs
+   * still load; absent = signed out (local-only, fully offline play). */
+  account?: Account;
 }
 
 const DEFAULT_STATE: EduState = {
@@ -53,6 +64,15 @@ function isDailyResult(v: unknown): v is DailyResult {
   return typeof o.date === 'string' && typeof o.score === 'number' && typeof o.bestStreak === 'number';
 }
 
+const USER_KEY_RE = /^[0-9a-f]{64}$/;
+
+function isAccount(v: unknown): v is Account {
+  if (!v || typeof v !== 'object') return false;
+  const o = v as Record<string, unknown>;
+  return typeof o.nickname === 'string' && o.nickname.trim().length > 0
+    && typeof o.userKey === 'string' && USER_KEY_RE.test(o.userKey);
+}
+
 function sanitize(raw: unknown): EduState {
   if (!raw || typeof raw !== 'object') return { ...DEFAULT_STATE, perTopic: {}, englishServedIds: [], dailyResults: {} };
   const o = raw as Record<string, unknown>;
@@ -74,7 +94,8 @@ function sanitize(raw: unknown): EduState {
       if (isDailyResult(val)) dailyResults[date] = val;
     }
   }
-  return { lang, difficulty, muted, perTopic, englishServedIds, dailyResults };
+  const account: Account | undefined = isAccount(o.account) ? o.account : undefined;
+  return { lang, difficulty, muted, perTopic, englishServedIds, dailyResults, account };
 }
 
 export function loadState(): EduState {

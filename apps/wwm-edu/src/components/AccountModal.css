@@ -1,0 +1,127 @@
+.account-modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 36, 64, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  z-index: 100;
+}
+
+.account-modal__card {
+  position: relative;
+  background: var(--edu-surface);
+  border-radius: 28px;
+  box-shadow: 0 12px 0 var(--edu-shadow), 0 20px 50px rgba(44, 36, 64, 0.25);
+  padding: 1.75rem 1.5rem;
+  max-width: 380px;
+  width: 100%;
+}
+
+.account-modal__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  border: none;
+  background: none;
+  font-size: 1.1rem;
+  color: var(--edu-ink-soft);
+  cursor: pointer;
+  padding: 0.4rem;
+}
+
+.account-modal__title {
+  font-family: var(--edu-font-display);
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--edu-primary-dark);
+  margin: 0 0 0.5rem;
+}
+
+.account-modal__subtitle {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  color: var(--edu-ink-soft);
+  line-height: 1.4;
+}
+
+.account-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.9rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.account-modal__field input {
+  font-family: var(--edu-font-body);
+  font-size: 1rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 12px;
+  border: 2px solid var(--edu-border);
+  background: var(--edu-bg);
+}
+
+.account-modal__field small {
+  font-weight: 500;
+  color: var(--edu-ink-soft);
+  font-size: 0.75rem;
+}
+
+.account-modal__error {
+  color: var(--edu-danger);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin: 0 0 0.75rem;
+}
+
+.account-modal__btn {
+  width: 100%;
+  font-family: var(--edu-font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.account-modal__btn--primary {
+  background: var(--edu-primary);
+  color: white;
+  box-shadow: 0 4px 0 var(--edu-primary-dark);
+}
+
+.account-modal__btn--primary:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.account-modal__btn--secondary {
+  background: var(--edu-danger-bg);
+  color: var(--edu-danger);
+  box-shadow: 0 4px 0 rgba(255, 84, 112, 0.3);
+}
+
+.account-modal__signed-in {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.account-modal__signed-in-label {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--edu-ink-soft);
+  font-weight: 700;
+}
+
+.account-modal__nickname {
+  margin: 0;
+  font-family: var(--edu-font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--edu-ink);
+}

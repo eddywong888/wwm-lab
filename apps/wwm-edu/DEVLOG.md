@@ -5,6 +5,24 @@ Version scheme: `0.<phase>.<patch>` until the full 4-phase plan is complete, the
 
 ---
 
+## v0.4.0 — Phase 3: online backend (2026-07-11)
+
+- **Accounts** — nickname + 4-6 digit PIN, hashed client-side (SHA-256) into an anonymous
+  userKey; no email/PII, restore on any device by re-entering both. Profile UI on Home.
+- **Progress sync** — offline-first: localStorage remains source of truth; fire-and-forget
+  push after sessions, pull+merge on sign-in (per-topic keep-better rules). App fully
+  functional offline/dev with zero console noise.
+- **Weekly leaderboard** — 🏆 screen; weekly total = sum of best Daily Challenge score per day,
+  top 20 shown, top 50 stored per ISO week. Server validates score range and date (±1 day).
+- **Content overrides + admin** — hidden `#admin` page: paste a question-pack JSON, validated
+  client- and server-side, stored in KV; packs with new ids appear as new topic cards without a
+  redeploy, same-id packs override repo banks. Requires `EDU_ADMIN_KEY` env var (CF dashboard;
+  `.dev.vars` locally).
+- New Pages Functions: `functions/api/edu/{progress,leaderboard,content}.ts` — all state in the
+  existing `VISITS` KV namespace under `edu:user:*` / `edu:lb:*` / `edu:pack:*` keys.
+- Verified via `wrangler pages dev` (curl round-trips incl. 400/401/413 guards, best-per-day
+  dedupe) + full browser flow (account → daily → leaderboard, admin upload/delete).
+
 ## v0.3.0 — Phase 2: English subject + Daily Challenge (2026-07-11, commit `1d39348`)
 
 - **English subject** — four curated question banks (`src/content/english/`): Grammar (65),

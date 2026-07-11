@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './Home.css';
 import type { Difficulty, Lang } from '../engine/types';
 import { MATH_GENERATORS } from '../engine/math';
@@ -5,6 +6,7 @@ import { ENGLISH_TOPICS } from '../engine/english';
 import { DAILY_TOPIC_ID, MIXED_TOPIC_ID, QUESTIONS_PER_SESSION, todayDateString } from '../engine/session';
 import { t, UI_STRINGS } from '../engine/i18n';
 import TopicCard from '../components/TopicCard';
+import AccountModal from '../components/AccountModal';
 import type { EduState } from '../store/local';
 import { playButtonTap, toggleMuted } from '../audio/sfx';
 
@@ -14,6 +16,9 @@ interface HomeProps {
   onChangeDifficulty: (difficulty: Difficulty) => void;
   onSelectTopic: (topicId: string) => void;
   onMuteChange: (muted: boolean) => void;
+  onSignIn: (nickname: string, pin: string) => Promise<void>;
+  onSignOut: () => void;
+  onOpenLeaderboard: () => void;
 }
 
 function starsForScore(score: number): number {
@@ -23,8 +28,18 @@ function starsForScore(score: number): number {
   return 0;
 }
 
-export default function Home({ state, onChangeLang, onChangeDifficulty, onSelectTopic, onMuteChange }: HomeProps) {
-  const { lang, difficulty, perTopic, muted } = state;
+export default function Home({
+  state,
+  onChangeLang,
+  onChangeDifficulty,
+  onSelectTopic,
+  onMuteChange,
+  onSignIn,
+  onSignOut,
+  onOpenLeaderboard,
+}: HomeProps) {
+  const { lang, difficulty, perTopic, muted, account } = state;
+  const [showAccountModal, setShowAccountModal] = useState(false);
   const termOneGenerators = MATH_GENERATORS.filter((g) => g.meta.term !== 2);
   const termTwoGenerators = MATH_GENERATORS.filter((g) => g.meta.term === 2);
   const today = todayDateString();
@@ -46,6 +61,22 @@ export default function Home({ state, onChangeLang, onChangeDifficulty, onSelect
           </div>
         </div>
         <div className="home__controls">
+          <button
+            type="button"
+            className="home__profile-toggle"
+            onClick={() => { playButtonTap(); setShowAccountModal(true); }}
+            aria-label={t(UI_STRINGS.profile, lang)}
+          >
+            {account ? `👤 ${account.nickname}` : '👤'}
+          </button>
+          <button
+            type="button"
+            className="home__trophy-toggle"
+            onClick={() => { playButtonTap(); onOpenLeaderboard(); }}
+            aria-label={t(UI_STRINGS.leaderboard, lang)}
+          >
+            🏆
+          </button>
           <button type="button" className="home__lang-toggle" onClick={() => { playButtonTap(); onChangeLang(lang === 'en' ? 'zh' : 'en'); }}>
             {lang === 'en' ? '中文' : 'EN'}
           </button>
@@ -54,6 +85,16 @@ export default function Home({ state, onChangeLang, onChangeDifficulty, onSelect
           </button>
         </div>
       </header>
+
+      {showAccountModal && (
+        <AccountModal
+          lang={lang}
+          account={account}
+          onSignIn={onSignIn}
+          onSignOut={onSignOut}
+          onClose={() => setShowAccountModal(false)}
+        />
+      )}
 
       <div className="home__difficulty">
         <button
