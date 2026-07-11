@@ -58,4 +58,11 @@ export const UI_STRINGS = {
   leaderboardEmpty: { en: 'No scores yet — play the Daily Challenge to appear here!', zh: '暂无成绩——完成每日挑战即可上榜！' } satisfies Bilingual,
   leaderboardOffline: { en: "Leaderboard needs an internet connection. Try again later!", zh: '排行榜需要网络连接，请稍后再试！' } satisfies Bilingual,
   leaderboardSignInHint: { en: 'Sign in to appear on the leaderboard!', zh: '登入后即可上榜！' } satisfies Bilingual,
+
+  // Phase 4 — badges & streak rewards
+  badges: { en: 'Badges', zh: '徽章' } satisfies Bilingual,
+  badgeUnlocked: { en: 'Badge Unlocked!', zh: '获得新徽章！' } satisfies Bilingual,
+  badgesEarned: { en: 'earned', zh: '已获得' } satisfies Bilingual,
+  badgeLocked: { en: 'Locked', zh: '未解锁' } satisfies Bilingual,
+  dailyStreakLabel: { en: 'day streak', zh: '天连续挑战' } satisfies Bilingual,
 };

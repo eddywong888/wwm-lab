@@ -48,7 +48,8 @@
 .home__lang-toggle,
 .home__mute-toggle,
 .home__profile-toggle,
-.home__trophy-toggle {
+.home__trophy-toggle,
+.home__badges-toggle {
   font-family: var(--edu-font-display);
   font-weight: 700;
   border: none;
@@ -67,9 +68,16 @@
 .home__lang-toggle:active,
 .home__mute-toggle:active,
 .home__profile-toggle:active,
-.home__trophy-toggle:active {
+.home__trophy-toggle:active,
+.home__badges-toggle:active {
   transform: translateY(2px);
   box-shadow: 0 1px 0 var(--edu-shadow);
+}
+
+.home__badges-count {
+  font-size: 0.75rem;
+  color: var(--edu-ink-soft);
+  margin-left: 0.3rem;
 }
 
 .home__difficulty {
@@ -177,6 +185,13 @@
 
 .home__daily-status--cta {
   text-decoration: underline;
+}
+
+.home__daily-streak {
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.85rem;
+  opacity: 0.9;
 }
 
 @media (max-width: 560px) {
