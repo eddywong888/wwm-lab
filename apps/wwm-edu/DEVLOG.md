@@ -5,6 +5,12 @@ Version scheme: `0.<phase>.<patch>` until the full 4-phase plan is complete, the
 
 ---
 
+## v1.1.1 — Main-site return control (2026-09-05)
+
+- Added a persistent back-arrow button to the Education Lab header that returns directly to the
+  WWM Lab homepage at `/`, with bilingual accessible text and desktop/mobile interaction states.
+- No exercise content, scoring, progress, account, or sync behavior changed.
+
 ## v1.1.0 — Learning experience design refresh (2026-09-05)
 
 - **Clearer Home hierarchy** — replaced the flat catalogue opening with a focused learning

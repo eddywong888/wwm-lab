@@ -21,6 +21,7 @@ export const UI_STRINGS = {
   yourScore: { en: 'Your Score', zh: '你的分数' } satisfies Bilingual,
   retrySameTopic: { en: 'Play Again', zh: '再玩一次' } satisfies Bilingual,
   backHome: { en: 'Back to Home', zh: '返回主页' } satisfies Bilingual,
+  backToLab: { en: 'Back to WWM Lab', zh: '返回 WWM Lab 主页' } satisfies Bilingual,
   ok: { en: 'OK', zh: '确定' } satisfies Bilingual,
   mute: { en: 'Sound On', zh: '开启声音' } satisfies Bilingual,
   unmute: { en: 'Sound Off', zh: '关闭声音' } satisfies Bilingual,

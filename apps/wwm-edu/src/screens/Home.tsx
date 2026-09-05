@@ -67,6 +67,7 @@ export default function Home({
     <div className="home">
       <header className="home__header">
         <div className="home__brand">
+          <a className="home__site-back" href="/" aria-label={t(UI_STRINGS.backToLab, lang)} title={t(UI_STRINGS.backToLab, lang)}>←</a>
           <span className="home__mascot" aria-hidden="true">🦉</span>
           <div>
             <h1 className="home__title">{t(UI_STRINGS.appTitle, lang)}</h1>
