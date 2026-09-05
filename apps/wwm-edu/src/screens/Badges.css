@@ -1,0 +1,159 @@
+.badges {
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1.25rem;
+}
+
+.badges__card {
+  background: var(--edu-surface);
+  border-radius: 32px;
+  box-shadow: 0 12px 0 var(--edu-shadow), 0 20px 50px rgba(44, 36, 64, 0.15);
+  padding: 2rem 1.5rem;
+  max-width: 720px;
+  width: 100%;
+}
+
+.badges__back {
+  border: none;
+  background: none;
+  color: var(--edu-ink-soft);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.badges__title {
+  font-family: var(--edu-font-display);
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: var(--edu-primary-dark);
+  margin: 0 0 0.25rem;
+  text-align: center;
+}
+
+.badges__subtitle {
+  text-align: center;
+  color: var(--edu-ink-soft);
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+}
+
+.badges__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .badges__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.badges__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--edu-bg);
+  border-radius: 20px;
+  padding: 1rem 0.85rem;
+  border: 3px solid var(--edu-border);
+}
+
+.badges__item--bronze {
+  border-color: #cd7f32;
+  background: color-mix(in srgb, #cd7f32 12%, var(--edu-bg));
+}
+
+.badges__item--silver {
+  border-color: #aab2bd;
+  background: color-mix(in srgb, #aab2bd 15%, var(--edu-bg));
+}
+
+.badges__item--gold {
+  border-color: #f2b632;
+  background: color-mix(in srgb, #f2b632 15%, var(--edu-bg));
+}
+
+.badges__icon-wrap {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--edu-surface);
+  margin-bottom: 0.5rem;
+}
+
+.badges__icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.badges__item--locked .badges__icon {
+  filter: grayscale(1);
+  opacity: 0.45;
+}
+
+.badges__name {
+  font-family: var(--edu-font-display);
+  font-weight: 800;
+  font-size: 0.9rem;
+  margin: 0 0 0.15rem;
+  color: var(--edu-ink);
+}
+
+.badges__tier-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--edu-ink-soft);
+}
+
+.badges__desc {
+  margin: 0 0 0.6rem;
+  font-size: 0.72rem;
+  color: var(--edu-ink-soft);
+  min-height: 2.2em;
+}
+
+.badges__progress {
+  width: 100%;
+}
+
+.badges__progress-bar {
+  width: 100%;
+  height: 8px;
+  border-radius: 8px;
+  background: var(--edu-border);
+  overflow: hidden;
+}
+
+.badges__progress-fill {
+  height: 100%;
+  background: var(--edu-primary);
+  border-radius: 8px;
+  transition: width 0.2s ease;
+}
+
+.badges__progress-text {
+  margin: 0.3rem 0 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--edu-ink-soft);
+}
+
+.badges__max {
+  margin: 0.2rem 0 0;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #b8860b;
+}

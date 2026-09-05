@@ -4,6 +4,7 @@ import Home from './screens/Home';
 import Exercise from './screens/Exercise';
 import Results from './screens/Results';
 import Leaderboard from './screens/Leaderboard';
+import Badges from './screens/Badges';
 import Admin from './screens/Admin';
 import { loadState, updateState, recordSession, recordDailyResult } from './store/local';
 import type { Difficulty, Lang } from './engine/types';
@@ -12,8 +13,9 @@ import { DAILY_TOPIC_ID, todayDateString } from './engine/session';
 import { pushProgress, pushLeaderboard } from './store/sync';
 import { signIn, signOut } from './store/account';
 import { refreshEnglishContent } from './engine/english';
+import { computeBadges, newlyEarnedBadges, type EarnedBadge } from './engine/badges';
 
-type Screen = 'home' | 'exercise' | 'results' | 'leaderboard' | 'admin';
+type Screen = 'home' | 'exercise' | 'results' | 'leaderboard' | 'admin' | 'badges';
 
 function screenFromHash(): Screen {
   return window.location.hash === '#admin' ? 'admin' : 'home';
@@ -25,6 +27,7 @@ export default function App() {
   const [topicId, setTopicId] = useState<string | null>(null);
   const [sessionKey, setSessionKey] = useState(0);
   const [lastResult, setLastResult] = useState<{ correct: number; total: number; bestStreak: number } | null>(null);
+  const [newBadges, setNewBadges] = useState<EarnedBadge[]>([]);
 
   // Hash-based route for the hidden admin content-override page — never
   // linked from any UI, reachable only by visiting #admin directly.
@@ -77,7 +80,13 @@ export default function App() {
     setScreen('leaderboard');
   }
 
+  function openBadges() {
+    setScreen('badges');
+  }
+
   function finishExercise(correctCount: number, totalCount: number, bestStreak: number) {
+    const badgesBefore = computeBadges(state);
+
     let nextState = state;
     if (topicId === DAILY_TOPIC_ID) {
       nextState = recordDailyResult(todayDateString(), correctCount, bestStreak);
@@ -85,6 +94,7 @@ export default function App() {
       nextState = recordSession(topicId, correctCount, totalCount, bestStreak);
     }
     setState(nextState);
+    setNewBadges(newlyEarnedBadges(badgesBefore, computeBadges(nextState)));
 
     const account = nextState.account;
     if (account) {
@@ -127,6 +137,7 @@ export default function App() {
           onSignIn={handleSignIn}
           onSignOut={handleSignOut}
           onOpenLeaderboard={openLeaderboard}
+          onOpenBadges={openBadges}
         />
       )}
       {screen === 'exercise' && topicId && (
@@ -144,12 +155,16 @@ export default function App() {
           correctCount={lastResult.correct}
           totalCount={lastResult.total}
           bestStreak={lastResult.bestStreak}
+          newBadges={newBadges}
           onRetry={retrySameTopic}
           onBackHome={backHome}
         />
       )}
       {screen === 'leaderboard' && (
         <Leaderboard lang={state.lang} account={state.account} onBackHome={backHome} />
+      )}
+      {screen === 'badges' && (
+        <Badges lang={state.lang} state={state} onBackHome={backHome} />
       )}
       {screen === 'admin' && <Admin onBackHome={backHome} />}
     </main>

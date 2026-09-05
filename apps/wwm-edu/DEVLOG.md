@@ -5,6 +5,44 @@ Version scheme: `0.<phase>.<patch>` until the full 4-phase plan is complete, the
 
 ---
 
+## v1.0.0 — Phase 4: badges & rewards (2026-09-05)
+
+- **Badge system** — 8 badges × 3 tiers (bronze/silver/gold), 24 achievements total: Topic Master
+  (3-star topics), Streak Hero (best streak), Daily Regular (distinct Daily Challenge days),
+  Perfect Day (10/10 Daily Challenges), Question Crusher (total attempts), Sharp Shooter (overall
+  accuracy, gated at ≥100 attempts so one lucky session can't fake gold), Math Explorer / Word
+  Wizard (breadth across math/English topics tried). Catalogue + thresholds live in
+  `src/engine/badges.ts`.
+- **Derived, not persisted** — the key design decision this phase: `computeBadges(state)` is a
+  pure function of the existing `EduState` (`perTopic` + `dailyResults`). No new field was added
+  to the localStorage schema, `sanitize()`, or `mergeEduState`, and zero migration was needed for
+  existing saved blobs. Because badges are recomputed from data that already syncs across devices
+  via Phase 3's progress sync, badges sync for free — there is no separate "unlocked badge ids"
+  blob that could ever drift out of sync with a player's actual stats.
+  `newlyEarnedBadges(before, after)` diffs two `computeBadges()` snapshots to detect a tier bump
+  (including null → bronze) for the Results-screen celebration.
+- **UI** — a compact `BadgeShelf` strip on Home (between the difficulty picker and the Daily
+  Challenge card) shows up to 6 earned badges plus a count, or a nudge to play if none are earned
+  yet; a full `Badges` gallery screen (🎖️ header button) shows all 8 badges with tier-colored
+  rings, progress bars toward the next tier, and a MAX marker for gold. Results shows a
+  celebration block with a new ascending-arpeggio `playBadgeUnlock()` SFX when a session crosses a
+  threshold.
+- **Daily Challenge counts toward the aggregate badges** — caught by an independent Codex review
+  of the diff. Daily sessions are recorded only in `dailyResults` (`App.tsx`'s `finishExercise`
+  calls `recordDailyResult`, never `recordSession`), so the first cut of `totalAttempts` /
+  `totalCorrect` / best-streak read `perTopic` alone and a kid who mainly played the Daily
+  Challenge would never have advanced Question Crusher, Sharp Shooter or Streak Hero. All three
+  metrics now fold the dailies in (one day = one session's worth of questions, using the stored
+  best result per date), with regression checks in the sanity script.
+- **1.0.0 release flip** — the 4-phase plan (math core, English + Daily Challenge, online backend,
+  badges & rewards) is complete; the wwm-edu card on the landing page moved from "in progress" to
+  "live". `apps/wwm-edu/package.json` was already at `1.0.0`.
+- Verified: `npx tsc -b --force` clean, `npm run check` (20,000 math questions + 4 English packs +
+  new badge unit checks: empty state, bronze/gold threshold crossings per badge, the sharp-shooter
+  100-attempt gate, and `newlyEarnedBadges` diffing) all passing, full root `npm run build`, and a
+  browser check with a seeded localStorage blob (fresh, backward-compat pre-Phase-2 shape, and a
+  crossed-threshold session) in both English and Chinese.
+
 ## v0.4.0 — Phase 3: online backend (2026-07-11)
 
 - **Accounts** — nickname + 4-6 digit PIN, hashed client-side (SHA-256) into an anonymous

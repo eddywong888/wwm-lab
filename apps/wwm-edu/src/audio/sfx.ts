@@ -96,6 +96,30 @@ export function playWrongBuzz(): void {
   osc.stop(time + 0.32);
 }
 
+export function playBadgeUnlock(): void {
+  if (muted) return;
+  const ctx = getAudioContext();
+  if (!ctx) return;
+  // Short ascending 4-note arpeggio, distinct in timbre/shape from the
+  // session fanfare (square wave, faster, higher-pitched).
+  const notes = [440, 587.33, 739.99, 880]; // A4 -> D5 -> F#5 -> A5
+  let time = ctx.currentTime;
+  notes.forEach((freq) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.type = 'square';
+    osc.frequency.setValueAtTime(freq, time);
+    gain.gain.setValueAtTime(0, time);
+    gain.gain.linearRampToValueAtTime(0.08, time + 0.015);
+    gain.gain.exponentialRampToValueAtTime(0.001, time + 0.16);
+    osc.start(time);
+    osc.stop(time + 0.18);
+    time += 0.09;
+  });
+}
+
 export function playSessionFanfare(): void {
   if (muted) return;
   const ctx = getAudioContext();

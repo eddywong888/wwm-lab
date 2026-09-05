@@ -15,7 +15,7 @@ const EDU_CARDS: EduCard[] = [
       'Daily bilingual practice exercises aligned to the Malaysian KSSR Standard 4 syllabus. Procedurally generated questions (never a fixed worksheet), English + Simplified Chinese toggle, standard and advanced difficulty tiers, streaks and sound effects to keep kids motivated.',
     tags: ['education', 'kssr', 'bilingual'],
     liveUrl: '/apps/wwm-edu/',
-    status: 'wip',
+    status: 'live',
   },
 ];
 

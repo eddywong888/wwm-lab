@@ -48,7 +48,8 @@
 .home__lang-toggle,
 .home__mute-toggle,
 .home__profile-toggle,
-.home__trophy-toggle {
+.home__trophy-toggle,
+.home__badges-toggle {
   font-family: var(--edu-font-display);
   font-weight: 700;
   border: none;
@@ -67,7 +68,8 @@
 .home__lang-toggle:active,
 .home__mute-toggle:active,
 .home__profile-toggle:active,
-.home__trophy-toggle:active {
+.home__trophy-toggle:active,
+.home__badges-toggle:active {
   transform: translateY(2px);
   box-shadow: 0 1px 0 var(--edu-shadow);
 }

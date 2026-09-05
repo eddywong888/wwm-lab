@@ -7,6 +7,7 @@ import { DAILY_TOPIC_ID, MIXED_TOPIC_ID, QUESTIONS_PER_SESSION, todayDateString 
 import { t, UI_STRINGS } from '../engine/i18n';
 import TopicCard from '../components/TopicCard';
 import AccountModal from '../components/AccountModal';
+import BadgeShelf from '../components/BadgeShelf';
 import type { EduState } from '../store/local';
 import { playButtonTap, toggleMuted } from '../audio/sfx';
 
@@ -19,6 +20,7 @@ interface HomeProps {
   onSignIn: (nickname: string, pin: string) => Promise<void>;
   onSignOut: () => void;
   onOpenLeaderboard: () => void;
+  onOpenBadges: () => void;
 }
 
 function starsForScore(score: number): number {
@@ -37,6 +39,7 @@ export default function Home({
   onSignIn,
   onSignOut,
   onOpenLeaderboard,
+  onOpenBadges,
 }: HomeProps) {
   const { lang, difficulty, perTopic, muted, account } = state;
   const [showAccountModal, setShowAccountModal] = useState(false);
@@ -77,6 +80,14 @@ export default function Home({
           >
             🏆
           </button>
+          <button
+            type="button"
+            className="home__badges-toggle"
+            onClick={() => { playButtonTap(); onOpenBadges(); }}
+            aria-label={t(UI_STRINGS.badges, lang)}
+          >
+            🎖️
+          </button>
           <button type="button" className="home__lang-toggle" onClick={() => { playButtonTap(); onChangeLang(lang === 'en' ? 'zh' : 'en'); }}>
             {lang === 'en' ? '中文' : 'EN'}
           </button>
@@ -112,6 +123,8 @@ export default function Home({
           {t(UI_STRINGS.advanced, lang)}
         </button>
       </div>
+
+      <BadgeShelf lang={lang} state={state} onOpenBadges={onOpenBadges} />
 
       <button type="button" className="home__daily-card" onClick={() => { playButtonTap(); onSelectTopic(DAILY_TOPIC_ID); }}>
         <div className="home__daily-top">

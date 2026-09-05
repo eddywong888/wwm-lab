@@ -58,4 +58,16 @@ export const UI_STRINGS = {
   leaderboardEmpty: { en: 'No scores yet — play the Daily Challenge to appear here!', zh: '暂无成绩——完成每日挑战即可上榜！' } satisfies Bilingual,
   leaderboardOffline: { en: "Leaderboard needs an internet connection. Try again later!", zh: '排行榜需要网络连接，请稍后再试！' } satisfies Bilingual,
   leaderboardSignInHint: { en: 'Sign in to appear on the leaderboard!', zh: '登入后即可上榜！' } satisfies Bilingual,
+
+  // Phase 4 — badges
+  badges: { en: 'Badges', zh: '徽章' } satisfies Bilingual,
+  badgesEarnedCount: { en: 'earned', zh: '已获得' } satisfies Bilingual,
+  badgeShelfEmpty: { en: 'Play to earn your first badge!', zh: '快来赢取第一个徽章吧！' } satisfies Bilingual,
+  badgeShelfCount: { en: 'badges', zh: '个徽章' } satisfies Bilingual,
+  badgeMax: { en: 'MAX', zh: '已满级' } satisfies Bilingual,
+  badgeLocked: { en: 'Locked', zh: '未解锁' } satisfies Bilingual,
+  newBadgeUnlocked: { en: 'New badge unlocked!', zh: '解锁新徽章！' } satisfies Bilingual,
+  badgeTierBronze: { en: 'Bronze', zh: '铜牌' } satisfies Bilingual,
+  badgeTierSilver: { en: 'Silver', zh: '银牌' } satisfies Bilingual,
+  badgeTierGold: { en: 'Gold', zh: '金牌' } satisfies Bilingual,
 };

@@ -56,6 +56,66 @@
   margin: 0 0 1.75rem;
 }
 
+.results__badges {
+  background: var(--edu-bg);
+  border-radius: 20px;
+  padding: 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.results__badges-title {
+  font-family: var(--edu-font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--edu-primary-dark);
+  margin: 0 0 0.6rem;
+}
+
+.results__badges-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.results__badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--edu-surface);
+  border-radius: 14px;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--edu-border);
+  text-align: left;
+}
+
+.results__badge--bronze {
+  border-color: #cd7f32;
+}
+
+.results__badge--silver {
+  border-color: #aab2bd;
+}
+
+.results__badge--gold {
+  border-color: #f2b632;
+}
+
+.results__badge-icon {
+  font-size: 1.5rem;
+}
+
+.results__badge-name {
+  font-weight: 800;
+  flex: 1;
+}
+
+.results__badge-tier {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--edu-ink-soft);
+}
+
 .results__actions {
   display: flex;
   flex-direction: column;

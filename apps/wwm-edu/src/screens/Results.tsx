@@ -2,16 +2,24 @@ import { useEffect } from 'react';
 import './Results.css';
 import type { Lang } from '../engine/types';
 import { t, UI_STRINGS } from '../engine/i18n';
-import { playSessionFanfare } from '../audio/sfx';
+import { playSessionFanfare, playBadgeUnlock } from '../audio/sfx';
+import type { EarnedBadge } from '../engine/badges';
 
 interface ResultsProps {
   lang: Lang;
   correctCount: number;
   totalCount: number;
   bestStreak: number;
+  newBadges: EarnedBadge[];
   onRetry: () => void;
   onBackHome: () => void;
 }
+
+const TIER_LABEL_KEY = {
+  bronze: 'badgeTierBronze',
+  silver: 'badgeTierSilver',
+  gold: 'badgeTierGold',
+} as const;
 
 function starsFor(correctCount: number): number {
   if (correctCount >= 9) return 3;
@@ -27,11 +35,16 @@ function encouragement(stars: number) {
   return UI_STRINGS.encourageTryAgain;
 }
 
-export default function Results({ lang, correctCount, totalCount, bestStreak, onRetry, onBackHome }: ResultsProps) {
+export default function Results({ lang, correctCount, totalCount, bestStreak, newBadges, onRetry, onBackHome }: ResultsProps) {
   const stars = starsFor(correctCount);
 
   useEffect(() => {
     playSessionFanfare();
+    if (newBadges.length > 0) {
+      const timer = setTimeout(() => playBadgeUnlock(), 550);
+      return () => clearTimeout(timer);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -49,6 +62,21 @@ export default function Results({ lang, correctCount, totalCount, bestStreak, on
         <p className="results__streak">🔥 {t(UI_STRINGS.bestStreak, lang)}: {bestStreak}</p>
 
         <p className="results__encourage">{t(encouragement(stars), lang)}</p>
+
+        {newBadges.length > 0 && (
+          <div className="results__badges edu-pop-in">
+            <p className="results__badges-title">🎉 {t(UI_STRINGS.newBadgeUnlocked, lang)}</p>
+            <div className="results__badges-list">
+              {newBadges.map((b) => (
+                <div key={b.def.id} className={`results__badge results__badge--${b.tier}`}>
+                  <span className="results__badge-icon" aria-hidden="true">{b.def.icon}</span>
+                  <span className="results__badge-name">{t(b.def.name, lang)}</span>
+                  <span className="results__badge-tier">{b.tier ? t(UI_STRINGS[TIER_LABEL_KEY[b.tier]], lang) : ''}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="results__actions">
           <button type="button" className="results__btn results__btn--primary" onClick={onRetry}>
