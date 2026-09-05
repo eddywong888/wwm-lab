@@ -6,10 +6,10 @@ import Results from './screens/Results';
 import Leaderboard from './screens/Leaderboard';
 import Badges from './screens/Badges';
 import Admin from './screens/Admin';
-import { loadState, updateState, recordSession, recordDailyResult } from './store/local';
-import type { Difficulty, Lang } from './engine/types';
+import { getDueReviewSkills, loadState, updateState, recordSession, recordDailyResult, recordReviewProgress } from './store/local';
+import type { AnswerRecord, Difficulty, Lang, Question } from './engine/types';
 import { unlockAudio } from './audio/sfx';
-import { DAILY_TOPIC_ID, todayDateString } from './engine/session';
+import { DAILY_TOPIC_ID, generateReviewSession, REVIEW_TOPIC_ID, todayDateString } from './engine/session';
 import { pushProgress, pushLeaderboard } from './store/sync';
 import { signIn, signOut } from './store/account';
 import { refreshEnglishContent } from './engine/english';
@@ -26,8 +26,9 @@ export default function App() {
   const [screen, setScreen] = useState<Screen>(() => screenFromHash());
   const [topicId, setTopicId] = useState<string | null>(null);
   const [sessionKey, setSessionKey] = useState(0);
-  const [lastResult, setLastResult] = useState<{ correct: number; total: number; bestStreak: number } | null>(null);
+  const [lastResult, setLastResult] = useState<{ answers: AnswerRecord[]; correct: number; total: number; bestStreak: number } | null>(null);
   const [newBadges, setNewBadges] = useState<EarnedBadge[]>([]);
+  const [reviewQuestions, setReviewQuestions] = useState<Question[] | null>(null);
 
   // Hash-based route for the hidden admin content-override page — never
   // linked from any UI, reachable only by visiting #admin directly.
@@ -71,6 +72,7 @@ export default function App() {
 
   function selectTopic(id: string) {
     unlockAudio();
+    setReviewQuestions(null);
     setTopicId(id);
     setSessionKey((k) => k + 1);
     setScreen('exercise');
@@ -84,15 +86,17 @@ export default function App() {
     setScreen('badges');
   }
 
-  function finishExercise(correctCount: number, totalCount: number, bestStreak: number) {
+  function finishExercise(answers: AnswerRecord[], bestStreak: number) {
+    const correctCount = answers.filter((answer) => answer.correct).length;
+    const totalCount = answers.length;
     const badgesBefore = computeBadges(state);
 
-    let nextState = state;
     if (topicId === DAILY_TOPIC_ID) {
-      nextState = recordDailyResult(todayDateString(), correctCount, bestStreak);
-    } else if (topicId) {
-      nextState = recordSession(topicId, correctCount, totalCount, bestStreak);
+      recordDailyResult(todayDateString(), correctCount, bestStreak);
+    } else if (topicId && topicId !== REVIEW_TOPIC_ID) {
+      recordSession(topicId, correctCount, totalCount, bestStreak);
     }
+    const nextState = recordReviewProgress(answers, topicId === REVIEW_TOPIC_ID);
     setState(nextState);
     setNewBadges(newlyEarnedBadges(badgesBefore, computeBadges(nextState)));
 
@@ -110,17 +114,33 @@ export default function App() {
       }
     }
 
-    setLastResult({ correct: correctCount, total: totalCount, bestStreak });
+    setLastResult({ answers, correct: correctCount, total: totalCount, bestStreak });
     setScreen('results');
   }
 
+  function practiceWeakAreas() {
+    const skills = getDueReviewSkills(state);
+    const questions = generateReviewSession(skills);
+    if (questions.length === 0) return;
+    unlockAudio();
+    setReviewQuestions(questions);
+    setTopicId(REVIEW_TOPIC_ID);
+    setSessionKey((key) => key + 1);
+    setScreen('exercise');
+  }
+
   function retrySameTopic() {
+    if (topicId === REVIEW_TOPIC_ID) {
+      practiceWeakAreas();
+      return;
+    }
     setSessionKey((k) => k + 1);
     setScreen('exercise');
   }
 
   function backHome() {
     setTopicId(null);
+    setReviewQuestions(null);
     if (window.location.hash === '#admin') window.location.hash = '';
     setScreen('home');
   }
@@ -138,6 +158,8 @@ export default function App() {
           onSignOut={handleSignOut}
           onOpenLeaderboard={openLeaderboard}
           onOpenBadges={openBadges}
+          dueReviewCount={getDueReviewSkills(state).length}
+          onPracticeWeakAreas={practiceWeakAreas}
         />
       )}
       {screen === 'exercise' && topicId && (
@@ -148,6 +170,7 @@ export default function App() {
           onFinish={finishExercise}
           onBackHome={backHome}
           sessionKey={sessionKey}
+          questionsOverride={topicId === REVIEW_TOPIC_ID ? reviewQuestions ?? undefined : undefined}
         />
       )}
       {screen === 'results' && lastResult && (
@@ -157,6 +180,10 @@ export default function App() {
           totalCount={lastResult.total}
           bestStreak={lastResult.bestStreak}
           newBadges={newBadges}
+          answers={lastResult.answers}
+          weakAreas={getDueReviewSkills(state)}
+          isReview={topicId === REVIEW_TOPIC_ID}
+          onPracticeWeakAreas={practiceWeakAreas}
           onRetry={retrySameTopic}
           onBackHome={backHome}
         />

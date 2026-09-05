@@ -253,7 +253,16 @@
   line-height: 1.5;
 }
 
-.home__welcome-action {
+.home__welcome-actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.home__welcome-action,
+.home__review-action {
   position: relative;
   z-index: 1;
   border: none;
@@ -267,13 +276,44 @@
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
+.home__review-action {
+  border: 2px solid rgba(255, 255, 255, 0.64);
+  border-radius: 16px;
+  padding: 0.68rem 0.9rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  cursor: pointer;
+  font-weight: 800;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.home__review-action span {
+  display: inline-grid;
+  min-width: 1.45rem;
+  min-height: 1.45rem;
+  margin-left: 0.25rem;
+  place-items: center;
+  border-radius: 999px;
+  background: white;
+  color: var(--edu-primary-dark);
+}
+
 .home__welcome-action:hover {
   transform: translateY(-2px);
   box-shadow: 0 7px 0 #cf9215;
 }
 
-.home__welcome-action:active {
+.home__review-action:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.home__welcome-action:active,
+.home__review-action:active {
   transform: translateY(3px);
+}
+
+.home__welcome-action:active {
   box-shadow: 0 2px 0 #cf9215;
 }
 

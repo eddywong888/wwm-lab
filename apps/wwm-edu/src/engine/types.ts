@@ -16,7 +16,15 @@ export interface Question {
   answer: string;
   kind: 'mcq' | 'numeric';
   topic: string;
+  difficulty?: Difficulty;
   explain?: Bilingual;
+}
+
+export interface AnswerRecord {
+  question: Question;
+  givenAnswer: string;
+  correct: boolean;
+  difficulty: Difficulty;
 }
 
 export interface GeneratorMeta {

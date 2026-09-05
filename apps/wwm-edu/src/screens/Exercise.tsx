@@ -1,10 +1,9 @@
 import { useMemo, useRef, useState } from 'react';
 import './Exercise.css';
-import type { Bilingual, Difficulty, Lang } from '../engine/types';
-import { MATH_GENERATORS } from '../engine/math';
-import { ENGLISH_TOPICS, CHINESE_TOPICS } from '../engine/english';
-import { DAILY_TOPIC_ID, MIXED_TOPIC_ID, generateSession, QUESTIONS_PER_SESSION } from '../engine/session';
+import type { AnswerRecord, Difficulty, Lang, Question } from '../engine/types';
+import { generateSession } from '../engine/session';
 import { t, UI_STRINGS } from '../engine/i18n';
+import { topicDetails } from '../engine/topic-meta';
 import QuestionCard from '../components/QuestionCard';
 import ProgressDots from '../components/ProgressDots';
 import StreakBadge from '../components/StreakBadge';
@@ -14,37 +13,28 @@ interface ExerciseProps {
   topicId: string;
   difficulty: Difficulty;
   lang: Lang;
-  onFinish: (correctCount: number, totalCount: number, bestStreak: number) => void;
+  onFinish: (answers: AnswerRecord[], bestStreak: number) => void;
   onBackHome: () => void;
   sessionKey: number;
+  questionsOverride?: Question[];
 }
 
-function topicDetails(topicId: string): { icon: string; name: Bilingual } {
-  if (topicId === DAILY_TOPIC_ID) return { icon: '🗓️', name: UI_STRINGS.dailyChallenge };
-  if (topicId === MIXED_TOPIC_ID) return { icon: '🎲', name: UI_STRINGS.mixedPractice };
-  const math = MATH_GENERATORS.find((generator) => generator.meta.id === topicId)?.meta;
-  if (math) return { icon: math.icon, name: math.name };
-  const english = [...ENGLISH_TOPICS, ...CHINESE_TOPICS].find((topic) => topic.id === topicId);
-  if (english) return { icon: english.icon, name: english.name };
-  return { icon: '✏️', name: UI_STRINGS.practiceByTopic };
-}
-
-export default function Exercise({ topicId, difficulty, lang, onFinish, onBackHome, sessionKey }: ExerciseProps) {
+export default function Exercise({ topicId, difficulty, lang, onFinish, onBackHome, sessionKey, questionsOverride }: ExerciseProps) {
   const [seedBase] = useState(() => Date.now());
   const questions = useMemo(
-    () => generateSession(topicId, difficulty, `${seedBase}-${sessionKey}`),
-    [topicId, difficulty, seedBase, sessionKey],
+    () => questionsOverride ?? generateSession(topicId, difficulty, `${seedBase}-${sessionKey}`),
+    [topicId, difficulty, seedBase, sessionKey, questionsOverride],
   );
   const [index, setIndex] = useState(0);
-  const [results, setResults] = useState<(boolean | null)[]>(() => new Array(QUESTIONS_PER_SESSION).fill(null));
+  const [results, setResults] = useState<(AnswerRecord | null)[]>(() => new Array(questions.length).fill(null));
   const [streak, setStreak] = useState(0);
   const bestStreakRef = useRef(0);
   const current = questions[index];
   const topic = topicDetails(topicId);
 
-  function handleAnswer(correct: boolean) {
+  function handleAnswer(givenAnswer: string, correct: boolean) {
     const nextResults = [...results];
-    nextResults[index] = correct;
+    nextResults[index] = { question: current, givenAnswer, correct, difficulty: current.difficulty ?? difficulty };
     setResults(nextResults);
 
     if (correct) {
@@ -62,15 +52,14 @@ export default function Exercise({ topicId, difficulty, lang, onFinish, onBackHo
 
   function handleNext() {
     if (index + 1 >= questions.length) {
-      const correctCount = results.filter((result) => result === true).length;
-      onFinish(correctCount, questions.length, bestStreakRef.current);
+      onFinish(results.filter((result): result is AnswerRecord => result !== null), bestStreakRef.current);
       return;
     }
     setIndex((currentIndex) => currentIndex + 1);
   }
 
   const isLast = index + 1 >= questions.length;
-  const correctSoFar = results.filter((result) => result === true).length;
+  const correctSoFar = results.filter((result) => result?.correct).length;
 
   return (
     <div className="exercise">
@@ -81,7 +70,7 @@ export default function Exercise({ topicId, difficulty, lang, onFinish, onBackHo
             <span>{topic.icon} {t(topic.name, lang)}</span>
             <strong>{t(UI_STRINGS.question, lang)} {index + 1}/{questions.length}</strong>
           </div>
-          <ProgressDots total={questions.length} current={index} results={results} />
+          <ProgressDots total={questions.length} current={index} results={results.map((result) => result?.correct ?? null)} />
         </div>
         <StreakBadge streak={streak} />
       </header>

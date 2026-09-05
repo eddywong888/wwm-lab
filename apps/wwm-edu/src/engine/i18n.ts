@@ -49,6 +49,12 @@ export const UI_STRINGS = {
   stars: { en: 'Stars', zh: '星星' } satisfies Bilingual,
   leavePractice: { en: 'Leave practice', zh: '离开练习' } satisfies Bilingual,
   takeYourTime: { en: "Take your time. You've got this!", zh: '慢慢来，你一定可以！' } satisfies Bilingual,
+  reviewMistakes: { en: 'Review your mistakes', zh: '复习错题' } satisfies Bilingual,
+  reviewMistakesHint: { en: 'Understand what happened before you try again.', zh: '先弄懂错在哪里，再试一次。' } satisfies Bilingual,
+  yourAnswer: { en: 'Your answer', zh: '你的答案' } satisfies Bilingual,
+  recommendedNext: { en: 'Recommended next', zh: '下一步建议' } satisfies Bilingual,
+  practiceWeakAreas: { en: 'Practice weak areas', zh: '练习薄弱项目' } satisfies Bilingual,
+  weakAreaPractice: { en: 'Weak-area practice', zh: '薄弱项目练习' } satisfies Bilingual,
 
   // Phase 3 — accounts
   profile: { en: 'Profile', zh: '账户' } satisfies Bilingual,

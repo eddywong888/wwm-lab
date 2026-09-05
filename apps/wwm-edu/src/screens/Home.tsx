@@ -22,6 +22,8 @@ interface HomeProps {
   onSignOut: () => void;
   onOpenLeaderboard: () => void;
   onOpenBadges: () => void;
+  dueReviewCount: number;
+  onPracticeWeakAreas: () => void;
 }
 
 type Subject = 'math' | 'english' | 'chinese';
@@ -43,6 +45,8 @@ export default function Home({
   onSignOut,
   onOpenLeaderboard,
   onOpenBadges,
+  dueReviewCount,
+  onPracticeWeakAreas,
 }: HomeProps) {
   const { lang, difficulty, perTopic, muted, account } = state;
   const [showAccountModal, setShowAccountModal] = useState(false);
@@ -115,9 +119,16 @@ export default function Home({
           <p className="home__eyebrow">✨ {t(UI_STRINGS.learningSpace, lang)}</p>
           <h2>{t(UI_STRINGS.welcomeTitle, lang)}</h2>
           <p className="home__welcome-copy">{t(UI_STRINGS.welcomeBody, lang)}</p>
-          <button type="button" className="home__welcome-action" onClick={() => { playButtonTap(); onSelectTopic(MIXED_TOPIC_ID); }}>
-            🎲 {t(UI_STRINGS.mixedPractice, lang)} <span aria-hidden="true">→</span>
-          </button>
+          <div className="home__welcome-actions">
+            <button type="button" className="home__welcome-action" onClick={() => { playButtonTap(); onSelectTopic(MIXED_TOPIC_ID); }}>
+              🎲 {t(UI_STRINGS.mixedPractice, lang)} <span aria-hidden="true">→</span>
+            </button>
+            {dueReviewCount > 0 && (
+              <button type="button" className="home__review-action" onClick={() => { playButtonTap(); onPracticeWeakAreas(); }}>
+                🧠 {t(UI_STRINGS.practiceWeakAreas, lang)} <span>{dueReviewCount}</span>
+              </button>
+            )}
+          </div>
           <span className="home__welcome-orbit" aria-hidden="true">★</span>
         </section>
 

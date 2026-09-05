@@ -1,4 +1,4 @@
-import type { Difficulty, Lang } from '../engine/types';
+import type { AnswerRecord, Difficulty, Lang } from '../engine/types';
 
 const STORAGE_KEY = 'wwm-edu:v1';
 
@@ -26,6 +26,16 @@ export interface Account {
   userKey: string;
 }
 
+export interface ReviewSkillProgress {
+  topicId: string;
+  difficulty: Difficulty;
+  misses: number;
+  reviewAttempts: number;
+  stage: number;
+  nextReviewAt: number;
+  lastMissedAt: number;
+}
+
 export interface EduState {
   lang: Lang;
   difficulty: Difficulty;
@@ -37,6 +47,8 @@ export interface EduState {
   /** Best result for each day's Daily Challenge, keyed by date. Optional/
    * defaulted so old saved blobs still load. */
   dailyResults?: Record<string, DailyResult>;
+  /** Local spaced-practice queue grouped by topic and difficulty. */
+  reviewSkills?: Record<string, ReviewSkillProgress>;
   /** Signed-in account, if any. Optional/defaulted so old saved blobs
    * still load; absent = signed out (local-only, fully offline play). */
   account?: Account;
@@ -49,6 +61,7 @@ const DEFAULT_STATE: EduState = {
   perTopic: {},
   englishServedIds: [],
   dailyResults: {},
+  reviewSkills: {},
 };
 
 function isTopicProgress(v: unknown): v is TopicProgress {
@@ -64,6 +77,18 @@ function isDailyResult(v: unknown): v is DailyResult {
   return typeof o.date === 'string' && typeof o.score === 'number' && typeof o.bestStreak === 'number';
 }
 
+function isReviewSkill(v: unknown): v is ReviewSkillProgress {
+  if (!v || typeof v !== 'object') return false;
+  const o = v as Record<string, unknown>;
+  return typeof o.topicId === 'string' && o.topicId.length > 0
+    && (o.difficulty === 'standard' || o.difficulty === 'advanced')
+    && typeof o.misses === 'number' && Number.isFinite(o.misses) && o.misses >= 0
+    && typeof o.reviewAttempts === 'number' && Number.isFinite(o.reviewAttempts) && o.reviewAttempts >= 0
+    && typeof o.stage === 'number' && Number.isInteger(o.stage) && o.stage >= 0
+    && typeof o.nextReviewAt === 'number' && Number.isFinite(o.nextReviewAt)
+    && typeof o.lastMissedAt === 'number' && Number.isFinite(o.lastMissedAt);
+}
+
 const USER_KEY_RE = /^[0-9a-f]{64}$/;
 
 function isAccount(v: unknown): v is Account {
@@ -74,7 +99,7 @@ function isAccount(v: unknown): v is Account {
 }
 
 function sanitize(raw: unknown): EduState {
-  if (!raw || typeof raw !== 'object') return { ...DEFAULT_STATE, perTopic: {}, englishServedIds: [], dailyResults: {} };
+  if (!raw || typeof raw !== 'object') return { ...DEFAULT_STATE, perTopic: {}, englishServedIds: [], dailyResults: {}, reviewSkills: {} };
   const o = raw as Record<string, unknown>;
   const lang: Lang = o.lang === 'zh' ? 'zh' : 'en';
   const difficulty: Difficulty = o.difficulty === 'advanced' ? 'advanced' : 'standard';
@@ -94,17 +119,23 @@ function sanitize(raw: unknown): EduState {
       if (isDailyResult(val)) dailyResults[date] = val;
     }
   }
+  const reviewSkills: Record<string, ReviewSkillProgress> = {};
+  if (o.reviewSkills && typeof o.reviewSkills === 'object') {
+    for (const [key, val] of Object.entries(o.reviewSkills as Record<string, unknown>)) {
+      if (isReviewSkill(val)) reviewSkills[key] = val;
+    }
+  }
   const account: Account | undefined = isAccount(o.account) ? o.account : undefined;
-  return { lang, difficulty, muted, perTopic, englishServedIds, dailyResults, account };
+  return { lang, difficulty, muted, perTopic, englishServedIds, dailyResults, reviewSkills, account };
 }
 
 export function loadState(): EduState {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return { ...DEFAULT_STATE, perTopic: {}, englishServedIds: [], dailyResults: {} };
+    if (!raw) return { ...DEFAULT_STATE, perTopic: {}, englishServedIds: [], dailyResults: {}, reviewSkills: {} };
     return sanitize(JSON.parse(raw));
   } catch {
-    return { ...DEFAULT_STATE, perTopic: {}, englishServedIds: [], dailyResults: {} };
+    return { ...DEFAULT_STATE, perTopic: {}, englishServedIds: [], dailyResults: {}, reviewSkills: {} };
   }
 }
 
@@ -165,6 +196,93 @@ export function recordDailyResult(date: string, score: number, bestStreak: numbe
     ? { date, score: prev.score, bestStreak: Math.max(prev.bestStreak, bestStreak) }
     : { date, score, bestStreak: prev ? Math.max(prev.bestStreak, bestStreak) : bestStreak };
   const next: EduState = { ...state, dailyResults: { ...(state.dailyResults ?? {}), [date]: updated } };
+  saveState(next);
+  return next;
+}
+
+const DAY_MS = 24 * 60 * 60 * 1000;
+const REVIEW_DELAYS = [DAY_MS, 3 * DAY_MS];
+
+export function reviewSkillKey(topicId: string, difficulty: Difficulty): string {
+  return `${difficulty}:${topicId}`;
+}
+
+export function getDueReviewSkills(state: EduState = loadState(), now: number = Date.now()): ReviewSkillProgress[] {
+  return Object.values(state.reviewSkills ?? {})
+    .filter((skill) => skill.nextReviewAt <= now)
+    .sort((a, b) => a.nextReviewAt - b.nextReviewAt || b.misses - a.misses);
+}
+
+export function applyReviewProgress(
+  state: EduState,
+  answers: readonly AnswerRecord[],
+  reviewSession: boolean,
+  now: number = Date.now(),
+): EduState {
+  const reviewSkills = { ...(state.reviewSkills ?? {}) };
+
+  if (!reviewSession) {
+    for (const answer of answers) {
+      if (answer.correct) continue;
+      const key = reviewSkillKey(answer.question.topic, answer.difficulty);
+      const current = reviewSkills[key];
+      reviewSkills[key] = {
+        topicId: answer.question.topic,
+        difficulty: answer.difficulty,
+        misses: (current?.misses ?? 0) + 1,
+        reviewAttempts: current?.reviewAttempts ?? 0,
+        stage: 0,
+        nextReviewAt: now,
+        lastMissedAt: now,
+      };
+    }
+    return { ...state, reviewSkills };
+  }
+
+  const groups = new Map<string, AnswerRecord[]>();
+  for (const answer of answers) {
+    const key = reviewSkillKey(answer.question.topic, answer.difficulty);
+    groups.set(key, [...(groups.get(key) ?? []), answer]);
+  }
+
+  for (const [key, group] of groups) {
+    const current = reviewSkills[key];
+    const correct = group.filter((answer) => answer.correct).length;
+    const passed = correct / group.length >= 0.8;
+    if (passed && current) {
+      const nextStage = current.stage + 1;
+      if (nextStage >= 3) {
+        delete reviewSkills[key];
+      } else {
+        reviewSkills[key] = {
+          ...current,
+          reviewAttempts: current.reviewAttempts + group.length,
+          stage: nextStage,
+          nextReviewAt: now + REVIEW_DELAYS[nextStage - 1],
+        };
+      }
+      continue;
+    }
+
+    const misses = group.length - correct;
+    if (misses > 0) {
+      reviewSkills[key] = {
+        topicId: group[0].question.topic,
+        difficulty: group[0].difficulty,
+        misses: (current?.misses ?? 0) + misses,
+        reviewAttempts: (current?.reviewAttempts ?? 0) + group.length,
+        stage: 0,
+        nextReviewAt: now,
+        lastMissedAt: now,
+      };
+    }
+  }
+
+  return { ...state, reviewSkills };
+}
+
+export function recordReviewProgress(answers: readonly AnswerRecord[], reviewSession: boolean): EduState {
+  const next = applyReviewProgress(loadState(), answers, reviewSession);
   saveState(next);
   return next;
 }

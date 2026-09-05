@@ -8,7 +8,7 @@ import { playButtonTap } from '../audio/sfx';
 interface QuestionCardProps {
   question: Question;
   lang: Lang;
-  onAnswer: (correct: boolean) => void;
+  onAnswer: (givenAnswer: string, correct: boolean) => void;
   onNext: () => void;
   nextLabel: string;
 }
@@ -34,7 +34,7 @@ export default function QuestionCard({ question, lang, onAnswer, onNext, nextLab
     const isCorrect = answersMatch(givenAnswer.trim(), question.answer.trim());
     setSelected(givenAnswer);
     setFeedback(isCorrect ? 'correct' : 'wrong');
-    onAnswer(isCorrect);
+    onAnswer(givenAnswer.trim(), isCorrect);
   }
 
   return (

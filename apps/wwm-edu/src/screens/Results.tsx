@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import './Results.css';
-import type { Lang } from '../engine/types';
+import type { AnswerRecord, Lang } from '../engine/types';
 import { t, UI_STRINGS } from '../engine/i18n';
 import { playSessionFanfare, playBadgeUnlock } from '../audio/sfx';
 import type { EarnedBadge } from '../engine/badges';
+import type { ReviewSkillProgress } from '../store/local';
+import { topicDetails } from '../engine/topic-meta';
 
 interface ResultsProps {
   lang: Lang;
@@ -11,6 +13,10 @@ interface ResultsProps {
   totalCount: number;
   bestStreak: number;
   newBadges: EarnedBadge[];
+  answers: AnswerRecord[];
+  weakAreas: ReviewSkillProgress[];
+  isReview: boolean;
+  onPracticeWeakAreas: () => void;
   onRetry: () => void;
   onBackHome: () => void;
 }
@@ -35,8 +41,9 @@ function encouragement(stars: number) {
   return UI_STRINGS.encourageTryAgain;
 }
 
-export default function Results({ lang, correctCount, totalCount, bestStreak, newBadges, onRetry, onBackHome }: ResultsProps) {
+export default function Results({ lang, correctCount, totalCount, bestStreak, newBadges, answers, weakAreas, isReview, onPracticeWeakAreas, onRetry, onBackHome }: ResultsProps) {
   const stars = starsFor(correctCount);
+  const mistakes = answers.filter((answer) => !answer.correct);
 
   useEffect(() => {
     playSessionFanfare();
@@ -90,10 +97,58 @@ export default function Results({ lang, correctCount, totalCount, bestStreak, ne
           </div>
         )}
 
+        {mistakes.length > 0 && (
+          <section className="results__mistakes">
+            <div className="results__section-head">
+              <span aria-hidden="true">🧩</span>
+              <div>
+                <h2>{t(UI_STRINGS.reviewMistakes, lang)}</h2>
+                <p>{t(UI_STRINGS.reviewMistakesHint, lang)}</p>
+              </div>
+            </div>
+            <div className="results__mistake-list">
+              {mistakes.map((answer, index) => (
+                <article className="results__mistake" key={`${answer.question.id}-${index}`}>
+                  <p className="results__mistake-topic">{t(topicDetails(answer.question.topic).name, lang)}</p>
+                  <p className="results__mistake-prompt">{t(answer.question.prompt, lang)}</p>
+                  <dl>
+                    <div>
+                      <dt>{t(UI_STRINGS.yourAnswer, lang)}</dt>
+                      <dd>{answer.givenAnswer || '—'}</dd>
+                    </div>
+                    <div>
+                      <dt>{t(UI_STRINGS.correctAnswerWas, lang)}</dt>
+                      <dd>{answer.question.answer}</dd>
+                    </div>
+                  </dl>
+                  {answer.question.explain && <p className="results__mistake-explain">💡 {t(answer.question.explain, lang)}</p>}
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {weakAreas.length > 0 && (
+          <section className="results__recommendation">
+            <div>
+              <strong>🧠 {t(UI_STRINGS.recommendedNext, lang)}</strong>
+              <p>{weakAreas.slice(0, 3).map((skill) => `${t(topicDetails(skill.topicId).name, lang)} · ${t(UI_STRINGS[skill.difficulty], lang)}`).join(' • ')}</p>
+            </div>
+            <span>{weakAreas.length}</span>
+          </section>
+        )}
+
         <div className="results__actions">
-          <button type="button" className="results__btn results__btn--primary" onClick={onRetry}>
-            {t(UI_STRINGS.retrySameTopic, lang)}
-          </button>
+          {weakAreas.length > 0 && (
+            <button type="button" className="results__btn results__btn--primary" onClick={onPracticeWeakAreas}>
+              {t(UI_STRINGS.practiceWeakAreas, lang)}
+            </button>
+          )}
+          {!isReview && (
+            <button type="button" className={`results__btn ${weakAreas.length === 0 ? 'results__btn--primary' : ''}`} onClick={onRetry}>
+              {t(UI_STRINGS.retrySameTopic, lang)}
+            </button>
+          )}
           <button type="button" className="results__btn" onClick={onBackHome}>
             {t(UI_STRINGS.backHome, lang)}
           </button>

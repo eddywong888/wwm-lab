@@ -2,9 +2,10 @@ import assert from 'node:assert/strict';
 import { REPO_PACKS, sampleBank, ENGLISH_TOPICS, CHINESE_TOPICS, mergePacks } from '../src/engine/english';
 import { validatePack, normalizeText } from '../src/content/schema';
 import { makeRng } from '../src/engine/rng';
-import { generateSession, generateDailySession, questionFingerprint } from '../src/engine/session';
+import { generateSession, generateDailySession, generateReviewSession, questionFingerprint } from '../src/engine/session';
 import { MATH_GENERATORS } from '../src/engine/math';
-import type { Question } from '../src/engine/types';
+import type { AnswerRecord, Question } from '../src/engine/types';
+import { applyReviewProgress, getDueReviewSkills, type EduState } from '../src/store/local';
 
 function numeric(text: string): number {
   return Number(text.replace(/RM|,/g, ''));
@@ -181,6 +182,39 @@ export function checkContentIntegrity() {
   assert.equal(mergePacks([good], [{ ...good, version: good.version - 1 }])[0].version, good.version);
   assert.equal(mergePacks([good], [{ ...good, subject: 'chinese' }])[0].subject, 'english');
   assert.equal(mergePacks([good], [{ ...good, version: good.version + 1 }])[0].version, good.version + 1);
+
+  const reviewNow = Date.UTC(2026, 8, 5);
+  const reviewState: EduState = {
+    lang: 'en',
+    difficulty: 'standard',
+    muted: true,
+    perTopic: {},
+    englishServedIds: [],
+    dailyResults: {},
+    reviewSkills: {},
+  };
+  const missedQuestion = generateSession('fractions', 'standard', 'review-miss')[0];
+  const missed: AnswerRecord = { question: missedQuestion, givenAnswer: 'wrong', correct: false, difficulty: 'standard' };
+  const queued = applyReviewProgress(reviewState, [missed], false, reviewNow);
+  const due = getDueReviewSkills(queued, reviewNow);
+  assert.equal(due.length, 1);
+  assert.equal(due[0].topicId, 'fractions');
+  const reviewQuestions = generateReviewSession(due, 10, 'review-session');
+  assert.equal(reviewQuestions.length, 10);
+  assert.ok(reviewQuestions.every((question) => question.topic === 'fractions' && question.difficulty === 'standard'));
+  const correctReview = reviewQuestions.map((question): AnswerRecord => ({ question, givenAnswer: question.answer, correct: true, difficulty: 'standard' }));
+  const stageOne = applyReviewProgress(queued, correctReview, true, reviewNow);
+  assert.equal(Object.values(stageOne.reviewSkills ?? {})[0].stage, 1);
+  assert.equal(getDueReviewSkills(stageOne, reviewNow).length, 0);
+  const stageOneDue = Object.values(stageOne.reviewSkills ?? {})[0].nextReviewAt;
+  const stageTwo = applyReviewProgress(stageOne, correctReview, true, stageOneDue);
+  assert.equal(Object.values(stageTwo.reviewSkills ?? {})[0].stage, 2);
+  const stageTwoDue = Object.values(stageTwo.reviewSkills ?? {})[0].nextReviewAt;
+  const mastered = applyReviewProgress(stageTwo, correctReview, true, stageTwoDue);
+  assert.equal(Object.keys(mastered.reviewSkills ?? {}).length, 0);
+  const reset = applyReviewProgress(stageTwo, [missed], true, stageTwoDue);
+  assert.equal(Object.values(reset.reviewSkills ?? {})[0].stage, 0);
+
   let oracles = 0;
   for (const generator of MATH_GENERATORS) for (const difficulty of ['standard', 'advanced'] as const) {
     const rng = makeRng(`oracle:${generator.meta.id}:${difficulty}`);

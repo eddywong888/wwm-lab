@@ -3,6 +3,7 @@ import type { Difficulty, Question } from './types';
 import { MATH_GENERATORS } from './math';
 import { ENGLISH_ALL, ENGLISH_TOPIC_IDS, isEnglishTopic, isChineseTopic, sampleBank } from './english';
 import { getEnglishServedIds, recordEnglishServedIds } from '../store/local';
+import type { ReviewSkillProgress } from '../store/local';
 import { normalizeText } from '../content/schema';
 
 export const QUESTIONS_PER_SESSION = 10;
@@ -10,6 +11,7 @@ export const MIXED_TOPIC_ID = 'mixed';
 export const ENGLISH_MIXED_TOPIC_ID = 'english-mixed';
 export const CHINESE_MIXED_TOPIC_ID = 'chinese-mixed';
 export const DAILY_TOPIC_ID = 'daily';
+export const REVIEW_TOPIC_ID = 'review';
 
 export function todayDateString(d: Date = new Date()): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -48,7 +50,7 @@ export function generateDailySession(date: string = todayDateString()): Question
     ...mathQuestions(MIXED_TOPIC_ID, 'standard', 4, rng),
     ...sampleBank('english', ENGLISH_ALL, 'standard', 3, rng),
     ...sampleBank('chinese', ENGLISH_ALL, 'standard', 3, rng),
-  ]).map((q, i) => ({ ...q, id: `${q.id}-daily-${i}` }));
+  ]).map((q, i) => ({ ...q, id: `${q.id}-daily-${i}`, difficulty: 'standard' as const }));
 }
 
 export function generateSession(topicId: string, difficulty: Difficulty, seed: string | number = Date.now()): Question[] {
@@ -59,8 +61,45 @@ export function generateSession(topicId: string, difficulty: Difficulty, seed: s
     const mixed = topicId === ENGLISH_MIXED_TOPIC_ID || topicId === CHINESE_MIXED_TOPIC_ID;
     const questions = sampleBank(chinese ? 'chinese' : 'english', mixed ? ENGLISH_ALL : topicId, difficulty, QUESTIONS_PER_SESSION, rng, getEnglishServedIds());
     recordEnglishServedIds(questions.map((q) => q.id));
-    return questions;
+    return questions.map((question) => ({ ...question, difficulty }));
   }
-  return mathQuestions(topicId, difficulty, QUESTIONS_PER_SESSION, rng);
+  return mathQuestions(topicId, difficulty, QUESTIONS_PER_SESSION, rng)
+    .map((question) => ({ ...question, difficulty }));
+}
+
+export function generateReviewSession(
+  skills: readonly ReviewSkillProgress[],
+  count: number = QUESTIONS_PER_SESSION,
+  seed: string | number = Date.now(),
+): Question[] {
+  const selectedSkills = skills.slice(0, count);
+  if (selectedSkills.length === 0) return [];
+  const rng = makeRng(`review-${seed}`);
+  const perSkill = Math.ceil(count / selectedSkills.length);
+  const pools = selectedSkills.map((skill) => {
+    let questions: Question[];
+    if (isChineseTopic(skill.topicId)) {
+      questions = sampleBank('chinese', skill.topicId, skill.difficulty, perSkill, rng, getEnglishServedIds());
+    } else if (isEnglishTopic(skill.topicId)) {
+      questions = sampleBank('english', skill.topicId, skill.difficulty, perSkill, rng, getEnglishServedIds());
+    } else {
+      questions = mathQuestions(skill.topicId, skill.difficulty, perSkill, rng);
+    }
+    return questions.map((question) => ({ ...question, difficulty: skill.difficulty }));
+  });
+
+  const review: Question[] = [];
+  for (let offset = 0; review.length < count; offset++) {
+    let added = false;
+    for (const pool of pools) {
+      const question = pool[offset];
+      if (!question || review.length >= count) continue;
+      review.push({ ...question, id: `${question.id}-review-${review.length}` });
+      added = true;
+    }
+    if (!added) break;
+  }
+  recordEnglishServedIds(review.filter((question) => question.id.includes(':')).map((question) => question.id.replace(/-review-\d+$/, '')));
+  return rng.shuffle(review);
 }
 export { ENGLISH_TOPIC_IDS };

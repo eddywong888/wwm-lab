@@ -5,6 +5,20 @@ Version scheme: `0.<phase>.<patch>` until the full 4-phase plan is complete, the
 
 ---
 
+## v1.3.0 — Mistake review and weak-area practice (2026-09-05)
+
+- Results now retain the completed session long enough to show every missed question, the
+  learner's answer, the correct answer, and the existing bilingual explanation together.
+- Wrong answers feed a local weak-skill queue grouped by topic and difficulty. Results recommends
+  the most urgent topics, and Home exposes a review action whenever practice is due.
+- Weak-area sessions generate fresh questions from the affected topics instead of replaying the
+  same answers. Reaching at least 80% schedules the skill again after one day and then three days;
+  a third successful review clears it, while another mistake returns it to immediate practice.
+- Review progress is backward-compatible and intentionally local-only; account, leaderboard,
+  scoring, question-bank, and remote progress formats are unchanged.
+- Added regression checks for queue creation, due-date scheduling, fresh ten-question remediation
+  sessions, mastery removal, and reset-on-error behavior.
+
 ## v1.2.0 — Year 4 curriculum and three-subject content expansion (2026-09-05)
 
 - Added Chinese / 华文 as a full subject in the existing v1.1.1 subject-tab and
