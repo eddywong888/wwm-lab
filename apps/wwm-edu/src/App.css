@@ -1,4 +1,30 @@
 .app {
+  position: relative;
   min-height: 100vh;
   width: 100%;
+  overflow-x: hidden;
+}
+
+.app::before,
+.app::after {
+  position: fixed;
+  z-index: -1;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  content: '';
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.app::before {
+  top: 12rem;
+  left: -6rem;
+  background: rgba(36, 170, 141, 0.09);
+}
+
+.app::after {
+  right: -5rem;
+  bottom: 8rem;
+  background: rgba(244, 123, 53, 0.09);
 }

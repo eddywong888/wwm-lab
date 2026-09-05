@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './AccountModal.css';
 import type { Lang } from '../engine/types';
 import type { Account } from '../store/local';
@@ -19,6 +19,14 @@ export default function AccountModal({ lang, account, onSignIn, onSignOut, onClo
   const [pin, setPin] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') onClose();
+    }
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
 
   async function handleSubmit() {
     playButtonTap();
@@ -42,11 +50,11 @@ export default function AccountModal({ lang, account, onSignIn, onSignOut, onClo
 
   return (
     <div className="account-modal__overlay" onClick={onClose}>
-      <div className="account-modal__card edu-pop-in" onClick={(e) => e.stopPropagation()}>
+      <div className="account-modal__card edu-pop-in" role="dialog" aria-modal="true" aria-labelledby="account-modal-title" onClick={(e) => e.stopPropagation()}>
         <button type="button" className="account-modal__close" onClick={onClose} aria-label={t(UI_STRINGS.close, lang)}>
           ✕
         </button>
-        <h2 className="account-modal__title">{t(UI_STRINGS.profile, lang)}</h2>
+        <h2 className="account-modal__title" id="account-modal-title">{t(UI_STRINGS.profile, lang)}</h2>
 
         {account ? (
           <div className="account-modal__signed-in">
@@ -61,7 +69,7 @@ export default function AccountModal({ lang, account, onSignIn, onSignOut, onClo
             </button>
           </div>
         ) : (
-          <>
+          <form onSubmit={(event) => { event.preventDefault(); void handleSubmit(); }}>
             <p className="account-modal__subtitle">{t(UI_STRINGS.signInSubtitle, lang)}</p>
             <label className="account-modal__field">
               <span>{t(UI_STRINGS.nickname, lang)}</span>
@@ -89,14 +97,13 @@ export default function AccountModal({ lang, account, onSignIn, onSignOut, onClo
             </label>
             {error && <p className="account-modal__error">{error}</p>}
             <button
-              type="button"
+              type="submit"
               className="account-modal__btn account-modal__btn--primary"
-              onClick={handleSubmit}
               disabled={busy}
             >
               {t(UI_STRINGS.signIn, lang)}
             </button>
-          </>
+          </form>
         )}
       </div>
     </div>

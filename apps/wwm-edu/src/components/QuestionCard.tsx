@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './QuestionCard.css';
 import type { Lang, Question } from '../engine/types';
 import { t, UI_STRINGS } from '../engine/i18n';
@@ -9,20 +9,16 @@ interface QuestionCardProps {
   question: Question;
   lang: Lang;
   onAnswer: (correct: boolean) => void;
+  onNext: () => void;
+  nextLabel: string;
 }
 
 type FeedbackState = 'none' | 'correct' | 'wrong';
 
-export default function QuestionCard({ question, lang, onAnswer }: QuestionCardProps) {
+export default function QuestionCard({ question, lang, onAnswer, onNext, nextLabel }: QuestionCardProps) {
   const [feedback, setFeedback] = useState<FeedbackState>('none');
   const [selected, setSelected] = useState<string | null>(null);
   const [numericValue, setNumericValue] = useState('');
-
-  useEffect(() => {
-    setFeedback('none');
-    setSelected(null);
-    setNumericValue('');
-  }, [question.id]);
 
   function answersMatch(given: string, expected: string): boolean {
     if (given === expected) return true;
@@ -47,7 +43,7 @@ export default function QuestionCard({ question, lang, onAnswer }: QuestionCardP
 
       {question.kind === 'mcq' && question.choices && (
         <div className="question-card__choices">
-          {question.choices.map((choice) => {
+          {question.choices.map((choice, index) => {
             let stateClass = '';
             if (feedback !== 'none') {
               if (choice === question.answer) stateClass = 'question-card__choice--correct';
@@ -61,7 +57,8 @@ export default function QuestionCard({ question, lang, onAnswer }: QuestionCardP
                 disabled={feedback !== 'none'}
                 onClick={() => { playButtonTap(); submit(choice); }}
               >
-                {choice}
+                <span className="question-card__choice-key" aria-hidden="true">{String.fromCharCode(65 + index)}</span>
+                <span>{choice}</span>
               </button>
             );
           })}
@@ -79,18 +76,24 @@ export default function QuestionCard({ question, lang, onAnswer }: QuestionCardP
       )}
 
       {feedback !== 'none' && (
-        <div className={`question-card__feedback question-card__feedback--${feedback}`}>
-          <p className="question-card__feedback-title">
-            {feedback === 'correct' ? t(UI_STRINGS.correct, lang) : t(UI_STRINGS.incorrect, lang)}
-          </p>
-          {feedback === 'wrong' && (
-            <p className="question-card__feedback-answer">
-              {t(UI_STRINGS.correctAnswerWas, lang)}: <strong>{question.answer}</strong>
+        <div className={`question-card__feedback question-card__feedback--${feedback}`} role="status" aria-live="polite">
+          <span className="question-card__feedback-icon" aria-hidden="true">{feedback === 'correct' ? '✓' : '↗'}</span>
+          <div className="question-card__feedback-copy">
+            <p className="question-card__feedback-title">
+              {feedback === 'correct' ? t(UI_STRINGS.correct, lang) : t(UI_STRINGS.incorrect, lang)}
             </p>
-          )}
-          {question.explain && (
-            <p className="question-card__feedback-explain">{t(question.explain, lang)}</p>
-          )}
+            {feedback === 'wrong' && (
+              <p className="question-card__feedback-answer">
+                {t(UI_STRINGS.correctAnswerWas, lang)}: <strong>{question.answer}</strong>
+              </p>
+            )}
+            {question.explain && (
+              <p className="question-card__feedback-explain">{t(question.explain, lang)}</p>
+            )}
+          </div>
+          <button type="button" className="question-card__next" onClick={() => { playButtonTap(); onNext(); }}>
+            {nextLabel} <span aria-hidden="true">→</span>
+          </button>
         </div>
       )}
     </div>

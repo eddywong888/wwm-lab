@@ -146,6 +146,7 @@ export default function App() {
           difficulty={topicId === DAILY_TOPIC_ID ? 'standard' : state.difficulty}
           lang={state.lang}
           onFinish={finishExercise}
+          onBackHome={backHome}
           sessionKey={sessionKey}
         />
       )}

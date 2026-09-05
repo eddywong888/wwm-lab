@@ -9,6 +9,7 @@ import TopicCard from '../components/TopicCard';
 import AccountModal from '../components/AccountModal';
 import BadgeShelf from '../components/BadgeShelf';
 import type { EduState } from '../store/local';
+import { computeBadges } from '../engine/badges';
 import { playButtonTap, toggleMuted } from '../audio/sfx';
 
 interface HomeProps {
@@ -22,6 +23,8 @@ interface HomeProps {
   onOpenLeaderboard: () => void;
   onOpenBadges: () => void;
 }
+
+type Subject = 'math' | 'english';
 
 function starsForScore(score: number): number {
   if (score >= 9) return 3;
@@ -43,14 +46,21 @@ export default function Home({
 }: HomeProps) {
   const { lang, difficulty, perTopic, muted, account } = state;
   const [showAccountModal, setShowAccountModal] = useState(false);
-  const termOneGenerators = MATH_GENERATORS.filter((g) => g.meta.term !== 2);
-  const termTwoGenerators = MATH_GENERATORS.filter((g) => g.meta.term === 2);
+  const [subject, setSubject] = useState<Subject>('math');
+  const termOneGenerators = MATH_GENERATORS.filter((generator) => generator.meta.term !== 2);
+  const termTwoGenerators = MATH_GENERATORS.filter((generator) => generator.meta.term === 2);
   const today = todayDateString();
   const todayResult = state.dailyResults?.[today];
+  const earnedBadges = computeBadges(state).filter((badge) => badge.tier !== null).length;
 
   function handleToggleMute() {
     const next = toggleMuted();
     onMuteChange(next);
+  }
+
+  function chooseSubject(next: Subject) {
+    playButtonTap();
+    setSubject(next);
   }
 
   return (
@@ -63,35 +73,27 @@ export default function Home({
             <p className="home__tagline">{t(UI_STRINGS.tagline, lang)}</p>
           </div>
         </div>
+
+        <button
+          type="button"
+          className="home__profile-toggle"
+          onClick={() => { playButtonTap(); setShowAccountModal(true); }}
+          aria-label={t(UI_STRINGS.profile, lang)}
+        >
+          <span className="home__profile-avatar" aria-hidden="true">{account ? account.nickname.charAt(0).toUpperCase() : '👤'}</span>
+          <span className="home__profile-copy">
+            <strong>{account?.nickname ?? t(UI_STRINGS.profile, lang)}</strong>
+            <small>{earnedBadges} {t(UI_STRINGS.badgeShelfCount, lang)}</small>
+          </span>
+        </button>
+
         <div className="home__controls">
-          <button
-            type="button"
-            className="home__profile-toggle"
-            onClick={() => { playButtonTap(); setShowAccountModal(true); }}
-            aria-label={t(UI_STRINGS.profile, lang)}
-          >
-            {account ? `👤 ${account.nickname}` : '👤'}
+          <button type="button" className="home__icon-toggle" onClick={() => { playButtonTap(); onOpenLeaderboard(); }} aria-label={t(UI_STRINGS.leaderboard, lang)}>🏆</button>
+          <button type="button" className="home__icon-toggle" onClick={() => { playButtonTap(); onOpenBadges(); }} aria-label={t(UI_STRINGS.badges, lang)}>🏅</button>
+          <button type="button" className="home__icon-toggle home__lang-toggle" onClick={() => { playButtonTap(); onChangeLang(lang === 'en' ? 'zh' : 'en'); }} aria-label={lang === 'en' ? '切换到中文' : 'Switch to English'}>
+            {lang === 'en' ? '中' : 'EN'}
           </button>
-          <button
-            type="button"
-            className="home__trophy-toggle"
-            onClick={() => { playButtonTap(); onOpenLeaderboard(); }}
-            aria-label={t(UI_STRINGS.leaderboard, lang)}
-          >
-            🏆
-          </button>
-          <button
-            type="button"
-            className="home__badges-toggle"
-            onClick={() => { playButtonTap(); onOpenBadges(); }}
-            aria-label={t(UI_STRINGS.badges, lang)}
-          >
-            🎖️
-          </button>
-          <button type="button" className="home__lang-toggle" onClick={() => { playButtonTap(); onChangeLang(lang === 'en' ? 'zh' : 'en'); }}>
-            {lang === 'en' ? '中文' : 'EN'}
-          </button>
-          <button type="button" className="home__mute-toggle" onClick={handleToggleMute} aria-label={muted ? t(UI_STRINGS.mute, lang) : t(UI_STRINGS.unmute, lang)}>
+          <button type="button" className="home__icon-toggle" onClick={handleToggleMute} aria-label={muted ? t(UI_STRINGS.mute, lang) : t(UI_STRINGS.unmute, lang)}>
             {muted ? '🔇' : '🔊'}
           </button>
         </div>
@@ -107,100 +109,106 @@ export default function Home({
         />
       )}
 
-      <div className="home__difficulty">
-        <button
-          type="button"
-          className={`home__difficulty-btn ${difficulty === 'standard' ? 'home__difficulty-btn--active' : ''}`}
-          onClick={() => { playButtonTap(); onChangeDifficulty('standard'); }}
-        >
-          {t(UI_STRINGS.standard, lang)}
-        </button>
-        <button
-          type="button"
-          className={`home__difficulty-btn ${difficulty === 'advanced' ? 'home__difficulty-btn--active' : ''}`}
-          onClick={() => { playButtonTap(); onChangeDifficulty('advanced'); }}
-        >
-          {t(UI_STRINGS.advanced, lang)}
-        </button>
-      </div>
+      <main className="home__main">
+        <section className="home__welcome">
+          <p className="home__eyebrow">✨ {t(UI_STRINGS.learningSpace, lang)}</p>
+          <h2>{t(UI_STRINGS.welcomeTitle, lang)}</h2>
+          <p className="home__welcome-copy">{t(UI_STRINGS.welcomeBody, lang)}</p>
+          <button type="button" className="home__welcome-action" onClick={() => { playButtonTap(); onSelectTopic(MIXED_TOPIC_ID); }}>
+            🎲 {t(UI_STRINGS.mixedPractice, lang)} <span aria-hidden="true">→</span>
+          </button>
+          <span className="home__welcome-orbit" aria-hidden="true">★</span>
+        </section>
 
-      <BadgeShelf lang={lang} state={state} onOpenBadges={onOpenBadges} />
+        <div className="home__quick-stack">
+          <button type="button" className="home__daily-card" onClick={() => { playButtonTap(); onSelectTopic(DAILY_TOPIC_ID); }}>
+            <span className={`home__daily-ring ${todayResult ? 'home__daily-ring--done' : ''}`} aria-hidden="true"><span>🗓️</span></span>
+            <span className="home__daily-copy">
+              <small>{today}</small>
+              <strong>{t(UI_STRINGS.dailyChallenge, lang)}</strong>
+              <span className="home__daily-status">
+                {todayResult
+                  ? `${t(UI_STRINGS.playedToday, lang)}: ${todayResult.score}/${QUESTIONS_PER_SESSION} ${'⭐'.repeat(starsForScore(todayResult.score))}`
+                  : `${QUESTIONS_PER_SESSION} ${t(UI_STRINGS.questionsToday, lang)} · ${t(UI_STRINGS.start, lang)} →`}
+              </span>
+            </span>
+          </button>
 
-      <button type="button" className="home__daily-card" onClick={() => { playButtonTap(); onSelectTopic(DAILY_TOPIC_ID); }}>
-        <div className="home__daily-top">
-          <span className="home__daily-icon" aria-hidden="true">🗓️</span>
-          <div>
-            <p className="home__daily-title">{t(UI_STRINGS.dailyChallenge, lang)}</p>
-            <p className="home__daily-date">{today}</p>
-          </div>
+          <BadgeShelf lang={lang} state={state} onOpenBadges={onOpenBadges} />
         </div>
-        {todayResult ? (
-          <p className="home__daily-status">
-            {t(UI_STRINGS.playedToday, lang)}: {todayResult.score}/{QUESTIONS_PER_SESSION} {'⭐'.repeat(starsForScore(todayResult.score))}
-          </p>
-        ) : (
-          <p className="home__daily-status home__daily-status--cta">{t(UI_STRINGS.start, lang)} →</p>
-        )}
-      </button>
 
-      <div className="home__grid home__grid--mixed">
-        <TopicCard
-          icon="🎲"
-          name={UI_STRINGS.mixedPractice}
-          bestStreak={perTopic[MIXED_TOPIC_ID]?.bestStreak ?? 0}
-          onClick={() => onSelectTopic(MIXED_TOPIC_ID)}
-          lang={lang}
-          accent="mixed"
-        />
-      </div>
+        <section className="home__topics">
+          <div className="home__topics-head">
+            <div>
+              <p className="home__eyebrow home__eyebrow--ink">{t(UI_STRINGS.practiceByTopic, lang)}</p>
+              <h2>{t(UI_STRINGS.chooseTopic, lang)}</h2>
+            </div>
+            <div className="home__difficulty" role="group" aria-label={t(UI_STRINGS.difficulty, lang)}>
+              <button type="button" aria-pressed={difficulty === 'standard'} onClick={() => { playButtonTap(); onChangeDifficulty('standard'); }}>
+                {t(UI_STRINGS.standard, lang)}
+              </button>
+              <button type="button" aria-pressed={difficulty === 'advanced'} onClick={() => { playButtonTap(); onChangeDifficulty('advanced'); }}>
+                {t(UI_STRINGS.advanced, lang)}
+              </button>
+            </div>
+          </div>
 
-      <h2 className="home__section-heading">
-        {UI_STRINGS.termOne.en} / {UI_STRINGS.termOne.zh}
-      </h2>
-      <div className="home__grid">
-        {termOneGenerators.map((g) => (
-          <TopicCard
-            key={g.meta.id}
-            icon={g.meta.icon}
-            name={g.meta.name}
-            bestStreak={perTopic[g.meta.id]?.bestStreak ?? 0}
-            onClick={() => onSelectTopic(g.meta.id)}
-            lang={lang}
-          />
-        ))}
-      </div>
+          <div className="home__subject-tabs" role="group" aria-label={t(UI_STRINGS.subject, lang)}>
+            <button type="button" aria-pressed={subject === 'math'} onClick={() => chooseSubject('math')}>🔢 {t(UI_STRINGS.math, lang)}</button>
+            <button type="button" aria-pressed={subject === 'english'} onClick={() => chooseSubject('english')}>📚 {t(UI_STRINGS.englishSection, lang)}</button>
+          </div>
 
-      <h2 className="home__section-heading">
-        {UI_STRINGS.termTwo.en} / {UI_STRINGS.termTwo.zh}
-      </h2>
-      <div className="home__grid">
-        {termTwoGenerators.map((g) => (
-          <TopicCard
-            key={g.meta.id}
-            icon={g.meta.icon}
-            name={g.meta.name}
-            bestStreak={perTopic[g.meta.id]?.bestStreak ?? 0}
-            onClick={() => onSelectTopic(g.meta.id)}
-            lang={lang}
-          />
-        ))}
-      </div>
+          {subject === 'math' ? (
+            <div className="home__subject-panel edu-pop-in" key="math">
+              <h3 className="home__section-heading">{t(UI_STRINGS.termOne, lang)}</h3>
+              <div className="home__grid">
+                {termOneGenerators.map((generator) => (
+                  <TopicCard
+                    key={generator.meta.id}
+                    icon={generator.meta.icon}
+                    name={generator.meta.name}
+                    bestStreak={perTopic[generator.meta.id]?.bestStreak ?? 0}
+                    stars={perTopic[generator.meta.id]?.stars ?? 0}
+                    onClick={() => onSelectTopic(generator.meta.id)}
+                    lang={lang}
+                  />
+                ))}
+              </div>
 
-      <h2 className="home__section-heading">
-        {UI_STRINGS.englishSection.en} / {UI_STRINGS.englishSection.zh}
-      </h2>
-      <div className="home__grid">
-        {ENGLISH_TOPICS.map((g) => (
-          <TopicCard
-            key={g.id}
-            icon={g.icon}
-            name={g.name}
-            bestStreak={perTopic[g.id]?.bestStreak ?? 0}
-            onClick={() => onSelectTopic(g.id)}
-            lang={lang}
-          />
-        ))}
-      </div>
+              <h3 className="home__section-heading">{t(UI_STRINGS.termTwo, lang)}</h3>
+              <div className="home__grid">
+                {termTwoGenerators.map((generator) => (
+                  <TopicCard
+                    key={generator.meta.id}
+                    icon={generator.meta.icon}
+                    name={generator.meta.name}
+                    bestStreak={perTopic[generator.meta.id]?.bestStreak ?? 0}
+                    stars={perTopic[generator.meta.id]?.stars ?? 0}
+                    onClick={() => onSelectTopic(generator.meta.id)}
+                    lang={lang}
+                  />
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="home__subject-panel edu-pop-in" key="english">
+              <div className="home__grid">
+                {ENGLISH_TOPICS.map((topic) => (
+                  <TopicCard
+                    key={topic.id}
+                    icon={topic.icon}
+                    name={topic.name}
+                    bestStreak={perTopic[topic.id]?.bestStreak ?? 0}
+                    stars={perTopic[topic.id]?.stars ?? 0}
+                    onClick={() => onSelectTopic(topic.id)}
+                    lang={lang}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+        </section>
+      </main>
     </div>
   );
 }

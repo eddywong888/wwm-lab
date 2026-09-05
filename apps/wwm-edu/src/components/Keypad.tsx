@@ -33,7 +33,7 @@ export default function Keypad({ value, onChange, onSubmit, disabled, lang }: Ke
 
   return (
     <div className="keypad">
-      <div className="keypad__display" aria-live="polite">{value || ' '}</div>
+      <div className="keypad__display" aria-live="polite" aria-label={value || '0'}>{value || ' '}</div>
       <div className="keypad__grid">
         {KEYS.map((k) => (
           <button
@@ -46,7 +46,7 @@ export default function Keypad({ value, onChange, onSubmit, disabled, lang }: Ke
             {k}
           </button>
         ))}
-        <button type="button" className="keypad__key keypad__key--wide" onClick={backspace} disabled={disabled}>
+        <button type="button" className="keypad__key keypad__key--wide" onClick={backspace} disabled={disabled} aria-label="Backspace">
           ⌫
         </button>
         <button

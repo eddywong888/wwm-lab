@@ -5,6 +5,30 @@ Version scheme: `0.<phase>.<patch>` until the full 4-phase plan is complete, the
 
 ---
 
+## v1.1.0 — Learning experience design refresh (2026-09-05)
+
+- **Clearer Home hierarchy** — replaced the flat catalogue opening with a focused learning
+  journey: a welcoming Mixed Practice hero, prominent Daily Challenge, compact badge shelf, and
+  a dedicated topic browser. Math and English now switch through accessible subject tabs, while
+  the existing Standard/Advanced control stays close to the topics it affects.
+- **More informative topic cards** — cards now show existing stars and best-streak progress, use
+  stronger icon containers and mastery indicators, and retain the original topic names and
+  selection behavior. No question banks, generators, scoring thresholds, or saved-data fields
+  changed.
+- **Focused practice flow** — added topic context, a segmented ten-question progress track, a
+  visible exit control, a lightweight owl coach, answer labels, and an integrated feedback/Next
+  action. MCQ and numeric-keypad sessions keep their original answer validation and session logic.
+- **Cohesive rewards and secondary screens** — Results, Badges, Leaderboard, and Profile now share
+  the same cards, typography, elevation, responsive spacing, and interaction states. Results uses
+  the existing score, streak, stars, and earned badges; no new reward currency or mechanics were
+  introduced.
+- **Responsive and accessible polish** — preserved large touch targets, restored Profile access
+  in the compact header, added visible keyboard focus, Escape-to-close for the profile dialog,
+  dialog semantics, live answer feedback, and a reduced-motion mode via the system preference.
+- Verified: `npx tsc -b --force`, `npm run check --prefix apps/wwm-edu` (20,000 generated math
+  questions, 245 English questions, badge checks), app-only production build, and interactive
+  browser checks at desktop and 390 px mobile widths in English and Chinese.
+
 ## v1.0.0 — Phase 4: badges & rewards (2026-09-05)
 
 - **Badge system** — 8 badges × 3 tiers (bronze/silver/gold), 24 achievements total: Topic Master

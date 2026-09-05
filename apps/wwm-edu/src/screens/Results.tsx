@@ -50,8 +50,9 @@ export default function Results({ lang, correctCount, totalCount, bestStreak, ne
   return (
     <div className="results">
       <div className="results__card edu-pop-in">
+        <div className="results__mascot" aria-hidden="true">🦉</div>
+        <h1 className="results__encourage">{t(encouragement(stars), lang)}</h1>
         <p className="results__label">{t(UI_STRINGS.yourScore, lang)}</p>
-        <p className="results__score">{correctCount} / {totalCount}</p>
 
         <div className="results__stars" aria-label={`${stars} stars`}>
           {[0, 1, 2].map((i) => (
@@ -59,9 +60,20 @@ export default function Results({ lang, correctCount, totalCount, bestStreak, ne
           ))}
         </div>
 
-        <p className="results__streak">🔥 {t(UI_STRINGS.bestStreak, lang)}: {bestStreak}</p>
-
-        <p className="results__encourage">{t(encouragement(stars), lang)}</p>
+        <div className="results__summary">
+          <div className="results__summary-item">
+            <strong>{correctCount}/{totalCount}</strong>
+            <span>{t(UI_STRINGS.yourScore, lang)}</span>
+          </div>
+          <div className="results__summary-item">
+            <strong>🔥 {bestStreak}</strong>
+            <span>{t(UI_STRINGS.bestStreak, lang)}</span>
+          </div>
+          <div className="results__summary-item">
+            <strong>⭐ {stars}</strong>
+            <span>{t(UI_STRINGS.stars, lang)}</span>
+          </div>
+        </div>
 
         {newBadges.length > 0 && (
           <div className="results__badges edu-pop-in">
