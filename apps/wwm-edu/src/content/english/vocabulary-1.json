@@ -6,7 +6,7 @@
     "en": "Vocabulary",
     "zh": "词汇"
   },
-  "version": 1,
+  "version": 2,
   "questions": [
     {
       "id": "vocab1-001",
@@ -23,8 +23,8 @@
       ],
       "answer": "market",
       "explain": {
-        "en": "\"market\" matches the given meaning.",
-        "zh": "正确答案是 \"market\"（符合题目给出的意思）。"
+        "en": "A market is a place to buy and sell goods. The other places provide treatment, books or sport.",
+        "zh": "Market 是买卖物品的市场；其他选项分别是医院、图书馆和体育场。"
       }
     },
     {
@@ -42,8 +42,8 @@
       ],
       "answer": "puppy",
       "explain": {
-        "en": "\"puppy\" matches the given meaning.",
-        "zh": "正确答案是 \"puppy\"（符合题目给出的意思）。"
+        "en": "A baby dog is a puppy; a kitten is a baby cat.",
+        "zh": "Puppy 是小狗；kitten 是小猫，不能混淆。"
       }
     },
     {
@@ -61,8 +61,8 @@
       ],
       "answer": "breakfast",
       "explain": {
-        "en": "\"breakfast\" matches the given meaning.",
-        "zh": "正确答案是 \"breakfast\"（符合题目给出的意思）。"
+        "en": "Breakfast is the meal eaten at the start of the day, usually in the morning.",
+        "zh": "Breakfast 是一天开始时吃的早餐；lunch 是午餐，dinner 是晚餐。"
       }
     },
     {
@@ -80,8 +80,8 @@
       ],
       "answer": "teacher",
       "explain": {
-        "en": "\"teacher\" matches the given meaning.",
-        "zh": "正确答案是 \"teacher\"（符合题目给出的意思）。"
+        "en": "A teacher helps pupils learn; the other jobs are not defined by teaching pupils.",
+        "zh": "Teacher 指教导学生的人；其他职业不以教学生为主要工作。"
       }
     },
     {
@@ -99,8 +99,8 @@
       ],
       "answer": "library",
       "explain": {
-        "en": "\"library\" matches the given meaning.",
-        "zh": "正确答案是 \"library\"（符合题目给出的意思）。"
+        "en": "A library keeps books for people to read or borrow and return.",
+        "zh": "Library 是让人阅读或借还书籍的图书馆。"
       }
     },
     {
@@ -118,8 +118,8 @@
       ],
       "answer": "light",
       "explain": {
-        "en": "\"light\" matches the given meaning.",
-        "zh": "正确答案是 \"light\"（符合题目给出的意思）。"
+        "en": "Light can describe weight as well as brightness. Here it means not heavy.",
+        "zh": "Light 既可描述光线，也可描述重量；这里的意思是“轻的”。"
       }
     },
     {
@@ -137,8 +137,8 @@
       ],
       "answer": "hospital",
       "explain": {
-        "en": "\"hospital\" matches the given meaning.",
-        "zh": "正确答案是 \"hospital\"（符合题目给出的意思）。"
+        "en": "A hospital provides care and treatment for people who are ill.",
+        "zh": "Hospital 是为病人提供护理和治疗的医院。"
       }
     },
     {
@@ -156,8 +156,8 @@
       ],
       "answer": "generous",
       "explain": {
-        "en": "\"generous\" matches the given meaning.",
-        "zh": "正确答案是 \"generous\"（符合题目给出的意思）。"
+        "en": "Generous describes someone happy to share or give to others.",
+        "zh": "Generous 表示慷慨，愿意与别人分享或给予。"
       }
     },
     {
@@ -175,8 +175,8 @@
       ],
       "answer": "cautious",
       "explain": {
-        "en": "\"cautious\" matches the given meaning.",
-        "zh": "正确答案是 \"cautious\"（符合题目给出的意思）。"
+        "en": "Cautious means taking care to avoid danger; careless means not taking care.",
+        "zh": "Cautious 表示小心谨慎、注意危险；careless 表示粗心。"
       }
     },
     {
@@ -194,8 +194,8 @@
       ],
       "answer": "curiosity",
       "explain": {
-        "en": "\"curiosity\" matches the given meaning.",
-        "zh": "正确答案是 \"curiosity\"（符合题目给出的意思）。"
+        "en": "Curiosity is the desire to find out or learn more about something.",
+        "zh": "Curiosity 是好奇心，即想知道或了解更多的心情。"
       }
     },
     {
@@ -213,8 +213,8 @@
       ],
       "answer": "glad",
       "explain": {
-        "en": "\"glad\" has a meaning that is closest to the given word.",
-        "zh": "正确答案是 \"glad\"（与题目单词意思最接近）。"
+        "en": "Glad and happy both describe a pleased feeling.",
+        "zh": "Glad 和 happy 都表示高兴的心情。"
       }
     },
     {
@@ -232,8 +232,8 @@
       ],
       "answer": "large",
       "explain": {
-        "en": "\"large\" has a meaning that is closest to the given word.",
-        "zh": "正确答案是 \"large\"（与题目单词意思最接近）。"
+        "en": "Large and big both describe a great size.",
+        "zh": "Large 和 big 都用来形容体积或规模大。"
       }
     },
     {
@@ -251,8 +251,8 @@
       ],
       "answer": "quick",
       "explain": {
-        "en": "\"quick\" has a meaning that is closest to the given word.",
-        "zh": "正确答案是 \"quick\"（与题目单词意思最接近）。"
+        "en": "Quick and fast both describe moving or doing something at speed.",
+        "zh": "Quick 和 fast 都可以表示速度快。"
       }
     },
     {
@@ -270,8 +270,8 @@
       ],
       "answer": "start",
       "explain": {
-        "en": "\"start\" has a meaning that is closest to the given word.",
-        "zh": "正确答案是 \"start\"（与题目单词意思最接近）。"
+        "en": "Begin and start both mean to do the first part of an activity.",
+        "zh": "Begin 和 start 都表示开始做某件事。"
       }
     },
     {
@@ -289,8 +289,8 @@
       ],
       "answer": "clever",
       "explain": {
-        "en": "\"clever\" has a meaning that is closest to the given word.",
-        "zh": "正确答案是 \"clever\"（与题目单词意思最接近）。"
+        "en": "Smart can mean clever: able to understand or learn things well.",
+        "zh": "Smart 在这里表示聪明，与 clever 意思最接近。"
       }
     },
     {
@@ -308,8 +308,8 @@
       ],
       "answer": "scared",
       "explain": {
-        "en": "\"scared\" has a meaning that is closest to the given word.",
-        "zh": "正确答案是 \"scared\"（与题目单词意思最接近）。"
+        "en": "Afraid and scared both describe feeling fear.",
+        "zh": "Afraid 和 scared 都表示害怕。"
       }
     },
     {
@@ -327,8 +327,8 @@
       ],
       "answer": "beautiful",
       "explain": {
-        "en": "\"beautiful\" has a meaning that is closest to the given word.",
-        "zh": "正确答案是 \"beautiful\"（与题目单词意思最接近）。"
+        "en": "Pretty and beautiful both describe something pleasant to look at.",
+        "zh": "Pretty 和 beautiful 都可以形容外表好看。"
       }
     },
     {
@@ -346,8 +346,8 @@
       ],
       "answer": "huge",
       "explain": {
-        "en": "\"huge\" has a meaning that is closest to the given word.",
-        "zh": "正确答案是 \"huge\"（与题目单词意思最接近）。"
+        "en": "Enormous and huge both mean very large; tiny means very small.",
+        "zh": "Enormous 和 huge 都表示巨大；tiny 则表示非常小。"
       }
     },
     {
@@ -365,8 +365,8 @@
       ],
       "answer": "help",
       "explain": {
-        "en": "\"help\" has a meaning that is closest to the given word.",
-        "zh": "正确答案是 \"help\"（与题目单词意思最接近）。"
+        "en": "Assist means to help someone do something.",
+        "zh": "Assist 表示协助别人，与 help 意思最接近。"
       }
     },
     {
@@ -384,8 +384,8 @@
       ],
       "answer": "courageous",
       "explain": {
-        "en": "\"courageous\" has a meaning that is closest to the given word.",
-        "zh": "正确答案是 \"courageous\"（与题目单词意思最接近）。"
+        "en": "Courageous and brave describe facing fear or difficulty with courage.",
+        "zh": "Courageous 和 brave 都表示勇敢面对害怕或困难的情况。"
       }
     },
     {
@@ -403,8 +403,8 @@
       ],
       "answer": "cold",
       "explain": {
-        "en": "\"cold\" means the opposite of the given word.",
-        "zh": "正确答案是 \"cold\"（与题目单词意思相反）。"
+        "en": "Cold describes a low temperature, the opposite of hot.",
+        "zh": "Cold 表示温度低，与 hot（热的）相反。"
       }
     },
     {
@@ -422,8 +422,8 @@
       ],
       "answer": "small",
       "explain": {
-        "en": "\"small\" means the opposite of the given word.",
-        "zh": "正确答案是 \"small\"（与题目单词意思相反）。"
+        "en": "Small describes a little size, the opposite of big.",
+        "zh": "Small 表示体积小，与 big 相反。"
       }
     },
     {
@@ -441,8 +441,8 @@
       ],
       "answer": "slow",
       "explain": {
-        "en": "\"slow\" means the opposite of the given word.",
-        "zh": "正确答案是 \"slow\"（与题目单词意思相反）。"
+        "en": "Slow describes low speed, the opposite of fast.",
+        "zh": "Slow 表示速度慢，与 fast 相反。"
       }
     },
     {
@@ -460,8 +460,8 @@
       ],
       "answer": "sad",
       "explain": {
-        "en": "\"sad\" means the opposite of the given word.",
-        "zh": "正确答案是 \"sad\"（与题目单词意思相反）。"
+        "en": "Sad describes an unhappy feeling, the opposite of happy.",
+        "zh": "Sad 表示难过，与 happy 的高兴心情相反。"
       }
     },
     {
@@ -479,8 +479,8 @@
       ],
       "answer": "closed",
       "explain": {
-        "en": "\"closed\" means the opposite of the given word.",
-        "zh": "正确答案是 \"closed\"（与题目单词意思相反）。"
+        "en": "A closed door is not open. Closed is the opposite of open here.",
+        "zh": "Closed 表示关闭的，与 open（打开的）相反。"
       }
     },
     {
@@ -498,8 +498,8 @@
       ],
       "answer": "dirty",
       "explain": {
-        "en": "\"dirty\" means the opposite of the given word.",
-        "zh": "正确答案是 \"dirty\"（与题目单词意思相反）。"
+        "en": "Dirty means not clean, often because of dust or mud.",
+        "zh": "Dirty 表示脏的，例如沾了灰尘或泥土，与 clean 相反。"
       }
     },
     {
@@ -517,8 +517,8 @@
       ],
       "answer": "weak",
       "explain": {
-        "en": "\"weak\" means the opposite of the given word.",
-        "zh": "正确答案是 \"weak\"（与题目单词意思相反）。"
+        "en": "Weak means lacking strength; it is the opposite of strong.",
+        "zh": "Weak 表示力气不足，与 strong（强壮的）相反。"
       }
     },
     {
@@ -536,8 +536,8 @@
       ],
       "answer": "easy",
       "explain": {
-        "en": "\"easy\" means the opposite of the given word.",
-        "zh": "正确答案是 \"easy\"（与题目单词意思相反）。"
+        "en": "Easy means not difficult. Hard, complex and tough suggest difficulty.",
+        "zh": "Easy 表示容易；hard、complex 和 tough 都表示有难度。"
       }
     },
     {
@@ -555,8 +555,8 @@
       ],
       "answer": "modern",
       "explain": {
-        "en": "\"modern\" means the opposite of the given word.",
-        "zh": "正确答案是 \"modern\"（与题目单词意思相反）。"
+        "en": "Ancient refers to the very distant past; modern relates to more recent times.",
+        "zh": "Ancient 表示古老的；modern 表示现代的，时间概念相反。"
       }
     },
     {
@@ -574,16 +574,16 @@
       ],
       "answer": "stingy",
       "explain": {
-        "en": "\"stingy\" means the opposite of the given word.",
-        "zh": "正确答案是 \"stingy\"（与题目单词意思相反）。"
+        "en": "Stingy describes being unwilling to share or give, the opposite of generous.",
+        "zh": "Stingy 表示吝啬、不愿给予，与 generous（慷慨的）相反。"
       }
     },
     {
       "id": "vocab1-031",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which word does NOT belong with the others?",
-        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+        "en": "Which word is NOT a fruit?",
+        "zh": "选出最合适的答案。Which word is NOT a fruit?"
       },
       "choices": [
         "carrot",
@@ -593,16 +593,16 @@
       ],
       "answer": "carrot",
       "explain": {
-        "en": "\"carrot\" belongs to a different category from the other three words.",
-        "zh": "正确答案是 \"carrot\"（与其他三个词不属于同一类别）。"
+        "en": "Carrot is a root vegetable. Apple, banana and mango are fruits.",
+        "zh": "Carrot 是根菜类；apple、banana 和 mango 都是水果。"
       }
     },
     {
       "id": "vocab1-032",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which word does NOT belong with the others?",
-        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+        "en": "Which word is NOT an animal?",
+        "zh": "选出最合适的答案。Which word is NOT an animal?"
       },
       "choices": [
         "lion",
@@ -612,16 +612,16 @@
       ],
       "answer": "sofa",
       "explain": {
-        "en": "\"sofa\" belongs to a different category from the other three words.",
-        "zh": "正确答案是 \"sofa\"（与其他三个词不属于同一类别）。"
+        "en": "Sofa is furniture for sitting on. Lion, tiger and elephant are animals.",
+        "zh": "Sofa 是用来坐的家具；另外三个词都是动物名称。"
       }
     },
     {
       "id": "vocab1-033",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which word does NOT belong with the others?",
-        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+        "en": "Which word is NOT an item of stationery?",
+        "zh": "选出最合适的答案。Which word is NOT an item of stationery?"
       },
       "choices": [
         "pencil",
@@ -631,16 +631,16 @@
       ],
       "answer": "banana",
       "explain": {
-        "en": "\"banana\" belongs to a different category from the other three words.",
-        "zh": "正确答案是 \"banana\"（与其他三个词不属于同一类别）。"
+        "en": "Banana is a fruit. Pencil, ruler and eraser are stationery used for schoolwork.",
+        "zh": "Banana 是水果；pencil、ruler 和 eraser 都是学习用的文具。"
       }
     },
     {
       "id": "vocab1-034",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which word does NOT belong with the others?",
-        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+        "en": "Which word is NOT a vehicle?",
+        "zh": "选出最合适的答案。Which word is NOT a vehicle?"
       },
       "choices": [
         "bus",
@@ -650,16 +650,16 @@
       ],
       "answer": "chair",
       "explain": {
-        "en": "\"chair\" belongs to a different category from the other three words.",
-        "zh": "正确答案是 \"chair\"（与其他三个词不属于同一类别）。"
+        "en": "A chair is furniture. A bus, train and car are vehicles used for travel.",
+        "zh": "Chair 是家具；bus、train 和 car 是交通工具。"
       }
     },
     {
       "id": "vocab1-035",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which word does NOT belong with the others?",
-        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+        "en": "Which word is NOT a colour?",
+        "zh": "选出最合适的答案。Which word is NOT a colour?"
       },
       "choices": [
         "red",
@@ -669,16 +669,16 @@
       ],
       "answer": "happy",
       "explain": {
-        "en": "\"happy\" belongs to a different category from the other three words.",
-        "zh": "正确答案是 \"happy\"（与其他三个词不属于同一类别）。"
+        "en": "Happy names a feeling. Red, blue and green name colours.",
+        "zh": "Happy 表示心情；red、blue 和 green 都是颜色。"
       }
     },
     {
       "id": "vocab1-036",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which word does NOT belong with the others?",
-        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+        "en": "Which word is NOT a word naming a family relationship?",
+        "zh": "选出最合适的答案。Which word is NOT a word naming a family relationship?"
       },
       "choices": [
         "mother",
@@ -688,16 +688,16 @@
       ],
       "answer": "teacher",
       "explain": {
-        "en": "\"teacher\" belongs to a different category from the other three words.",
-        "zh": "正确答案是 \"teacher\"（与其他三个词不属于同一类别）。"
+        "en": "Teacher names a job. Mother, father and sister name family relationships.",
+        "zh": "Teacher 是职业名称；mother、father 和 sister 是亲属关系名称。"
       }
     },
     {
       "id": "vocab1-037",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which word does NOT belong with the others?",
-        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+        "en": "Which word is NOT a day of the week?",
+        "zh": "选出最合适的答案。Which word is NOT a day of the week?"
       },
       "choices": [
         "Monday",
@@ -707,16 +707,16 @@
       ],
       "answer": "January",
       "explain": {
-        "en": "\"January\" belongs to a different category from the other three words.",
-        "zh": "正确答案是 \"January\"（与其他三个词不属于同一类别）。"
+        "en": "January is a month. Monday, Tuesday and Friday are days of the week.",
+        "zh": "January 是月份名称；另外三个词都是星期几。"
       }
     },
     {
       "id": "vocab1-038",
       "difficulty": "advanced",
       "prompt": {
-        "en": "Which word does NOT belong with the others?",
-        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+        "en": "A poster lists activities pupils can play: football, basketball and badminton. Which word names a place, rather than a sport?",
+        "zh": "选出最合适的答案。A poster lists activities pupils can play: football, basketball and badminton. Which word names a place, rather than a sport?"
       },
       "choices": [
         "football",
@@ -726,16 +726,16 @@
       ],
       "answer": "library",
       "explain": {
-        "en": "\"library\" belongs to a different category from the other three words.",
-        "zh": "正确答案是 \"library\"（与其他三个词不属于同一类别）。"
+        "en": "Library names a place for books; football, basketball and badminton name sports.",
+        "zh": "Library 是图书馆，属于地点；其余三个词是运动项目。"
       }
     },
     {
       "id": "vocab1-039",
       "difficulty": "advanced",
       "prompt": {
-        "en": "Which word does NOT belong with the others?",
-        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+        "en": "Whales, dolphins and sharks live in the sea. Which word names a bird instead of one of these sea animals?",
+        "zh": "选出最合适的答案。Whales, dolphins and sharks live in the sea. Which word names a bird instead of one of these sea animals?"
       },
       "choices": [
         "whale",
@@ -745,16 +745,16 @@
       ],
       "answer": "eagle",
       "explain": {
-        "en": "\"eagle\" belongs to a different category from the other three words.",
-        "zh": "正确答案是 \"eagle\"（与其他三个词不属于同一类别）。"
+        "en": "An eagle is a bird. The passage groups the other three animals by their sea habitat.",
+        "zh": "Eagle 是鸟类；题目把另外三种动物按海洋栖息地分在一组。"
       }
     },
     {
       "id": "vocab1-040",
       "difficulty": "advanced",
       "prompt": {
-        "en": "Which word does NOT belong with the others?",
-        "zh": "选出正确的答案。Which word does NOT belong with the others?"
+        "en": "A maths worksheet asks for names of flat shapes. Which word belongs in a list of fruits instead?",
+        "zh": "选出最合适的答案。A maths worksheet asks for names of flat shapes. Which word belongs in a list of fruits instead?"
       },
       "choices": [
         "triangle",
@@ -764,8 +764,8 @@
       ],
       "answer": "orange",
       "explain": {
-        "en": "\"orange\" belongs to a different category from the other three words.",
-        "zh": "正确答案是 \"orange\"（与其他三个词不属于同一类别）。"
+        "en": "Orange names a fruit here; triangle, square and circle name flat shapes.",
+        "zh": "Orange 在这里是水果；triangle、square 和 circle 是平面图形名称。"
       }
     },
     {
@@ -783,8 +783,8 @@
       ],
       "answer": "Make",
       "explain": {
-        "en": "\"Make\" is the word that is normally used together with the rest of the phrase.",
-        "zh": "正确答案是 \"Make\"（固定搭配用法）。"
+        "en": "Make your bed means arrange the sheets and covers neatly after sleeping.",
+        "zh": "Make your bed 是整理床铺的固定说法，不是制造一张床。"
       }
     },
     {
@@ -802,8 +802,8 @@
       ],
       "answer": "Do",
       "explain": {
-        "en": "\"Do\" is the word that is normally used together with the rest of the phrase.",
-        "zh": "正确答案是 \"Do\"（固定搭配用法）。"
+        "en": "Do the dishes means wash the plates, bowls and other dishes.",
+        "zh": "Do the dishes 是洗碗碟的常用搭配。"
       }
     },
     {
@@ -821,35 +821,35 @@
       ],
       "answer": "Take",
       "explain": {
-        "en": "\"Take\" is the word that is normally used together with the rest of the phrase.",
-        "zh": "正确答案是 \"Take\"（固定搭配用法）。"
+        "en": "Take a photo is the usual phrase for using a camera to make a picture.",
+        "zh": "用相机拍照的常用搭配是 take a photo。"
       }
     },
     {
       "id": "vocab1-044",
       "difficulty": "standard",
       "prompt": {
-        "en": "\"___ breakfast before school.\"",
-        "zh": "选出正确的答案。\"___ breakfast before school.\""
+        "en": "Choose the word meaning eat: \"___ breakfast before school.\"",
+        "zh": "选出最合适的答案。Choose the word meaning eat: \"___ breakfast before school.\""
       },
       "choices": [
         "Have",
-        "Make",
-        "Do",
-        "Take"
+        "Draw",
+        "Carry",
+        "Find"
       ],
       "answer": "Have",
       "explain": {
-        "en": "\"Have\" is the word that is normally used together with the rest of the phrase.",
-        "zh": "正确答案是 \"Have\"（固定搭配用法）。"
+        "en": "Have breakfast means eat breakfast; the question asks specifically for this meaning.",
+        "zh": "Have breakfast 表示吃早餐，符合题目指定的 eat 的意思。"
       }
     },
     {
       "id": "vocab1-045",
       "difficulty": "standard",
       "prompt": {
-        "en": "\"___ a mistake in the exam.\"",
-        "zh": "选出正确的答案。\"___ a mistake in the exam.\""
+        "en": "Choose the usual phrase: \"Try not to ___ a mistake in the test.\"",
+        "zh": "选出最合适的答案。Choose the usual phrase: \"Try not to ___ a mistake in the test.\""
       },
       "choices": [
         "Make",
@@ -859,8 +859,8 @@
       ],
       "answer": "Make",
       "explain": {
-        "en": "\"Make\" is the word that is normally used together with the rest of the phrase.",
-        "zh": "正确答案是 \"Make\"（固定搭配用法）。"
+        "en": "Make a mistake means do something incorrectly. Try not to tells us to avoid it.",
+        "zh": "Make a mistake 表示犯错；try not to 表示尽量避免犯错。"
       }
     },
     {
@@ -878,8 +878,8 @@
       ],
       "answer": "Do",
       "explain": {
-        "en": "\"Do\" is the word that is normally used together with the rest of the phrase.",
-        "zh": "正确答案是 \"Do\"（固定搭配用法）。"
+        "en": "Do your best means try as hard as you can.",
+        "zh": "Do your best 表示尽自己最大的努力。"
       }
     },
     {
@@ -897,8 +897,8 @@
       ],
       "answer": "Take",
       "explain": {
-        "en": "\"Take\" is the word that is normally used together with the rest of the phrase.",
-        "zh": "正确答案是 \"Take\"（固定搭配用法）。"
+        "en": "Take a shower is a usual phrase for washing under a shower.",
+        "zh": "Take a shower 是淋浴的常用说法。"
       }
     },
     {
@@ -916,8 +916,8 @@
       ],
       "answer": "Have",
       "explain": {
-        "en": "\"Have\" is the word that is normally used together with the rest of the phrase.",
-        "zh": "正确答案是 \"Have\"（固定搭配用法）。"
+        "en": "Have a rest means stop an activity for a short time to recover energy.",
+        "zh": "Have a rest 表示休息一下，让自己恢复精神。"
       }
     },
     {
@@ -935,8 +935,8 @@
       ],
       "answer": "Pay",
       "explain": {
-        "en": "\"Pay\" is the word that is normally used together with the rest of the phrase.",
-        "zh": "正确答案是 \"Pay\"（固定搭配用法）。"
+        "en": "Pay attention means listen or look carefully and concentrate.",
+        "zh": "Pay attention 表示专心留意、认真听或看。"
       }
     },
     {
@@ -954,27 +954,27 @@
       ],
       "answer": "Take",
       "explain": {
-        "en": "\"Take\" is the word that is normally used together with the rest of the phrase.",
-        "zh": "正确答案是 \"Take\"（固定搭配用法）。"
+        "en": "Take care of means look after and help keep someone safe and well.",
+        "zh": "Take care of 表示照顾某人。"
       }
     },
     {
       "id": "vocab1-051",
       "difficulty": "standard",
       "prompt": {
-        "en": "What do we call a place where people buy fresh vegetables and fish in the morning?",
-        "zh": "选出正确的答案。What do we call a place where people buy fresh vegetables and fish in the morning?"
+        "en": "What do we call a market with stalls selling fresh fish, meat and vegetables?",
+        "zh": "选出最合适的答案。What do we call a market with stalls selling fresh fish, meat and vegetables?"
       },
       "choices": [
         "wet market",
-        "supermarket",
         "bookshop",
-        "playground"
+        "playground",
+        "post office"
       ],
       "answer": "wet market",
       "explain": {
-        "en": "\"wet market\" is the correct word for this everyday Malaysian context.",
-        "zh": "正确答案是 \"wet market\"（马来西亚日常生活常用词）。"
+        "en": "A wet market has stalls selling fresh food such as fish, meat and vegetables.",
+        "zh": "Wet market 指售卖鲜鱼、肉类和蔬菜等食物的巴刹。"
       }
     },
     {
@@ -992,16 +992,16 @@
       ],
       "answer": "rice dish",
       "explain": {
-        "en": "\"rice dish\" is the correct word for this everyday Malaysian context.",
-        "zh": "正确答案是 \"rice dish\"（马来西亚日常生活常用词）。"
+        "en": "Nasi lemak is a prepared rice dish; it is not a fruit, drink or vegetable.",
+        "zh": "Nasi lemak（椰浆饭）是一种米饭料理，不是水果、饮料或蔬菜。"
       }
     },
     {
       "id": "vocab1-053",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which animal appears on the Malaysian coat of arms as a symbol of courage?",
-        "zh": "选出正确的答案。Which animal appears on the Malaysian coat of arms as a symbol of courage?"
+        "en": "Read the description: \"This large wild cat has orange fur with black stripes.\" Which animal is described?",
+        "zh": "选出最合适的答案。Read the description: \"This large wild cat has orange fur with black stripes.\" Which animal is described?"
       },
       "choices": [
         "tiger",
@@ -1011,8 +1011,8 @@
       ],
       "answer": "tiger",
       "explain": {
-        "en": "\"tiger\" is the correct word for this everyday Malaysian context.",
-        "zh": "正确答案是 \"tiger\"（马来西亚日常生活常用词）。"
+        "en": "Orange fur and black stripes are the clues describing a tiger.",
+        "zh": "橙色皮毛和黑色条纹是辨认 tiger（老虎）的线索。"
       }
     },
     {
@@ -1030,46 +1030,46 @@
       ],
       "answer": "uncle",
       "explain": {
-        "en": "\"uncle\" is the correct word for this everyday Malaysian context.",
-        "zh": "正确答案是 \"uncle\"（马来西亚日常生活常用词）。"
+        "en": "Your father's brother is your uncle. Aunt is used for a female relative of that generation.",
+        "zh": "父亲的兄弟用 uncle；aunt 用于同辈的女性亲属。"
       }
     },
     {
       "id": "vocab1-055",
       "difficulty": "standard",
       "prompt": {
-        "en": "Where do students go in school to borrow books?",
-        "zh": "选出正确的答案。Where do students go in school to borrow books?"
+        "en": "A sign points to the way out of the school hall. Which word should be on the sign?",
+        "zh": "选出最合适的答案。A sign points to the way out of the school hall. Which word should be on the sign?"
       },
       "choices": [
-        "library",
-        "canteen",
-        "hall",
-        "office"
+        "EXIT",
+        "ENTRANCE",
+        "TOILET",
+        "OFFICE"
       ],
-      "answer": "library",
+      "answer": "EXIT",
       "explain": {
-        "en": "\"library\" is the correct word for this everyday Malaysian context.",
-        "zh": "正确答案是 \"library\"（马来西亚日常生活常用词）。"
+        "en": "Exit means the way out. Entrance means the way in.",
+        "zh": "Exit 表示出口；entrance 表示入口。"
       }
     },
     {
       "id": "vocab1-056",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which fruit is known as the \"King of Fruits\" in Malaysia?",
-        "zh": "选出正确的答案。Which fruit is known as the \"King of Fruits\" in Malaysia?"
+        "en": "At a fruit stall, Mei reads: \"Durian: a large fruit with a spiky shell.\" What does spiky mean?",
+        "zh": "选出最合适的答案。At a fruit stall, Mei reads: \"Durian: a large fruit with a spiky shell.\" What does spiky mean?"
       },
       "choices": [
-        "durian",
-        "mango",
-        "rambutan",
-        "papaya"
+        "covered with sharp points",
+        "completely smooth",
+        "full of round holes",
+        "made of soft cloth"
       ],
-      "answer": "durian",
+      "answer": "covered with sharp points",
       "explain": {
-        "en": "\"durian\" is the correct word for this everyday Malaysian context.",
-        "zh": "正确答案是 \"durian\"（马来西亚日常生活常用词）。"
+        "en": "Spiky means having sharp points. The shell description supplies the clue.",
+        "zh": "Spiky 表示有尖刺的；题目用榴梿外壳的描述提供线索。"
       }
     },
     {
@@ -1087,16 +1087,16 @@
       ],
       "answer": "canteen",
       "explain": {
-        "en": "\"canteen\" is the correct word for this everyday Malaysian context.",
-        "zh": "正确答案是 \"canteen\"（马来西亚日常生活常用词）。"
+        "en": "A canteen is the school eating place, especially during recess.",
+        "zh": "Canteen 是学校里学生下课时用餐的食堂。"
       }
     },
     {
       "id": "vocab1-058",
       "difficulty": "advanced",
       "prompt": {
-        "en": "What does the Malay word \"kampung\" mean in English?",
-        "zh": "选出正确的答案。What does the Malay word \"kampung\" mean in English?"
+        "en": "The family left the busy city for a kampung with a few houses and farms. Which English word best describes this small settlement?",
+        "zh": "选出最合适的答案。The family left the busy city for a kampung with a few houses and farms. Which English word best describes this small settlement?"
       },
       "choices": [
         "village",
@@ -1106,8 +1106,8 @@
       ],
       "answer": "village",
       "explain": {
-        "en": "\"village\" is the correct word for this everyday Malaysian context.",
-        "zh": "正确答案是 \"village\"（马来西亚日常生活常用词）。"
+        "en": "Village describes a small settlement with homes, unlike a large busy city.",
+        "zh": "Village 表示村庄，符合房屋少、靠近农地的小聚落描述。"
       }
     },
     {
@@ -1125,27 +1125,597 @@
       ],
       "answer": "sundry shop",
       "explain": {
-        "en": "\"sundry shop\" is the correct word for this everyday Malaysian context.",
-        "zh": "正确答案是 \"sundry shop\"（马来西亚日常生活常用词）。"
+        "en": "A sundry shop is a small shop selling a range of everyday items.",
+        "zh": "Sundry shop 是售卖各种日用品的小杂货店。"
       }
     },
     {
       "id": "vocab1-060",
       "difficulty": "advanced",
       "prompt": {
-        "en": "What is the English word for \"raya\", as in \"Hari Raya\", a major festival in Malaysia?",
-        "zh": "选出正确的答案。What is the English word for \"raya\", as in \"Hari Raya\", a major festival in Malaysia?"
+        "en": "The neighbours gathered for food, games and songs to mark a happy occasion. This event was a ___.",
+        "zh": "选出最合适的答案。The neighbours gathered for food, games and songs to mark a happy occasion. This event was a ___."
       },
       "choices": [
         "celebration",
-        "holiday homework",
-        "examination",
-        "weather"
+        "disagreement",
+        "punishment",
+        "disaster"
       ],
       "answer": "celebration",
       "explain": {
-        "en": "\"celebration\" is the correct word for this everyday Malaysian context.",
-        "zh": "正确答案是 \"celebration\"（马来西亚日常生活常用词）。"
+        "en": "Celebration names an event for a happy or special occasion; food, games and songs support that meaning.",
+        "zh": "Celebration 表示庆祝活动；食物、游戏、歌曲和开心的场合提供了线索。"
+      }
+    },
+    {
+      "id": "vocab1-061",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The pupil put the letter in an envelope and stuck a ___ on it before posting it.",
+        "zh": "选出最合适的答案。The pupil put the letter in an envelope and stuck a ___ on it before posting it."
+      },
+      "choices": [
+        "stamp",
+        "leaf",
+        "button",
+        "ticket"
+      ],
+      "answer": "stamp",
+      "explain": {
+        "en": "A stamp shows that postage has been paid. An envelope and posting are the clues.",
+        "zh": "Stamp 是邮票；信封和寄信这两个线索说明应选邮票。"
+      }
+    },
+    {
+      "id": "vocab1-062",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "At the clinic, the nurse asked the patients to sit in the ___ room until their names were called.",
+        "zh": "选出最合适的答案。At the clinic, the nurse asked the patients to sit in the ___ room until their names were called."
+      },
+      "choices": [
+        "waiting",
+        "dining",
+        "changing",
+        "living"
+      ],
+      "answer": "waiting",
+      "explain": {
+        "en": "People wait to be called in a waiting room; the clinic context supports this phrase.",
+        "zh": "候诊的地方称为 waiting room；题目说等候叫到名字。"
+      }
+    },
+    {
+      "id": "vocab1-063",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"The bag is light, so Hana can carry it easily.\" What does light mean here?",
+        "zh": "选出最合适的答案。\"The bag is light, so Hana can carry it easily.\" What does light mean here?"
+      },
+      "choices": [
+        "not heavy",
+        "not dark",
+        "pale in colour",
+        "a lamp"
+      ],
+      "answer": "not heavy",
+      "explain": {
+        "en": "Carrying the bag easily is a clue about its weight, not brightness or colour.",
+        "zh": "能轻松提起书包说明这里谈重量，因此 light 表示轻。"
+      }
+    },
+    {
+      "id": "vocab1-064",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"Turn right after the bridge.\" Which sentence uses right with the same meaning?",
+        "zh": "选出最合适的答案。\"Turn right after the bridge.\" Which sentence uses right with the same meaning?"
+      },
+      "choices": [
+        "The shop is on your right.",
+        "Your answer is right.",
+        "It is right to be kind.",
+        "You have the right to ask."
+      ],
+      "answer": "The shop is on your right.",
+      "explain": {
+        "en": "Both the instruction and the shop sentence use right as a direction.",
+        "zh": "两句中的 right 都表示右边的方向；其余句子表示正确、合宜或权利。"
+      }
+    },
+    {
+      "id": "vocab1-065",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"The pupils watched a bat fly from the cave.\" Which clue shows that bat is an animal here?",
+        "zh": "选出最合适的答案。\"The pupils watched a bat fly from the cave.\" Which clue shows that bat is an animal here?"
+      },
+      "choices": [
+        "It can fly from a cave.",
+        "The pupils are watching.",
+        "The sentence is short.",
+        "The word starts with b."
+      ],
+      "answer": "It can fly from a cave.",
+      "explain": {
+        "en": "Fly from the cave describes an animal's action; a sports bat cannot fly by itself.",
+        "zh": "从洞里飞出来是动物的动作；球棒不能自行飞行。"
+      }
+    },
+    {
+      "id": "vocab1-066",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "A notice says, \"Please return all borrowed books by Friday.\" Which word means give back?",
+        "zh": "选出最合适的答案。A notice says, \"Please return all borrowed books by Friday.\" Which word means give back?"
+      },
+      "choices": [
+        "return",
+        "borrow",
+        "keep",
+        "collect"
+      ],
+      "answer": "return",
+      "explain": {
+        "en": "Return means give something back; borrow means take it temporarily.",
+        "zh": "Return 表示归还；borrow 是借来暂时使用。"
+      }
+    },
+    {
+      "id": "vocab1-067",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"The path was narrow, so the pupils walked one behind another.\" Which word is closest to narrow?",
+        "zh": "选出最合适的答案。\"The path was narrow, so the pupils walked one behind another.\" Which word is closest to narrow?"
+      },
+      "choices": [
+        "not wide",
+        "not clean",
+        "not long",
+        "not flat"
+      ],
+      "answer": "not wide",
+      "explain": {
+        "en": "Walking in single file suggests there is little space across the path: not wide.",
+        "zh": "学生必须一个跟着一个走，说明路面不宽；narrow 表示狭窄。"
+      }
+    },
+    {
+      "id": "vocab1-068",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"The hall was silent during the story.\" Which word would change the sentence to the opposite meaning?",
+        "zh": "选出最合适的答案。\"The hall was silent during the story.\" Which word would change the sentence to the opposite meaning?"
+      },
+      "choices": [
+        "noisy",
+        "quiet",
+        "peaceful",
+        "still"
+      ],
+      "answer": "noisy",
+      "explain": {
+        "en": "Noisy means full of sound, the opposite of silent. The other choices suggest quietness.",
+        "zh": "Noisy 表示吵闹，与 silent（安静无声的）相反；其他选项都接近安静。"
+      }
+    },
+    {
+      "id": "vocab1-069",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"Aina was relieved when she found her missing bus card.\" How did she most likely feel?",
+        "zh": "选出最合适的答案。\"Aina was relieved when she found her missing bus card.\" How did she most likely feel?"
+      },
+      "choices": [
+        "No longer worried.",
+        "More confused.",
+        "Ready to argue.",
+        "Too bored to care."
+      ],
+      "answer": "No longer worried.",
+      "explain": {
+        "en": "Finding the missing card removes the worry. Relieved means less anxious after a problem ends.",
+        "zh": "找到遗失的车卡后不再担心；relieved 表示松了一口气。"
+      }
+    },
+    {
+      "id": "vocab1-070",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"Please handle this glass model carefully. It is fragile.\" Which instruction has the same meaning?",
+        "zh": "选出最合适的答案。\"Please handle this glass model carefully. It is fragile.\" Which instruction has the same meaning?"
+      },
+      "choices": [
+        "Be gentle because it breaks easily.",
+        "Hurry because it is very heavy.",
+        "Shake it because it is noisy.",
+        "Hide it because it is bright."
+      ],
+      "answer": "Be gentle because it breaks easily.",
+      "explain": {
+        "en": "Fragile means easily broken; handle carefully tells us to be gentle.",
+        "zh": "Fragile 表示易碎；handle carefully 提醒我们轻拿轻放。"
+      }
+    },
+    {
+      "id": "vocab1-071",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The word reuse means use again. Which action shows reuse?",
+        "zh": "选出最合适的答案。The word reuse means use again. Which action shows reuse?"
+      },
+      "choices": [
+        "Using an empty jar to store pencils.",
+        "Throwing a jar into the rubbish bin.",
+        "Buying a new jar each morning.",
+        "Breaking a jar into tiny pieces."
+      ],
+      "answer": "Using an empty jar to store pencils.",
+      "explain": {
+        "en": "Re- can mean again. The same jar is used again for a new purpose.",
+        "zh": "前缀 re- 可表示“再一次”；把同一个空罐子拿来放铅笔，就是再次使用。"
+      }
+    },
+    {
+      "id": "vocab1-072",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Which word completes the sentence? \"The answer was correct before, but now the pupil thinks it is ___.\"",
+        "zh": "选出最合适的答案。Which word completes the sentence? \"The answer was correct before, but now the pupil thinks it is ___.\""
+      },
+      "choices": [
+        "incorrect",
+        "correctly",
+        "correction",
+        "correctness"
+      ],
+      "answer": "incorrect",
+      "explain": {
+        "en": "Incorrect is an adjective meaning not correct; the prefix in- changes the meaning.",
+        "zh": "Incorrect 是形容词，表示不正确；前缀 in- 在这里表示否定。"
+      }
+    },
+    {
+      "id": "vocab1-073",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"Be helpful when your classmates need you.\" What does helpful mean?",
+        "zh": "选出最合适的答案。\"Be helpful when your classmates need you.\" What does helpful mean?"
+      },
+      "choices": [
+        "Willing to give help.",
+        "Unable to give help.",
+        "Needing help always.",
+        "Never asking for help."
+      ],
+      "answer": "Willing to give help.",
+      "explain": {
+        "en": "Helpful describes someone willing to help; -ful can mean having a quality.",
+        "zh": "Helpful 形容愿意帮助人的人；-ful 可表示具有某种特质。"
+      }
+    },
+    {
+      "id": "vocab1-074",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The teacher says, \"Put the words in alphabetical order.\" Which list is correct?",
+        "zh": "选出最合适的答案。The teacher says, \"Put the words in alphabetical order.\" Which list is correct?"
+      },
+      "choices": [
+        "basket, beach, bicycle, bottle",
+        "beach, basket, bottle, bicycle",
+        "bicycle, bottle, basket, beach",
+        "bottle, bicycle, beach, basket"
+      ],
+      "answer": "basket, beach, bicycle, bottle",
+      "explain": {
+        "en": "All start with b. Compare the next letters: a, e, i, o.",
+        "zh": "四个词都以 b 开头，再比较第二个字母：a、e、i、o。"
+      }
+    },
+    {
+      "id": "vocab1-075",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "A dictionary page has the guide words market and meal. Which word would be between them alphabetically?",
+        "zh": "选出最合适的答案。A dictionary page has the guide words market and meal. Which word would be between them alphabetically?"
+      },
+      "choices": [
+        "mat",
+        "map",
+        "milk",
+        "moon"
+      ],
+      "answer": "mat",
+      "explain": {
+        "en": "Mat comes after market because t comes after r, and before meal because a comes before e.",
+        "zh": "Mat 在 market 之后，因为第三个字母 t 排在 r 后；又在 meal 之前，因为第二个字母 a 排在 e 前。"
+      }
+    },
+    {
+      "id": "vocab1-076",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the spelling that fits: \"We can ___ the school bell from the field.\"",
+        "zh": "选出最合适的答案。Choose the spelling that fits: \"We can ___ the school bell from the field.\""
+      },
+      "choices": [
+        "hear",
+        "here",
+        "hair",
+        "hare"
+      ],
+      "answer": "hear",
+      "explain": {
+        "en": "Hear is the verb for noticing sound. Here refers to a place.",
+        "zh": "Hear 表示听见声音；here 表示这里，两者发音相同但意思不同。"
+      }
+    },
+    {
+      "id": "vocab1-077",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the word that fits: \"Please ___ your name at the top of the page.\"",
+        "zh": "选出最合适的答案。Choose the word that fits: \"Please ___ your name at the top of the page.\""
+      },
+      "choices": [
+        "write",
+        "right",
+        "ride",
+        "white"
+      ],
+      "answer": "write",
+      "explain": {
+        "en": "Write means form letters or words. Right has a different meaning despite the same sound.",
+        "zh": "Write 表示书写；right 虽然发音相同，却不是写字的意思。"
+      }
+    },
+    {
+      "id": "vocab1-078",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"Ravi lent Mei his ruler. Mei will give it back after class.\" What did Ravi do?",
+        "zh": "选出最合适的答案。\"Ravi lent Mei his ruler. Mei will give it back after class.\" What did Ravi do?"
+      },
+      "choices": [
+        "Let Mei use his ruler for a short time.",
+        "Bought a ruler from Mei.",
+        "Kept Mei's ruler forever.",
+        "Asked Mei to buy a ruler."
+      ],
+      "answer": "Let Mei use his ruler for a short time.",
+      "explain": {
+        "en": "Lent means allowed someone to borrow. The promise to give it back shows it is temporary.",
+        "zh": "Lent 是 lend 的过去式，表示借出；会归还说明只是暂时使用。"
+      }
+    },
+    {
+      "id": "vocab1-079",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"The bus was delayed by heavy rain.\" What does delayed mean?",
+        "zh": "选出最合适的答案。\"The bus was delayed by heavy rain.\" What does delayed mean?"
+      },
+      "choices": [
+        "Later than planned.",
+        "Earlier than planned.",
+        "Larger than before.",
+        "Cheaper than before."
+      ],
+      "answer": "Later than planned.",
+      "explain": {
+        "en": "Delayed describes something happening later than expected; it is about time.",
+        "zh": "Delayed 表示延误、比原定时间迟，谈的是时间而非大小或价格。"
+      }
+    },
+    {
+      "id": "vocab1-080",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The pupils joined a queue at the canteen. What should a new pupil joining the queue do?",
+        "zh": "选出最合适的答案。The pupils joined a queue at the canteen. What should a new pupil joining the queue do?"
+      },
+      "choices": [
+        "Stand at the back of the line.",
+        "Move to the front without asking.",
+        "Sit on the serving table.",
+        "Call every pupil by name."
+      ],
+      "answer": "Stand at the back of the line.",
+      "explain": {
+        "en": "A queue is a line of people waiting for their turn; new arrivals join its back.",
+        "zh": "Queue 是等候轮到自己的队伍；新来的人应排在队尾。"
+      }
+    },
+    {
+      "id": "vocab1-081",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"The class donated storybooks to a reading corner.\" Which word is closest to donated?",
+        "zh": "选出最合适的答案。\"The class donated storybooks to a reading corner.\" Which word is closest to donated?"
+      },
+      "choices": [
+        "gave",
+        "borrowed",
+        "hid",
+        "counted"
+      ],
+      "answer": "gave",
+      "explain": {
+        "en": "Donated means gave something to help others without asking for payment.",
+        "zh": "Donated 表示捐赠，即不要求报酬地把东西送出帮助别人。"
+      }
+    },
+    {
+      "id": "vocab1-082",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"Please keep the corridor clear.\" Which action best follows this instruction?",
+        "zh": "选出最合适的答案。\"Please keep the corridor clear.\" Which action best follows this instruction?"
+      },
+      "choices": [
+        "Move the bags away so people can walk through.",
+        "Place more chairs across the walkway.",
+        "Cover the windows with paper.",
+        "Paint every bag the same colour."
+      ],
+      "answer": "Move the bags away so people can walk through.",
+      "explain": {
+        "en": "Clear here means free from objects that block the way. It is about keeping a path open.",
+        "zh": "Clear 在这里表示没有障碍物；把书包移开，走廊才能通行。"
+      }
+    },
+    {
+      "id": "vocab1-083",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "A recipe says, \"Stir the soup gently.\" What should the cook do?",
+        "zh": "选出最合适的答案。A recipe says, \"Stir the soup gently.\" What should the cook do?"
+      },
+      "choices": [
+        "Move a spoon slowly around in the soup.",
+        "Throw the soup onto a plate.",
+        "Leave the spoon outside the bowl.",
+        "Pour the soup onto the floor."
+      ],
+      "answer": "Move a spoon slowly around in the soup.",
+      "explain": {
+        "en": "Stir means move a spoon around in a liquid to mix it. Gently means without force.",
+        "zh": "Stir 表示用汤匙搅拌液体；gently 表示轻轻地。"
+      }
+    },
+    {
+      "id": "vocab1-084",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"The lost child felt safe when a teacher stayed beside her.\" Which word is the opposite of safe in this context?",
+        "zh": "选出最合适的答案。\"The lost child felt safe when a teacher stayed beside her.\" Which word is the opposite of safe in this context?"
+      },
+      "choices": [
+        "in danger",
+        "comfortable",
+        "protected",
+        "secure"
+      ],
+      "answer": "in danger",
+      "explain": {
+        "en": "Safe means protected from harm; in danger gives the opposite meaning.",
+        "zh": "Safe 表示安全、受到保护；in danger 表示处于危险之中，意思相反。"
+      }
+    },
+    {
+      "id": "vocab1-085",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"The pupils explored the garden and discovered a tiny nest.\" Which word is closest to discovered?",
+        "zh": "选出最合适的答案。\"The pupils explored the garden and discovered a tiny nest.\" Which word is closest to discovered?"
+      },
+      "choices": [
+        "found",
+        "built",
+        "lost",
+        "closed"
+      ],
+      "answer": "found",
+      "explain": {
+        "en": "Discovered means found or learned about something for the first time; the pupils did not build the nest.",
+        "zh": "Discovered 表示发现原先不知道的东西；学生是发现鸟巢，不是筑巢。"
+      }
+    },
+    {
+      "id": "vocab1-086",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"Rina kept practising even after several mistakes.\" Which word best describes her effort?",
+        "zh": "选出最合适的答案。\"Rina kept practising even after several mistakes.\" Which word best describes her effort?"
+      },
+      "choices": [
+        "determined",
+        "careless",
+        "uninterested",
+        "forgetful"
+      ],
+      "answer": "determined",
+      "explain": {
+        "en": "Continuing despite mistakes shows determination: a strong wish to keep trying.",
+        "zh": "犯错后仍继续练习，表现出坚定、不轻易放弃的态度，因此选 determined。"
+      }
+    },
+    {
+      "id": "vocab1-087",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"The timetable was changed. The new time is 10 a.m.\" Which word is closest to timetable?",
+        "zh": "选出最合适的答案。\"The timetable was changed. The new time is 10 a.m.\" Which word is closest to timetable?"
+      },
+      "choices": [
+        "schedule",
+        "dictionary",
+        "receipt",
+        "recipe"
+      ],
+      "answer": "schedule",
+      "explain": {
+        "en": "A timetable or schedule lists when activities happen. The new time is the clue.",
+        "zh": "Timetable 和 schedule 都表示时间表；题目提到新的活动时间。"
+      }
+    },
+    {
+      "id": "vocab1-088",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "A shop notice says, \"Keep your receipt if you want to exchange an item.\" What is a receipt?",
+        "zh": "选出最合适的答案。A shop notice says, \"Keep your receipt if you want to exchange an item.\" What is a receipt?"
+      },
+      "choices": [
+        "A record showing what you paid for.",
+        "A list of words and meanings.",
+        "A map showing roads.",
+        "A story about the shopkeeper."
+      ],
+      "answer": "A record showing what you paid for.",
+      "explain": {
+        "en": "A receipt records a purchase and payment, so it can help show where an item was bought.",
+        "zh": "Receipt 是收据，记录所购物品和付款情况，可用来证明购买。"
+      }
+    },
+    {
+      "id": "vocab1-089",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"The instructions were clear, so everyone knew what to do.\" What does clear mean here?",
+        "zh": "选出最合适的答案。\"The instructions were clear, so everyone knew what to do.\" What does clear mean here?"
+      },
+      "choices": [
+        "easy to understand",
+        "without clouds",
+        "see-through",
+        "empty of people"
+      ],
+      "answer": "easy to understand",
+      "explain": {
+        "en": "Knowing what to do is a clue that the instructions were easy to understand.",
+        "zh": "人人都明白该做什么，说明 clear 在这里表示清楚易懂，不是透明或晴朗。"
+      }
+    },
+    {
+      "id": "vocab1-090",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"The pupils will set up a reading corner.\" What does set up mean here?",
+        "zh": "选出最合适的答案。\"The pupils will set up a reading corner.\" What does set up mean here?"
+      },
+      "choices": [
+        "Prepare and arrange it for use.",
+        "Carry it high into the air.",
+        "Close it for the whole year.",
+        "Forget where it is."
+      ],
+      "answer": "Prepare and arrange it for use.",
+      "explain": {
+        "en": "Set up means prepare something so people can use it, such as arranging books and seats.",
+        "zh": "Set up 在这里表示布置和建立，例如安排书籍与座位，让阅读角可供使用。"
       }
     }
   ]

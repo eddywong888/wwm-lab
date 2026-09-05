@@ -2,7 +2,7 @@ import { useMemo, useRef, useState } from 'react';
 import './Exercise.css';
 import type { Bilingual, Difficulty, Lang } from '../engine/types';
 import { MATH_GENERATORS } from '../engine/math';
-import { ENGLISH_TOPICS } from '../engine/english';
+import { ENGLISH_TOPICS, CHINESE_TOPICS } from '../engine/english';
 import { DAILY_TOPIC_ID, MIXED_TOPIC_ID, generateSession, QUESTIONS_PER_SESSION } from '../engine/session';
 import { t, UI_STRINGS } from '../engine/i18n';
 import QuestionCard from '../components/QuestionCard';
@@ -24,7 +24,7 @@ function topicDetails(topicId: string): { icon: string; name: Bilingual } {
   if (topicId === MIXED_TOPIC_ID) return { icon: '🎲', name: UI_STRINGS.mixedPractice };
   const math = MATH_GENERATORS.find((generator) => generator.meta.id === topicId)?.meta;
   if (math) return { icon: math.icon, name: math.name };
-  const english = ENGLISH_TOPICS.find((topic) => topic.id === topicId);
+  const english = [...ENGLISH_TOPICS, ...CHINESE_TOPICS].find((topic) => topic.id === topicId);
   if (english) return { icon: english.icon, name: english.name };
   return { icon: '✏️', name: UI_STRINGS.practiceByTopic };
 }

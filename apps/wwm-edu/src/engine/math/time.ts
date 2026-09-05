@@ -30,8 +30,10 @@ function formatTimeEN(mins: number): string {
 
 /** Chinese-style clock text used only inside bilingual prompt/explain strings. */
 function formatTimeZH(mins: number): string {
-  const { hour, minute, isAM } = splitClock(mins);
-  return `${isAM ? '上午' : '下午'}${hour}:${pad2(minute)}`;
+  const { hour, minute } = splitClock(mins);
+  const h24 = Math.floor((((mins % 1440) + 1440) % 1440) / 60);
+  const period = h24 < 6 ? '凌晨' : h24 < 12 ? '上午' : h24 === 12 ? '中午' : h24 < 18 ? '下午' : '晚上';
+  return `${period}${hour}:${pad2(minute)}`;
 }
 
 function hoursMinutesQuestion(rng: Rng, difficulty: Difficulty): Question {

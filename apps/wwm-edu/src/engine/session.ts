@@ -1,88 +1,66 @@
-import { makeRng } from './rng';
+import { makeRng, type Rng } from './rng';
 import type { Difficulty, Question } from './types';
 import { MATH_GENERATORS } from './math';
-import { ENGLISH_ALL, ENGLISH_TOPIC_IDS, isEnglishTopic, sampleEnglish } from './english';
+import { ENGLISH_ALL, ENGLISH_TOPIC_IDS, isEnglishTopic, isChineseTopic, sampleBank } from './english';
 import { getEnglishServedIds, recordEnglishServedIds } from '../store/local';
+import { normalizeText } from '../content/schema';
 
 export const QUESTIONS_PER_SESSION = 10;
 export const MIXED_TOPIC_ID = 'mixed';
 export const ENGLISH_MIXED_TOPIC_ID = 'english-mixed';
+export const CHINESE_MIXED_TOPIC_ID = 'chinese-mixed';
 export const DAILY_TOPIC_ID = 'daily';
 
-const DAILY_MATH_COUNT = 7;
-const DAILY_ENGLISH_COUNT = 3;
-
-/** Local (not UTC) calendar date as YYYY-MM-DD, so the Daily Challenge
- * resets at local midnight for the player, not at UTC midnight. */
 export function todayDateString(d: Date = new Date()): string {
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
-  return `${y}-${m}-${day}`;
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+export function dailySeed(date: string = todayDateString()): string { return `daily-three-subjects-${date}`; }
+
+export function questionFingerprint(q: Question): string {
+  return normalizeText(`${q.prompt.en}|${q.prompt.zh}|${[...(q.choices ?? [])].sort().join('|')}`);
 }
 
-export function dailySeed(date: string = todayDateString()): string {
-  return `daily-${date}`;
+function mathQuestions(topic: string, difficulty: Difficulty, count: number, rng: Rng): Question[] {
+  const result: Question[] = [];
+  const seen = new Set<string>();
+  const schedule = rng.shuffle(MATH_GENERATORS);
+  for (let attempts = 0; result.length < count && attempts < count * 100; attempts++) {
+    const generator = topic === MIXED_TOPIC_ID
+      ? schedule[result.length % schedule.length]
+      : MATH_GENERATORS.find((g) => g.meta.id === topic);
+    if (!generator) throw new Error(`Unknown maths topic: ${topic}`);
+    const question = generator.generate(rng, difficulty);
+    // Comparison questions carry their data in the choices; all other
+    // stems identify the task even if regenerated with new distractors.
+    const comparison = /compare/.test(question.id);
+    const key = comparison ? questionFingerprint(question) : normalizeText(`${question.prompt.en}|${question.prompt.zh}`);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    result.push({ ...question, id: `${question.id}-${result.length}` });
+  }
+  if (result.length !== count) throw new Error(`Cannot generate ${count} distinct maths questions`);
+  return result;
 }
 
-/**
- * The Daily Challenge: same 10 questions for every player on a given local
- * date (7 math sampled across all math generators + 3 English from the
- * banks), always at 'standard' difficulty. Determinism wins over
- * anti-repeat here, so English sampling ignores the served-ids history.
- */
-function generateDailySession(date: string = todayDateString()): Question[] {
+export function generateDailySession(date: string = todayDateString()): Question[] {
   const rng = makeRng(dailySeed(date));
-  const questions: Question[] = [];
-
-  for (let i = 0; i < DAILY_MATH_COUNT; i++) {
-    const generator = rng.pick(MATH_GENERATORS);
-    const q = generator.generate(rng, 'standard');
-    questions.push({ ...q, id: `${q.id}-daily-${i}` });
-  }
-
-  const englishQuestions = sampleEnglish(ENGLISH_ALL, 'standard', DAILY_ENGLISH_COUNT, rng, []);
-  questions.push(...englishQuestions.map((q, i) => ({ ...q, id: `${q.id}-daily-${DAILY_MATH_COUNT + i}` })));
-
-  return rng.shuffle(questions);
+  return rng.shuffle([
+    ...mathQuestions(MIXED_TOPIC_ID, 'standard', 4, rng),
+    ...sampleBank('english', ENGLISH_ALL, 'standard', 3, rng),
+    ...sampleBank('chinese', ENGLISH_ALL, 'standard', 3, rng),
+  ]).map((q, i) => ({ ...q, id: `${q.id}-daily-${i}` }));
 }
 
-/**
- * Build a fresh 10-question session. `topicId` is a math generator id,
- * MIXED_TOPIC_ID (shuffled mix across all math generators), an English
- * bank topic id, ENGLISH_MIXED_TOPIC_ID (shuffled mix across all English
- * topics), or DAILY_TOPIC_ID (date-seeded, identical for every player).
- * Seed defaults to Date.now() so every session is different, but sessions
- * remain reproducible/testable when an explicit seed is passed.
- */
 export function generateSession(topicId: string, difficulty: Difficulty, seed: string | number = Date.now()): Question[] {
-  if (topicId === DAILY_TOPIC_ID) {
-    return generateDailySession();
-  }
-
-  if (topicId === ENGLISH_MIXED_TOPIC_ID || isEnglishTopic(topicId)) {
-    const rng = makeRng(seed);
-    const excludeIds = getEnglishServedIds();
-    const bankTopic = topicId === ENGLISH_MIXED_TOPIC_ID ? ENGLISH_ALL : topicId;
-    const questions = sampleEnglish(bankTopic, difficulty, QUESTIONS_PER_SESSION, rng, excludeIds);
-    recordEnglishServedIds(questions.map((q) => q.id));
-    return questions.map((q, i) => ({ ...q, id: `${q.id}-${i}` }));
-  }
-
+  if (topicId === DAILY_TOPIC_ID) return generateDailySession();
   const rng = makeRng(seed);
-  const questions: Question[] = [];
-
-  for (let i = 0; i < QUESTIONS_PER_SESSION; i++) {
-    const generator = topicId === MIXED_TOPIC_ID
-      ? rng.pick(MATH_GENERATORS)
-      : MATH_GENERATORS.find((g) => g.meta.id === topicId) ?? rng.pick(MATH_GENERATORS);
-    const q = generator.generate(rng, difficulty);
-    // Ensure unique ids within a session even if a generator repeats a
-    // combination (rare, but keypad/react keys need it).
-    questions.push({ ...q, id: `${q.id}-${i}` });
+  const chinese = isChineseTopic(topicId) || topicId === CHINESE_MIXED_TOPIC_ID;
+  if (chinese || isEnglishTopic(topicId) || topicId === ENGLISH_MIXED_TOPIC_ID) {
+    const mixed = topicId === ENGLISH_MIXED_TOPIC_ID || topicId === CHINESE_MIXED_TOPIC_ID;
+    const questions = sampleBank(chinese ? 'chinese' : 'english', mixed ? ENGLISH_ALL : topicId, difficulty, QUESTIONS_PER_SESSION, rng, getEnglishServedIds());
+    recordEnglishServedIds(questions.map((q) => q.id));
+    return questions;
   }
-
-  return questions;
+  return mathQuestions(topicId, difficulty, QUESTIONS_PER_SESSION, rng);
 }
-
 export { ENGLISH_TOPIC_IDS };

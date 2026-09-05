@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Home.css';
 import type { Difficulty, Lang } from '../engine/types';
 import { MATH_GENERATORS } from '../engine/math';
-import { ENGLISH_TOPICS } from '../engine/english';
+import { ENGLISH_TOPICS, CHINESE_TOPICS } from '../engine/english';
 import { DAILY_TOPIC_ID, MIXED_TOPIC_ID, QUESTIONS_PER_SESSION, todayDateString } from '../engine/session';
 import { t, UI_STRINGS } from '../engine/i18n';
 import TopicCard from '../components/TopicCard';
@@ -24,7 +24,7 @@ interface HomeProps {
   onOpenBadges: () => void;
 }
 
-type Subject = 'math' | 'english';
+type Subject = 'math' | 'english' | 'chinese';
 
 function starsForScore(score: number): number {
   if (score >= 9) return 3;
@@ -157,6 +157,7 @@ export default function Home({
           <div className="home__subject-tabs" role="group" aria-label={t(UI_STRINGS.subject, lang)}>
             <button type="button" aria-pressed={subject === 'math'} onClick={() => chooseSubject('math')}>🔢 {t(UI_STRINGS.math, lang)}</button>
             <button type="button" aria-pressed={subject === 'english'} onClick={() => chooseSubject('english')}>📚 {t(UI_STRINGS.englishSection, lang)}</button>
+            <button type="button" aria-pressed={subject === 'chinese'} onClick={() => chooseSubject('chinese')}>📙 {t(UI_STRINGS.chineseSection, lang)}</button>
           </div>
 
           {subject === 'math' ? (
@@ -192,9 +193,9 @@ export default function Home({
               </div>
             </div>
           ) : (
-            <div className="home__subject-panel edu-pop-in" key="english">
+            <div className="home__subject-panel edu-pop-in" key={subject}>
               <div className="home__grid">
-                {ENGLISH_TOPICS.map((topic) => (
+                {(subject === 'chinese' ? CHINESE_TOPICS : ENGLISH_TOPICS).map((topic) => (
                   <TopicCard
                     key={topic.id}
                     icon={topic.icon}

@@ -40,7 +40,8 @@ export default function Admin({ onBackHome }: AdminProps) {
   }
 
   useEffect(() => {
-    void loadPacks();
+    const timer = window.setTimeout(() => void loadPacks(), 0);
+    return () => window.clearTimeout(timer);
   }, []);
 
   function handleValidate(): QuestionPack | null {

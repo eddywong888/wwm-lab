@@ -17,14 +17,22 @@ function fracStr(num: number, den: number): string {
   return `${num}/${den}`;
 }
 
+function fractionKey(text: string): string {
+  const [wholeOrFraction, fraction] = text.split(' ');
+  const [num, den = 1] = (fraction ?? wholeOrFraction).split('/').map(Number);
+  const numerator = num + (fraction ? Number(wholeOrFraction) * den : 0);
+  const common = gcd(numerator, den);
+  return `${numerator / common}/${den / common}`;
+}
+
 /** Build a small set of unique, plausible fraction-string MCQ choices. */
 function fractionChoices(rng: Rng, correct: string, candidates: string[]): string[] {
-  const seen = new Set<string>([correct]);
+  const seen = new Set<string>([fractionKey(correct)]);
   const distractors: string[] = [];
   for (const c of candidates) {
     if (distractors.length >= 3) break;
-    if (!seen.has(c)) {
-      seen.add(c);
+    if (!seen.has(fractionKey(c))) {
+      seen.add(fractionKey(c));
       distractors.push(c);
     }
   }
@@ -32,8 +40,8 @@ function fractionChoices(rng: Rng, correct: string, candidates: string[]): strin
   let jitterDen = 2;
   while (distractors.length < 3) {
     const candidate = fracStr(jitterNum, jitterDen);
-    if (!seen.has(candidate)) {
-      seen.add(candidate);
+    if (!seen.has(fractionKey(candidate))) {
+      seen.add(fractionKey(candidate));
       distractors.push(candidate);
     }
     jitterNum++;
@@ -112,8 +120,8 @@ function compareFractionQuestion(rng: Rng, difficulty: Difficulty): Question {
     kind: 'mcq',
     topic: meta.id,
     explain: {
-      en: `${fracStr(target.num, target.den)} = ${(target.num / target.den).toFixed(3)}, the ${wantLargest ? 'largest' : 'smallest'} value.`,
-      zh: `${fracStr(target.num, target.den)} = ${(target.num / target.den).toFixed(3)}，是最${wantLargest ? '大' : '小'}的分数。`,
+      en: `${fracStr(target.num, target.den)} ≈ ${(target.num / target.den).toFixed(3)}, the ${wantLargest ? 'largest' : 'smallest'} value.`,
+      zh: `${fracStr(target.num, target.den)} ≈ ${(target.num / target.den).toFixed(3)}，是最${wantLargest ? '大' : '小'}的分数。`,
     },
   };
 }
@@ -231,8 +239,8 @@ function simplestFormQuestion(rng: Rng): Question {
     kind: 'mcq',
     topic: meta.id,
     explain: {
-      en: `${fracStr(num, den)} ÷ ${f}/${f} = ${correct}.`,
-      zh: `${fracStr(num, den)} 除以 ${f}/${f} 等于 ${correct}。`,
+      en: `Divide the numerator and denominator by ${f}: (${num} ÷ ${f})/(${den} ÷ ${f}) = ${correct}.`,
+      zh: `分子和分母同时除以 ${f}：(${num} ÷ ${f})/(${den} ÷ ${f}) = ${correct}。`,
     },
   };
 }
@@ -339,8 +347,8 @@ function mixedNumberQuestion(rng: Rng): Question {
       kind: 'mcq',
       topic: meta.id,
       explain: {
-        en: `Add whole numbers and fractions separately, then simplify: ${correct}.`,
-        zh: `分别把整数和分数相加，再化简：${correct}。`,
+        en: `Add whole numbers and fractions separately, regroup any whole from the fraction: ${correct}.`,
+        zh: `分别把整数和分数相加，把满一个整体的分数化为整数：${correct}。`,
       },
     };
   }

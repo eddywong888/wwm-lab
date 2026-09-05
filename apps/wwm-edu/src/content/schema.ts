@@ -1,4 +1,4 @@
-// Framework-free schema + validator for English question banks. Kept
+// Framework-free schema + validator for language question banks. Kept
 // dependency-free so it can be reused verbatim by a future admin upload
 // page (Phase 3) without pulling in the rest of the app.
 
@@ -13,7 +13,7 @@ export interface BankQuestion {
   /** Unique within the pack (not necessarily globally unique). */
   id: string;
   difficulty: Difficulty;
-  /** Question text; English content stays English, zh is an instruction hint. */
+  /** Assessed text plus any language-specific instruction. */
   prompt: Bilingual;
   /** Exactly 4 unique strings. */
   choices: string[];
@@ -24,14 +24,20 @@ export interface BankQuestion {
 
 export interface QuestionPack {
   id: string;
-  subject: 'english';
+  subject: 'english' | 'chinese';
   topic: string;
   title: Bilingual;
   version: number;
   questions: BankQuestion[];
 }
 
-const BAD_TEXT = /NaN|undefined|null/;
+const BAD_TEXT = /\b(?:NaN|undefined|null)\b/;
+
+export function normalizeText(text: string): string {
+  return text.normalize('NFKC').replace(/\s+/g, ' ').trim().toLocaleLowerCase('en');
+}
+
+const RESERVED_TOPICS = new Set(['mixed', 'english-mixed', 'chinese-mixed', 'daily', 'all', 'whole-numbers', 'add-sub', 'mul-div', 'money', 'fractions', 'decimals', 'percentages', 'time', 'measurement', 'shapes', 'coordinates-ratio', 'data']);
 
 function isBilingual(v: unknown): v is Bilingual {
   if (!v || typeof v !== 'object') return false;
@@ -85,7 +91,7 @@ function validateQuestion(v: unknown, index: number, seenIds: Set<string>): stri
       errors.push(`${label} (id=${String(o.id)}): all choices must be non-empty strings`);
     }
     const strChoices = choices.filter((c): c is string => typeof c === 'string');
-    if (new Set(strChoices).size !== strChoices.length) {
+    if (new Set(strChoices.map((choice) => choice.trim())).size !== strChoices.length) {
       errors.push(`${label} (id=${String(o.id)}): choices not unique: ${JSON.stringify(choices)}`);
     }
     for (const c of strChoices) {
@@ -96,9 +102,7 @@ function validateQuestion(v: unknown, index: number, seenIds: Set<string>): stri
     }
   }
 
-  if (o.explain !== undefined) {
-    errors.push(...bilingualErrors(o.explain, `${label} (id=${String(o.id)}).explain`));
-  }
+  errors.push(...bilingualErrors(o.explain, `${label} (id=${String(o.id)}).explain`));
 
   return errors;
 }
@@ -112,19 +116,36 @@ export function validatePack(data: unknown): { ok: true; pack: QuestionPack } | 
   const o = data as Record<string, unknown>;
 
   if (typeof o.id !== 'string' || !o.id.trim()) errors.push('pack.id: missing/invalid');
-  if (o.subject !== 'english') errors.push(`pack.subject: must be 'english', got ${JSON.stringify(o.subject)}`);
+  if (o.subject !== 'english' && o.subject !== 'chinese') errors.push('pack.subject: must be english or chinese');
   if (typeof o.topic !== 'string' || !o.topic.trim()) errors.push('pack.topic: missing/invalid');
+  if (typeof o.topic === 'string' && (RESERVED_TOPICS.has(o.topic) || (o.subject === 'chinese' && !o.topic.startsWith('chinese-')) || (o.subject === 'english' && o.topic.startsWith('chinese-')))) errors.push('pack.topic: reserved or wrong subject namespace');
   errors.push(...bilingualErrors(o.title, 'pack.title'));
-  if (typeof o.version !== 'number' || !Number.isFinite(o.version)) errors.push('pack.version: must be a number');
+  if (typeof o.version !== 'number' || !Number.isSafeInteger(o.version) || o.version < 1) errors.push('pack.version: must be a positive integer');
 
   if (!Array.isArray(o.questions)) {
     errors.push('pack.questions: must be an array');
   } else {
     if (o.questions.length === 0) errors.push('pack.questions: must not be empty');
     const seenIds = new Set<string>();
+    const seenPrompts = { en: new Set<string>(), zh: new Set<string>() };
+    const tiers = { standard: 0, advanced: 0 };
     o.questions.forEach((q, i) => {
+      if (q && typeof q === 'object') {
+        const item = q as Record<string, unknown>;
+        if (item.difficulty === 'standard' || item.difficulty === 'advanced') tiers[item.difficulty]++;
+        if (isBilingual(item.prompt)) {
+          for (const lang of ['en', 'zh'] as const) {
+            const key = normalizeText(item.prompt[lang]);
+            if (seenPrompts[lang].has(key)) errors.push(`questions[${i}]: duplicate ${lang} prompt`);
+            seenPrompts[lang].add(key);
+          }
+        }
+      }
       errors.push(...validateQuestion(q, i, seenIds));
     });
+    for (const tier of ['standard', 'advanced'] as const) {
+      if (tiers[tier] < 10) errors.push(`pack.questions: requires at least 10 ${tier} questions for a complete session`);
+    }
   }
 
   if (errors.length > 0) return { ok: false, errors };

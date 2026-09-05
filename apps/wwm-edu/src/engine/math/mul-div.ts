@@ -40,7 +40,7 @@ function multiplyQuestion(rng: Rng, difficulty: Difficulty): Question {
 function divideQuestion(rng: Rng, difficulty: Difficulty): Question {
   const divisor = difficulty === 'standard' ? rng.pick([2, 3, 4, 5, 6, 7, 8, 9]) : rng.pick([10, 100]);
   const wantRemainder = rng.chance(0.4);
-  const quotient = difficulty === 'standard' ? rng.int(11, 999) : rng.int(11, 9999);
+  const quotient = difficulty === 'standard' ? rng.int(11, 999) : rng.int(11, Math.floor((100_000 - divisor) / divisor));
   const remainder = wantRemainder ? rng.int(1, divisor - 1) : 0;
   const dividend = quotient * divisor + remainder;
   if (divisor < 10 && dividend > 9999) {
@@ -83,8 +83,8 @@ function buildDivideQuestion(rng: Rng, dividend: number, divisor: number, quotie
           zh: `${formatNumber(dividend)} ÷ ${divisor} = ${formatNumber(quotient)} ……余多少？`,
         }
       : {
-          en: `${formatNumber(dividend)} ÷ ${divisor} = ?`,
-          zh: `${formatNumber(dividend)} ÷ ${divisor} = ?`,
+          en: `What is the whole-number quotient of ${formatNumber(dividend)} ÷ ${divisor}?`,
+          zh: `${formatNumber(dividend)} ÷ ${divisor} 的整数商是多少（不包括余数）？`,
         },
     choices,
     answer: formatNumber(correct),
@@ -100,25 +100,23 @@ function buildDivideQuestion(rng: Rng, dividend: number, divisor: number, quotie
 function twoStepWordProblem(rng: Rng): Question {
   // e.g. buy `qty` boxes of `perBox` items each, then split among `groups`
   const perBox = rng.int(6, 24);
-  const qty = rng.int(5, 40);
-  const total = perBox * qty;
   const groups = rng.pick([2, 3, 4, 5, 6]);
-  // ensure clean division for the second step
-  const adjTotal = total - (total % groups);
+  const qty = groups * rng.int(2, 8);
+  const adjTotal = perBox * qty;
   const perGroup = adjTotal / groups;
 
   return {
     id: `md-2step-${perBox}-${qty}-${groups}`,
     prompt: {
-      en: `A shop packs ${formatNumber(qty)} boxes with ${formatNumber(perBox)} pencils in each box. If the pencils are shared equally among ${groups} classes, how many pencils does each class get? (Use ${formatNumber(adjTotal)} pencils in total.)`,
-      zh: `一间商店把 ${formatNumber(qty)} 盒铅笔打包，每盒有 ${formatNumber(perBox)} 支。如果把铅笔平分给 ${groups} 个班级，每班能得到多少支？（总共使用 ${formatNumber(adjTotal)} 支铅笔。）`,
+      en: `A shop packs ${formatNumber(qty)} boxes with ${formatNumber(perBox)} pencils in each box. If the pencils are shared equally among ${groups} classes, how many pencils does each class get?`,
+      zh: `一间商店把 ${formatNumber(qty)} 盒铅笔打包，每盒有 ${formatNumber(perBox)} 支。如果把铅笔平分给 ${groups} 个班级，每班能得到多少支？`,
     },
     answer: String(perGroup),
     kind: 'numeric',
     topic: meta.id,
     explain: {
-      en: `${formatNumber(adjTotal)} ÷ ${groups} = ${formatNumber(perGroup)}`,
-      zh: `${formatNumber(adjTotal)} ÷ ${groups} = ${formatNumber(perGroup)}`,
+      en: `${qty} × ${perBox} = ${adjTotal} pencils. Then ${adjTotal} ÷ ${groups} = ${perGroup} pencils per class.`,
+      zh: `${qty} × ${perBox} = ${adjTotal} 支铅笔；再算 ${adjTotal} ÷ ${groups} = ${perGroup}，每班得到 ${perGroup} 支。`,
     },
   };
 }

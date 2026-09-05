@@ -60,8 +60,8 @@ function percentToFractionQuestion(rng: Rng): Question {
   return {
     id: `pct-pct2fr-${percent}`,
     prompt: {
-      en: `${percent}% = ?/100`,
-      zh: `${percent}% = ?/100`,
+      en: `Which fraction equals ${percent}%?`,
+      zh: `哪个分数等于 ${percent}%？`,
     },
     choices,
     answer: correct,
@@ -100,8 +100,8 @@ function percentToDecimalQuestion(rng: Rng): Question {
   return {
     id: `pct-pct2dec-${percent}`,
     prompt: {
-      en: `${percent}% = ?`,
-      zh: `${percent}% = ?`,
+      en: `Write ${percent}% as a decimal.`,
+      zh: `把 ${percent}% 写成小数。`,
     },
     answer: decStr,
     kind: 'numeric',

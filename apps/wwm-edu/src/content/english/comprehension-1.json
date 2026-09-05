@@ -6,7 +6,7 @@
     "en": "Comprehension",
     "zh": "阅读理解"
   },
-  "version": 1,
+  "version": 2,
   "questions": [
     {
       "id": "comprehension1-001",
@@ -23,8 +23,8 @@
       ],
       "answer": "She rode her bicycle to the park.",
       "explain": {
-        "en": "The passage directly states that \"She rode her bicycle to the park.\".",
-        "zh": "正确答案是 \"She rode her bicycle to the park.\"（短文中明确提到的细节）。"
+        "en": "After that follows watering the plants. The next action is riding her bicycle to the park with her brother.",
+        "zh": "After that 表示浇花之后；接下来的动作是和哥哥或弟弟骑脚车去公园。"
       }
     },
     {
@@ -42,8 +42,8 @@
       ],
       "answer": "Mei Ling's Saturday morning activities.",
       "explain": {
-        "en": "\"Mei Ling's Saturday morning activities.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"Mei Ling's Saturday morning activities.\"（短文的主旨）。"
+        "en": "The passage begins on Saturday morning and describes watering plants and cycling. The answer includes both activities.",
+        "zh": "短文从星期六早晨开始，描述浇花和骑脚车；主旨应涵盖这两项活动。"
       }
     },
     {
@@ -61,8 +61,8 @@
       ],
       "answer": "assisted",
       "explain": {
-        "en": "\"assisted\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"assisted\"（短文中该词的意思）。"
+        "en": "Mei Ling helped her mother do the watering, so assisted means worked with her to get it done.",
+        "zh": "Mei Ling 帮妈妈浇花，所以 helped 与 assisted 都表示协助。"
       }
     },
     {
@@ -80,8 +80,8 @@
       ],
       "answer": "The canteen was very crowded.",
       "explain": {
-        "en": "The passage directly states that \"The canteen was very crowded.\".",
-        "zh": "正确答案是 \"The canteen was very crowded.\"（短文中明确提到的细节）。"
+        "en": "The first sentence says the canteen was very crowded. That explains why a seat was hard to find.",
+        "zh": "第一句指出食堂很拥挤，因此 Ali 很难找到座位。"
       }
     },
     {
@@ -99,8 +99,8 @@
       ],
       "answer": "He is a kind and helpful friend.",
       "explain": {
-        "en": "\"He is a kind and helpful friend.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"He is a kind and helpful friend.\"（短文的主旨）。"
+        "en": "Kumar shares his table when Ali cannot find a seat. This action supports the inference that he is helpful and kind.",
+        "zh": "Ali 找不到座位时，Kumar 愿意共用桌子；这项行为说明他友善、乐于助人。"
       }
     },
     {
@@ -118,8 +118,8 @@
       ],
       "answer": "let someone use something together",
       "explain": {
-        "en": "\"let someone use something together\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"let someone use something together\"（短文中该词的意思）。"
+        "en": "Kumar lets Ali sit at his table too. Shared means allowing someone to use something together with you.",
+        "zh": "Kumar 也让 Ali 坐在他的桌旁；shared 表示让别人一起使用。"
       }
     },
     {
@@ -137,8 +137,8 @@
       ],
       "answer": "They lost electricity.",
       "explain": {
-        "en": "The passage directly states that \"They lost electricity.\".",
-        "zh": "正确答案是 \"They lost electricity.\"（短文中明确提到的细节）。"
+        "en": "The passage explicitly says that some houses lost electricity during the storm.",
+        "zh": "短文明说风暴期间有些房子停电，因此选 They lost electricity。"
       }
     },
     {
@@ -156,16 +156,16 @@
       ],
       "answer": "They cooperate to solve problems together.",
       "explain": {
-        "en": "\"They cooperate to solve problems together.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"They cooperate to solve problems together.\"（短文的主旨）。"
+        "en": "The villagers worked together to remove branches. Working together is evidence that they cooperate to solve problems.",
+        "zh": "村民共同清理树枝，说明他们会合作解决问题；不是忽视损坏。"
       }
     },
     {
       "id": "comprehension1-009",
       "difficulty": "standard",
       "prompt": {
-        "en": "A heavy storm hit the village last night. Many trees fell across the road, and some houses lost electricity. This morning, the villagers worked together to clear the fallen branches. In this passage, the word \"cleared\" is closest in meaning to",
-        "zh": "阅读短文，选出正确的答案。A heavy storm hit the village last night. Many trees fell across the road, and some houses lost electricity. This morning, the villagers worked together to clear the fallen branches. In this passage, the word \"cleared\" is closest in meaning to"
+        "en": "A heavy storm hit the village last night. Many trees fell across the road, and some houses lost electricity. This morning, the villagers worked together to clear the fallen branches. In this passage, the word \"clear\" is closest in meaning to",
+        "zh": "阅读英文材料，选出最合适的答案。A heavy storm hit the village last night. Many trees fell across the road, and some houses lost electricity. This morning, the villagers worked together to clear the fallen branches. In this passage, the word \"clear\" is closest in meaning to"
       },
       "choices": [
         "removed",
@@ -175,8 +175,8 @@
       ],
       "answer": "removed",
       "explain": {
-        "en": "\"removed\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"removed\"（短文中该词的意思）。"
+        "en": "Clear the fallen branches means remove them from the road so the road is no longer blocked.",
+        "zh": "Clear the fallen branches 表示把倒下的树枝移走，让道路畅通。"
       }
     },
     {
@@ -194,8 +194,8 @@
       ],
       "answer": "She is a nurse.",
       "explain": {
-        "en": "The passage directly states that \"She is a nurse.\".",
-        "zh": "正确答案是 \"She is a nurse.\"（短文中明确提到的细节）。"
+        "en": "The first sentence identifies Puan Aminah as a nurse at the local clinic.",
+        "zh": "第一句直接说明 Puan Aminah 是诊所的护士。"
       }
     },
     {
@@ -213,8 +213,8 @@
       ],
       "answer": "Caring and gentle.",
       "explain": {
-        "en": "\"Caring and gentle.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"Caring and gentle.\"（短文的主旨）。"
+        "en": "She cares for patients and comforts worried people. These actions support caring and gentle.",
+        "zh": "她照顾病人、安慰担忧的人，这些行为支持 caring and gentle 的描述。"
       }
     },
     {
@@ -232,8 +232,8 @@
       ],
       "answer": "soothes",
       "explain": {
-        "en": "\"soothes\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"soothes\"（短文中该词的意思）。"
+        "en": "Comforts describes helping worried patients feel calmer. Soothes carries that meaning.",
+        "zh": "Comforts 表示帮助担忧的病人平静下来，与 soothes（安抚）意思相近。"
       }
     },
     {
@@ -251,8 +251,8 @@
       ],
       "answer": "Plant vegetables.",
       "explain": {
-        "en": "The passage directly states that \"Plant vegetables.\".",
-        "zh": "正确答案是 \"Plant vegetables.\"（短文中明确提到的细节）。"
+        "en": "The passage says Danial learned how to plant vegetables. Feeding chickens is another activity, but it is not what the question asks.",
+        "zh": "短文说 Danial 学会种菜；喂鸡也是活动，但问题问的是学会做什么。"
       }
     },
     {
@@ -270,8 +270,8 @@
       ],
       "answer": "Danial spent his holiday learning new things at his grandparents' home.",
       "explain": {
-        "en": "\"Danial spent his holiday learning new things at his grandparents' home.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"Danial spent his holiday learning new things at his grandparents' home.\"（短文的主旨）。"
+        "en": "Both helping with chickens and learning to plant happen during his holiday at his grandparents' home. The answer covers the whole visit.",
+        "zh": "喂鸡和学种菜都发生在祖父母家度假期间；这个答案概括整个探访经历。"
       }
     },
     {
@@ -289,8 +289,8 @@
       ],
       "answer": "give food to",
       "explain": {
-        "en": "\"give food to\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"give food to\"（短文中该词的意思）。"
+        "en": "Feeding the chickens means giving the chickens food. The chickens are the animals receiving it.",
+        "zh": "Feed the chickens 表示给鸡食物，也就是喂鸡。"
       }
     },
     {
@@ -308,8 +308,8 @@
       ],
       "answer": "Drink enough water and warm up.",
       "explain": {
-        "en": "The passage directly states that \"Drink enough water and warm up.\".",
-        "zh": "正确答案是 \"Drink enough water and warm up.\"（短文中明确提到的细节）。"
+        "en": "Coach Lim gives two reminders: drink enough water and warm up properly. The correct choice includes both.",
+        "zh": "教练提醒两件事：喝足够的水和做好热身；答案必须包含两项。"
       }
     },
     {
@@ -327,8 +327,8 @@
       ],
       "answer": "To help the students stay safe and healthy during Sports Day.",
       "explain": {
-        "en": "\"To help the students stay safe and healthy during Sports Day.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"To help the students stay safe and healthy during Sports Day.\"（短文的主旨）。"
+        "en": "The words to avoid injuries give the purpose. Drinking water and warming up are reminders for safe participation.",
+        "zh": "To avoid injuries 说明目的是避免受伤；这些提醒是为了让学生安全、健康地参与运动。"
       }
     },
     {
@@ -346,8 +346,8 @@
       ],
       "answer": "prevent",
       "explain": {
-        "en": "\"prevent\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"prevent\"（短文中该词的意思）。"
+        "en": "Avoid injuries means try to prevent injuries from happening. Prevent is the closest option in this context.",
+        "zh": "Avoid injuries 表示设法避免受伤，在这个语境中与 prevent 最接近。"
       }
     },
     {
@@ -365,8 +365,8 @@
       ],
       "answer": "Two.",
       "explain": {
-        "en": "The passage directly states that \"Two.\".",
-        "zh": "正确答案是 \"Two.\"（短文中明确提到的细节）。"
+        "en": "Every Friday tells us the visit is weekly, and the passage says she borrows two new books each time.",
+        "zh": "Every Friday 表示每星期一次；她每次借两本书，因此每周借两本。"
       }
     },
     {
@@ -384,8 +384,8 @@
       ],
       "answer": "She is a responsible and enthusiastic reader.",
       "explain": {
-        "en": "\"She is a responsible and enthusiastic reader.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"She is a responsible and enthusiastic reader.\"（短文的主旨）。"
+        "en": "She visits regularly and returns books on time. These details support enthusiasm for reading and responsibility.",
+        "zh": "她经常借书并准时归还，说明她喜欢阅读，也有责任感。"
       }
     },
     {
@@ -403,8 +403,8 @@
       ],
       "answer": "takes something to use and return later",
       "explain": {
-        "en": "\"takes something to use and return later\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"takes something to use and return later\"（短文中该词的意思）。"
+        "en": "Siti takes the books from the library and later returns them. That is borrowing, not buying or keeping forever.",
+        "zh": "Siti 把图书馆的书带走阅读后归还，这叫借用，不是购买或永久占有。"
       }
     },
     {
@@ -422,8 +422,8 @@
       ],
       "answer": "The museum.",
       "explain": {
-        "en": "The passage directly states that \"The museum.\".",
-        "zh": "正确答案是 \"The museum.\"（短文中明确提到的细节）。"
+        "en": "Instead of marks the change from the beach to the museum. The museum is the place they actually chose.",
+        "zh": "Instead of 表示替代原计划；一家人改去的地点是博物馆。"
       }
     },
     {
@@ -441,8 +441,8 @@
       ],
       "answer": "Because heavy rain was forecast.",
       "explain": {
-        "en": "\"Because heavy rain was forecast.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"Because heavy rain was forecast.\"（短文的主旨）。"
+        "en": "The first sentence gives a forecast of heavy rain. The next sentence says they changed their beach plan, so the forecast is the reason.",
+        "zh": "第一句说明天气预报将有大雨，下一句说他们改变海滩计划，因此原因是大雨预报。"
       }
     },
     {
@@ -460,8 +460,8 @@
       ],
       "answer": "forecast",
       "explain": {
-        "en": "\"forecast\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"forecast\"（短文中该词的意思）。"
+        "en": "Predicted means said what was expected to happen in the future. Forecast has that meaning for weather.",
+        "zh": "Predicted 表示预先判断将发生的事；在天气语境中与 forecast（预报）相近。"
       }
     },
     {
@@ -479,8 +479,8 @@
       ],
       "answer": "Bread and buns.",
       "explain": {
-        "en": "The passage directly states that \"Bread and buns.\".",
-        "zh": "正确答案是 \"Bread and buns.\"（短文中明确提到的细节）。"
+        "en": "The bakery smells of fresh bread, and pupils buy buns there. Both bread and buns are named in the passage.",
+        "zh": "短文提到新鲜面包的香味，也说学生买小面包，因此店里卖 bread and buns。"
       }
     },
     {
@@ -498,16 +498,16 @@
       ],
       "answer": "A popular bakery near the school.",
       "explain": {
-        "en": "\"A popular bakery near the school.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"A popular bakery near the school.\"（短文的主旨）。"
+        "en": "All the details describe Uncle Chong's bakery near the school and its customers. That is the central topic.",
+        "zh": "所有细节都围绕学校附近 Uncle Chong 的面包店和顾客，因此这就是主旨。"
       }
     },
     {
       "id": "comprehension1-027",
       "difficulty": "advanced",
       "prompt": {
-        "en": "Uncle Chong owns a small bakery near the school. Every morning, the smell of fresh bread fills the street, and students often stop by to buy buns before class begins. In this passage, the word \"fills\" means to",
-        "zh": "阅读短文，选出正确的答案。Uncle Chong owns a small bakery near the school. Every morning, the smell of fresh bread fills the street, and students often stop by to buy buns before class begins. In this passage, the word \"fills\" means to"
+        "en": "Uncle Chong owns a small bakery near the school. Every morning, the smell of fresh bread fills the street, and students often stop by to buy buns before class begins. In this passage, the word \"fills\" is closest in meaning to",
+        "zh": "阅读英文材料，选出最合适的答案。Uncle Chong owns a small bakery near the school. Every morning, the smell of fresh bread fills the street, and students often stop by to buy buns before class begins. In this passage, the word \"fills\" is closest in meaning to"
       },
       "choices": [
         "spreads through",
@@ -517,35 +517,35 @@
       ],
       "answer": "spreads through",
       "explain": {
-        "en": "\"spreads through\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"spreads through\"（短文中该词的意思）。"
+        "en": "The smell fills the street: it spreads through the area and can be noticed there.",
+        "zh": "香味 fills the street，表示香味散布整条街，让人闻得到。"
       }
     },
     {
       "id": "comprehension1-028",
       "difficulty": "standard",
       "prompt": {
-        "en": "Farid found a lost kitten near the bus stop. It was shivering and hungry. He gently carried it home, gave it some milk, and posted pictures online to find its owner. What did Farid give the kitten?",
-        "zh": "阅读短文，选出正确的答案。Farid found a lost kitten near the bus stop. It was shivering and hungry. He gently carried it home, gave it some milk, and posted pictures online to find its owner. What did Farid give the kitten?"
+        "en": "Farid told his father about a lost kitten near the bus stop. It was shivering and hungry. Together they carried it to a safe place, offered it water and asked a vet for help. What did Farid and his father offer the kitten?",
+        "zh": "阅读英文材料，选出最合适的答案。Farid told his father about a lost kitten near the bus stop. It was shivering and hungry. Together they carried it to a safe place, offered it water and asked a vet for help. What did Farid and his father offer the kitten?"
       },
       "choices": [
-        "Milk.",
+        "Water.",
         "Rice.",
         "Bread.",
         "Fish."
       ],
-      "answer": "Milk.",
+      "answer": "Water.",
       "explain": {
-        "en": "The passage directly states that \"Milk.\".",
-        "zh": "正确答案是 \"Milk.\"（短文中明确提到的细节）。"
+        "en": "The passage says they offered it water. No food in the other options is mentioned as something they offered.",
+        "zh": "短文明确说他们给小猫水，其他选项中的食物没有被提到。"
       }
     },
     {
       "id": "comprehension1-029",
       "difficulty": "standard",
       "prompt": {
-        "en": "Farid found a lost kitten near the bus stop. It was shivering and hungry. He gently carried it home, gave it some milk, and posted pictures online to find its owner. What does Farid's action show about him?",
-        "zh": "阅读短文，选出正确的答案。Farid found a lost kitten near the bus stop. It was shivering and hungry. He gently carried it home, gave it some milk, and posted pictures online to find its owner. What does Farid's action show about him?"
+        "en": "Farid told his father about a lost kitten near the bus stop. It was shivering and hungry. Together they carried it to a safe place, offered it water and asked a vet for help. What does Farid's action show about him?",
+        "zh": "阅读英文材料，选出最合适的答案。Farid told his father about a lost kitten near the bus stop. It was shivering and hungry. Together they carried it to a safe place, offered it water and asked a vet for help. What does Farid's action show about him?"
       },
       "choices": [
         "He is caring and responsible.",
@@ -555,16 +555,16 @@
       ],
       "answer": "He is caring and responsible.",
       "explain": {
-        "en": "\"He is caring and responsible.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"He is caring and responsible.\"（短文的主旨）。"
+        "en": "Farid asks his father for help and helps the kitten reach safety. These actions show care and responsibility.",
+        "zh": "Farid 向父亲求助，并帮助小猫到安全的地方，表现出关爱和责任感。"
       }
     },
     {
       "id": "comprehension1-030",
       "difficulty": "advanced",
       "prompt": {
-        "en": "Farid found a lost kitten near the bus stop. It was shivering and hungry. He gently carried it home, gave it some milk, and posted pictures online to find its owner. In this passage, the word \"shivering\" suggests the kitten was",
-        "zh": "阅读短文，选出正确的答案。Farid found a lost kitten near the bus stop. It was shivering and hungry. He gently carried it home, gave it some milk, and posted pictures online to find its owner. In this passage, the word \"shivering\" suggests the kitten was"
+        "en": "Farid told his father about a lost kitten near the bus stop. It was shivering and hungry. Together they carried it to a safe place, offered it water and asked a vet for help. In this passage, the word \"shivering\" suggests the kitten was",
+        "zh": "阅读英文材料，选出最合适的答案。Farid told his father about a lost kitten near the bus stop. It was shivering and hungry. Together they carried it to a safe place, offered it water and asked a vet for help. In this passage, the word \"shivering\" suggests the kitten was"
       },
       "choices": [
         "cold or frightened",
@@ -574,8 +574,8 @@
       ],
       "answer": "cold or frightened",
       "explain": {
-        "en": "\"cold or frightened\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"cold or frightened\"（短文中该词的意思）。"
+        "en": "Shivering means shaking slightly. Cold or fear can cause this, so that is the best supported option; the text does not prove one exact cause.",
+        "zh": "Shivering 表示身体微微发抖，可能因为寒冷或害怕；短文并没有证明唯一原因。"
       }
     },
     {
@@ -593,8 +593,8 @@
       ],
       "answer": "A trophy.",
       "explain": {
-        "en": "The passage directly states that \"A trophy.\".",
-        "zh": "正确答案是 \"A trophy.\"（短文中明确提到的细节）。"
+        "en": "The passage says Class 4 Bestari won a trophy after collecting the most cans and bottles.",
+        "zh": "短文说 4 Bestari 班收集最多罐子和瓶子，赢得了奖杯。"
       }
     },
     {
@@ -612,8 +612,8 @@
       ],
       "answer": "To encourage students to protect the environment.",
       "explain": {
-        "en": "\"To encourage students to protect the environment.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"To encourage students to protect the environment.\"（短文的主旨）。"
+        "en": "The prize recognises their effort in protecting the environment, showing the competition encourages recycling and environmental care.",
+        "zh": "奖项表扬保护环境的努力，说明比赛鼓励回收和环保行动。"
       }
     },
     {
@@ -631,8 +631,8 @@
       ],
       "answer": "gathered",
       "explain": {
-        "en": "\"gathered\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"gathered\"（短文中该词的意思）。"
+        "en": "Collected the cans and bottles means gathered them together.",
+        "zh": "Collected 指把罐子和瓶子收集在一起，与 gathered 意思相近。"
       }
     },
     {
@@ -650,8 +650,8 @@
       ],
       "answer": "Take a deep breath and remember her practice.",
       "explain": {
-        "en": "The passage directly states that \"Take a deep breath and remember her practice.\".",
-        "zh": "正确答案是 \"Take a deep breath and remember her practice.\"（短文中明确提到的细节）。"
+        "en": "The teacher gives two instructions: take a deep breath and remember the hours of practice. The answer repeats both.",
+        "zh": "老师给了两项建议：深呼吸和想想之前的练习，答案必须包括两项。"
       }
     },
     {
@@ -669,8 +669,8 @@
       ],
       "answer": "She felt more confident after her teacher's advice.",
       "explain": {
-        "en": "\"She felt more confident after her teacher's advice.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"She felt more confident after her teacher's advice.\"（短文的主旨）。"
+        "en": "Nurul smiles and enters the room after the advice. Those details suggest she feels more confident, although the text does not state her thoughts directly.",
+        "zh": "Nurul 听了建议后微笑并走进考场，这些细节暗示她更有信心；这属于推断。"
       }
     },
     {
@@ -688,8 +688,8 @@
       ],
       "answer": "anxious",
       "explain": {
-        "en": "\"anxious\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"anxious\"（短文中该词的意思）。"
+        "en": "Nervous describes Nurul's worry before the exam. Anxious is another word for that worried feeling.",
+        "zh": "Nervous 描述考试前的紧张担忧，与 anxious 相近。"
       }
     },
     {
@@ -707,8 +707,8 @@
       ],
       "answer": "Before sunrise.",
       "explain": {
-        "en": "The passage directly states that \"Before sunrise.\".",
-        "zh": "正确答案是 \"Before sunrise.\"（短文中明确提到的细节）。"
+        "en": "The first sentence says the fishermen left before sunrise every day.",
+        "zh": "第一句明确说渔民每天在日出前出发。"
       }
     },
     {
@@ -726,8 +726,8 @@
       ],
       "answer": "It describes the daily routine of the fishermen.",
       "explain": {
-        "en": "\"It describes the daily routine of the fishermen.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"It describes the daily routine of the fishermen.\"（短文的主旨）。"
+        "en": "The passage follows leaving, fishing, returning and selling the catch. Together these describe a daily routine.",
+        "zh": "短文按出发、捕鱼、回来和卖鱼的过程展开，整体描述日常作息。"
       }
     },
     {
@@ -745,8 +745,8 @@
       ],
       "answer": "the fish that were caught",
       "explain": {
-        "en": "\"the fish that were caught\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"the fish that were caught\"（短文中该词的意思）。"
+        "en": "They return from fishing and sell their catch, so catch means the fish they caught, not a net or boat.",
+        "zh": "他们捕鱼回来售卖 catch，因此这个词指捕获的鱼，不是渔网或船。"
       }
     },
     {
@@ -764,27 +764,27 @@
       ],
       "answer": "The assembly area outside.",
       "explain": {
-        "en": "The passage directly states that \"The assembly area outside.\".",
-        "zh": "正确答案是 \"The assembly area outside.\"（短文中明确提到的细节）。"
+        "en": "The final phrase states their destination: the assembly area outside.",
+        "zh": "短文最后明确说明他们走到室外的集合地点。"
       }
     },
     {
       "id": "comprehension1-041",
       "difficulty": "advanced",
       "prompt": {
-        "en": "When the fire alarm rang suddenly during class, the students remained calm. They followed their teacher's instructions and walked quickly but quietly to the assembly area outside. What does this passage suggest about the students' training?",
-        "zh": "阅读短文，选出正确的答案。When the fire alarm rang suddenly during class, the students remained calm. They followed their teacher's instructions and walked quickly but quietly to the assembly area outside. What does this passage suggest about the students' training?"
+        "en": "When the fire alarm rang suddenly during class, the students remained calm. They followed their teacher's instructions and walked quickly but quietly to the assembly area outside. Which detail best shows that the students responded calmly?",
+        "zh": "阅读英文材料，选出最合适的答案。When the fire alarm rang suddenly during class, the students remained calm. They followed their teacher's instructions and walked quickly but quietly to the assembly area outside. Which detail best shows that the students responded calmly?"
       },
       "choices": [
-        "They had been well-prepared for emergencies.",
-        "They had never practised a fire drill before.",
-        "They ignored their teacher completely.",
-        "They panicked and ran randomly."
+        "They followed their teacher's instructions and walked quietly.",
+        "They screamed and ran to the gate.",
+        "They continued playing in the classroom.",
+        "They argued about which way to go."
       ],
-      "answer": "They had been well-prepared for emergencies.",
+      "answer": "They followed their teacher's instructions and walked quietly.",
       "explain": {
-        "en": "\"They had been well-prepared for emergencies.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"They had been well-prepared for emergencies.\"（短文的主旨）。"
+        "en": "Following instructions and walking quietly are observable details showing a calm response. The passage does not tell us their training history.",
+        "zh": "听从指示、安静步行是平静应对的直接证据；短文没有说明他们以前接受过什么训练。"
       }
     },
     {
@@ -802,8 +802,8 @@
       ],
       "answer": "stayed",
       "explain": {
-        "en": "\"stayed\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"stayed\"（短文中该词的意思）。"
+        "en": "Remained calm means continued to be calm, so stayed is the closest meaning.",
+        "zh": "Remained calm 表示继续保持冷静，因此 remained 与 stayed 相近。"
       }
     },
     {
@@ -821,8 +821,8 @@
       ],
       "answer": "Three generations.",
       "explain": {
-        "en": "The passage directly states that \"Three generations.\".",
-        "zh": "正确答案是 \"Three generations.\"（短文中明确提到的细节）。"
+        "en": "Three generations is directly stated. A generation is a family age group, so it should not be changed into a guessed number of years.",
+        "zh": "短文明说三代人；一代不是固定年数，不应自行换算成年份。"
       }
     },
     {
@@ -840,8 +840,8 @@
       ],
       "answer": "A family tradition of cooking together.",
       "explain": {
-        "en": "\"A family tradition of cooking together.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"A family tradition of cooking together.\"（短文的主旨）。"
+        "en": "The recipe is passed through the family, and they prepare it together every Hari Raya. Repeating it as a family makes it a tradition.",
+        "zh": "食谱代代相传，一家人每逢开斋节一起制作，说明这是家庭传统。"
       }
     },
     {
@@ -859,8 +859,8 @@
       ],
       "answer": "handed on from one generation to the next",
       "explain": {
-        "en": "\"handed on from one generation to the next\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"handed on from one generation to the next\"（短文中该词的意思）。"
+        "en": "Passed down describes giving a recipe from older family members to the next generation.",
+        "zh": "Passed down 在这里指长辈把食谱传给下一代，不是扔掉或出售。"
       }
     },
     {
@@ -878,8 +878,8 @@
       ],
       "answer": "They invited him to join their game.",
       "explain": {
-        "en": "The passage directly states that \"They invited him to join their game.\".",
-        "zh": "正确答案是 \"They invited him to join their game.\"（短文中明确提到的细节）。"
+        "en": "The passage states that classmates invited Wei Jie to join their game at recess.",
+        "zh": "短文明说同学们邀请 Wei Jie 在下课时一起玩游戏。"
       }
     },
     {
@@ -897,8 +897,8 @@
       ],
       "answer": "Kindness can help someone feel welcome.",
       "explain": {
-        "en": "\"Kindness can help someone feel welcome.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"Kindness can help someone feel welcome.\"（短文的主旨）。"
+        "en": "The invitation is followed by Wei Jie smiling and joining happily. It shows how kindness can make a newcomer feel welcome.",
+        "zh": "受到邀请后，Wei Jie 微笑并开心加入，说明善意能帮助新同学感到受欢迎。"
       }
     },
     {
@@ -916,8 +916,8 @@
       ],
       "answer": "timid",
       "explain": {
-        "en": "\"timid\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"timid\"（短文中该词的意思）。"
+        "en": "Shy describes feeling nervous around others; timid is the closest option here.",
+        "zh": "Shy 表示在别人面前害羞、拘谨，在这里与 timid 最接近。"
       }
     },
     {
@@ -935,8 +935,8 @@
       ],
       "answer": "He picks up litter and greets neighbours.",
       "explain": {
-        "en": "The passage directly states that \"He picks up litter and greets neighbours.\".",
-        "zh": "正确答案是 \"He picks up litter and greets neighbours.\"（短文中明确提到的细节）。"
+        "en": "The passage names both greeting neighbours and picking up litter during his walk.",
+        "zh": "短文指出他散步时向邻居打招呼并捡垃圾，答案包含这两项。"
       }
     },
     {
@@ -954,8 +954,8 @@
       ],
       "answer": "He is friendly and cares about his neighbourhood.",
       "explain": {
-        "en": "\"He is friendly and cares about his neighbourhood.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"He is friendly and cares about his neighbourhood.\"（短文的主旨）。"
+        "en": "Greeting people supports friendly; picking up litter supports caring about the neighbourhood. Each description has evidence.",
+        "zh": "打招呼说明友善，捡垃圾说明关心社区；两个特点各有证据。"
       }
     },
     {
@@ -973,8 +973,8 @@
       ],
       "answer": "rubbish left in a public place",
       "explain": {
-        "en": "\"rubbish left in a public place\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"rubbish left in a public place\"（短文中该词的意思）。"
+        "en": "Litter is rubbish left lying in a public place. Picking it up helps keep the park clean.",
+        "zh": "Litter 是被乱丢在公共地方的垃圾，捡起来能让公园整洁。"
       }
     },
     {
@@ -992,8 +992,8 @@
       ],
       "answer": "More than one hundred years old.",
       "explain": {
-        "en": "The passage directly states that \"More than one hundred years old.\".",
-        "zh": "正确答案是 \"More than one hundred years old.\"（短文中明确提到的细节）。"
+        "en": "The guide says more than one hundred years old, so the answer must keep more than rather than change it to exactly one hundred.",
+        "zh": "导游说超过一百年，答案必须保留“超过”，不能改成刚好一百年。"
       }
     },
     {
@@ -1011,8 +1011,8 @@
       ],
       "answer": "Because the exhibits were old and fragile.",
       "explain": {
-        "en": "\"Because the exhibits were old and fragile.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"Because the exhibits were old and fragile.\"（短文的主旨）。"
+        "en": "Fragile means easily damaged or broken. This explains the reminder not to touch the old exhibits.",
+        "zh": "Fragile 表示容易损坏，因此游客不应触摸这些古老展品。"
       }
     },
     {
@@ -1030,8 +1030,8 @@
       ],
       "answer": "easily broken",
       "explain": {
-        "en": "\"easily broken\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"easily broken\"（短文中该词的意思）。"
+        "en": "Fragile describes objects that can break easily. Their age and the no-touch reminder support this meaning.",
+        "zh": "Fragile 形容易碎物品；年代久远和禁止触摸的提醒都是线索。"
       }
     },
     {
@@ -1049,8 +1049,8 @@
       ],
       "answer": "Second place.",
       "explain": {
-        "en": "The passage directly states that \"Second place.\".",
-        "zh": "正确答案是 \"Second place.\"（短文中明确提到的细节）。"
+        "en": "The last words state that the choir was awarded second place.",
+        "zh": "短文最后明确说明合唱团获得第二名。"
       }
     },
     {
@@ -1068,8 +1068,8 @@
       ],
       "answer": "Their practice helped them perform well despite their nerves.",
       "explain": {
-        "en": "\"Their practice helped them perform well despite their nerves.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"Their practice helped them perform well despite their nerves.\"（短文的主旨）。"
+        "en": "Weeks of practice are followed by a confident performance and second place. These details support the inference that practice helped.",
+        "zh": "多周练习后，他们自信演出并获得第二名，这些细节支持“练习有帮助”的推断。"
       }
     },
     {
@@ -1087,16 +1087,16 @@
       ],
       "answer": "feeling sure of themselves",
       "explain": {
-        "en": "Singing confidently means singing while feeling sure of yourself.",
-        "zh": "正确答案是 \"feeling sure of themselves\"（confidently 意思是自信地、对自己有把握地）。"
+        "en": "Confidently describes singing with confidence, feeling sure of themselves rather than afraid.",
+        "zh": "Confidently 表示有信心地演唱，对自己有把握，而不是害怕。"
       }
     },
     {
       "id": "comprehension1-058",
       "difficulty": "standard",
       "prompt": {
-        "en": "The river near the village had become polluted with rubbish. A group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. What did the students start?",
-        "zh": "阅读短文，选出正确的答案。The river near the village had become polluted with rubbish. A group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. What did the students start?"
+        "en": "The river near the village had become polluted with rubbish. With adults supervising, a group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. What did the students start?",
+        "zh": "阅读英文材料，选出最合适的答案。The river near the village had become polluted with rubbish. With adults supervising, a group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. What did the students start?"
       },
       "choices": [
         "A weekend clean-up club.",
@@ -1106,16 +1106,16 @@
       ],
       "answer": "A weekend clean-up club.",
       "explain": {
-        "en": "The passage directly states that \"A weekend clean-up club.\".",
-        "zh": "正确答案是 \"A weekend clean-up club.\"（短文中明确提到的细节）。"
+        "en": "The students started a weekend clean-up club, with adults supervising. The question asks for the club they formed.",
+        "zh": "学生在成人监督下成立周末清理小组；问题问成立了什么组织。"
       }
     },
     {
       "id": "comprehension1-059",
       "difficulty": "advanced",
       "prompt": {
-        "en": "The river near the village had become polluted with rubbish. A group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. What can we infer from the passage's ending?",
-        "zh": "阅读短文，选出正确的答案。The river near the village had become polluted with rubbish. A group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. What can we infer from the passage's ending?"
+        "en": "The river near the village had become polluted with rubbish. With adults supervising, a group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. What can we infer from the passage's ending?",
+        "zh": "阅读英文材料，选出最合适的答案。The river near the village had become polluted with rubbish. With adults supervising, a group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. What can we infer from the passage's ending?"
       },
       "choices": [
         "The students' efforts successfully improved the river.",
@@ -1125,16 +1125,16 @@
       ],
       "answer": "The students' efforts successfully improved the river.",
       "explain": {
-        "en": "\"The students' efforts successfully improved the river.\" best captures the overall idea of the passage.",
-        "zh": "正确答案是 \"The students' efforts successfully improved the river.\"（短文的主旨）。"
+        "en": "At first the river is polluted; later the water is clear and fish return. That change supports the inference that the clean-up helped.",
+        "zh": "起初河流受污染，后来水变清、鱼儿回来，这个变化支持清理行动有效的推断。"
       }
     },
     {
       "id": "comprehension1-060",
       "difficulty": "standard",
       "prompt": {
-        "en": "The river near the village had become polluted with rubbish. A group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. In this passage, the word \"polluted\" is closest in meaning to",
-        "zh": "阅读短文，选出正确的答案。The river near the village had become polluted with rubbish. A group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. In this passage, the word \"polluted\" is closest in meaning to"
+        "en": "The river near the village had become polluted with rubbish. With adults supervising, a group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. In this passage, the word \"polluted\" is closest in meaning to",
+        "zh": "阅读英文材料，选出最合适的答案。The river near the village had become polluted with rubbish. With adults supervising, a group of students started a weekend clean-up club, and within a few months, fish began to return to the clear water. In this passage, the word \"polluted\" is closest in meaning to"
       },
       "choices": [
         "dirtied",
@@ -1144,8 +1144,578 @@
       ],
       "answer": "dirtied",
       "explain": {
-        "en": "\"dirtied\" is the meaning of the highlighted word as used in this passage.",
-        "zh": "正确答案是 \"dirtied\"（短文中该词的意思）。"
+        "en": "Polluted describes water made dirty or harmful by rubbish. Dirtied is the closest choice here.",
+        "zh": "Polluted 表示水被垃圾弄脏或受到污染，在这些选项中与 dirtied 最接近。"
+      }
+    },
+    {
+      "id": "comprehension1-061",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Notice: \"School Library: Open Monday to Friday, 8 a.m.–2 p.m. Closed on Saturday and Sunday.\" On which day is the library closed?",
+        "zh": "阅读英文材料，选出最合适的答案。Notice: \"School Library: Open Monday to Friday, 8 a.m.–2 p.m. Closed on Saturday and Sunday.\" On which day is the library closed?"
+      },
+      "choices": [
+        "Saturday.",
+        "Tuesday.",
+        "Thursday.",
+        "Friday."
+      ],
+      "answer": "Saturday.",
+      "explain": {
+        "en": "The notice explicitly lists Saturday and Sunday as closed days.",
+        "zh": "通告明确说明星期六和星期日关闭，因此选 Saturday。"
+      }
+    },
+    {
+      "id": "comprehension1-062",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Message from Mum: \"Aina, your lunch is on the kitchen table. Please take it before you leave for school. Your water bottle is beside it.\" Where is Aina's lunch?",
+        "zh": "阅读英文材料，选出最合适的答案。Message from Mum: \"Aina, your lunch is on the kitchen table. Please take it before you leave for school. Your water bottle is beside it.\" Where is Aina's lunch?"
+      },
+      "choices": [
+        "On the kitchen table.",
+        "In the school canteen.",
+        "Under her bed.",
+        "Inside the car."
+      ],
+      "answer": "On the kitchen table.",
+      "explain": {
+        "en": "The first sentence gives the lunch location: on the kitchen table.",
+        "zh": "第一句直接说明午餐放在厨房桌上。"
+      }
+    },
+    {
+      "id": "comprehension1-063",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "Poster: \"Year 4 Book Swap. Wednesday, 1 p.m., School Hall. Bring one storybook in good condition.\" What should each pupil bring?",
+        "zh": "阅读英文材料，选出最合适的答案。Poster: \"Year 4 Book Swap. Wednesday, 1 p.m., School Hall. Bring one storybook in good condition.\" What should each pupil bring?"
+      },
+      "choices": [
+        "One storybook in good condition.",
+        "A bag of sports shoes.",
+        "Two broken toys.",
+        "A bowl of soup."
+      ],
+      "answer": "One storybook in good condition.",
+      "explain": {
+        "en": "The poster names both the item and its condition: one storybook in good condition.",
+        "zh": "海报同时说明物品和状况：一本保存良好的故事书。"
+      }
+    },
+    {
+      "id": "comprehension1-064",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "A notice says, \"The reading room closes at 4 p.m. Please return books at the desk before you leave. Do not put them back on the shelves.\" Ravi finishes reading at 3 p.m. What should he do with his book?",
+        "zh": "阅读英文材料，选出最合适的答案。A notice says, \"The reading room closes at 4 p.m. Please return books at the desk before you leave. Do not put them back on the shelves.\" Ravi finishes reading at 3 p.m. What should he do with his book?"
+      },
+      "choices": [
+        "Leave it at the desk before going.",
+        "Put it on any shelf himself.",
+        "Keep it until the next morning.",
+        "Wait until after 4 p.m. to return it."
+      ],
+      "answer": "Leave it at the desk before going.",
+      "explain": {
+        "en": "The desk instruction applies whenever readers leave. Ravi does not need to wait until closing time.",
+        "zh": "无论几点离开，都要按指示把书放到柜台；Ravi 不必等到关门。"
+      }
+    },
+    {
+      "id": "comprehension1-065",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Poster: \"Garden Club: Friday, 2–3 p.m. Meet outside Room 5. Bring a hat and a water bottle. If it rains, meet inside Room 5.\" Dark clouds gather and rain begins before the meeting. Where should members meet?",
+        "zh": "阅读英文材料，选出最合适的答案。Poster: \"Garden Club: Friday, 2–3 p.m. Meet outside Room 5. Bring a hat and a water bottle. If it rains, meet inside Room 5.\" Dark clouds gather and rain begins before the meeting. Where should members meet?"
+      },
+      "choices": [
+        "Inside Room 5.",
+        "Outside Room 5.",
+        "At the school gate.",
+        "At the swimming pool."
+      ],
+      "answer": "Inside Room 5.",
+      "explain": {
+        "en": "The conditional instruction says to meet inside Room 5 if it rains, so the wet-weather plan applies.",
+        "zh": "通告说下雨时改在第五号课室内集合；现在已经下雨，因此采用这个安排。"
+      }
+    },
+    {
+      "id": "comprehension1-066",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Bus timetable: \"Bus A leaves at 8.10 a.m. and arrives at 8.35 a.m. Bus B leaves at 8.30 a.m. and arrives at 8.55 a.m.\" Lina must arrive before 8.45 a.m. Which bus meets her need?",
+        "zh": "阅读英文材料，选出最合适的答案。Bus timetable: \"Bus A leaves at 8.10 a.m. and arrives at 8.35 a.m. Bus B leaves at 8.30 a.m. and arrives at 8.55 a.m.\" Lina must arrive before 8.45 a.m. Which bus meets her need?"
+      },
+      "choices": [
+        "Bus A only.",
+        "Bus B only.",
+        "Both buses.",
+        "Neither bus."
+      ],
+      "answer": "Bus A only.",
+      "explain": {
+        "en": "Bus A arrives at 8.35, before 8.45. Bus B arrives ten minutes after 8.45.",
+        "zh": "Bus A 在 8:35 到，早于 8:45；Bus B 在 8:55 到，晚了十分钟。"
+      }
+    },
+    {
+      "id": "comprehension1-067",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Email: \"Dear Ravi, Our class picnic is on Saturday at 9 a.m. in Taman Murni. Please tell me by Thursday whether you can come so I can prepare enough food. From Aina.\" Why does Aina need a reply by Thursday?",
+        "zh": "阅读英文材料，选出最合适的答案。Email: \"Dear Ravi, Our class picnic is on Saturday at 9 a.m. in Taman Murni. Please tell me by Thursday whether you can come so I can prepare enough food. From Aina.\" Why does Aina need a reply by Thursday?"
+      },
+      "choices": [
+        "To know how much food to prepare.",
+        "To move the picnic to Thursday.",
+        "To choose a different park.",
+        "To change the class timetable."
+      ],
+      "answer": "To know how much food to prepare.",
+      "explain": {
+        "en": "So I can prepare enough food explicitly connects the reply to planning the food.",
+        "zh": "So I can prepare enough food 明确说明，提前回复是为了准备足够的食物。"
+      }
+    },
+    {
+      "id": "comprehension1-068",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Mei packed a sandwich in a reusable box and filled her own bottle. At the picnic, she used a cloth napkin and took every container home. Which title best fits the passage?",
+        "zh": "阅读英文材料，选出最合适的答案。Mei packed a sandwich in a reusable box and filled her own bottle. At the picnic, she used a cloth napkin and took every container home. Which title best fits the passage?"
+      },
+      "choices": [
+        "A Picnic with Less Waste.",
+        "Learning to Swim.",
+        "A Surprise Music Lesson.",
+        "Buying New Furniture."
+      ],
+      "answer": "A Picnic with Less Waste.",
+      "explain": {
+        "en": "The reusable box, bottle, napkin and returned containers all support reducing picnic waste.",
+        "zh": "可重复使用的饭盒、水瓶、餐巾以及带回容器，都围绕减少野餐垃圾。"
+      }
+    },
+    {
+      "id": "comprehension1-069",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Ravi wanted a toy costing RM12. He had RM10. Instead of asking a friend for money, he decided to save RM1 a week and wait. What does his decision show?",
+        "zh": "阅读英文材料，选出最合适的答案。Ravi wanted a toy costing RM12. He had RM10. Instead of asking a friend for money, he decided to save RM1 a week and wait. What does his decision show?"
+      },
+      "choices": [
+        "He is willing to plan and wait for something he wants.",
+        "He thinks the toy is free.",
+        "He has already paid for the toy.",
+        "He does not understand that the toy costs money."
+      ],
+      "answer": "He is willing to plan and wait for something he wants.",
+      "explain": {
+        "en": "He checks the cost, plans to save and accepts a wait. Those actions show planning and patience.",
+        "zh": "他留意价格、计划储蓄并愿意等待，这些行为显示他有计划和耐心。"
+      }
+    },
+    {
+      "id": "comprehension1-070",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Aina placed two pots near the window. She watered the first every morning but forgot the second for several days. The soil in the second pot became dry. What is the best-supported reason for the dry soil?",
+        "zh": "阅读英文材料，选出最合适的答案。Aina placed two pots near the window. She watered the first every morning but forgot the second for several days. The soil in the second pot became dry. What is the best-supported reason for the dry soil?"
+      },
+      "choices": [
+        "The second pot had not been watered for several days.",
+        "Both pots were watered too often.",
+        "The window was painted blue.",
+        "The first pot was made of gold."
+      ],
+      "answer": "The second pot had not been watered for several days.",
+      "explain": {
+        "en": "The text links the second pot with several days without watering; the other explanations are unsupported.",
+        "zh": "短文指出第二盆连续几天没浇水，这是土干的直接线索；其他原因没有证据。"
+      }
+    },
+    {
+      "id": "comprehension1-071",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The class prepared a play. Hana made the masks, Siva arranged the chairs and Mei checked the music. Before the show, they thanked one another. What helped them get ready?",
+        "zh": "阅读英文材料，选出最合适的答案。The class prepared a play. Hana made the masks, Siva arranged the chairs and Mei checked the music. Before the show, they thanked one another. What helped them get ready?"
+      },
+      "choices": [
+        "They shared different jobs and worked together.",
+        "Only one pupil did every job.",
+        "They cancelled the show.",
+        "They waited for the audience to do the work."
+      ],
+      "answer": "They shared different jobs and worked together.",
+      "explain": {
+        "en": "Three pupils take different useful tasks, which shows cooperation in preparing the show.",
+        "zh": "三人分担制作面具、排椅子和检查音乐的工作，显示合作帮助完成准备。"
+      }
+    },
+    {
+      "id": "comprehension1-072",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "During a quiz, Danial saw that his team's score had an extra point. He told the teacher, although it meant his team would no longer be first. Which action best shows his honesty?",
+        "zh": "阅读英文材料，选出最合适的答案。During a quiz, Danial saw that his team's score had an extra point. He told the teacher, although it meant his team would no longer be first. Which action best shows his honesty?"
+      },
+      "choices": [
+        "Reporting the extra point even when it reduced his team's score.",
+        "Joining a team for the quiz.",
+        "Looking at the score board.",
+        "Knowing the teacher's name."
+      ],
+      "answer": "Reporting the extra point even when it reduced his team's score.",
+      "explain": {
+        "en": "Correcting an error that benefits his team shows he values an accurate result over an unfair advantage.",
+        "zh": "主动纠正对自己队伍有利的错误，说明他重视真实成绩，表现诚实。"
+      }
+    },
+    {
+      "id": "comprehension1-073",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The path to the waterfall was closed after heavy rain. A sign warned of loose rocks. The family chose another walking trail. Why was changing the route sensible?",
+        "zh": "阅读英文材料，选出最合适的答案。The path to the waterfall was closed after heavy rain. A sign warned of loose rocks. The family chose another walking trail. Why was changing the route sensible?"
+      },
+      "choices": [
+        "The warning suggested the original path might be unsafe.",
+        "The waterfall had become a library.",
+        "The family wanted to carry loose rocks home.",
+        "Every other path was closed too."
+      ],
+      "answer": "The warning suggested the original path might be unsafe.",
+      "explain": {
+        "en": "The closure and loose-rock warning provide evidence of risk on the original path.",
+        "zh": "封路和落石警告说明原路线可能不安全，因此改道是合理决定。"
+      }
+    },
+    {
+      "id": "comprehension1-074",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Before her speech, Lina held her notes tightly and spoke very softly. Her friend smiled and whispered, \"You have practised well.\" Lina took a breath and spoke clearly. How did the friend help?",
+        "zh": "阅读英文材料，选出最合适的答案。Before her speech, Lina held her notes tightly and spoke very softly. Her friend smiled and whispered, \"You have practised well.\" Lina took a breath and spoke clearly. How did the friend help?"
+      },
+      "choices": [
+        "By giving encouragement that helped Lina feel more confident.",
+        "By reading the entire speech instead.",
+        "By hiding Lina's notes.",
+        "By telling Lina to leave the room."
+      ],
+      "answer": "By giving encouragement that helped Lina feel more confident.",
+      "explain": {
+        "en": "The encouraging words come just before Lina takes a breath and speaks clearly, supporting this inference.",
+        "zh": "朋友鼓励后，Lina 深呼吸并清楚讲话，这个变化暗示鼓励提升了信心。"
+      }
+    },
+    {
+      "id": "comprehension1-075",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "A notice says, \"Lost: a blue pencil case with a yellow zip. Found items should be taken to the office.\" Mei finds a blue pencil case with a yellow zip near the hall. What should she do next?",
+        "zh": "阅读英文材料，选出最合适的答案。A notice says, \"Lost: a blue pencil case with a yellow zip. Found items should be taken to the office.\" Mei finds a blue pencil case with a yellow zip near the hall. What should she do next?"
+      },
+      "choices": [
+        "Take it to the office.",
+        "Keep it because she found it.",
+        "Put it in the rubbish bin.",
+        "Open every classroom cupboard."
+      ],
+      "answer": "Take it to the office.",
+      "explain": {
+        "en": "The item matches both colour details, and the notice directs found items to the office.",
+        "zh": "物品的蓝色和黄色拉链都吻合，通告又说明失物要交到办公室。"
+      }
+    },
+    {
+      "id": "comprehension1-076",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The pupils wanted to buy new books for their reading corner. They sold handmade bookmarks during recess and used the money for storybooks. Why did they sell bookmarks?",
+        "zh": "阅读英文材料，选出最合适的答案。The pupils wanted to buy new books for their reading corner. They sold handmade bookmarks during recess and used the money for storybooks. Why did they sell bookmarks?"
+      },
+      "choices": [
+        "To raise money for books.",
+        "To stop pupils from reading.",
+        "To buy a larger canteen.",
+        "To replace all their school bags."
+      ],
+      "answer": "To raise money for books.",
+      "explain": {
+        "en": "The first sentence states the goal; the sale provides the money used to meet it.",
+        "zh": "第一句说明目标是买新书，售卖书签所得正用来达成这个目标。"
+      }
+    },
+    {
+      "id": "comprehension1-077",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Invitation: \"Family Games Day, Sunday, 8–11 a.m. Children must be accompanied by an adult. Wear sports shoes.\" Ten-year-old Ravi wants to attend. Which plan follows both instructions?",
+        "zh": "阅读英文材料，选出最合适的答案。Invitation: \"Family Games Day, Sunday, 8–11 a.m. Children must be accompanied by an adult. Wear sports shoes.\" Ten-year-old Ravi wants to attend. Which plan follows both instructions?"
+      },
+      "choices": [
+        "Go with his mother and wear sports shoes.",
+        "Go alone and wear sports shoes.",
+        "Go with his father and wear slippers.",
+        "Go alone after noon."
+      ],
+      "answer": "Go with his mother and wear sports shoes.",
+      "explain": {
+        "en": "He needs an accompanying adult and sports shoes. Only one plan satisfies both requirements.",
+        "zh": "必须同时有成人陪同和穿运动鞋，只有与妈妈同行并穿运动鞋符合两项要求。"
+      }
+    },
+    {
+      "id": "comprehension1-078",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Mei borrowed a book about birds. She read it twice and made notes about the birds in her garden. \"It helped me notice their different calls,\" she said. What does It refer to?",
+        "zh": "阅读英文材料，选出最合适的答案。Mei borrowed a book about birds. She read it twice and made notes about the birds in her garden. \"It helped me notice their different calls,\" she said. What does It refer to?"
+      },
+      "choices": [
+        "The book about birds.",
+        "The garden gate.",
+        "A bird's nest.",
+        "Mei's school bag."
+      ],
+      "answer": "The book about birds.",
+      "explain": {
+        "en": "The book is the thing she read and learned from; it is the reference that fits helped me notice.",
+        "zh": "她阅读并从中学习的是那本鸟类书籍，因此 It 指这本书。"
+      }
+    },
+    {
+      "id": "comprehension1-079",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "A shop sign says, \"Buy two notebooks for RM6. One notebook costs RM4.\" Aina needs exactly two notebooks. Which statement is true?",
+        "zh": "阅读英文材料，选出最合适的答案。A shop sign says, \"Buy two notebooks for RM6. One notebook costs RM4.\" Aina needs exactly two notebooks. Which statement is true?"
+      },
+      "choices": [
+        "The two-notebook offer costs less than buying two separately.",
+        "The offer costs RM2 more.",
+        "One notebook is free with every pencil.",
+        "Three notebooks always cost RM6."
+      ],
+      "answer": "The two-notebook offer costs less than buying two separately.",
+      "explain": {
+        "en": "Two at RM4 each cost RM8; the stated two-notebook offer is RM6, so it costs less.",
+        "zh": "分别买两本是 RM8；两本优惠价是 RM6，因此优惠更便宜。"
+      }
+    },
+    {
+      "id": "comprehension1-080",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "At first, nobody used the class reading corner because the books were hard to find. The pupils sorted them by topic and added labels. Soon, more classmates began borrowing books. What probably made the corner more useful?",
+        "zh": "阅读英文材料，选出最合适的答案。At first, nobody used the class reading corner because the books were hard to find. The pupils sorted them by topic and added labels. Soon, more classmates began borrowing books. What probably made the corner more useful?"
+      },
+      "choices": [
+        "The labels and sorting made books easier to find.",
+        "The pupils removed every book.",
+        "The school stopped all reading lessons.",
+        "The labels made the books heavier."
+      ],
+      "answer": "The labels and sorting made books easier to find.",
+      "explain": {
+        "en": "The problem was finding books. Sorting and labels address that problem before borrowing increases.",
+        "zh": "原来的问题是难找书；分类和标签解决了这个问题，随后借书的人增加。"
+      }
+    },
+    {
+      "id": "comprehension1-081",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Four lines from a poem:\nRain taps softly on the roof,\nLeaves dance beside the door.\nI listen to the gentle beat,\nThen hear the drops once more.\nWhich sense is most strongly used in the words taps, listen, beat and hear?",
+        "zh": "阅读英文材料，选出最合适的答案。Four lines from a poem:\nRain taps softly on the roof,\nLeaves dance beside the door.\nI listen to the gentle beat,\nThen hear the drops once more.\nWhich sense is most strongly used in the words taps, listen, beat and hear?"
+      },
+      "choices": [
+        "Hearing.",
+        "Taste.",
+        "Smell.",
+        "Touch."
+      ],
+      "answer": "Hearing.",
+      "explain": {
+        "en": "Taps and beat describe sounds; listen and hear name the act of noticing sound.",
+        "zh": "Taps 和 beat 描写声音，listen 和 hear 都表示听，因此主要运用听觉。"
+      }
+    },
+    {
+      "id": "comprehension1-082",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Read these lines:\nA seed sleeps deep below the ground,\nThen lifts a leaf without a sound.\nWhat does the poet mean by saying the seed sleeps?",
+        "zh": "阅读英文材料，选出最合适的答案。Read these lines:\nA seed sleeps deep below the ground,\nThen lifts a leaf without a sound.\nWhat does the poet mean by saying the seed sleeps?"
+      },
+      "choices": [
+        "The seed rests in the soil before it starts to grow.",
+        "The seed wears pyjamas every night.",
+        "The seed can never grow.",
+        "The seed is already a tall tree."
+      ],
+      "answer": "The seed rests in the soil before it starts to grow.",
+      "explain": {
+        "en": "Sleeps is an imaginative description of the seed before growth, not a literal claim that it behaves like a person.",
+        "zh": "Sleeps 是对发芽前种子的想象性描写，不是说种子真的像人一样睡觉。"
+      }
+    },
+    {
+      "id": "comprehension1-083",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Two notices: \"Swimming lesson: arrive by 3 p.m. Bring a towel.\" \"The pool car park is closed today. Please use the entrance beside the hall.\" Which detail has changed today?",
+        "zh": "阅读英文材料，选出最合适的答案。Two notices: \"Swimming lesson: arrive by 3 p.m. Bring a towel.\" \"The pool car park is closed today. Please use the entrance beside the hall.\" Which detail has changed today?"
+      },
+      "choices": [
+        "The way visitors should enter.",
+        "The need to bring a towel.",
+        "The arrival time of the lesson.",
+        "The subject of the lesson."
+      ],
+      "answer": "The way visitors should enter.",
+      "explain": {
+        "en": "The second notice changes access because the car park is closed; it does not change the lesson time or towel instruction.",
+        "zh": "第二则通告因停车场关闭而改变入口安排，并没有更改上课时间或毛巾要求。"
+      }
+    },
+    {
+      "id": "comprehension1-084",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The class voted for a trip. Twelve pupils chose the museum, nine chose the bird park and four chose the beach. The teacher selected the place with the most votes. Where will the class go?",
+        "zh": "阅读英文材料，选出最合适的答案。The class voted for a trip. Twelve pupils chose the museum, nine chose the bird park and four chose the beach. The teacher selected the place with the most votes. Where will the class go?"
+      },
+      "choices": [
+        "The museum.",
+        "The bird park.",
+        "The beach.",
+        "All three places on the same day."
+      ],
+      "answer": "The museum.",
+      "explain": {
+        "en": "Twelve is the largest vote count, and the teacher uses the most-votes rule.",
+        "zh": "十二票最多；老师按最高票数选择，因此去博物馆。"
+      }
+    },
+    {
+      "id": "comprehension1-085",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Hana checked the tap before leaving the washroom. It was dripping even though she had turned it off. She told a teacher instead of pulling at the tap. Why did she tell the teacher?",
+        "zh": "阅读英文材料，选出最合适的答案。Hana checked the tap before leaving the washroom. It was dripping even though she had turned it off. She told a teacher instead of pulling at the tap. Why did she tell the teacher?"
+      },
+      "choices": [
+        "The tap still leaked and needed an adult to arrange help.",
+        "She wanted to leave the tap running.",
+        "She thought every tap should drip.",
+        "She had lost her lunchbox."
+      ],
+      "answer": "The tap still leaked and needed an adult to arrange help.",
+      "explain": {
+        "en": "The continuing drip is the problem. Informing a teacher allows an adult to deal with it safely.",
+        "zh": "水龙头关了仍滴水，说明有问题；告诉老师可让成人安排处理。"
+      }
+    },
+    {
+      "id": "comprehension1-086",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "An email says, \"Our football practice on Tuesday has moved from the field to the covered court because the field is muddy. The time is still 4 p.m.\" Which summary is accurate?",
+        "zh": "阅读英文材料，选出最合适的答案。An email says, \"Our football practice on Tuesday has moved from the field to the covered court because the field is muddy. The time is still 4 p.m.\" Which summary is accurate?"
+      },
+      "choices": [
+        "Practice is at the usual time but in a different place.",
+        "Practice is cancelled for the whole week.",
+        "Practice is earlier and still on the field.",
+        "Practice is now on Wednesday at noon."
+      ],
+      "answer": "Practice is at the usual time but in a different place.",
+      "explain": {
+        "en": "The email changes the place to the covered court but explicitly keeps 4 p.m.",
+        "zh": "邮件把地点改到有盖球场，但明确保留下午四点的时间。"
+      }
+    },
+    {
+      "id": "comprehension1-087",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "At the craft stall, Mei chose a plain cloth bag instead of a plastic gift bag. She said, \"I can decorate this one and use it for my books all year.\" Why did she choose the cloth bag?",
+        "zh": "阅读英文材料，选出最合适的答案。At the craft stall, Mei chose a plain cloth bag instead of a plastic gift bag. She said, \"I can decorate this one and use it for my books all year.\" Why did she choose the cloth bag?"
+      },
+      "choices": [
+        "She could personalise it and use it many times.",
+        "She wanted to throw it away that afternoon.",
+        "She thought books must never go in bags.",
+        "She needed it to melt in water."
+      ],
+      "answer": "She could personalise it and use it many times.",
+      "explain": {
+        "en": "Her words give two reasons: decorate it herself and keep using it for books.",
+        "zh": "她的话给出两个理由：自己装饰，以及整年重复用来装书。"
+      }
+    },
+    {
+      "id": "comprehension1-088",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "A class report says, \"In Week 1, we collected 10 used bottles. In Week 2, we collected 18. We kept the bottles in labelled boxes until the recycling truck arrived.\" Which statement is supported?",
+        "zh": "阅读英文材料，选出最合适的答案。A class report says, \"In Week 1, we collected 10 used bottles. In Week 2, we collected 18. We kept the bottles in labelled boxes until the recycling truck arrived.\" Which statement is supported?"
+      },
+      "choices": [
+        "The class collected more bottles in Week 2 than in Week 1.",
+        "The class collected fewer bottles in Week 2.",
+        "The truck arrived every morning.",
+        "The boxes were thrown into the river."
+      ],
+      "answer": "The class collected more bottles in Week 2 than in Week 1.",
+      "explain": {
+        "en": "The report gives 18 for Week 2 and 10 for Week 1. It gives no daily truck schedule.",
+        "zh": "第二周十八个，比第一周十个多；报告没有提供回收车每天到达的安排。"
+      }
+    },
+    {
+      "id": "comprehension1-089",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Mira wrote, \"My first clay pot leaned to one side. I asked my teacher for advice and tried again. The second pot stood straight, and I felt proud.\" Which lesson is best supported?",
+        "zh": "阅读英文材料，选出最合适的答案。Mira wrote, \"My first clay pot leaned to one side. I asked my teacher for advice and tried again. The second pot stood straight, and I felt proud.\" Which lesson is best supported?"
+      },
+      "choices": [
+        "Learning from advice and trying again can help us improve.",
+        "A first mistake means we should stop learning.",
+        "Teachers should make every pot for pupils.",
+        "Clay pots are always perfect on the first try."
+      ],
+      "answer": "Learning from advice and trying again can help us improve.",
+      "explain": {
+        "en": "She uses advice, makes another attempt and achieves a better result. Those events support improvement through practice.",
+        "zh": "她听取建议、再次尝试并做得更好，这个过程说明练习与建议能帮助进步。"
+      }
+    },
+    {
+      "id": "comprehension1-090",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Two friends review a book. Ravi says, \"The drawings helped me understand how plants grow.\" Aina says, \"I liked the clear pictures, but I wished the book had more examples.\" What do both readers agree about?",
+        "zh": "阅读英文材料，选出最合适的答案。Two friends review a book. Ravi says, \"The drawings helped me understand how plants grow.\" Aina says, \"I liked the clear pictures, but I wished the book had more examples.\" What do both readers agree about?"
+      },
+      "choices": [
+        "The pictures were useful or appealing.",
+        "The book had too many examples.",
+        "The book had no pictures.",
+        "Plants are not interesting."
+      ],
+      "answer": "The pictures were useful or appealing.",
+      "explain": {
+        "en": "Ravi finds the drawings helpful and Aina likes the pictures. Only Aina asks for more examples.",
+        "zh": "Ravi 觉得插图有帮助，Aina 喜欢图片，两人都肯定图片；只有 Aina 希望增加例子。"
       }
     }
   ]

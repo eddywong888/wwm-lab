@@ -9,10 +9,8 @@ import { validatePack } from '../src/content/schema';
 import { BADGE_DEFS, computeBadges, newlyEarnedBadges } from '../src/engine/badges';
 import type { EduState, TopicProgress } from '../src/store/local';
 
-import grammar1 from '../src/content/english/grammar-1.json';
-import vocabulary1 from '../src/content/english/vocabulary-1.json';
-import sentences1 from '../src/content/english/sentences-1.json';
-import comprehension1 from '../src/content/english/comprehension-1.json';
+import { REPO_PACKS } from '../src/engine/english';
+import { checkContentIntegrity } from './check-content';
 
 const ITERATIONS = 1000;
 const DIFFICULTIES: Difficulty[] = ['standard', 'advanced'];
@@ -87,14 +85,9 @@ for (const generator of MATH_GENERATORS) {
 console.log(`Checked ${totalChecked} generated questions across ${MATH_GENERATORS.length} generators x ${DIFFICULTIES.length} difficulties.`);
 
 // --- English question banks -------------------------------------------
-console.log('\nValidating English question banks...');
+console.log('\nValidating English and Chinese question banks...');
 
-const RAW_PACKS: { file: string; data: unknown }[] = [
-  { file: 'grammar-1.json', data: grammar1 },
-  { file: 'vocabulary-1.json', data: vocabulary1 },
-  { file: 'sentences-1.json', data: sentences1 },
-  { file: 'comprehension-1.json', data: comprehension1 },
-];
+const RAW_PACKS = REPO_PACKS.map((pack) => ({ file: `${pack.subject}/${pack.id}`, data: pack }));
 
 let totalBankQuestions = 0;
 let totalStandard = 0;
@@ -121,7 +114,7 @@ for (const { file, data } of RAW_PACKS) {
   console.log(`  ${file} (topic=${pack.topic}): ${count} questions (${standardCount} standard / ${advancedCount} advanced)`);
 }
 
-console.log(`\nEnglish banks total: ${RAW_PACKS.length} packs, ${totalBankQuestions} questions (${totalStandard} standard / ${totalAdvanced} advanced).`);
+console.log(`\nLanguage banks total: ${RAW_PACKS.length} packs, ${totalBankQuestions} questions (${totalStandard} standard / ${totalAdvanced} advanced).`);
 
 // --- Badges (Phase 4) --------------------------------------------------
 console.log('\nChecking badge computation (src/engine/badges.ts)...');
@@ -342,6 +335,8 @@ function badgeDef(badgeId: string) {
 }
 
 console.log(`Badge checks complete (${BADGE_DEFS.length} badge defs, ${mathIds.length} math topics, ${englishIds.length} English topics considered).`);
+
+checkContentIntegrity();
 
 if (failures > 0) {
   console.error(`\n${failures} failure(s) found.`);

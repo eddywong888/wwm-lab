@@ -19,16 +19,16 @@ const NAMES: { en: string; zh: string }[] = [
   { en: 'Farah', zh: '法拉' },
 ];
 
-const ITEMS: { en: string; zh: string }[] = [
-  { en: 'stickers', zh: '贴纸' },
-  { en: 'marbles', zh: '弹珠' },
-  { en: 'storybooks', zh: '故事书' },
-  { en: 'eggs', zh: '鸡蛋' },
-  { en: 'pencils', zh: '铅笔' },
+const ITEMS: { en: string; zh: string; classifier: string }[] = [
+  { en: 'stickers', zh: '贴纸', classifier: '张' },
+  { en: 'marbles', zh: '弹珠', classifier: '颗' },
+  { en: 'storybooks', zh: '故事书', classifier: '本' },
+  { en: 'eggs', zh: '鸡蛋', classifier: '个' },
+  { en: 'pencils', zh: '铅笔', classifier: '支' },
 ];
 
 function plainAdd(rng: Rng, difficulty: Difficulty): Question {
-  const max = difficulty === 'standard' ? 60_000 : 500_000;
+  const max = difficulty === 'standard' ? 40_000 : 50_000;
   const a = rng.int(100, max);
   const b = rng.int(100, max);
   const sum = a + b;
@@ -54,7 +54,7 @@ function plainAdd(rng: Rng, difficulty: Difficulty): Question {
 }
 
 function plainSub(rng: Rng, difficulty: Difficulty): Question {
-  const max = difficulty === 'standard' ? 60_000 : 500_000;
+  const max = difficulty === 'standard' ? 40_000 : 50_000;
   const a = rng.int(1000, max);
   const b = rng.int(100, a - 1);
   const diff = a - b;
@@ -80,12 +80,11 @@ function plainSub(rng: Rng, difficulty: Difficulty): Question {
 }
 
 function wordProblem(rng: Rng, difficulty: Difficulty): Question {
-  const max = difficulty === 'standard' ? 40_000 : 300_000;
   const name = rng.pick(NAMES);
   const item = rng.pick(ITEMS);
   const isAdd = rng.chance(0.5);
-  const a = rng.int(100, max);
-  const b = rng.int(100, max);
+  const a = rng.int(10, difficulty === 'standard' ? 200 : 500);
+  const b = rng.int(10, difficulty === 'standard' ? 200 : 500);
 
   if (isAdd) {
     const total = a + b;
@@ -93,7 +92,7 @@ function wordProblem(rng: Rng, difficulty: Difficulty): Question {
       id: `as-word-add-${a}-${b}`,
       prompt: {
         en: `${name.en} has ${formatNumber(a)} ${item.en}. ${name.en} gets ${formatNumber(b)} more ${item.en}. How many ${item.en} does ${name.en} have now?`,
-        zh: `${name.zh}有 ${formatNumber(a)} 个${item.zh}。${name.zh}又得到 ${formatNumber(b)} 个${item.zh}。${name.zh}现在一共有多少个${item.zh}？`,
+        zh: `${name.zh}有 ${formatNumber(a)} ${item.classifier}${item.zh}。${name.zh}又得到 ${formatNumber(b)} ${item.classifier}${item.zh}。${name.zh}现在一共有多少${item.classifier}${item.zh}？`,
       },
       answer: String(total),
       kind: 'numeric',
@@ -108,7 +107,7 @@ function wordProblem(rng: Rng, difficulty: Difficulty): Question {
     id: `as-word-sub-${a}-${b}`,
     prompt: {
       en: `${name.en} has ${formatNumber(bigger)} ${item.en}. ${name.en} gives away ${formatNumber(smaller)} ${item.en}. How many ${item.en} does ${name.en} have left?`,
-      zh: `${name.zh}有 ${formatNumber(bigger)} 个${item.zh}。${name.zh}送出了 ${formatNumber(smaller)} 个${item.zh}。${name.zh}还剩下多少个${item.zh}？`,
+      zh: `${name.zh}有 ${formatNumber(bigger)} ${item.classifier}${item.zh}。${name.zh}送出了 ${formatNumber(smaller)} ${item.classifier}${item.zh}。${name.zh}还剩下多少${item.classifier}${item.zh}？`,
     },
     answer: String(remaining),
     kind: 'numeric',
@@ -118,7 +117,7 @@ function wordProblem(rng: Rng, difficulty: Difficulty): Question {
 }
 
 function chainQuestion(rng: Rng, difficulty: Difficulty): Question {
-  const max = difficulty === 'standard' ? 40_000 : 300_000;
+  const max = difficulty === 'standard' ? 30_000 : 50_000;
   const a = rng.int(1000, max);
   const b = rng.int(100, Math.min(a, max / 2));
   const c = rng.int(100, max / 2);
@@ -150,7 +149,7 @@ function chainQuestion(rng: Rng, difficulty: Difficulty): Question {
 }
 
 function missingNumberQuestion(rng: Rng, difficulty: Difficulty): Question {
-  const max = difficulty === 'standard' ? 40_000 : 300_000;
+  const max = difficulty === 'standard' ? 30_000 : 50_000;
   const isAdd = rng.chance(0.5);
   const known = rng.int(1000, max);
   const missing = rng.int(100, max);

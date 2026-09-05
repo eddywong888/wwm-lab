@@ -131,30 +131,31 @@ function countSidesQuestion(rng: Rng): Question {
 // label itself is a fixed, locale-neutral token (like "RM" in money.ts),
 // while the surrounding prompt sentence is fully bilingual.
 const SHAPE_DESCRIPTIONS: { shape: string; en: string; zh: string }[] = [
-  { shape: 'square', en: 'I have 4 equal sides and 4 right angles. What shape am I?', zh: '我有4条相等的边和4个直角。我是什么图形？' },
+  { shape: 'square', en: 'I have 4 equal sides and 4 right angles. What is my most specific name?', zh: '我有4条相等的边和4个直角。我的最确切名称是什么？' },
   { shape: 'rectangle', en: 'I have 4 sides, opposite sides are equal, and I have 4 right angles, but not all my sides are equal. What shape am I?', zh: '我有4条边，对边相等，也有4个直角，但不是所有边都相等。我是什么图形？' },
   { shape: 'triangle', en: 'I have 3 sides and 3 vertices. What shape am I?', zh: '我有3条边和3个顶点。我是什么图形？' },
   { shape: 'pentagon', en: 'I have 5 sides and 5 vertices. What shape am I?', zh: '我有5条边和5个顶点。我是什么图形？' },
   { shape: 'hexagon', en: 'I have 6 sides and 6 vertices. What shape am I?', zh: '我有6条边和6个顶点。我是什么图形？' },
 ];
 const SHAPE_NAMES = ['square', 'rectangle', 'triangle', 'pentagon', 'hexagon'];
+const SHAPE_LABELS: Record<string, string> = { square: 'square / 正方形', rectangle: 'rectangle / 长方形', triangle: 'triangle / 三角形', pentagon: 'pentagon / 五边形', hexagon: 'hexagon / 六边形' };
 
 function identifyShapeQuestion(rng: Rng): Question {
   const item = rng.pick(SHAPE_DESCRIPTIONS);
   const others = SHAPE_NAMES.filter((s) => s !== item.shape);
   const distractors = rng.shuffle(others).slice(0, 3);
-  const choices = rng.shuffle([item.shape, ...distractors]);
+  const choices = rng.shuffle([item.shape, ...distractors].map((shape) => SHAPE_LABELS[shape]));
 
   return {
     id: `shp-identify-${item.shape}`,
     prompt: { en: item.en, zh: item.zh },
     choices,
-    answer: item.shape,
+    answer: SHAPE_LABELS[item.shape],
     kind: 'mcq',
     topic: meta.id,
     explain: {
       en: `The shape described is a ${item.shape}.`,
-      zh: `描述的图形是${item.shape}。`,
+      zh: `描述的图形是${SHAPE_LABELS[item.shape]}。`,
     },
   };
 }

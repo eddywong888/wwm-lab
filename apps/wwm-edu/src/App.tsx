@@ -42,7 +42,7 @@ export default function App() {
   // Content overrides (Phase 3 KV packs) and, if already signed in,
   // server progress — both fire-and-forget, the app works fully offline.
   useEffect(() => {
-    void refreshEnglishContent();
+    void refreshEnglishContent().then((updated) => { if (updated) setState(loadState()); });
     const userKey = state.account?.userKey;
     if (userKey) void pushProgress(userKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps

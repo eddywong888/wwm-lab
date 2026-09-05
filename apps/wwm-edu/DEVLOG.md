@@ -5,6 +5,36 @@ Version scheme: `0.<phase>.<patch>` until the full 4-phase plan is complete, the
 
 ---
 
+## v1.2.0 — Year 4 curriculum and three-subject content expansion (2026-09-05)
+
+- Added Chinese / 华文 as a full subject in the existing v1.1.1 subject-tab and
+  topic-card design: 字词运用, 句子与标点, 阅读理解, and 习作基础 contain 240 original
+  questions, evenly split between Standard and Advanced practice.
+- Expanded the four English banks from 245 to 360 questions (45 per tier in each
+  topic), repaired ambiguous clozes and sentence ordering, corrected inaccurate
+  vocabulary and grammar explanations, and added functional texts, editing,
+  inference, dialogue, and dictionary skills.
+- Expanded Mathematics from 10 to 12 topics with Coordinates & Ratio and Data
+  Handling. Added patterns, odd/even, contextual multi-step reasoning, mixed and
+  improper fractions, triangle area, angles, line relationships, payment methods,
+  budgeting, measurement-unit suitability, and corrected Year 4 ranges and
+  division/fraction defects.
+- Updated Daily Challenge to four maths, three English, and three Chinese questions.
+  Language sessions now preserve the chosen tier, shuffle choices at runtime,
+  namespace IDs, and avoid recently served or duplicate questions; maths sessions
+  also prevent duplicate stems.
+- Strengthened bundled and KV-upload validation for both language subjects:
+  explanations, tier depth, unique prompts/choices, positive versions, topic
+  namespaces, and safe override precedence are enforced by shared validation.
+- Added `CURRICULUM-AUDIT.md`, separating verified KPM/Parliament curriculum and
+  MPT4 policy from inferred practice conventions and documenting remaining engine
+  limits. WWM Edu makes no official-endorsement or exact-paper-format claim.
+- Verified: `npm run check --prefix apps/wwm-edu` (24,000 generated questions,
+  600 curated questions, 576 complete sessions, 31 daily sets, malformed packs,
+  and 8,652 independent maths answer recalculations), `npx tsc -b --force`, app
+  and Education API lint, app production build, and browser checks of Chinese
+  navigation, reading feedback, and multiline data charts.
+
 ## v1.1.1 — Main-site return control (2026-09-05)
 
 - Added a persistent back-arrow button to the Education Lab header that returns directly to the

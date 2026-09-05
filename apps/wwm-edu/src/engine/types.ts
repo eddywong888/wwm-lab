@@ -24,7 +24,7 @@ export interface GeneratorMeta {
   name: Bilingual;
   /** Emoji icon representing the topic */
   icon: string;
-  /** Which half of the KSSR Standard 4 school year this topic belongs to. */
+  /** Practice grouping: numbers/operations (1), measures/space/data (2); not an official term sequence. */
   term?: 1 | 2;
 }
 

@@ -90,7 +90,6 @@ function fourDigitsToWordsZH(n: number): string {
     } else {
       s += DIGIT_ZH[ten] + '十';
     }
-    seenHigher = true;
   } else if (seenHigher && one > 0 && hundred === 0 && thousand === 0) {
     // no-op, handled above
   } else if (hundred > 0 && one > 0 && ten === 0) {

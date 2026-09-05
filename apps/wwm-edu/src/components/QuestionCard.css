@@ -10,6 +10,7 @@
 }
 
 .question-card__prompt {
+  white-space: pre-line;
   margin: 0 0 1.7rem;
   color: var(--edu-ink);
   font-family: var(--edu-font-display);
@@ -181,6 +182,7 @@
   }
 
   .question-card__prompt {
+  white-space: pre-line;
     margin-bottom: 1.25rem;
     font-size: clamp(1.25rem, 6vw, 1.65rem);
   }

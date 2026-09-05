@@ -26,14 +26,14 @@ function digitAtPlace(n: number, placeValue: number): number {
 }
 
 function randomNumber(rng: Rng, difficulty: Difficulty): number {
-  return difficulty === 'standard' ? rng.int(1000, 99_999) : rng.int(50_000, 999_999);
+  return difficulty === 'standard' ? rng.int(1000, 100_000) : rng.int(10_000, 100_000);
 }
 
 function placeValueQuestion(rng: Rng, difficulty: Difficulty): Question {
   const n = randomNumber(rng, difficulty);
   const places: Place[] = difficulty === 'standard'
     ? ['ones', 'tens', 'hundreds', 'thousands', 'ten-thousands']
-    : ['tens', 'hundreds', 'thousands', 'ten-thousands', 'hundred-thousands'];
+    : ['ones', 'tens', 'hundreds', 'thousands', 'ten-thousands'];
   const place = rng.pick(places);
   const { value, name } = PLACE_INFO[place];
   const correctDigit = digitAtPlace(n, value);
@@ -64,7 +64,7 @@ function roundQuestion(rng: Rng, difficulty: Difficulty): Question {
   const n = randomNumber(rng, difficulty);
   const roundTo = difficulty === 'standard'
     ? rng.pick([10, 100, 1000])
-    : rng.pick([10, 100, 1000, 10_000, 100_000]);
+    : rng.pick([10, 100, 1000, 10_000]);
   const rounded = Math.round(n / roundTo) * roundTo;
   const formatted = formatNumber(n);
   const correctStr = formatNumber(rounded);

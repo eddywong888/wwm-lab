@@ -143,7 +143,6 @@ function budgetWordProblem(rng: Rng): Question {
 
 function unitPriceQuestion(rng: Rng): Question {
   const name = rng.pick(NAMES);
-  const item = rng.pick(ITEMS);
   const unitPrice = rng.int(50, 999); // sen
   const qty = rng.int(2, 12);
   const total = unitPrice * qty;
@@ -158,8 +157,8 @@ function unitPriceQuestion(rng: Rng): Question {
   return {
     id: `money-unit-${unitPrice}-${qty}`,
     prompt: {
-      en: `${name.en} buys ${qty} of ${item.en} at ${formatMoneySen(unitPrice)} each. What is the total cost?`,
-      zh: `${name.zh}以每个 ${formatMoneySen(unitPrice)} 的价格买了 ${qty} 个${item.zh.replace('一', '')}。总共需要多少钱？`,
+      en: `${name.en} buys ${qty} notebooks at ${formatMoneySen(unitPrice)} each. What is the total cost?`,
+      zh: `${name.zh}以每本 ${formatMoneySen(unitPrice)} 的价格买了 ${qty} 本笔记本。总共需要多少钱？`,
     },
     choices,
     answer: formatMoneySen(total),

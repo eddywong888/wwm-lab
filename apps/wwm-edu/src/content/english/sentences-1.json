@@ -6,14 +6,14 @@
     "en": "Sentences",
     "zh": "句子"
   },
-  "version": 1,
+  "version": 2,
   "questions": [
     {
       "id": "sentences1-001",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is in the correct order?",
-        "zh": "选出正确的答案。Which sentence is in the correct order?"
+        "en": "Arrange these words into a sentence beginning with \"She\": a / book / in / the / library / She / is / reading.",
+        "zh": "选出最合适的答案。Arrange these words into a sentence beginning with \"She\": a / book / in / the / library / She / is / reading."
       },
       "choices": [
         "She is reading a book in the library.",
@@ -23,16 +23,16 @@
       ],
       "answer": "She is reading a book in the library.",
       "explain": {
-        "en": "This sentence follows correct English word order (subject, verb, object).",
-        "zh": "这个句子的词序正确（主语、动词、宾语）。"
+        "en": "Keep She before is reading, followed by a book and the place phrase in the library.",
+        "zh": "She 是主语，后接 is reading，再接 a book 和地点短语 in the library。"
       }
     },
     {
       "id": "sentences1-002",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is in the correct order?",
-        "zh": "选出正确的答案。Which sentence is in the correct order?"
+        "en": "Arrange these words into a sentence beginning with \"My mother\": dinner / every / evening / My / mother / cooks.",
+        "zh": "选出最合适的答案。Arrange these words into a sentence beginning with \"My mother\": dinner / every / evening / My / mother / cooks."
       },
       "choices": [
         "My mother cooks dinner every evening.",
@@ -42,16 +42,16 @@
       ],
       "answer": "My mother cooks dinner every evening.",
       "explain": {
-        "en": "This sentence follows correct English word order (subject, verb, object).",
-        "zh": "这个句子的词序正确（主语、动词、宾语）。"
+        "en": "Begin with My mother, then cooks dinner, and finish with the time phrase every evening.",
+        "zh": "先写 My mother，再写 cooks dinner，最后加时间短语 every evening。"
       }
     },
     {
       "id": "sentences1-003",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is in the correct order?",
-        "zh": "选出正确的答案。Which sentence is in the correct order?"
+        "en": "Arrange these words into a sentence beginning with \"The children\": playing / in / the / field / The / children / are.",
+        "zh": "选出最合适的答案。Arrange these words into a sentence beginning with \"The children\": playing / in / the / field / The / children / are."
       },
       "choices": [
         "The children are playing in the field.",
@@ -61,16 +61,16 @@
       ],
       "answer": "The children are playing in the field.",
       "explain": {
-        "en": "This sentence follows correct English word order (subject, verb, object).",
-        "zh": "这个句子的词序正确（主语、动词、宾语）。"
+        "en": "The children is the subject. Are playing is the verb phrase, followed by the place in the field.",
+        "zh": "The children 是主语，are playing 是动词短语，in the field 说明地点；这里不需要宾语。"
       }
     },
     {
       "id": "sentences1-004",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is in the correct order?",
-        "zh": "选出正确的答案。Which sentence is in the correct order?"
+        "en": "Arrange these words into a sentence beginning with \"I\": school / by / bus / every / day / I / go / to.",
+        "zh": "选出最合适的答案。Arrange these words into a sentence beginning with \"I\": school / by / bus / every / day / I / go / to."
       },
       "choices": [
         "I go to school by bus every day.",
@@ -80,16 +80,16 @@
       ],
       "answer": "I go to school by bus every day.",
       "explain": {
-        "en": "This sentence follows correct English word order (subject, verb, object).",
-        "zh": "这个句子的词序正确（主语、动词、宾语）。"
+        "en": "After I, use go to school, then by bus and every day to explain travel and time.",
+        "zh": "I 后接 go to school，再用 by bus 和 every day 说明交通方式和时间。"
       }
     },
     {
       "id": "sentences1-005",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is in the correct order?",
-        "zh": "选出正确的答案。Which sentence is in the correct order?"
+        "en": "Arrange these words into a sentence beginning with \"We\": grandmother / last / weekend / We / visited / our.",
+        "zh": "选出最合适的答案。Arrange these words into a sentence beginning with \"We\": grandmother / last / weekend / We / visited / our."
       },
       "choices": [
         "We visited our grandmother last weekend.",
@@ -99,16 +99,16 @@
       ],
       "answer": "We visited our grandmother last weekend.",
       "explain": {
-        "en": "This sentence follows correct English word order (subject, verb, object).",
-        "zh": "这个句子的词序正确（主语、动词、宾语）。"
+        "en": "We is followed by visited, the object our grandmother, and the time last weekend.",
+        "zh": "We 后接 visited，宾语是 our grandmother，最后是时间 last weekend。"
       }
     },
     {
       "id": "sentences1-006",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is in the correct order?",
-        "zh": "选出正确的答案。Which sentence is in the correct order?"
+        "en": "Arrange these words into a sentence beginning with \"The teacher\": us / homework / today / The / teacher / gave.",
+        "zh": "选出最合适的答案。Arrange these words into a sentence beginning with \"The teacher\": us / homework / today / The / teacher / gave."
       },
       "choices": [
         "The teacher gave us homework today.",
@@ -118,16 +118,16 @@
       ],
       "answer": "The teacher gave us homework today.",
       "explain": {
-        "en": "This sentence follows correct English word order (subject, verb, object).",
-        "zh": "这个句子的词序正确（主语、动词、宾语）。"
+        "en": "The teacher is the subject, gave is the verb, us names the receivers and homework names what was given.",
+        "zh": "The teacher 是主语，gave 是动词；us 表示接受者，homework 表示所给的东西。"
       }
     },
     {
       "id": "sentences1-007",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is in the correct order?",
-        "zh": "选出正确的答案。Which sentence is in the correct order?"
+        "en": "Arrange these words into a sentence beginning with \"My father\": to / work / every / morning / My / father / drives.",
+        "zh": "选出最合适的答案。Arrange these words into a sentence beginning with \"My father\": to / work / every / morning / My / father / drives."
       },
       "choices": [
         "My father drives to work every morning.",
@@ -137,16 +137,16 @@
       ],
       "answer": "My father drives to work every morning.",
       "explain": {
-        "en": "This sentence follows correct English word order (subject, verb, object).",
-        "zh": "这个句子的词序正确（主语、动词、宾语）。"
+        "en": "Begin with My father, then drives to work, followed by every morning.",
+        "zh": "题目指定从 My father 开始，接着是 drives to work，最后是 every morning。"
       }
     },
     {
       "id": "sentences1-008",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is in the correct order?",
-        "zh": "选出正确的答案。Which sentence is in the correct order?"
+        "en": "Arrange these words into a sentence beginning with \"The cat\": sleeping / under / the / table / The / cat / is.",
+        "zh": "选出最合适的答案。Arrange these words into a sentence beginning with \"The cat\": sleeping / under / the / table / The / cat / is."
       },
       "choices": [
         "The cat is sleeping under the table.",
@@ -156,16 +156,16 @@
       ],
       "answer": "The cat is sleeping under the table.",
       "explain": {
-        "en": "This sentence follows correct English word order (subject, verb, object).",
-        "zh": "这个句子的词序正确（主语、动词、宾语）。"
+        "en": "The requested beginning is The cat. Follow it with is sleeping and then under the table.",
+        "zh": "题目指定以 The cat 开始，后接 is sleeping 和地点 under the table；地点短语放句首也可能正确，但不符合本题指定的开头。"
       }
     },
     {
       "id": "sentences1-009",
       "difficulty": "advanced",
       "prompt": {
-        "en": "Which sentence is in the correct order?",
-        "zh": "选出正确的答案。Which sentence is in the correct order?"
+        "en": "Arrange these words into a sentence beginning with \"Although\": raining / we / still / went / to / the / park / Although / it / was.",
+        "zh": "选出最合适的答案。Arrange these words into a sentence beginning with \"Although\": raining / we / still / went / to / the / park / Although / it / was."
       },
       "choices": [
         "Although it was raining, we still went to the park.",
@@ -175,16 +175,16 @@
       ],
       "answer": "Although it was raining, we still went to the park.",
       "explain": {
-        "en": "This sentence follows correct English word order (subject, verb, object).",
-        "zh": "这个句子的词序正确（主语、动词、宾语）。"
+        "en": "Although introduces the first clause it was raining. A comma separates it from we still went to the park.",
+        "zh": "Although 引出 it was raining 这个从句，再用逗号与主句 we still went to the park 分开。"
       }
     },
     {
       "id": "sentences1-010",
       "difficulty": "advanced",
       "prompt": {
-        "en": "Which sentence is in the correct order?",
-        "zh": "选出正确的答案。Which sentence is in the correct order?"
+        "en": "Arrange these words into a sentence beginning with \"Before\": the / house / remember / to / lock / the / door / Before / you / leave.",
+        "zh": "选出最合适的答案。Arrange these words into a sentence beginning with \"Before\": the / house / remember / to / lock / the / door / Before / you / leave."
       },
       "choices": [
         "Before you leave the house, remember to lock the door.",
@@ -194,16 +194,16 @@
       ],
       "answer": "Before you leave the house, remember to lock the door.",
       "explain": {
-        "en": "This sentence follows correct English word order (subject, verb, object).",
-        "zh": "这个句子的词序正确（主语、动词、宾语）。"
+        "en": "Before you leave the house is the time clause. The main instruction is remember to lock the door.",
+        "zh": "Before you leave the house 是时间从句；主要指示是 remember to lock the door。"
       }
     },
     {
       "id": "sentences1-011",
       "difficulty": "advanced",
       "prompt": {
-        "en": "Which sentence is in the correct order?",
-        "zh": "选出正确的答案。Which sentence is in the correct order?"
+        "en": "Arrange these words into a sentence beginning with \"Because\": every / day / she / won / the / competition / Because / she / practised.",
+        "zh": "选出最合适的答案。Arrange these words into a sentence beginning with \"Because\": every / day / she / won / the / competition / Because / she / practised."
       },
       "choices": [
         "Because she practised every day, she won the competition.",
@@ -213,16 +213,16 @@
       ],
       "answer": "Because she practised every day, she won the competition.",
       "explain": {
-        "en": "This sentence follows correct English word order (subject, verb, object).",
-        "zh": "这个句子的词序正确（主语、动词、宾语）。"
+        "en": "Because introduces the reason she practised every day. The main clause tells the result: she won the competition.",
+        "zh": "Because 引出每天练习这个原因；主句 she won the competition 说明结果。"
       }
     },
     {
       "id": "sentences1-012",
       "difficulty": "advanced",
       "prompt": {
-        "en": "Which sentence is in the correct order?",
-        "zh": "选出正确的答案。Which sentence is in the correct order?"
+        "en": "Arrange these words into a sentence beginning with \"The book\": I / borrowed / from / the / library / is / very / interesting / The / book / that.",
+        "zh": "选出最合适的答案。Arrange these words into a sentence beginning with \"The book\": I / borrowed / from / the / library / is / very / interesting / The / book / that."
       },
       "choices": [
         "The book that I borrowed from the library is very interesting.",
@@ -232,16 +232,16 @@
       ],
       "answer": "The book that I borrowed from the library is very interesting.",
       "explain": {
-        "en": "This sentence follows correct English word order (subject, verb, object).",
-        "zh": "这个句子的词序正确（主语、动词、宾语）。"
+        "en": "That I borrowed from the library stays beside The book to describe which book. Is very interesting completes the sentence.",
+        "zh": "That I borrowed from the library 紧接 The book，说明是哪一本书；is very interesting 完成句子。"
       }
     },
     {
       "id": "sentences1-013",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is in the correct order?",
-        "zh": "选出正确的答案。Which sentence is in the correct order?"
+        "en": "Arrange these words into a sentence beginning with \"My sister and I\": I / share / a / bedroom / My / sister / and.",
+        "zh": "选出最合适的答案。Arrange these words into a sentence beginning with \"My sister and I\": I / share / a / bedroom / My / sister / and."
       },
       "choices": [
         "My sister and I share a bedroom.",
@@ -251,16 +251,16 @@
       ],
       "answer": "My sister and I share a bedroom.",
       "explain": {
-        "en": "This sentence follows correct English word order (subject, verb, object).",
-        "zh": "这个句子的词序正确（主语、动词、宾语）。"
+        "en": "Begin with the requested subject My sister and I, then use share a bedroom.",
+        "zh": "题目指定以主语 My sister and I 开头，再接 share a bedroom。"
       }
     },
     {
       "id": "sentences1-014",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is in the correct order?",
-        "zh": "选出正确的答案。Which sentence is in the correct order?"
+        "en": "Arrange these words into a sentence beginning with \"The farmer\": the / chickens / every / morning / The / farmer / feeds.",
+        "zh": "选出最合适的答案。Arrange these words into a sentence beginning with \"The farmer\": the / chickens / every / morning / The / farmer / feeds."
       },
       "choices": [
         "The farmer feeds the chickens every morning.",
@@ -270,16 +270,16 @@
       ],
       "answer": "The farmer feeds the chickens every morning.",
       "explain": {
-        "en": "This sentence follows correct English word order (subject, verb, object).",
-        "zh": "这个句子的词序正确（主语、动词、宾语）。"
+        "en": "The farmer does the action, feeds. The chickens receive the food, and every morning gives the time.",
+        "zh": "The farmer 是喂食的人，feeds 是动作，the chickens 是对象，every morning 是时间。"
       }
     },
     {
       "id": "sentences1-015",
       "difficulty": "advanced",
       "prompt": {
-        "en": "Which sentence is in the correct order?",
-        "zh": "选出正确的答案。Which sentence is in the correct order?"
+        "en": "Arrange these words into a sentence beginning with \"After\": homework / she / watched / her / favourite / cartoon / After / finishing / her.",
+        "zh": "选出最合适的答案。Arrange these words into a sentence beginning with \"After\": homework / she / watched / her / favourite / cartoon / After / finishing / her."
       },
       "choices": [
         "After finishing her homework, she watched her favourite cartoon.",
@@ -289,16 +289,16 @@
       ],
       "answer": "After finishing her homework, she watched her favourite cartoon.",
       "explain": {
-        "en": "This sentence follows correct English word order (subject, verb, object).",
-        "zh": "这个句子的词序正确（主语、动词、宾语）。"
+        "en": "After finishing her homework is a complete opening phrase. She watched her favourite cartoon is the main clause.",
+        "zh": "After finishing her homework 是完整的开头短语，后接主句 she watched her favourite cartoon。"
       }
     },
     {
       "id": "sentences1-016",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is correctly punctuated and capitalized?",
-        "zh": "选出正确的答案。Which sentence is correctly punctuated and capitalized?"
+        "en": "Choose the sentence with correct capital letters and punctuation for introducing Ali.",
+        "zh": "选出最合适的答案。Choose the sentence with correct capital letters and punctuation for introducing Ali."
       },
       "choices": [
         "My name is Ali and I am ten years old.",
@@ -308,16 +308,16 @@
       ],
       "answer": "My name is Ali and I am ten years old.",
       "explain": {
-        "en": "This sentence uses the correct capital letters and end punctuation.",
-        "zh": "这个句子的大小写和标点符号使用正确。"
+        "en": "A sentence starts with a capital. The name Ali and the pronoun I also need capitals; finish the statement with a full stop.",
+        "zh": "句首、名字 Ali 和代词 I 要大写；陈述句末用句号。"
       }
     },
     {
       "id": "sentences1-017",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is correctly punctuated and capitalized?",
-        "zh": "选出正确的答案。Which sentence is correctly punctuated and capitalized?"
+        "en": "Choose the sentence with correct capital letters and punctuation for asking about Kuala Lumpur.",
+        "zh": "选出最合适的答案。Choose the sentence with correct capital letters and punctuation for asking about Kuala Lumpur."
       },
       "choices": [
         "Do you live in Kuala Lumpur?",
@@ -327,16 +327,16 @@
       ],
       "answer": "Do you live in Kuala Lumpur?",
       "explain": {
-        "en": "This sentence uses the correct capital letters and end punctuation.",
-        "zh": "这个句子的大小写和标点符号使用正确。"
+        "en": "Start Do with a capital, capitalise both parts of Kuala Lumpur, and end the question with ?.",
+        "zh": "句首 Do 及地名 Kuala Lumpur 要大写；问句末用问号。"
       }
     },
     {
       "id": "sentences1-018",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is correctly punctuated and capitalized?",
-        "zh": "选出正确的答案。Which sentence is correctly punctuated and capitalized?"
+        "en": "Choose the sentence with correct capital letters and punctuation for a holiday in Penang.",
+        "zh": "选出最合适的答案。Choose the sentence with correct capital letters and punctuation for a holiday in Penang."
       },
       "choices": [
         "We went to Penang for the holidays.",
@@ -346,16 +346,16 @@
       ],
       "answer": "We went to Penang for the holidays.",
       "explain": {
-        "en": "This sentence uses the correct capital letters and end punctuation.",
-        "zh": "这个句子的大小写和标点符号使用正确。"
+        "en": "We starts the sentence, Penang is a place name, and a full stop ends the statement.",
+        "zh": "句首 We 与地名 Penang 要大写；陈述句末用句号。"
       }
     },
     {
       "id": "sentences1-019",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is correctly punctuated and capitalized?",
-        "zh": "选出正确的答案。Which sentence is correctly punctuated and capitalized?"
+        "en": "Choose the sentence with correct capital letters and an exclamation mark to show strong surprise at a sunset.",
+        "zh": "选出最合适的答案。Choose the sentence with correct capital letters and an exclamation mark to show strong surprise at a sunset."
       },
       "choices": [
         "What a beautiful sunset!",
@@ -365,16 +365,16 @@
       ],
       "answer": "What a beautiful sunset!",
       "explain": {
-        "en": "This sentence uses the correct capital letters and end punctuation.",
-        "zh": "这个句子的大小写和标点符号使用正确。"
+        "en": "The task asks for strong surprise, so use an exclamation mark. Ordinary words inside the sentence stay lower case.",
+        "zh": "题目指定表达强烈惊叹，所以句末用感叹号；普通词不必每个字都大写。"
       }
     },
     {
       "id": "sentences1-020",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is correctly punctuated and capitalized?",
-        "zh": "选出正确的答案。Which sentence is correctly punctuated and capitalized?"
+        "en": "Choose the sentence with correct capital letters and punctuation for listing three friends.",
+        "zh": "选出最合适的答案。Choose the sentence with correct capital letters and punctuation for listing three friends."
       },
       "choices": [
         "Aisyah, Ben and Mei Ling are my friends.",
@@ -384,16 +384,16 @@
       ],
       "answer": "Aisyah, Ben and Mei Ling are my friends.",
       "explain": {
-        "en": "This sentence uses the correct capital letters and end punctuation.",
-        "zh": "这个句子的大小写和标点符号使用正确。"
+        "en": "Capitalise each person's name. A comma separates the first name from the rest of the list.",
+        "zh": "每个人的名字都要大写；列举三个名字时，第一项后用逗号分隔。"
       }
     },
     {
       "id": "sentences1-021",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is correctly punctuated and capitalized?",
-        "zh": "选出正确的答案。Which sentence is correctly punctuated and capitalized?"
+        "en": "Choose the sentence with correct capital letters and punctuation for listing three pets.",
+        "zh": "选出最合适的答案。Choose the sentence with correct capital letters and punctuation for listing three pets."
       },
       "choices": [
         "I have a dog, a cat and a rabbit.",
@@ -403,16 +403,16 @@
       ],
       "answer": "I have a dog, a cat and a rabbit.",
       "explain": {
-        "en": "This sentence uses the correct capital letters and end punctuation.",
-        "zh": "这个句子的大小写和标点符号使用正确。"
+        "en": "Start with I, use a comma in the three-item list, and end with a full stop. Pet names used as common nouns stay lower case.",
+        "zh": "句首 I 要大写，列举三种宠物时用逗号，句末用句号；普通动物名称不必大写。"
       }
     },
     {
       "id": "sentences1-022",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is correctly punctuated and capitalized?",
-        "zh": "选出正确的答案。Which sentence is correctly punctuated and capitalized?"
+        "en": "Choose the sentence with correct capital letters and punctuation for asking for help.",
+        "zh": "选出最合适的答案。Choose the sentence with correct capital letters and punctuation for asking for help."
       },
       "choices": [
         "Can you help me, please?",
@@ -422,35 +422,35 @@
       ],
       "answer": "Can you help me, please?",
       "explain": {
-        "en": "This sentence uses the correct capital letters and end punctuation.",
-        "zh": "这个句子的大小写和标点符号使用正确。"
+        "en": "Can starts the question, the comma sets off please, and ? marks the question.",
+        "zh": "Can 在句首大写，please 前可用逗号隔开，句末用问号。"
       }
     },
     {
       "id": "sentences1-023",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is correctly punctuated and capitalized?",
-        "zh": "选出正确的答案。Which sentence is correctly punctuated and capitalized?"
+        "en": "Choose the sentence with correct capital letters and punctuation for a reading club on Monday.",
+        "zh": "选出最合适的答案。Choose the sentence with correct capital letters and punctuation for a reading club on Monday."
       },
       "choices": [
-        "Today is Monday, the first day of the school week.",
-        "today is monday, the first day of the school week.",
-        "Today is monday, the first Day of the school week.",
-        "Today Is Monday, The First Day Of The School Week."
+        "Our reading club meets on Monday.",
+        "our reading club meets on monday.",
+        "Our Reading Club Meets On Monday.",
+        "Our reading club meets on monday"
       ],
-      "answer": "Today is Monday, the first day of the school week.",
+      "answer": "Our reading club meets on Monday.",
       "explain": {
-        "en": "This sentence uses the correct capital letters and end punctuation.",
-        "zh": "这个句子的大小写和标点符号使用正确。"
+        "en": "Capitalise Our at the start and Monday as a day name. The other ordinary words stay lower case.",
+        "zh": "句首 Our 和星期名称 Monday 要大写；其他普通词用小写。"
       }
     },
     {
       "id": "sentences1-024",
       "difficulty": "advanced",
       "prompt": {
-        "en": "Which sentence is correctly punctuated and capitalized?",
-        "zh": "选出正确的答案。Which sentence is correctly punctuated and capitalized?"
+        "en": "Choose the sentence with correct capital letters and punctuation for quoting Hafiz's words.",
+        "zh": "选出最合适的答案。Choose the sentence with correct capital letters and punctuation for quoting Hafiz's words."
       },
       "choices": [
         "\"I am tired,\" said Hafiz, \"so I will rest now.\"",
@@ -460,16 +460,16 @@
       ],
       "answer": "\"I am tired,\" said Hafiz, \"so I will rest now.\"",
       "explain": {
-        "en": "This sentence uses the correct capital letters and end punctuation.",
-        "zh": "这个句子的大小写和标点符号使用正确。"
+        "en": "Quotation marks surround the exact words spoken. Commas separate said Hafiz from the two parts of the speech.",
+        "zh": "引号包住说话内容；said Hafiz 与前后两段话之间用逗号分开。"
       }
     },
     {
       "id": "sentences1-025",
       "difficulty": "advanced",
       "prompt": {
-        "en": "Which sentence is correctly punctuated and capitalized?",
-        "zh": "选出正确的答案。Which sentence is correctly punctuated and capitalized?"
+        "en": "Choose the sentence with correct capital letters and punctuation for Mrs Tan visiting Ipoh.",
+        "zh": "选出最合适的答案。Choose the sentence with correct capital letters and punctuation for Mrs Tan visiting Ipoh."
       },
       "choices": [
         "Mrs. Tan, our class teacher, will visit Ipoh next week.",
@@ -479,16 +479,16 @@
       ],
       "answer": "Mrs. Tan, our class teacher, will visit Ipoh next week.",
       "explain": {
-        "en": "This sentence uses the correct capital letters and end punctuation.",
-        "zh": "这个句子的大小写和标点符号使用正确。"
+        "en": "Mrs Tan and Ipoh are names. Commas surround the extra information our class teacher, and the statement ends with a full stop.",
+        "zh": "Mrs Tan 与 Ipoh 属于名字；额外说明 our class teacher 前后用逗号，句末用句号。"
       }
     },
     {
       "id": "sentences1-026",
       "difficulty": "advanced",
       "prompt": {
-        "en": "Which sentence is correctly punctuated and capitalized?",
-        "zh": "选出正确的答案。Which sentence is correctly punctuated and capitalized?"
+        "en": "Choose the sentence with correct capital letters and punctuation for asking about Malaysia's capital.",
+        "zh": "选出最合适的答案。Choose the sentence with correct capital letters and punctuation for asking about Malaysia's capital."
       },
       "choices": [
         "Did you know that Malaysia's capital is Kuala Lumpur?",
@@ -498,16 +498,16 @@
       ],
       "answer": "Did you know that Malaysia's capital is Kuala Lumpur?",
       "explain": {
-        "en": "This sentence uses the correct capital letters and end punctuation.",
-        "zh": "这个句子的大小写和标点符号使用正确。"
+        "en": "Malaysia's needs apostrophe + s for possession. Kuala Lumpur is capitalised and the question ends with ?.",
+        "zh": "Malaysia's 用撇号和 s 表示所属；Kuala Lumpur 要大写，问句末用问号。"
       }
     },
     {
       "id": "sentences1-027",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is correctly punctuated and capitalized?",
-        "zh": "选出正确的答案。Which sentence is correctly punctuated and capitalized?"
+        "en": "Choose the sentence with correct capital letters and punctuation for asking about a school bag.",
+        "zh": "选出最合适的答案。Choose the sentence with correct capital letters and punctuation for asking about a school bag."
       },
       "choices": [
         "Where is my school bag?",
@@ -517,16 +517,16 @@
       ],
       "answer": "Where is my school bag?",
       "explain": {
-        "en": "This sentence uses the correct capital letters and end punctuation.",
-        "zh": "这个句子的大小写和标点符号使用正确。"
+        "en": "Where starts with a capital, ordinary words like bag stay lower case, and the question ends with ?.",
+        "zh": "句首 Where 要大写；bag 等普通词用小写，句末用问号。"
       }
     },
     {
       "id": "sentences1-028",
       "difficulty": "standard",
       "prompt": {
-        "en": "Which sentence is correctly punctuated and capitalized?",
-        "zh": "选出正确的答案。Which sentence is correctly punctuated and capitalized?"
+        "en": "Choose the sentence with correct capital letters and punctuation for giving a Jalan Bunga address.",
+        "zh": "选出最合适的答案。Choose the sentence with correct capital letters and punctuation for giving a Jalan Bunga address."
       },
       "choices": [
         "I live at No. 12, Jalan Bunga.",
@@ -536,16 +536,16 @@
       ],
       "answer": "I live at No. 12, Jalan Bunga.",
       "explain": {
-        "en": "This sentence uses the correct capital letters and end punctuation.",
-        "zh": "这个句子的大小写和标点符号使用正确。"
+        "en": "Start with I, capitalise the road name Jalan Bunga, and use punctuation to separate the house number and road.",
+        "zh": "句首 I 和路名 Jalan Bunga 要大写；门牌号码与路名之间用适当标点分隔。"
       }
     },
     {
       "id": "sentences1-029",
       "difficulty": "advanced",
       "prompt": {
-        "en": "Which sentence is correctly punctuated and capitalized?",
-        "zh": "选出正确的答案。Which sentence is correctly punctuated and capitalized?"
+        "en": "Choose the sentence with correct capital letters and punctuation for showing surprise at a painting.",
+        "zh": "选出最合适的答案。Choose the sentence with correct capital letters and punctuation for showing surprise at a painting."
       },
       "choices": [
         "Wow, that's an amazing painting!",
@@ -555,8 +555,8 @@
       ],
       "answer": "Wow, that's an amazing painting!",
       "explain": {
-        "en": "This sentence uses the correct capital letters and end punctuation.",
-        "zh": "这个句子的大小写和标点符号使用正确。"
+        "en": "That's needs an apostrophe because it means that is. An exclamation mark fits the surprised Wow.",
+        "zh": "That's 是 that is 的缩写，必须有撇号；Wow 表示惊叹，句末用感叹号。"
       }
     },
     {
@@ -574,8 +574,8 @@
       ],
       "answer": "What",
       "explain": {
-        "en": "\"What\" is the correct question word or question form for this answer.",
-        "zh": "正确答案是 \"What\"（正确的疑问词/疑问句形式）。"
+        "en": "What asks for information such as a name. The answer gives Ravi's name.",
+        "zh": "What 可以询问名字；回答提供 Ravi 的名字。"
       }
     },
     {
@@ -593,8 +593,8 @@
       ],
       "answer": "Where",
       "explain": {
-        "en": "\"Where\" is the correct question word or question form for this answer.",
-        "zh": "正确答案是 \"Where\"（正确的疑问词/疑问句形式）。"
+        "en": "Where asks about a place; Ipoh is the place given in the answer.",
+        "zh": "Where 用来询问地点；回答中的 Ipoh 是地点。"
       }
     },
     {
@@ -612,8 +612,8 @@
       ],
       "answer": "When",
       "explain": {
-        "en": "\"When\" is the correct question word or question form for this answer.",
-        "zh": "正确答案是 \"When\"（正确的疑问词/疑问句形式）。"
+        "en": "When asks about time or a date; 5 May is a date.",
+        "zh": "When 询问时间或日期；5 May 是日期。"
       }
     },
     {
@@ -631,8 +631,8 @@
       ],
       "answer": "Who",
       "explain": {
-        "en": "\"Who\" is the correct question word or question form for this answer.",
-        "zh": "正确答案是 \"Who\"（正确的疑问词/疑问句形式）。"
+        "en": "Who asks about a person; the answer identifies the boy as Danial.",
+        "zh": "Who 询问人物；回答说明男孩是 Danial。"
       }
     },
     {
@@ -650,8 +650,8 @@
       ],
       "answer": "How",
       "explain": {
-        "en": "\"How\" is the correct question word or question form for this answer.",
-        "zh": "正确答案是 \"How\"（正确的疑问词/疑问句形式）。"
+        "en": "How old is the phrase used to ask a person's age.",
+        "zh": "询问年龄的固定问法是 How old。"
       }
     },
     {
@@ -669,8 +669,8 @@
       ],
       "answer": "Why",
       "explain": {
-        "en": "\"Why\" is the correct question word or question form for this answer.",
-        "zh": "正确答案是 \"Why\"（正确的疑问词/疑问句形式）。"
+        "en": "Why asks for a reason; Because I lost my pencil gives that reason.",
+        "zh": "Why 询问原因，Because I lost my pencil 正是原因。"
       }
     },
     {
@@ -688,8 +688,8 @@
       ],
       "answer": "How many",
       "explain": {
-        "en": "\"How many\" is the correct question word or question form for this answer.",
-        "zh": "正确答案是 \"How many\"（正确的疑问词/疑问句形式）。"
+        "en": "How many asks for the number of countable things. Books can be counted and five is a number.",
+        "zh": "Books 可以数，回答是数量 five，所以用 How many。"
       }
     },
     {
@@ -707,8 +707,8 @@
       ],
       "answer": "Do you like durian?",
       "explain": {
-        "en": "\"Do you like durian?\" is the correct question word or question form for this answer.",
-        "zh": "正确答案是 \"Do you like durian?\"（正确的疑问词/疑问句形式）。"
+        "en": "With you, a present-simple yes/no question uses Do + you + like.",
+        "zh": "主语是 you，一般现在式的是非问句用 Do you like，而不是 Does 或 Are。"
       }
     },
     {
@@ -726,8 +726,8 @@
       ],
       "answer": "How did she go to school?",
       "explain": {
-        "en": "\"How did she go to school?\" is the correct question word or question form for this answer.",
-        "zh": "正确答案是 \"How did she go to school?\"（正确的疑问词/疑问句形式）。"
+        "en": "How asks about the method of travel. For the past action went, the question uses did + go.",
+        "zh": "How 询问交通方式；回答用过去式 went，疑问句用 did 加原形 go。"
       }
     },
     {
@@ -745,8 +745,8 @@
       ],
       "answer": "How many students are there in your class?",
       "explain": {
-        "en": "\"How many students are there in your class?\" is the correct question word or question form for this answer.",
-        "zh": "正确答案是 \"How many students are there in your class?\"（正确的疑问词/疑问句形式）。"
+        "en": "Students is plural and countable, so use How many students are there ...?",
+        "zh": "Students 是可数复数名词，所以用 How many，并配合 are there。"
       }
     },
     {
@@ -764,8 +764,8 @@
       ],
       "answer": "How much does it cost?",
       "explain": {
-        "en": "\"How much does it cost?\" is the correct question word or question form for this answer.",
-        "zh": "正确答案是 \"How much does it cost?\"（正确的疑问词/疑问句形式）。"
+        "en": "How much asks the price. After does, cost stays in its base form.",
+        "zh": "How much 询问价格；does 后的 cost 用原形。"
       }
     },
     {
@@ -783,8 +783,8 @@
       ],
       "answer": "What",
       "explain": {
-        "en": "\"What\" is the correct question word or question form for this answer.",
-        "zh": "正确答案是 \"What\"（正确的疑问词/疑问句形式）。"
+        "en": "What is the weather like? asks for a description, such as sunny and hot.",
+        "zh": "What is the weather like? 用来询问天气状况，回答可描述为 sunny and hot。"
       }
     },
     {
@@ -802,8 +802,8 @@
       ],
       "answer": "When",
       "explain": {
-        "en": "\"When\" is the correct question word or question form for this answer.",
-        "zh": "正确答案是 \"When\"（正确的疑问词/疑问句形式）。"
+        "en": "When asks for an arrival time. At seven in the morning supplies that time.",
+        "zh": "When 询问到达时间；回答给出早上七点。"
       }
     },
     {
@@ -821,16 +821,16 @@
       ],
       "answer": "Why did she bake a cake?",
       "explain": {
-        "en": "\"Why did she bake a cake?\" is the correct question word or question form for this answer.",
-        "zh": "正确答案是 \"Why did she bake a cake?\"（正确的疑问词/疑问句形式）。"
+        "en": "Why asks for a reason. A past-simple question uses did + she + bake, not baked or baking.",
+        "zh": "Why 询问原因；过去式疑问句用 did she bake，bake 保留原形。"
       }
     },
     {
       "id": "sentences1-044",
       "difficulty": "standard",
       "prompt": {
-        "en": "The weather is very hot today, so I will wear my ___.",
-        "zh": "选出正确的答案。The weather is very hot today, so I will wear my ___."
+        "en": "The sunlight is very bright, so I will protect my eyes by wearing ___.",
+        "zh": "选出最合适的答案。The sunlight is very bright, so I will protect my eyes by wearing ___."
       },
       "choices": [
         "sunglasses",
@@ -840,35 +840,35 @@
       ],
       "answer": "sunglasses",
       "explain": {
-        "en": "\"sunglasses\" is the word that best completes the sentence logically.",
-        "zh": "正确答案是 \"sunglasses\"（最符合句意的词语）。"
+        "en": "Sunglasses protect the eyes from bright sunlight; the clue is protect my eyes.",
+        "zh": "Sunglasses 是太阳眼镜；protect my eyes 和 bright sunlight 提供了线索。"
       }
     },
     {
       "id": "sentences1-045",
       "difficulty": "standard",
       "prompt": {
-        "en": "I forgot to bring my umbrella, and now I am getting ___ in the rain.",
-        "zh": "选出正确的答案。I forgot to bring my umbrella, and now I am getting ___ in the rain."
+        "en": "I forgot to bring my umbrella, and now my clothes are getting ___ in the rain.",
+        "zh": "选出最合适的答案。I forgot to bring my umbrella, and now my clothes are getting ___ in the rain."
       },
       "choices": [
         "wet",
         "dry",
-        "hot",
-        "cold"
+        "dusty",
+        "tidy"
       ],
       "answer": "wet",
       "explain": {
-        "en": "\"wet\" is the word that best completes the sentence logically.",
-        "zh": "正确答案是 \"wet\"（最符合句意的词语）。"
+        "en": "Rain adds water to the clothes, making them wet rather than dry.",
+        "zh": "雨水让衣服沾上水，因此是 wet（湿的），不是 dry（干的）。"
       }
     },
     {
       "id": "sentences1-046",
       "difficulty": "standard",
       "prompt": {
-        "en": "She was very ___ after running the long race, so she sat down to rest.",
-        "zh": "选出正确的答案。She was very ___ after running the long race, so she sat down to rest."
+        "en": "After the long race, she had little energy left. She felt ___ and needed to rest.",
+        "zh": "选出最合适的答案。After the long race, she had little energy left. She felt ___ and needed to rest."
       },
       "choices": [
         "tired",
@@ -878,8 +878,8 @@
       ],
       "answer": "tired",
       "explain": {
-        "en": "\"tired\" is the word that best completes the sentence logically.",
-        "zh": "正确答案是 \"tired\"（最符合句意的词语）。"
+        "en": "Little energy and needing rest describe being tired.",
+        "zh": "Little energy 和 needed to rest 说明身体疲累，因此选 tired。"
       }
     },
     {
@@ -897,8 +897,8 @@
       ],
       "answer": "hands",
       "explain": {
-        "en": "\"hands\" is the word that best completes the sentence logically.",
-        "zh": "正确答案是 \"hands\"（最符合句意的词语）。"
+        "en": "Washing hands before eating helps remove dirt from the part used to handle food.",
+        "zh": "饭前应清洗用来接触食物的双手，因此选 hands。"
       }
     },
     {
@@ -906,18 +906,18 @@
       "difficulty": "standard",
       "prompt": {
         "en": "The library is a quiet place, so we must not ___ loudly.",
-        "zh": "选出正确的答案。The library is a quiet place, so we must not ___ loudly."
+        "zh": "选出最合适的答案。The library is a quiet place, so we must not ___ loudly."
       },
       "choices": [
         "talk",
-        "read",
+        "draw",
         "write",
         "sit"
       ],
       "answer": "talk",
       "explain": {
-        "en": "\"talk\" is the word that best completes the sentence logically.",
-        "zh": "正确答案是 \"talk\"（最符合句意的词语）。"
+        "en": "Talk can be loud and disturb readers. The other actions do not normally make a voice sound.",
+        "zh": "Talk 是说话，大声说话会影响读者；其他动作一般不会发出说话声。"
       }
     },
     {
@@ -935,8 +935,8 @@
       ],
       "answer": "light",
       "explain": {
-        "en": "\"light\" is the word that best completes the sentence logically.",
-        "zh": "正确答案是 \"light\"（最符合句意的词语）。"
+        "en": "Switching on a light makes a dark place brighter.",
+        "zh": "打开 light（灯）能照亮黑暗的地方。"
       }
     },
     {
@@ -954,8 +954,8 @@
       ],
       "answer": "short",
       "explain": {
-        "en": "\"short\" is the word that best completes the sentence logically.",
-        "zh": "正确答案是 \"short\"（最符合句意的词语）。"
+        "en": "Not reaching a high shelf is a clue about height. Too short means not tall enough.",
+        "zh": "够不到高架子是身高的线索；too short 表示不够高。"
       }
     },
     {
@@ -963,18 +963,18 @@
       "difficulty": "standard",
       "prompt": {
         "en": "We should recycle paper and plastic to help protect the ___.",
-        "zh": "选出正确的答案。We should recycle paper and plastic to help protect the ___."
+        "zh": "选出最合适的答案。We should recycle paper and plastic to help protect the ___."
       },
       "choices": [
         "environment",
         "homework",
         "kitchen",
-        "classroom"
+        "calculator"
       ],
       "answer": "environment",
       "explain": {
-        "en": "\"environment\" is the word that best completes the sentence logically.",
-        "zh": "正确答案是 \"environment\"（最符合句意的词语）。"
+        "en": "Recycling reduces waste and helps protect the environment around us.",
+        "zh": "回收纸和塑料可减少垃圾，保护 environment（环境）。"
       }
     },
     {
@@ -992,16 +992,16 @@
       ],
       "answer": "cool down",
       "explain": {
-        "en": "\"cool down\" is the word that best completes the sentence logically.",
-        "zh": "正确答案是 \"cool down\"（最符合句意的词语）。"
+        "en": "Cool down means become less hot; it does not mean freeze.",
+        "zh": "Cool down 表示温度降低、没那么烫，并不表示结冰。"
       }
     },
     {
       "id": "sentences1-053",
       "difficulty": "standard",
       "prompt": {
-        "en": "I did not study for the test, so I felt very ___ before it started.",
-        "zh": "选出正确的答案。I did not study for the test, so I felt very ___ before it started."
+        "en": "I was worried about the test and my hands were shaking. I felt ___ before it started.",
+        "zh": "选出最合适的答案。I was worried about the test and my hands were shaking. I felt ___ before it started."
       },
       "choices": [
         "nervous",
@@ -1011,8 +1011,8 @@
       ],
       "answer": "nervous",
       "explain": {
-        "en": "\"nervous\" is the word that best completes the sentence logically.",
-        "zh": "正确答案是 \"nervous\"（最符合句意的词语）。"
+        "en": "Feeling worried and having shaking hands are clues to nervousness.",
+        "zh": "担心和手发抖是紧张的线索，所以选 nervous。"
       }
     },
     {
@@ -1030,8 +1030,8 @@
       ],
       "answer": "captain",
       "explain": {
-        "en": "\"captain\" is the word that best completes the sentence logically.",
-        "zh": "正确答案是 \"captain\"（最符合句意的词语）。"
+        "en": "A captain leads a team. Audience and spectator refer to people watching.",
+        "zh": "Captain 是带领队伍的队长；audience 和 spectator 是观看的人。"
       }
     },
     {
@@ -1049,8 +1049,8 @@
       ],
       "answer": "experiment",
       "explain": {
-        "en": "\"experiment\" is the word that best completes the sentence logically.",
-        "zh": "正确答案是 \"experiment\"（最符合句意的词语）。"
+        "en": "An experiment is a planned test used to investigate a question, such as how sunlight affects growth.",
+        "zh": "Experiment 是为了探究问题而进行的实验，例如测试阳光是否影响生长。"
       }
     },
     {
@@ -1068,8 +1068,8 @@
       ],
       "answer": "on time",
       "explain": {
-        "en": "\"on time\" is the word that best completes the sentence logically.",
-        "zh": "正确答案是 \"on time\"（最符合句意的词语）。"
+        "en": "On time means at the planned time; despite shows that the traffic did not make them late.",
+        "zh": "On time 表示准时；despite 说明虽然交通拥挤，他们仍按时到达。"
       }
     },
     {
@@ -1087,8 +1087,8 @@
       ],
       "answer": "unsafe",
       "explain": {
-        "en": "\"unsafe\" is the word that best completes the sentence logically.",
-        "zh": "正确答案是 \"unsafe\"（最符合句意的词语）。"
+        "en": "Closing a bridge for repairs suggests it is unsafe to use.",
+        "zh": "需要封桥维修，说明桥梁使用起来不安全，因此选 unsafe。"
       }
     },
     {
@@ -1106,8 +1106,8 @@
       ],
       "answer": "willingness",
       "explain": {
-        "en": "\"willingness\" is the word that best completes the sentence logically.",
-        "zh": "正确答案是 \"willingness\"（最符合句意的词语）。"
+        "en": "Willingness means being ready to help. Refusal and reluctance would not support the description kind-hearted.",
+        "zh": "Willingness 表示乐意；拒绝或不情愿都不符合 kind-hearted（心地善良）的描述。"
       }
     },
     {
@@ -1125,16 +1125,16 @@
       ],
       "answer": "tidy",
       "explain": {
-        "en": "\"tidy\" is the word that best completes the sentence logically.",
-        "zh": "正确答案是 \"tidy\"（最符合句意的词语）。"
+        "en": "Tidy up means put things neatly in their places, the response to a messy classroom.",
+        "zh": "Tidy up 表示整理；教室凌乱时应把物品放整齐。"
       }
     },
     {
       "id": "sentences1-060",
       "difficulty": "advanced",
       "prompt": {
-        "en": "The villagers worked together to ___ the flooded road before the festival.",
-        "zh": "选出正确的答案。The villagers worked together to ___ the flooded road before the festival."
+        "en": "The flood left holes in the road. The villagers worked together to ___ the damaged road before the festival.",
+        "zh": "选出最合适的答案。The flood left holes in the road. The villagers worked together to ___ the damaged road before the festival."
       },
       "choices": [
         "repair",
@@ -1144,8 +1144,578 @@
       ],
       "answer": "repair",
       "explain": {
-        "en": "\"repair\" is the word that best completes the sentence logically.",
-        "zh": "正确答案是 \"repair\"（最符合句意的词语）。"
+        "en": "Repair means fix damage. The holes caused by the flood explain why the road needed repair.",
+        "zh": "Repair 表示修补；洪水造成路上有坑洞，所以道路需要修复。"
+      }
+    },
+    {
+      "id": "sentences1-061",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "A classmate says, \"Thank you for lending me your pencil.\" Choose a polite reply.",
+        "zh": "选出最合适的答案。A classmate says, \"Thank you for lending me your pencil.\" Choose a polite reply."
+      },
+      "choices": [
+        "You are welcome.",
+        "Where is the canteen?",
+        "I am ten years old.",
+        "It is Monday."
+      ],
+      "answer": "You are welcome.",
+      "explain": {
+        "en": "You are welcome politely responds to thanks. The other answers change the subject.",
+        "zh": "You are welcome 是回应感谢的礼貌用语；其余答案与感谢无关。"
+      }
+    },
+    {
+      "id": "sentences1-062",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "You want to borrow a ruler from your friend. Which sentence makes a polite request?",
+        "zh": "选出最合适的答案。You want to borrow a ruler from your friend. Which sentence makes a polite request?"
+      },
+      "choices": [
+        "May I borrow your ruler, please?",
+        "That ruler is mine now.",
+        "Give me the ruler immediately!",
+        "You have no ruler."
+      ],
+      "answer": "May I borrow your ruler, please?",
+      "explain": {
+        "en": "May I ... please? asks permission politely rather than demanding something.",
+        "zh": "May I ... please? 是礼貌地请求允许借用，不是命令别人。"
+      }
+    },
+    {
+      "id": "sentences1-063",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "The teacher asks, \"Where did you put the scissors?\" Which reply answers the question?",
+        "zh": "选出最合适的答案。The teacher asks, \"Where did you put the scissors?\" Which reply answers the question?"
+      },
+      "choices": [
+        "In the drawer beside the door.",
+        "Yesterday afternoon.",
+        "Because the paper is thick.",
+        "There are two pairs."
+      ],
+      "answer": "In the drawer beside the door.",
+      "explain": {
+        "en": "Where asks for a place; the drawer beside the door is a place.",
+        "zh": "Where 询问地点；门旁的抽屉是地点，其他选项回答时间、原因或数量。"
+      }
+    },
+    {
+      "id": "sentences1-064",
+      "difficulty": "standard",
+      "prompt": {
+        "en": "A friend invites you to play, but you must finish your homework. Choose a polite refusal.",
+        "zh": "选出最合适的答案。A friend invites you to play, but you must finish your homework. Choose a polite refusal."
+      },
+      "choices": [
+        "Thank you, but I need to finish my homework first.",
+        "You must do all my homework.",
+        "I never want to speak to you.",
+        "The field has green grass."
+      ],
+      "answer": "Thank you, but I need to finish my homework first.",
+      "explain": {
+        "en": "The reply thanks the friend and gives a clear reason for declining.",
+        "zh": "这个回答先表示感谢，再说明无法参加的原因，语气礼貌。"
+      }
+    },
+    {
+      "id": "sentences1-065",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Combine without changing the meaning: \"The bag is old. It is still useful.\"",
+        "zh": "选出最合适的答案。Combine without changing the meaning: \"The bag is old. It is still useful.\""
+      },
+      "choices": [
+        "The bag is old, but it is still useful.",
+        "The bag is old because it is still useful.",
+        "The bag is old, so it is no longer useful.",
+        "The bag is useful only when it is new."
+      ],
+      "answer": "The bag is old, but it is still useful.",
+      "explain": {
+        "en": "But links the contrast while keeping both original facts: old and still useful.",
+        "zh": "But 连接转折，同时保留“旧”和“仍然有用”两个原意。"
+      }
+    },
+    {
+      "id": "sentences1-066",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Combine the ideas to show the reason: \"The match stopped. It started to rain heavily.\"",
+        "zh": "选出最合适的答案。Combine the ideas to show the reason: \"The match stopped. It started to rain heavily.\""
+      },
+      "choices": [
+        "The match stopped because it started to rain heavily.",
+        "It rained because the match stopped.",
+        "The match stopped before the rain was expected next week.",
+        "The match stopped, but it did not rain."
+      ],
+      "answer": "The match stopped because it started to rain heavily.",
+      "explain": {
+        "en": "Because makes heavy rain the reason the match stopped, not a result of stopping it.",
+        "zh": "Because 说明大雨是比赛停止的原因，不能把因果关系倒转。"
+      }
+    },
+    {
+      "id": "sentences1-067",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the sentence that keeps this meaning: \"Please return the book before Friday.\"",
+        "zh": "选出最合适的答案。Choose the sentence that keeps this meaning: \"Please return the book before Friday.\""
+      },
+      "choices": [
+        "Bring the book back earlier than Friday.",
+        "Bring the book back only after Friday.",
+        "Keep the book forever.",
+        "Buy a new book on Friday."
+      ],
+      "answer": "Bring the book back earlier than Friday.",
+      "explain": {
+        "en": "Return means bring back. Before Friday means earlier than Friday, not after it.",
+        "zh": "Return 表示归还；before Friday 表示星期五之前，不是星期五之后。"
+      }
+    },
+    {
+      "id": "sentences1-068",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Ravi asks, \"Could you tell me how to get to the library?\" Which reply gives directions?",
+        "zh": "选出最合适的答案。Ravi asks, \"Could you tell me how to get to the library?\" Which reply gives directions?"
+      },
+      "choices": [
+        "Go straight and turn left after the hall.",
+        "The library has many books.",
+        "I read two books yesterday.",
+        "My favourite book is about birds."
+      ],
+      "answer": "Go straight and turn left after the hall.",
+      "explain": {
+        "en": "Go straight and turn left explain the route. The other replies give book information.",
+        "zh": "Go straight 和 turn left 说明路线；其余答案没有指路。"
+      }
+    },
+    {
+      "id": "sentences1-069",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "A classmate drops her books. Choose the most helpful offer.",
+        "zh": "选出最合适的答案。A classmate drops her books. Choose the most helpful offer."
+      },
+      "choices": [
+        "Shall I help you pick them up?",
+        "Why do books have covers?",
+        "Those books are not new.",
+        "I do not like that colour."
+      ],
+      "answer": "Shall I help you pick them up?",
+      "explain": {
+        "en": "Shall I help ...? offers practical help with the dropped books.",
+        "zh": "Shall I help ...? 主动提出帮忙捡书，回应了同学的需要。"
+      }
+    },
+    {
+      "id": "sentences1-070",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "A notice says, \"Please switch off the fan before leaving.\" Which reminder has the same meaning?",
+        "zh": "选出最合适的答案。A notice says, \"Please switch off the fan before leaving.\" Which reminder has the same meaning?"
+      },
+      "choices": [
+        "Remember to turn the fan off when you leave.",
+        "Leave the fan on all night.",
+        "Switch on the fan after everyone leaves.",
+        "Take the fan home with you."
+      ],
+      "answer": "Remember to turn the fan off when you leave.",
+      "explain": {
+        "en": "Switch off and turn off have the same meaning. Both reminders require the fan to stop running.",
+        "zh": "Switch off 和 turn off 意思相同，都是把风扇关掉。"
+      }
+    },
+    {
+      "id": "sentences1-071",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the best closing sentence for this note: \"Dear Mei, Please come to my birthday picnic on Sunday at 4 p.m. at the park. ...\"",
+        "zh": "选出最合适的答案。Choose the best closing sentence for this note: \"Dear Mei, Please come to my birthday picnic on Sunday at 4 p.m. at the park. ...\""
+      },
+      "choices": [
+        "I hope you can join us!",
+        "I have never invited anyone.",
+        "Please mark my homework.",
+        "The picnic happened last year."
+      ],
+      "answer": "I hope you can join us!",
+      "explain": {
+        "en": "The closing expresses a wish for Mei to attend and fits the invitation.",
+        "zh": "这个结尾希望 Mei 来参加，符合生日野餐邀请的目的。"
+      }
+    },
+    {
+      "id": "sentences1-072",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the sentence that corrects the error in \"She do not like noisy places.\"",
+        "zh": "选出最合适的答案。Choose the sentence that corrects the error in \"She do not like noisy places.\""
+      },
+      "choices": [
+        "She does not like noisy places.",
+        "She does not likes noisy places.",
+        "She do not likes noisy places.",
+        "She doing not like noisy places."
+      ],
+      "answer": "She does not like noisy places.",
+      "explain": {
+        "en": "She takes does not, followed by the base verb like.",
+        "zh": "She 后用 does not；后面的 like 保留原形，不能再加 -s。"
+      }
+    },
+    {
+      "id": "sentences1-073",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the correct question to ask about yesterday: \"___\" \"Yes, I visited the museum.\"",
+        "zh": "选出最合适的答案。Choose the correct question to ask about yesterday: \"___\" \"Yes, I visited the museum.\""
+      },
+      "choices": [
+        "Did you visit the museum?",
+        "Do you visited the museum?",
+        "Were you visit the museum?",
+        "Did you visited the museum?"
+      ],
+      "answer": "Did you visit the museum?",
+      "explain": {
+        "en": "A past yes/no question uses Did + you + visit. Did already marks the past.",
+        "zh": "过去式的是非问句用 Did you visit；Did 已表示过去，visit 用原形。"
+      }
+    },
+    {
+      "id": "sentences1-074",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "A pupil writes, \"We went to melaka in june.\" Which correction is needed?",
+        "zh": "选出最合适的答案。A pupil writes, \"We went to melaka in june.\" Which correction is needed?"
+      },
+      "choices": [
+        "Write Melaka and June with capital letters.",
+        "Write every word in capital letters.",
+        "Write went as wents.",
+        "Remove both place and month names."
+      ],
+      "answer": "Write Melaka and June with capital letters.",
+      "explain": {
+        "en": "Melaka is a place name and June is a month name, so both start with capitals.",
+        "zh": "Melaka 是地名，June 是月份名称，两者首字母都要大写。"
+      }
+    },
+    {
+      "id": "sentences1-075",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Which sentence correctly shows that one girl owns the bicycle?",
+        "zh": "选出最合适的答案。Which sentence correctly shows that one girl owns the bicycle?"
+      },
+      "choices": [
+        "The girl's bicycle is red.",
+        "The girls bicycle is red.",
+        "The girls' bicycle is red.",
+        "The girl bicycle's is red."
+      ],
+      "answer": "The girl's bicycle is red.",
+      "explain": {
+        "en": "One girl takes apostrophe + s: girl's. Girls' would show ownership by more than one girl.",
+        "zh": "一个女孩拥有的自行车用 girl's；girls' 表示多个女孩的所属关系。"
+      }
+    },
+    {
+      "id": "sentences1-076",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the sentence that reports these facts accurately: \"Mira arrived at 8 a.m. Ravi arrived at 8.15 a.m.\"",
+        "zh": "选出最合适的答案。Choose the sentence that reports these facts accurately: \"Mira arrived at 8 a.m. Ravi arrived at 8.15 a.m.\""
+      },
+      "choices": [
+        "Mira arrived before Ravi.",
+        "Mira arrived after Ravi.",
+        "They arrived at the same time.",
+        "Ravi arrived an hour earlier."
+      ],
+      "answer": "Mira arrived before Ravi.",
+      "explain": {
+        "en": "8 a.m. is fifteen minutes before 8.15 a.m., so Mira arrived first.",
+        "zh": "上午八点比八点十五分早十五分钟，因此 Mira 先到。"
+      }
+    },
+    {
+      "id": "sentences1-077",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the most suitable sentence for a poster asking pupils to save water.",
+        "zh": "选出最合适的答案。Choose the most suitable sentence for a poster asking pupils to save water."
+      },
+      "choices": [
+        "Turn off the tap after washing your hands.",
+        "Leave the tap running all day.",
+        "Use a fresh notebook each week.",
+        "Bring a football to class."
+      ],
+      "answer": "Turn off the tap after washing your hands.",
+      "explain": {
+        "en": "Turning off a tap directly supports the purpose of saving water.",
+        "zh": "洗手后关水龙头，直接符合节约用水的海报目的。"
+      }
+    },
+    {
+      "id": "sentences1-078",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Put the events in order: 1. We ate the sandwiches. 2. We spread butter on the bread. 3. We put the slices together.",
+        "zh": "选出最合适的答案。Put the events in order: 1. We ate the sandwiches. 2. We spread butter on the bread. 3. We put the slices together."
+      },
+      "choices": [
+        "2, 3, 1",
+        "1, 2, 3",
+        "3, 1, 2",
+        "2, 1, 3"
+      ],
+      "answer": "2, 3, 1",
+      "explain": {
+        "en": "First spread butter, then assemble the sandwiches, and finally eat them.",
+        "zh": "先涂牛油，再把面包片合起来，最后才吃，所以是 2、3、1。"
+      }
+    },
+    {
+      "id": "sentences1-079",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the best next sentence: \"The sky grew dark. Strong winds shook the trees. ...\"",
+        "zh": "选出最合适的答案。Choose the best next sentence: \"The sky grew dark. Strong winds shook the trees. ...\""
+      },
+      "choices": [
+        "We went indoors before the storm arrived.",
+        "We put away our books because the test ended.",
+        "The room smelled of freshly baked bread.",
+        "The bus fare was three ringgit."
+      ],
+      "answer": "We went indoors before the storm arrived.",
+      "explain": {
+        "en": "Dark skies and strong winds suggest a coming storm; going indoors continues the same event.",
+        "zh": "天色转暗和强风预示暴风雨，把“到室内避雨”接在后面最连贯。"
+      }
+    },
+    {
+      "id": "sentences1-080",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the sentence that does NOT fit a paragraph about caring for a school garden.",
+        "zh": "选出最合适的答案。Choose the sentence that does NOT fit a paragraph about caring for a school garden."
+      },
+      "choices": [
+        "The bus to Ipoh leaves at noon.",
+        "We water the plants in the morning.",
+        "We remove weeds from the flower beds.",
+        "We put dry leaves in the compost bin."
+      ],
+      "answer": "The bus to Ipoh leaves at noon.",
+      "explain": {
+        "en": "The bus departure is about travel. The other sentences describe garden care.",
+        "zh": "巴士出发时间属于交通信息；另外三句都与照顾花园有关。"
+      }
+    },
+    {
+      "id": "sentences1-081",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "\"Aina gave her sister a card. She smiled when she received it.\" Who does She refer to in the second sentence?",
+        "zh": "选出最合适的答案。\"Aina gave her sister a card. She smiled when she received it.\" Who does She refer to in the second sentence?"
+      },
+      "choices": [
+        "Aina's sister.",
+        "The card.",
+        "Aina's teacher.",
+        "The postman."
+      ],
+      "answer": "Aina's sister.",
+      "explain": {
+        "en": "The sister receives the card, so the person who smiles on receiving it is the sister.",
+        "zh": "收到卡片的人是 Aina 的姐妹，因此收到后微笑的 She 指姐妹。"
+      }
+    },
+    {
+      "id": "sentences1-082",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the clearest sentence to give these details: \"club meeting / Friday / 2 p.m. / Room 4\"",
+        "zh": "选出最合适的答案。Choose the clearest sentence to give these details: \"club meeting / Friday / 2 p.m. / Room 4\""
+      },
+      "choices": [
+        "The club meeting is in Room 4 at 2 p.m. on Friday.",
+        "Room 4 meets the club in Friday on 2 p.m.",
+        "The Friday is at club and Room 4 meets.",
+        "The meeting is at Friday in 2 p.m. on Room 4."
+      ],
+      "answer": "The club meeting is in Room 4 at 2 p.m. on Friday.",
+      "explain": {
+        "en": "Use in for the room, at for a clock time and on for the day.",
+        "zh": "房间前用 in，钟点前用 at，星期几前用 on，句子便能清楚表达所有资料。"
+      }
+    },
+    {
+      "id": "sentences1-083",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "A friend says, \"I cannot understand this instruction.\" Choose a useful response.",
+        "zh": "选出最合适的答案。A friend says, \"I cannot understand this instruction.\" Choose a useful response."
+      },
+      "choices": [
+        "Let us read it together and look at the example.",
+        "Then you must already know the answer.",
+        "The instruction has disappeared forever.",
+        "That means the book is too heavy."
+      ],
+      "answer": "Let us read it together and look at the example.",
+      "explain": {
+        "en": "Reading together and checking an example directly helps the friend understand.",
+        "zh": "一起重读并查看例子，直接帮助朋友理解指示。"
+      }
+    },
+    {
+      "id": "sentences1-084",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the sentence with the same meaning: \"Both Siva and Lina brought their lunch.\"",
+        "zh": "选出最合适的答案。Choose the sentence with the same meaning: \"Both Siva and Lina brought their lunch.\""
+      },
+      "choices": [
+        "Siva brought lunch, and Lina did too.",
+        "Only Siva brought lunch.",
+        "Neither pupil brought lunch.",
+        "Lina brought lunch instead of Siva."
+      ],
+      "answer": "Siva brought lunch, and Lina did too.",
+      "explain": {
+        "en": "Both includes the two people, so each of them brought lunch.",
+        "zh": "Both 包括两个人，表示 Siva 和 Lina 都带了午餐。"
+      }
+    },
+    {
+      "id": "sentences1-085",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the correct sentence using these facts: \"The red ribbon is 20 cm. The blue ribbon is 30 cm.\"",
+        "zh": "选出最合适的答案。Choose the correct sentence using these facts: \"The red ribbon is 20 cm. The blue ribbon is 30 cm.\""
+      },
+      "choices": [
+        "The blue ribbon is longer than the red ribbon.",
+        "The red ribbon is longer than the blue ribbon.",
+        "The ribbons are the same length.",
+        "The red ribbon is the longest of the two."
+      ],
+      "answer": "The blue ribbon is longer than the red ribbon.",
+      "explain": {
+        "en": "30 cm is longer than 20 cm. Use the comparative longer than for two ribbons.",
+        "zh": "30 cm 比 20 cm 长；比较两条缎带用 longer than。"
+      }
+    },
+    {
+      "id": "sentences1-086",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "An invitation gives a date and time but no place. Which question asks for the missing information?",
+        "zh": "选出最合适的答案。An invitation gives a date and time but no place. Which question asks for the missing information?"
+      },
+      "choices": [
+        "Where will the event take place?",
+        "When will the event begin?",
+        "What is the date?",
+        "How old are you?"
+      ],
+      "answer": "Where will the event take place?",
+      "explain": {
+        "en": "Where asks for the missing place; the date and time have already been given.",
+        "zh": "Where 询问缺少的地点资料；日期和时间已经提供。"
+      }
+    },
+    {
+      "id": "sentences1-087",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "You accidentally step on a friend's foot. Which reply is the most suitable?",
+        "zh": "选出最合适的答案。You accidentally step on a friend's foot. Which reply is the most suitable?"
+      },
+      "choices": [
+        "I am sorry. Are you all right?",
+        "You are welcome. See you tomorrow.",
+        "Congratulations on winning!",
+        "Please order two bowls of soup."
+      ],
+      "answer": "I am sorry. Are you all right?",
+      "explain": {
+        "en": "Apologising and checking that the friend is all right respond to the accident.",
+        "zh": "道歉并关心朋友是否受伤，才符合不小心踩到脚的情境。"
+      }
+    },
+    {
+      "id": "sentences1-088",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the correct sentence that uses all these ideas: \"Ravi / enjoy / reading / because / learn new things\"",
+        "zh": "选出最合适的答案。Choose the correct sentence that uses all these ideas: \"Ravi / enjoy / reading / because / learn new things\""
+      },
+      "choices": [
+        "Ravi enjoys reading because he learns new things.",
+        "Ravi enjoy reading because learns he new things.",
+        "Ravi enjoys read because he learning new things.",
+        "Because Ravi new things he enjoys learns reading."
+      ],
+      "answer": "Ravi enjoys reading because he learns new things.",
+      "explain": {
+        "en": "Singular Ravi takes enjoys. Enjoy is followed by reading, and because introduces the reason.",
+        "zh": "Ravi 是单数，用 enjoys；enjoy 后接 reading，because 引出原因。"
+      }
+    },
+    {
+      "id": "sentences1-089",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The teacher says, \"Please speak more slowly so everyone can follow your story.\" What should the pupil do?",
+        "zh": "选出最合适的答案。The teacher says, \"Please speak more slowly so everyone can follow your story.\" What should the pupil do?"
+      },
+      "choices": [
+        "Tell the story at a slower speed.",
+        "Speak as fast as possible.",
+        "Stop telling stories forever.",
+        "Make every sentence much louder."
+      ],
+      "answer": "Tell the story at a slower speed.",
+      "explain": {
+        "en": "More slowly concerns speed, not loudness. It helps listeners understand the story.",
+        "zh": "More slowly 是放慢速度，不是提高音量，这能让听众听明白故事。"
+      }
+    },
+    {
+      "id": "sentences1-090",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the sentence that best joins these ideas in time order: \"We washed the vegetables. Then we cooked them.\"",
+        "zh": "选出最合适的答案。Choose the sentence that best joins these ideas in time order: \"We washed the vegetables. Then we cooked them.\""
+      },
+      "choices": [
+        "We washed the vegetables before cooking them.",
+        "We washed the vegetables after eating them.",
+        "We cooked the vegetables before washing them.",
+        "We never washed or cooked the vegetables."
+      ],
+      "answer": "We washed the vegetables before cooking them.",
+      "explain": {
+        "en": "Before cooking them keeps the order: wash first, cook second.",
+        "zh": "Before cooking them 保留原先的顺序：先洗菜，再煮菜。"
       }
     }
   ]

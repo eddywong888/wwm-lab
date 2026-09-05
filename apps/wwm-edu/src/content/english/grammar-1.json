@@ -6,7 +6,7 @@
     "en": "Grammar",
     "zh": "语法"
   },
-  "version": 1,
+  "version": 2,
   "questions": [
     {
       "id": "grammar1-001",
@@ -23,8 +23,8 @@
       ],
       "answer": "goes",
       "explain": {
-        "en": "The verb must agree with the subject, so \"goes\" is correct.",
-        "zh": "正确答案是 \"goes\"（主谓一致：动词形式要与主语配合）。"
+        "en": "She is singular; a daily habit uses the present simple goes.",
+        "zh": "She 是单数主语；every day 表示习惯，go 要加 -es。"
       }
     },
     {
@@ -42,8 +42,8 @@
       ],
       "answer": "play",
       "explain": {
-        "en": "The verb must agree with the subject, so \"play\" is correct.",
-        "zh": "正确答案是 \"play\"（主谓一致：动词形式要与主语配合）。"
+        "en": "They is plural; a regular Saturday activity uses play without -s.",
+        "zh": "They 是复数主语；描述星期六的习惯时用 play，不加 -s。"
       }
     },
     {
@@ -61,8 +61,8 @@
       ],
       "answer": "does",
       "explain": {
-        "en": "The verb must agree with the subject, so \"does\" is correct.",
-        "zh": "正确答案是 \"does\"（主谓一致：动词形式要与主语配合）。"
+        "en": "My brother is singular, so the present simple form is does.",
+        "zh": "My brother 是单数，do 在一般现在式中变成 does。"
       }
     },
     {
@@ -80,16 +80,16 @@
       ],
       "answer": "eat",
       "explain": {
-        "en": "The verb must agree with the subject, so \"eat\" is correct.",
-        "zh": "正确答案是 \"eat\"（主谓一致：动词形式要与主语配合）。"
+        "en": "Every morning signals a habit. With I, use the base form eat.",
+        "zh": "Every morning 表示习惯；主语是 I，动词用原形 eat。"
       }
     },
     {
       "id": "grammar1-005",
       "difficulty": "standard",
       "prompt": {
-        "en": "The cat ___ milk every morning.",
-        "zh": "选出正确的答案。The cat ___ milk every morning."
+        "en": "The cat ___ water every morning.",
+        "zh": "选出最合适的答案。The cat ___ water every morning."
       },
       "choices": [
         "drinks",
@@ -99,8 +99,8 @@
       ],
       "answer": "drinks",
       "explain": {
-        "en": "The verb must agree with the subject, so \"drinks\" is correct.",
-        "zh": "正确答案是 \"drinks\"（主谓一致：动词形式要与主语配合）。"
+        "en": "The cat is singular. For a daily habit, drink becomes drinks.",
+        "zh": "The cat 是单数；描述每天的习惯，drink 要加 -s。"
       }
     },
     {
@@ -118,8 +118,8 @@
       ],
       "answer": "brush",
       "explain": {
-        "en": "The verb must agree with the subject, so \"brush\" is correct.",
-        "zh": "正确答案是 \"brush\"（主谓一致：动词形式要与主语配合）。"
+        "en": "We takes the base verb brush when describing a habit.",
+        "zh": "We 后面用动词原形 brush；twice a day 表示每天两次的习惯。"
       }
     },
     {
@@ -137,16 +137,16 @@
       ],
       "answer": "is",
       "explain": {
-        "en": "The verb must agree with the subject, so \"is\" is correct.",
-        "zh": "正确答案是 \"is\"（主谓一致：动词形式要与主语配合）。"
+        "en": "Each means every person separately, so each takes singular is.",
+        "zh": "Each 强调每一个人，因此即使后面有 boys，也用单数动词 is。"
       }
     },
     {
       "id": "grammar1-008",
       "difficulty": "advanced",
       "prompt": {
-        "en": "Each of the students ___ a book to read.",
-        "zh": "选出正确的答案。Each of the students ___ a book to read."
+        "en": "Each of the students ___ a book to read right now.",
+        "zh": "选出最合适的答案。Each of the students ___ a book to read right now."
       },
       "choices": [
         "has",
@@ -156,8 +156,8 @@
       ],
       "answer": "has",
       "explain": {
-        "en": "The verb must agree with the subject, so \"has\" is correct.",
-        "zh": "正确答案是 \"has\"（主谓一致：动词形式要与主语配合）。"
+        "en": "Each is singular; right now rules out the past form had. Use has.",
+        "zh": "Each 强调每一个学生，应用 has；right now 表示现在，不能用过去式 had。"
       }
     },
     {
@@ -175,8 +175,8 @@
       ],
       "answer": "ate",
       "explain": {
-        "en": "This sentence describes a completed past action, so \"ate\" is correct.",
-        "zh": "正确答案是 \"ate\"（一般过去式，表示已完成的动作）。"
+        "en": "Yesterday tells us the action is past. Eat changes to ate.",
+        "zh": "Yesterday 表示昨天，eat 的过去式是 ate。"
       }
     },
     {
@@ -194,8 +194,8 @@
       ],
       "answer": "went",
       "explain": {
-        "en": "This sentence describes a completed past action, so \"went\" is correct.",
-        "zh": "正确答案是 \"went\"（一般过去式，表示已完成的动作）。"
+        "en": "Last Sunday is in the past; go has the irregular past form went.",
+        "zh": "Last Sunday 表示过去的时间；go 的不规则过去式是 went。"
       }
     },
     {
@@ -213,8 +213,8 @@
       ],
       "answer": "watched",
       "explain": {
-        "en": "This sentence describes a completed past action, so \"watched\" is correct.",
-        "zh": "正确答案是 \"watched\"（一般过去式，表示已完成的动作）。"
+        "en": "Last night is past time. Add -ed to watch to make watched.",
+        "zh": "Last night 表示过去；watch 加 -ed 变成 watched。"
       }
     },
     {
@@ -232,16 +232,16 @@
       ],
       "answer": "rode",
       "explain": {
-        "en": "This sentence describes a completed past action, so \"rode\" is correct.",
-        "zh": "正确答案是 \"rode\"（一般过去式，表示已完成的动作）。"
+        "en": "Yesterday requires the past tense; ride becomes rode.",
+        "zh": "Yesterday 表示过去；ride 的过去式是 rode。"
       }
     },
     {
       "id": "grammar1-013",
       "difficulty": "standard",
       "prompt": {
-        "en": "They ___ a beautiful sandcastle at the beach.",
-        "zh": "选出正确的答案。They ___ a beautiful sandcastle at the beach."
+        "en": "Last Sunday, they ___ a beautiful sandcastle at the beach.",
+        "zh": "选出最合适的答案。Last Sunday, they ___ a beautiful sandcastle at the beach."
       },
       "choices": [
         "built",
@@ -251,8 +251,8 @@
       ],
       "answer": "built",
       "explain": {
-        "en": "This sentence describes a completed past action, so \"built\" is correct.",
-        "zh": "正确答案是 \"built\"（一般过去式，表示已完成的动作）。"
+        "en": "Last Sunday anchors this action in the past; build becomes built.",
+        "zh": "Last Sunday 明确表示过去；build 的过去式是 built。"
       }
     },
     {
@@ -270,27 +270,27 @@
       ],
       "answer": "finished",
       "explain": {
-        "en": "This sentence describes a completed past action, so \"finished\" is correct.",
-        "zh": "正确答案是 \"finished\"（一般过去式，表示已完成的动作）。"
+        "en": "Last night requires finished, the past form of finish.",
+        "zh": "Last night 表示过去，因此 finish 要变成 finished。"
       }
     },
     {
       "id": "grammar1-015",
       "difficulty": "advanced",
       "prompt": {
-        "en": "By the time we arrived, the movie ___ already started.",
-        "zh": "选出正确的答案。By the time we arrived, the movie ___ already started."
+        "en": "Complete the past-tense sentence: We ___ not visit the museum yesterday because it was closed.",
+        "zh": "选出最合适的答案。Complete the past-tense sentence: We ___ not visit the museum yesterday because it was closed."
       },
       "choices": [
-        "had",
-        "has",
-        "have",
-        "was"
+        "did",
+        "do",
+        "does",
+        "doing"
       ],
-      "answer": "had",
+      "answer": "did",
       "explain": {
-        "en": "This sentence describes a completed past action, so \"had\" is correct.",
-        "zh": "正确答案是 \"had\"（一般过去式，表示已完成的动作）。"
+        "en": "A negative past-simple sentence uses did not followed by the base verb visit.",
+        "zh": "一般过去式的否定句用 did not，后面的 visit 保留原形。"
       }
     },
     {
@@ -308,8 +308,8 @@
       ],
       "answer": "was",
       "explain": {
-        "en": "This sentence describes a completed past action, so \"was\" is correct.",
-        "zh": "正确答案是 \"was\"（一般过去式，表示已完成的动作）。"
+        "en": "Was swimming describes an action in progress when the rain began. She takes was.",
+        "zh": "Was swimming 表示下雨时正在游泳，是过去进行式；She 后用 was。"
       }
     },
     {
@@ -327,8 +327,8 @@
       ],
       "answer": "is running",
       "explain": {
-        "en": "This describes an action happening now (or a fixed future plan), so \"is running\" is correct.",
-        "zh": "正确答案是 \"is running\"（现在进行式：be 动词 + 动词-ing）。"
+        "en": "Look points to an action now. The dog takes is + running.",
+        "zh": "Look 提示动作正在发生；The dog 是单数，应用 is running。"
       }
     },
     {
@@ -346,8 +346,8 @@
       ],
       "answer": "are singing",
       "explain": {
-        "en": "This describes an action happening now (or a fixed future plan), so \"are singing\" is correct.",
-        "zh": "正确答案是 \"are singing\"（现在进行式：be 动词 + 动词-ing）。"
+        "en": "Listen points to an action now. The plural birds takes are singing.",
+        "zh": "Listen 提示正在发生的动作；birds 是复数，用 are singing。"
       }
     },
     {
@@ -365,8 +365,8 @@
       ],
       "answer": "am doing",
       "explain": {
-        "en": "This describes an action happening now (or a fixed future plan), so \"am doing\" is correct.",
-        "zh": "正确答案是 \"am doing\"（现在进行式：be 动词 + 动词-ing）。"
+        "en": "Right now calls for the present continuous. With I, use am doing.",
+        "zh": "Right now 表示现在正在进行；I 后用 am doing。"
       }
     },
     {
@@ -384,16 +384,16 @@
       ],
       "answer": "is writing",
       "explain": {
-        "en": "This describes an action happening now (or a fixed future plan), so \"is writing\" is correct.",
-        "zh": "正确答案是 \"is writing\"（现在进行式：be 动词 + 动词-ing）。"
+        "en": "At the moment means now. She takes is writing.",
+        "zh": "At the moment 表示此刻；She 后用 is writing，表示正在写信。"
       }
     },
     {
       "id": "grammar1-021",
       "difficulty": "advanced",
       "prompt": {
-        "en": "While I ___ dinner, my sister was setting the table.",
-        "zh": "选出正确的答案。While I ___ dinner, my sister was setting the table."
+        "en": "Complete with the past continuous form: While I ___ dinner, my sister was setting the table.",
+        "zh": "选出最合适的答案。Complete with the past continuous form: While I ___ dinner, my sister was setting the table."
       },
       "choices": [
         "was cooking",
@@ -403,16 +403,16 @@
       ],
       "answer": "was cooking",
       "explain": {
-        "en": "This describes an action happening now (or a fixed future plan), so \"was cooking\" is correct.",
-        "zh": "正确答案是 \"was cooking\"（现在进行式：be 动词 + 动词-ing）。"
+        "en": "Past continuous uses was/were + -ing. I takes was cooking for the ongoing past action.",
+        "zh": "过去进行式用 was/were 加动词 -ing；I 后用 was cooking，表示当时正在煮饭。"
       }
     },
     {
       "id": "grammar1-022",
       "difficulty": "advanced",
       "prompt": {
-        "en": "They ___ to Penang next week for a holiday.",
-        "zh": "选出正确的答案。They ___ to Penang next week for a holiday."
+        "en": "Use the present continuous for an arranged plan: They ___ to Penang next week for a holiday.",
+        "zh": "选出最合适的答案。Use the present continuous for an arranged plan: They ___ to Penang next week for a holiday."
       },
       "choices": [
         "are travelling",
@@ -422,46 +422,46 @@
       ],
       "answer": "are travelling",
       "explain": {
-        "en": "This describes an action happening now (or a fixed future plan), so \"are travelling\" is correct.",
-        "zh": "正确答案是 \"are travelling\"（现在进行式：be 动词 + 动词-ing）。"
+        "en": "For the requested present-continuous plan, use are + travelling with They.",
+        "zh": "题目指定用现在进行式表示已安排的计划；They 后用 are travelling。"
       }
     },
     {
       "id": "grammar1-023",
       "difficulty": "standard",
       "prompt": {
-        "en": "I saw ___ elephant at the zoo.",
-        "zh": "选出正确的答案。I saw ___ elephant at the zoo."
+        "en": "Choose a or an: I saw ___ elephant at the zoo.",
+        "zh": "选出最合适的答案。Choose a or an: I saw ___ elephant at the zoo."
       },
       "choices": [
         "an",
         "a",
-        "the",
-        "one"
+        "ans",
+        "as"
       ],
       "answer": "an",
       "explain": {
-        "en": "\"an\" is the correct article for this word or context.",
-        "zh": "正确答案是 \"an\"（冠词的正确用法）。"
+        "en": "Elephant begins with a vowel sound, so choose an.",
+        "zh": "Elephant 以元音开头；a 和 an 之中应选 an。"
       }
     },
     {
       "id": "grammar1-024",
       "difficulty": "standard",
       "prompt": {
-        "en": "She wants to be ___ doctor when she grows up.",
-        "zh": "选出正确的答案。She wants to be ___ doctor when she grows up."
+        "en": "Choose a or an: She wants to be ___ doctor when she grows up.",
+        "zh": "选出最合适的答案。Choose a or an: She wants to be ___ doctor when she grows up."
       },
       "choices": [
         "a",
         "an",
-        "the",
-        "one"
+        "as",
+        "ans"
       ],
       "answer": "a",
       "explain": {
-        "en": "\"a\" is the correct article for this word or context.",
-        "zh": "正确答案是 \"a\"（冠词的正确用法）。"
+        "en": "Doctor begins with a consonant sound, so choose a.",
+        "zh": "Doctor 以辅音开头，因此用 a doctor。"
       }
     },
     {
@@ -479,27 +479,27 @@
       ],
       "answer": "The",
       "explain": {
-        "en": "\"The\" is the correct article for this word or context.",
-        "zh": "正确答案是 \"The\"（冠词的正确用法）。"
+        "en": "Use the for the sun, the one we refer to in our solar system.",
+        "zh": "谈到太阳时使用定冠词 the，句首 The 要大写。"
       }
     },
     {
       "id": "grammar1-026",
       "difficulty": "standard",
       "prompt": {
-        "en": "He bought ___ umbrella because it was raining.",
-        "zh": "选出正确的答案。He bought ___ umbrella because it was raining."
+        "en": "Choose a or an: He bought ___ umbrella because it was raining.",
+        "zh": "选出最合适的答案。Choose a or an: He bought ___ umbrella because it was raining."
       },
       "choices": [
         "an",
         "a",
-        "the",
-        "one"
+        "ans",
+        "as"
       ],
       "answer": "an",
       "explain": {
-        "en": "\"an\" is the correct article for this word or context.",
-        "zh": "正确答案是 \"an\"（冠词的正确用法）。"
+        "en": "Umbrella begins with a vowel sound, so use an umbrella.",
+        "zh": "Umbrella 以元音开头，因此用 an umbrella。"
       }
     },
     {
@@ -517,27 +517,27 @@
       ],
       "answer": "The",
       "explain": {
-        "en": "\"The\" is the correct article for this word or context.",
-        "zh": "正确答案是 \"The\"（冠词的正确用法）。"
+        "en": "The is used before the plural name Petronas Towers.",
+        "zh": "Petronas Towers 是这组双塔的名称，前面使用 The。"
       }
     },
     {
       "id": "grammar1-028",
       "difficulty": "advanced",
       "prompt": {
-        "en": "I need ___ hour to finish my homework.",
-        "zh": "选出正确的答案。I need ___ hour to finish my homework."
+        "en": "Choose a or an: I need ___ hour to finish my homework.",
+        "zh": "选出最合适的答案。Choose a or an: I need ___ hour to finish my homework."
       },
       "choices": [
         "an",
         "a",
-        "the",
-        "one"
+        "ans",
+        "as"
       ],
       "answer": "an",
       "explain": {
-        "en": "\"an\" is the correct article for this word or context.",
-        "zh": "正确答案是 \"an\"（冠词的正确用法）。"
+        "en": "The h in hour is silent, so the first sound is a vowel: an hour.",
+        "zh": "Hour 的 h 不发音，开头是元音，因此用 an hour；判断时听发音。"
       }
     },
     {
@@ -555,8 +555,8 @@
       ],
       "answer": "in",
       "explain": {
-        "en": "\"in\" is the correct preposition of time here.",
-        "zh": "正确答案是 \"in\"（表示时间的介词）。"
+        "en": "Use in with a month: in May.",
+        "zh": "月份前面用 in，例如 in May。"
       }
     },
     {
@@ -574,8 +574,8 @@
       ],
       "answer": "on",
       "explain": {
-        "en": "\"on\" is the correct preposition of time here.",
-        "zh": "正确答案是 \"on\"（表示时间的介词）。"
+        "en": "Use on with a named day: on Monday.",
+        "zh": "星期几前面用 on，例如 on Monday。"
       }
     },
     {
@@ -593,8 +593,8 @@
       ],
       "answer": "at",
       "explain": {
-        "en": "\"at\" is the correct preposition of time here.",
-        "zh": "正确答案是 \"at\"（表示时间的介词）。"
+        "en": "Use at for a clock time: at 8 o'clock.",
+        "zh": "具体钟点前用 at，例如 at 8 o'clock。"
       }
     },
     {
@@ -612,16 +612,16 @@
       ],
       "answer": "in",
       "explain": {
-        "en": "\"in\" is the correct preposition of time here.",
-        "zh": "正确答案是 \"in\"（表示时间的介词）。"
+        "en": "Use in with a year: in 2015.",
+        "zh": "年份前用 in，例如 in 2015。"
       }
     },
     {
       "id": "grammar1-033",
       "difficulty": "advanced",
       "prompt": {
-        "en": "The shop closes ___ night during Ramadan.",
-        "zh": "选出正确的答案。The shop closes ___ night during Ramadan."
+        "en": "Choose the usual time expression: We can see the stars ___ night.",
+        "zh": "选出最合适的答案。Choose the usual time expression: We can see the stars ___ night."
       },
       "choices": [
         "at",
@@ -631,8 +631,8 @@
       ],
       "answer": "at",
       "explain": {
-        "en": "\"at\" is the correct preposition of time here.",
-        "zh": "正确答案是 \"at\"（表示时间的介词）。"
+        "en": "At night is the usual expression for the night-time period.",
+        "zh": "At night 是表示“在夜间”的常用时间表达。"
       }
     },
     {
@@ -650,16 +650,16 @@
       ],
       "answer": "on",
       "explain": {
-        "en": "\"on\" is used with days of the week: on Sunday, on Monday.",
-        "zh": "正确答案是 \"on\"（星期前用介词 on：on Sunday、on Monday）。"
+        "en": "Use on with a day of the week: on Sunday.",
+        "zh": "星期几前用 on，因此是 on Sunday。"
       }
     },
     {
       "id": "grammar1-035",
       "difficulty": "standard",
       "prompt": {
-        "en": "The cat is sleeping ___ the box.",
-        "zh": "选出正确的答案。The cat is sleeping ___ the box."
+        "en": "The cat is inside the box. Complete with the same meaning: The cat is sleeping ___ the box.",
+        "zh": "选出最合适的答案。The cat is inside the box. Complete with the same meaning: The cat is sleeping ___ the box."
       },
       "choices": [
         "in",
@@ -669,16 +669,16 @@
       ],
       "answer": "in",
       "explain": {
-        "en": "\"in\" is the correct preposition of place here.",
-        "zh": "正确答案是 \"in\"（表示地点的介词）。"
+        "en": "In means inside; it keeps the meaning given in the first sentence.",
+        "zh": "In 表示在里面，与第一句的 inside 意思相同。"
       }
     },
     {
       "id": "grammar1-036",
       "difficulty": "standard",
       "prompt": {
-        "en": "The book is ___ the table.",
-        "zh": "选出正确的答案。The book is ___ the table."
+        "en": "The book is resting on the top surface of the table. The book is ___ the table.",
+        "zh": "选出最合适的答案。The book is resting on the top surface of the table. The book is ___ the table."
       },
       "choices": [
         "on",
@@ -688,16 +688,16 @@
       ],
       "answer": "on",
       "explain": {
-        "en": "\"on\" is the correct preposition of place here.",
-        "zh": "正确答案是 \"on\"（表示地点的介词）。"
+        "en": "On describes contact with the upper surface of the table.",
+        "zh": "On 表示物品放在桌面的上方并与桌面接触。"
       }
     },
     {
       "id": "grammar1-037",
       "difficulty": "standard",
       "prompt": {
-        "en": "The ball rolled ___ the sofa.",
-        "zh": "选出正确的答案。The ball rolled ___ the sofa."
+        "en": "The ball rolled into the space below the sofa. It is now ___ the sofa.",
+        "zh": "选出最合适的答案。The ball rolled into the space below the sofa. It is now ___ the sofa."
       },
       "choices": [
         "under",
@@ -707,16 +707,16 @@
       ],
       "answer": "under",
       "explain": {
-        "en": "\"under\" is the correct preposition of place here.",
-        "zh": "正确答案是 \"under\"（表示地点的介词）。"
+        "en": "Under means below something; the clue is the space below the sofa.",
+        "zh": "Under 表示在下面；线索是 space below the sofa。"
       }
     },
     {
       "id": "grammar1-038",
       "difficulty": "standard",
       "prompt": {
-        "en": "The dog is hiding ___ the tree.",
-        "zh": "选出正确的答案。The dog is hiding ___ the tree."
+        "en": "The tree is between me and the dog, so I cannot see the dog. The dog is ___ the tree.",
+        "zh": "选出最合适的答案。The tree is between me and the dog, so I cannot see the dog. The dog is ___ the tree."
       },
       "choices": [
         "behind",
@@ -726,8 +726,8 @@
       ],
       "answer": "behind",
       "explain": {
-        "en": "\"behind\" is the correct preposition of place here.",
-        "zh": "正确答案是 \"behind\"（表示地点的介词）。"
+        "en": "Behind means at the back of something; the tree blocks the dog from view.",
+        "zh": "Behind 表示在后面；树挡住了视线，所以狗在树后。"
       }
     },
     {
@@ -745,16 +745,16 @@
       ],
       "answer": "between",
       "explain": {
-        "en": "\"between\" is the correct preposition of place here.",
-        "zh": "正确答案是 \"between\"（表示地点的介词）。"
+        "en": "Between links two named places: the school and the library.",
+        "zh": "Between 表示在两者之间，这里是学校与图书馆之间。"
       }
     },
     {
       "id": "grammar1-040",
       "difficulty": "advanced",
       "prompt": {
-        "en": "Put the picture ___ the wall.",
-        "zh": "选出正确的答案。Put the picture ___ the wall."
+        "en": "Hang the picture flat against the wall: Put the picture ___ the wall.",
+        "zh": "选出最合适的答案。Hang the picture flat against the wall: Put the picture ___ the wall."
       },
       "choices": [
         "on",
@@ -764,16 +764,16 @@
       ],
       "answer": "on",
       "explain": {
-        "en": "\"on\" is the correct preposition of place here.",
-        "zh": "正确答案是 \"on\"（表示地点的介词）。"
+        "en": "A picture hanging flat against a wall is on the wall.",
+        "zh": "挂在墙面上的画用 on the wall；这里明确说平贴着墙面。"
       }
     },
     {
       "id": "grammar1-041",
       "difficulty": "standard",
       "prompt": {
-        "en": "Ali is my friend. ___ is very kind.",
-        "zh": "选出正确的答案。Ali is my friend. ___ is very kind."
+        "en": "Ali is my brother. ___ is very kind.",
+        "zh": "选出最合适的答案。Ali is my brother. ___ is very kind."
       },
       "choices": [
         "He",
@@ -783,16 +783,16 @@
       ],
       "answer": "He",
       "explain": {
-        "en": "\"He\" is the correct pronoun to replace the noun(s) mentioned.",
-        "zh": "正确答案是 \"He\"（代词的正确用法）。"
+        "en": "He is the subject pronoun for Ali, identified here as a brother.",
+        "zh": "第一句说明 Ali 是哥哥或弟弟，因此代词用 He。"
       }
     },
     {
       "id": "grammar1-042",
       "difficulty": "standard",
       "prompt": {
-        "en": "This is Mei Ling's bag. It is ___ bag.",
-        "zh": "选出正确的答案。This is Mei Ling's bag. It is ___ bag."
+        "en": "Mei Ling is my sister. This is Mei Ling's bag. It is ___ bag.",
+        "zh": "选出最合适的答案。Mei Ling is my sister. This is Mei Ling's bag. It is ___ bag."
       },
       "choices": [
         "her",
@@ -802,8 +802,8 @@
       ],
       "answer": "her",
       "explain": {
-        "en": "\"her\" is the correct pronoun to replace the noun(s) mentioned.",
-        "zh": "正确答案是 \"her\"（代词的正确用法）。"
+        "en": "Her before bag shows that the bag belongs to Mei Ling, identified as a sister.",
+        "zh": "Her 放在 bag 前表示所属；第一句已说明 Mei Ling 是姐姐或妹妹。"
       }
     },
     {
@@ -821,8 +821,8 @@
       ],
       "answer": "They",
       "explain": {
-        "en": "\"They\" is the correct pronoun to replace the noun(s) mentioned.",
-        "zh": "正确答案是 \"They\"（代词的正确用法）。"
+        "en": "The children is plural, so replace it with They.",
+        "zh": "The children 是复数，代替他们的主语代词是 They。"
       }
     },
     {
@@ -840,8 +840,8 @@
       ],
       "answer": "my",
       "explain": {
-        "en": "\"my\" is the correct pronoun to replace the noun(s) mentioned.",
-        "zh": "正确答案是 \"my\"（代词的正确用法）。"
+        "en": "Mine means belonging to me. Before the noun pencil, use my.",
+        "zh": "Mine 表示“我的”；名词 pencil 前要用 my，形成 my pencil。"
       }
     },
     {
@@ -859,16 +859,16 @@
       ],
       "answer": "We",
       "explain": {
-        "en": "\"We\" is the correct pronoun to replace the noun(s) mentioned.",
-        "zh": "正确答案是 \"We\"（代词的正确用法）。"
+        "en": "My parents and I includes the speaker, so use We.",
+        "zh": "My parents and I 包括说话者自己，因此用 We。"
       }
     },
     {
       "id": "grammar1-046",
       "difficulty": "advanced",
       "prompt": {
-        "en": "The teacher gave the students ___ homework before the bell rang.",
-        "zh": "选出正确的答案。The teacher gave the students ___ homework before the bell rang."
+        "en": "The students own these books. Complete with the same meaning: These are ___ books.",
+        "zh": "选出最合适的答案。The students own these books. Complete with the same meaning: These are ___ books."
       },
       "choices": [
         "their",
@@ -878,16 +878,16 @@
       ],
       "answer": "their",
       "explain": {
-        "en": "\"their\" is the correct pronoun to replace the noun(s) mentioned.",
-        "zh": "正确答案是 \"their\"（代词的正确用法）。"
+        "en": "Their shows ownership by the students, a plural group.",
+        "zh": "书属于这些学生；表示复数人称的所属关系，用 their books。"
       }
     },
     {
       "id": "grammar1-047",
       "difficulty": "standard",
       "prompt": {
-        "en": "I like apples ___ oranges.",
-        "zh": "选出正确的答案。I like apples ___ oranges."
+        "en": "Join the two items in a list: I like apples ___ oranges.",
+        "zh": "选出最合适的答案。Join the two items in a list: I like apples ___ oranges."
       },
       "choices": [
         "and",
@@ -897,16 +897,16 @@
       ],
       "answer": "and",
       "explain": {
-        "en": "\"and\" correctly joins the two ideas in this sentence.",
-        "zh": "正确答案是 \"and\"（连接词的正确用法）。"
+        "en": "And adds the second item, oranges, to the list.",
+        "zh": "And 用来把 apples 和 oranges 两个项目连接起来。"
       }
     },
     {
       "id": "grammar1-048",
       "difficulty": "standard",
       "prompt": {
-        "en": "She was tired, ___ she went to sleep early.",
-        "zh": "选出正确的答案。She was tired, ___ she went to sleep early."
+        "en": "Choose the word that shows a result: She was tired, ___ she went to sleep early.",
+        "zh": "选出最合适的答案。Choose the word that shows a result: She was tired, ___ she went to sleep early."
       },
       "choices": [
         "so",
@@ -916,16 +916,16 @@
       ],
       "answer": "so",
       "explain": {
-        "en": "\"so\" correctly joins the two ideas in this sentence.",
-        "zh": "正确答案是 \"so\"（连接词的正确用法）。"
+        "en": "So introduces the result of being tired: going to sleep early.",
+        "zh": "So 引出结果；因为累了，所以提早睡觉。"
       }
     },
     {
       "id": "grammar1-049",
       "difficulty": "standard",
       "prompt": {
-        "en": "He wanted to play outside, ___ it was raining.",
-        "zh": "选出正确的答案。He wanted to play outside, ___ it was raining."
+        "en": "Choose the word that shows a contrast: He wanted to play outside, ___ it was raining.",
+        "zh": "选出最合适的答案。Choose the word that shows a contrast: He wanted to play outside, ___ it was raining."
       },
       "choices": [
         "but",
@@ -935,16 +935,16 @@
       ],
       "answer": "but",
       "explain": {
-        "en": "\"but\" correctly joins the two ideas in this sentence.",
-        "zh": "正确答案是 \"but\"（连接词的正确用法）。"
+        "en": "But contrasts wanting to play outside with the rainy weather.",
+        "zh": "But 表示转折，连接“想出去玩”和“正在下雨”这两个相反情况。"
       }
     },
     {
       "id": "grammar1-050",
       "difficulty": "standard",
       "prompt": {
-        "en": "I stayed home ___ I was sick.",
-        "zh": "选出正确的答案。I stayed home ___ I was sick."
+        "en": "Choose the word that introduces a reason: I stayed home ___ I was sick.",
+        "zh": "选出最合适的答案。Choose the word that introduces a reason: I stayed home ___ I was sick."
       },
       "choices": [
         "because",
@@ -954,16 +954,16 @@
       ],
       "answer": "because",
       "explain": {
-        "en": "\"because\" correctly joins the two ideas in this sentence.",
-        "zh": "正确答案是 \"because\"（连接词的正确用法）。"
+        "en": "Because introduces the reason for staying home: being sick.",
+        "zh": "Because 引出待在家的原因，也就是生病。"
       }
     },
     {
       "id": "grammar1-051",
       "difficulty": "advanced",
       "prompt": {
-        "en": "The exam was difficult, ___ Aisyah still scored full marks.",
-        "zh": "选出正确的答案。The exam was difficult, ___ Aisyah still scored full marks."
+        "en": "Choose the word that shows a contrast: The test was difficult, ___ Aisyah still scored full marks.",
+        "zh": "选出最合适的答案。Choose the word that shows a contrast: The test was difficult, ___ Aisyah still scored full marks."
       },
       "choices": [
         "but",
@@ -973,27 +973,27 @@
       ],
       "answer": "but",
       "explain": {
-        "en": "\"but\" correctly joins the two ideas in this sentence.",
-        "zh": "正确答案是 \"but\"（连接词的正确用法）。"
+        "en": "But shows the contrast between a difficult test and a full score.",
+        "zh": "But 表示转折，连接“测验很难”和“仍然得满分”。"
       }
     },
     {
       "id": "grammar1-052",
       "difficulty": "advanced",
       "prompt": {
-        "en": "Not only did she finish her homework, ___ she also helped her brother.",
-        "zh": "选出正确的答案。Not only did she finish her homework, ___ she also helped her brother."
+        "en": "Choose the pair that shows a choice: You can have ___ tea or water.",
+        "zh": "选出最合适的答案。Choose the pair that shows a choice: You can have ___ tea or water."
       },
       "choices": [
-        "but",
-        "so",
-        "and",
+        "either",
+        "both",
+        "neither",
         "because"
       ],
-      "answer": "but",
+      "answer": "either",
       "explain": {
-        "en": "\"but\" correctly joins the two ideas in this sentence.",
-        "zh": "正确答案是 \"but\"（连接词的正确用法）。"
+        "en": "Either ... or presents a choice between two options.",
+        "zh": "Either ... or 表示两者之中选择其一，这里是茶或水。"
       }
     },
     {
@@ -1011,8 +1011,8 @@
       ],
       "answer": "children",
       "explain": {
-        "en": "The plural form of this noun is \"children\".",
-        "zh": "正确答案是 \"children\"（名词复数形式）。"
+        "en": "Child has an irregular plural: children, without an extra -s.",
+        "zh": "Child 的不规则复数是 children，不再加 -s。"
       }
     },
     {
@@ -1030,8 +1030,8 @@
       ],
       "answer": "mice",
       "explain": {
-        "en": "The plural form of this noun is \"mice\".",
-        "zh": "正确答案是 \"mice\"（名词复数形式）。"
+        "en": "Mouse has the irregular plural mice.",
+        "zh": "Mouse 的不规则复数是 mice。"
       }
     },
     {
@@ -1049,8 +1049,8 @@
       ],
       "answer": "teeth",
       "explain": {
-        "en": "The plural form of this noun is \"teeth\".",
-        "zh": "正确答案是 \"teeth\"（名词复数形式）。"
+        "en": "Tooth changes its vowel to form the plural teeth.",
+        "zh": "Tooth 变复数时改变元音，写成 teeth。"
       }
     },
     {
@@ -1068,8 +1068,8 @@
       ],
       "answer": "feet",
       "explain": {
-        "en": "The plural form of this noun is \"feet\".",
-        "zh": "正确答案是 \"feet\"（名词复数形式）。"
+        "en": "Foot has the irregular plural feet.",
+        "zh": "Foot 的不规则复数是 feet。"
       }
     },
     {
@@ -1087,8 +1087,8 @@
       ],
       "answer": "boxes",
       "explain": {
-        "en": "The plural form of this noun is \"boxes\".",
-        "zh": "正确答案是 \"boxes\"（名词复数形式）。"
+        "en": "Nouns ending in -x add -es: box becomes boxes.",
+        "zh": "以 -x 结尾的名词变复数时加 -es：box → boxes。"
       }
     },
     {
@@ -1106,8 +1106,8 @@
       ],
       "answer": "sheep",
       "explain": {
-        "en": "The plural form of this noun is \"sheep\".",
-        "zh": "正确答案是 \"sheep\"（名词复数形式）。"
+        "en": "Sheep stays the same in singular and plural forms.",
+        "zh": "Sheep 的单数和复数形式相同，不加 -s。"
       }
     },
     {
@@ -1125,8 +1125,8 @@
       ],
       "answer": "men",
       "explain": {
-        "en": "The plural form of this noun is \"men\".",
-        "zh": "正确答案是 \"men\"（名词复数形式）。"
+        "en": "Man changes to men in the plural.",
+        "zh": "Man 的不规则复数是 men。"
       }
     },
     {
@@ -1144,8 +1144,8 @@
       ],
       "answer": "bigger",
       "explain": {
-        "en": "\"bigger\" is the correct comparative/superlative form here.",
-        "zh": "正确答案是 \"bigger\"（比较级/最高级的正确用法）。"
+        "en": "Than compares two animals. Big doubles g and adds -er: bigger.",
+        "zh": "Than 表示比较两者；big 双写 g 后加 -er，变成 bigger。"
       }
     },
     {
@@ -1163,8 +1163,8 @@
       ],
       "answer": "best",
       "explain": {
-        "en": "\"best\" is the correct comparative/superlative form here.",
-        "zh": "正确答案是 \"best\"（比较级/最高级的正确用法）。"
+        "en": "The best means the highest quality among all the books mentioned. Good has irregular forms better and best.",
+        "zh": "这里比较读过的所有书，用最高级 best；good 的比较级是 better，最高级是 best。"
       }
     },
     {
@@ -1182,8 +1182,8 @@
       ],
       "answer": "taller",
       "explain": {
-        "en": "\"taller\" is the correct comparative/superlative form here.",
-        "zh": "正确答案是 \"taller\"（比较级/最高级的正确用法）。"
+        "en": "Than compares two people. Add -er to tall: taller.",
+        "zh": "Than 表示比较两人；tall 加 -er 变成 taller。"
       }
     },
     {
@@ -1201,8 +1201,8 @@
       ],
       "answer": "worst",
       "explain": {
-        "en": "\"worst\" is the correct comparative/superlative form here.",
-        "zh": "正确答案是 \"worst\"（比较级/最高级的正确用法）。"
+        "en": "Of my life compares that day with all the others; bad has the superlative worst.",
+        "zh": "与一生中所有日子相比，要用最高级；bad 的最高级是 worst。"
       }
     },
     {
@@ -1220,8 +1220,8 @@
       ],
       "answer": "more difficult",
       "explain": {
-        "en": "\"more difficult\" is the correct comparative/superlative form here.",
-        "zh": "正确答案是 \"more difficult\"（比较级/最高级的正确用法）。"
+        "en": "Than signals a comparison. Use more before the longer adjective difficult.",
+        "zh": "Than 表示比较；较长的形容词 difficult 前加 more，形成 more difficult。"
       }
     },
     {
@@ -1239,8 +1239,483 @@
       ],
       "answer": "most careful",
       "explain": {
-        "en": "\"most careful\" is the correct comparative/superlative form here.",
-        "zh": "正确答案是 \"most careful\"（比较级/最高级的正确用法）。"
+        "en": "Of all the students needs a superlative: most careful.",
+        "zh": "Of all 表示在所有学生当中比较，careful 的最高级是 most careful。"
+      }
+    },
+    {
+      "id": "grammar1-066",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "At the moment, the pupils ___ their models while their teacher watches.",
+        "zh": "选出最合适的答案。At the moment, the pupils ___ their models while their teacher watches."
+      },
+      "choices": [
+        "are making",
+        "is making",
+        "makes",
+        "made"
+      ],
+      "answer": "are making",
+      "explain": {
+        "en": "The plural pupils takes are making; at the moment tells us this is happening now.",
+        "zh": "Pupils 是复数；at the moment 表示此刻正在制作，所以用 are making。"
+      }
+    },
+    {
+      "id": "grammar1-067",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Edit the verb: \"Yesterday, Aina buy a stamp and posted a letter.\" Replace buy with ___.",
+        "zh": "选出最合适的答案。Edit the verb: \"Yesterday, Aina buy a stamp and posted a letter.\" Replace buy with ___."
+      },
+      "choices": [
+        "bought",
+        "buys",
+        "buying",
+        "buyed"
+      ],
+      "answer": "bought",
+      "explain": {
+        "en": "Yesterday places both actions in the past. The irregular past form of buy is bought.",
+        "zh": "Yesterday 表示过去；buy 的不规则过去式是 bought，与 posted 的时态一致。"
+      }
+    },
+    {
+      "id": "grammar1-068",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the correct pair: Yesterday, we ___ to the lake and ___ some birds.",
+        "zh": "选出最合适的答案。Choose the correct pair: Yesterday, we ___ to the lake and ___ some birds."
+      },
+      "choices": [
+        "went; saw",
+        "go; saw",
+        "went; see",
+        "goes; sees"
+      ],
+      "answer": "went; saw",
+      "explain": {
+        "en": "Both actions happened yesterday, so use the past forms went and saw.",
+        "zh": "两个动作都发生在昨天，因此 go 和 see 都要变过去式：went 和 saw。"
+      }
+    },
+    {
+      "id": "grammar1-069",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Ravi did not ___ his ruler, so he borrowed one.",
+        "zh": "选出最合适的答案。Ravi did not ___ his ruler, so he borrowed one."
+      },
+      "choices": [
+        "bring",
+        "brought",
+        "brings",
+        "bringing"
+      ],
+      "answer": "bring",
+      "explain": {
+        "en": "After did not, the main verb stays in its base form, bring.",
+        "zh": "Did not 后面的主要动词必须用原形 bring，不能再变过去式。"
+      }
+    },
+    {
+      "id": "grammar1-070",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Did the visitors ___ the map before they entered the park?",
+        "zh": "选出最合适的答案。Did the visitors ___ the map before they entered the park?"
+      },
+      "choices": [
+        "check",
+        "checked",
+        "checks",
+        "checking"
+      ],
+      "answer": "check",
+      "explain": {
+        "en": "A past-simple question uses did + subject + base verb, so use check.",
+        "zh": "一般过去式疑问句已有 Did，后面用动词原形 check。"
+      }
+    },
+    {
+      "id": "grammar1-071",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the pair: There ___ a bowl on the table, but there ___ no spoons.",
+        "zh": "选出最合适的答案。Choose the pair: There ___ a bowl on the table, but there ___ no spoons."
+      },
+      "choices": [
+        "is; are",
+        "are; is",
+        "is; is",
+        "are; are"
+      ],
+      "answer": "is; are",
+      "explain": {
+        "en": "A bowl is singular and spoons is plural: there is a bowl; there are no spoons.",
+        "zh": "A bowl 是单数，用 is；spoons 是复数，用 are。"
+      }
+    },
+    {
+      "id": "grammar1-072",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "A notice says, \"You must ___ your name on the form before joining.\"",
+        "zh": "选出最合适的答案。A notice says, \"You must ___ your name on the form before joining.\""
+      },
+      "choices": [
+        "write",
+        "writes",
+        "wrote",
+        "writing"
+      ],
+      "answer": "write",
+      "explain": {
+        "en": "Must is followed by a base verb, so write completes the instruction.",
+        "zh": "情态动词 must 后接原形动词，所以用 write。"
+      }
+    },
+    {
+      "id": "grammar1-073",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the negative rule: Pupils ___ run beside the swimming pool because the floor is slippery.",
+        "zh": "选出最合适的答案。Choose the negative rule: Pupils ___ run beside the swimming pool because the floor is slippery."
+      },
+      "choices": [
+        "must not",
+        "must",
+        "can always",
+        "should always"
+      ],
+      "answer": "must not",
+      "explain": {
+        "en": "Because the floor is slippery, the rule needs must not to forbid running.",
+        "zh": "地面很滑，因此规则应禁止奔跑；must not 表示“不准”。"
+      }
+    },
+    {
+      "id": "grammar1-074",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Aina can swim, but her little brother ___ swim yet.",
+        "zh": "选出最合适的答案。Aina can swim, but her little brother ___ swim yet."
+      },
+      "choices": [
+        "cannot",
+        "does not",
+        "is not",
+        "has not"
+      ],
+      "answer": "cannot",
+      "explain": {
+        "en": "Cannot + base verb describes an ability he does not have yet.",
+        "zh": "Cannot 加动词原形表示还不会做某件事；这里说弟弟还不会游泳。"
+      }
+    },
+    {
+      "id": "grammar1-075",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the pair: How ___ apples and how ___ water do we need?",
+        "zh": "选出最合适的答案。Choose the pair: How ___ apples and how ___ water do we need?"
+      },
+      "choices": [
+        "many; much",
+        "much; many",
+        "many; many",
+        "much; much"
+      ],
+      "answer": "many; much",
+      "explain": {
+        "en": "Count apples separately with many; water is uncountable here and takes much.",
+        "zh": "Apples 可以逐个数，用 many；water 在这里是不可数名词，用 much。"
+      }
+    },
+    {
+      "id": "grammar1-076",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "There are only two eggs left. We have ___ eggs for the cake.",
+        "zh": "选出最合适的答案。There are only two eggs left. We have ___ eggs for the cake."
+      },
+      "choices": [
+        "a few",
+        "a little",
+        "much",
+        "any"
+      ],
+      "answer": "a few",
+      "explain": {
+        "en": "Eggs are countable. A few means a small number, matching only two.",
+        "zh": "Eggs 是可数名词；a few 表示少量，符合只剩两颗鸡蛋的情况。"
+      }
+    },
+    {
+      "id": "grammar1-077",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "There is only a little juice left. Complete the statement: We do not have ___ juice.",
+        "zh": "选出最合适的答案。There is only a little juice left. Complete the statement: We do not have ___ juice."
+      },
+      "choices": [
+        "much",
+        "many",
+        "a few",
+        "several"
+      ],
+      "answer": "much",
+      "explain": {
+        "en": "Juice is uncountable, so not much expresses a small amount.",
+        "zh": "Juice 是不可数名词；not much 表示剩下的量不多。"
+      }
+    },
+    {
+      "id": "grammar1-078",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Lina is 140 cm tall. Siva is 145 cm tall. Lina is ___ than Siva.",
+        "zh": "选出最合适的答案。Lina is 140 cm tall. Siva is 145 cm tall. Lina is ___ than Siva."
+      },
+      "choices": [
+        "shorter",
+        "taller",
+        "shortest",
+        "tallest"
+      ],
+      "answer": "shorter",
+      "explain": {
+        "en": "Lina is 5 cm shorter. Than requires the comparative form shorter.",
+        "zh": "Lina 比 Siva 矮 5 cm；than 表示两者比较，因此用 shorter。"
+      }
+    },
+    {
+      "id": "grammar1-079",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Of the three bags, this one costs the least. It is the ___ bag.",
+        "zh": "选出最合适的答案。Of the three bags, this one costs the least. It is the ___ bag."
+      },
+      "choices": [
+        "cheapest",
+        "cheaper",
+        "cheap",
+        "more cheap"
+      ],
+      "answer": "cheapest",
+      "explain": {
+        "en": "The least expensive of three bags needs the superlative cheapest.",
+        "zh": "三个书包中价格最低的，要用最高级 cheapest。"
+      }
+    },
+    {
+      "id": "grammar1-080",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "My brother and I made this kite. It is ___.",
+        "zh": "选出最合适的答案。My brother and I made this kite. It is ___."
+      },
+      "choices": [
+        "ours",
+        "our",
+        "us",
+        "we"
+      ],
+      "answer": "ours",
+      "explain": {
+        "en": "Ours stands alone and means belonging to my brother and me. Our needs a noun after it.",
+        "zh": "Ours 可以单独使用，表示“我们的”；our 后面必须接名词。"
+      }
+    },
+    {
+      "id": "grammar1-081",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "The teacher spoke to Aina and me. She asked ___ to carry the books.",
+        "zh": "选出最合适的答案。The teacher spoke to Aina and me. She asked ___ to carry the books."
+      },
+      "choices": [
+        "us",
+        "we",
+        "our",
+        "ours"
+      ],
+      "answer": "us",
+      "explain": {
+        "en": "After asked, use the object pronoun us for Aina and me.",
+        "zh": "Asked 后面要用宾语代词；Aina and me 可用 us 代替。"
+      }
+    },
+    {
+      "id": "grammar1-082",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "These two bicycles belong to the boys. Choose the plural possessive phrase: the ___ bicycles.",
+        "zh": "选出最合适的答案。These two bicycles belong to the boys. Choose the plural possessive phrase: the ___ bicycles."
+      },
+      "choices": [
+        "boys'",
+        "boy's",
+        "boys",
+        "boy"
+      ],
+      "answer": "boys'",
+      "explain": {
+        "en": "For the plural boys, add an apostrophe after s to show ownership: boys'.",
+        "zh": "Boys 已经是以 s 结尾的复数名词，表示所属时在 s 后加撇号：boys'。"
+      }
+    },
+    {
+      "id": "grammar1-083",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "One child owns this lunchbox. It is the ___ lunchbox.",
+        "zh": "选出最合适的答案。One child owns this lunchbox. It is the ___ lunchbox."
+      },
+      "choices": [
+        "child's",
+        "children's",
+        "childs'",
+        "childs"
+      ],
+      "answer": "child's",
+      "explain": {
+        "en": "A single child takes apostrophe + s: child's lunchbox.",
+        "zh": "一个孩子拥有的饭盒，用单数 child 加撇号和 s：child's。"
+      }
+    },
+    {
+      "id": "grammar1-084",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the word that introduces a reason: We brought reusable bags ___ we wanted to use less plastic.",
+        "zh": "选出最合适的答案。Choose the word that introduces a reason: We brought reusable bags ___ we wanted to use less plastic."
+      },
+      "choices": [
+        "because",
+        "although",
+        "but",
+        "or"
+      ],
+      "answer": "because",
+      "explain": {
+        "en": "Wanting to use less plastic is the reason for bringing reusable bags. Because introduces it.",
+        "zh": "想减少塑料用量是携带环保袋的原因，应用 because 引出。"
+      }
+    },
+    {
+      "id": "grammar1-085",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Complete the pair: ___ it was raining, the pupils stayed dry under the roof.",
+        "zh": "选出最合适的答案。Complete the pair: ___ it was raining, the pupils stayed dry under the roof."
+      },
+      "choices": [
+        "Although",
+        "Because",
+        "So",
+        "And"
+      ],
+      "answer": "Although",
+      "explain": {
+        "en": "Although introduces a contrast: rain outside, but dry pupils under the roof.",
+        "zh": "Although 表示“虽然”，连接下雨与学生在屋檐下没被淋湿的转折关系。"
+      }
+    },
+    {
+      "id": "grammar1-086",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the pair: First, ___ the paper. Then, ___ it along the line.",
+        "zh": "选出最合适的答案。Choose the pair: First, ___ the paper. Then, ___ it along the line."
+      },
+      "choices": [
+        "fold; cut",
+        "folds; cuts",
+        "folded; cut",
+        "folding; cutting"
+      ],
+      "answer": "fold; cut",
+      "explain": {
+        "en": "Instructions begin with base verbs: fold and cut.",
+        "zh": "祈使句发出指示时用动词原形，因此两格都用原形：fold、cut。"
+      }
+    },
+    {
+      "id": "grammar1-087",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the correct sentence about a habit.",
+        "zh": "选出最合适的答案。Choose the correct sentence about a habit."
+      },
+      "choices": [
+        "Farah usually walks to school.",
+        "Farah usually walk to school.",
+        "Farah usually walking to school.",
+        "Farah usually walked to school every day now."
+      ],
+      "answer": "Farah usually walks to school.",
+      "explain": {
+        "en": "Usually describes a habit. Singular Farah takes walks in the present simple.",
+        "zh": "Usually 表示习惯；Farah 是单数主语，一般现在式动词用 walks。"
+      }
+    },
+    {
+      "id": "grammar1-088",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the correct pair: A month ago, Danial ___ not ride a bicycle. Now he ___.",
+        "zh": "选出最合适的答案。Choose the correct pair: A month ago, Danial ___ not ride a bicycle. Now he ___."
+      },
+      "choices": [
+        "could; can",
+        "can; could",
+        "could; could not",
+        "can; cannot"
+      ],
+      "answer": "could; can",
+      "explain": {
+        "en": "Could not describes past inability; can describes his ability now.",
+        "zh": "A month ago 表示过去，用 could not；now 表示现在会骑，用 can。"
+      }
+    },
+    {
+      "id": "grammar1-089",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Aisyah is going to ___ a poster for the class exhibition tomorrow.",
+        "zh": "选出最合适的答案。Aisyah is going to ___ a poster for the class exhibition tomorrow."
+      },
+      "choices": [
+        "design",
+        "designed",
+        "designs",
+        "designing"
+      ],
+      "answer": "design",
+      "explain": {
+        "en": "Be going to is followed by a base verb to describe a plan: design.",
+        "zh": "Be going to 后接动词原形表示计划，因此用 design。"
+      }
+    },
+    {
+      "id": "grammar1-090",
+      "difficulty": "advanced",
+      "prompt": {
+        "en": "Choose the correct pair: This is my ___ book, and those are my two ___ books.",
+        "zh": "选出最合适的答案。Choose the correct pair: This is my ___ book, and those are my two ___ books."
+      },
+      "choices": [
+        "sister's; brothers'",
+        "sisters'; brother's",
+        "sister; brothers",
+        "sisters; brother"
+      ],
+      "answer": "sister's; brothers'",
+      "explain": {
+        "en": "One sister takes sister's. Two brothers takes brothers', with the apostrophe after the plural s.",
+        "zh": "一个姐妹用 sister's；两个兄弟用复数 brothers，再把撇号加在 s 后。"
       }
     }
   ]

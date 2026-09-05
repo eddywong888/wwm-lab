@@ -16,7 +16,7 @@ import type { Bilingual } from './types';
 import type { EduState } from '../store/local';
 import { MATH_GENERATORS } from './math';
 import { ENGLISH_TOPICS } from './english';
-import { MIXED_TOPIC_ID, ENGLISH_MIXED_TOPIC_ID, DAILY_TOPIC_ID, QUESTIONS_PER_SESSION } from './session';
+import { MIXED_TOPIC_ID, ENGLISH_MIXED_TOPIC_ID, CHINESE_MIXED_TOPIC_ID, DAILY_TOPIC_ID, QUESTIONS_PER_SESSION } from './session';
 
 export type BadgeTier = 'bronze' | 'silver' | 'gold';
 
@@ -40,7 +40,7 @@ export interface EarnedBadge {
 }
 
 /** Pseudo-topic ids that never count as a "real" topic for badge purposes. */
-const PSEUDO_TOPIC_IDS = new Set<string>([MIXED_TOPIC_ID, ENGLISH_MIXED_TOPIC_ID, DAILY_TOPIC_ID]);
+const PSEUDO_TOPIC_IDS = new Set<string>([MIXED_TOPIC_ID, ENGLISH_MIXED_TOPIC_ID, CHINESE_MIXED_TOPIC_ID, DAILY_TOPIC_ID]);
 
 function realTopicEntries(state: EduState) {
   return Object.entries(state.perTopic).filter(([id]) => !PSEUDO_TOPIC_IDS.has(id));
@@ -213,14 +213,13 @@ export const BADGE_DEFS: BadgeDef[] = [
 
 function tierForValue(def: BadgeDef, value: number): { tier: BadgeTier | null; next: number | null } {
   let tier: BadgeTier | null = null;
-  let next: number | null = def.tiers[0]?.threshold ?? null;
   for (const t of def.tiers) {
     if (value >= t.threshold) {
       tier = t.tier;
     }
   }
   const idx = tier ? def.tiers.findIndex((t) => t.tier === tier) : -1;
-  next = idx >= 0 && idx + 1 < def.tiers.length ? def.tiers[idx + 1].threshold : (tier ? null : def.tiers[0]?.threshold ?? null);
+  const next = idx >= 0 && idx + 1 < def.tiers.length ? def.tiers[idx + 1].threshold : (tier ? null : def.tiers[0]?.threshold ?? null);
   return { tier, next };
 }
 

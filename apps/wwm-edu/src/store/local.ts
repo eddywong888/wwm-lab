@@ -2,7 +2,7 @@ import type { Difficulty, Lang } from '../engine/types';
 
 const STORAGE_KEY = 'wwm-edu:v1';
 
-/** How many recently-served English question ids to remember for anti-repeat. */
+/** How many recently-served language-bank question ids to remember for anti-repeat. */
 const ENGLISH_HISTORY_LIMIT = 200;
 
 export interface TopicProgress {
@@ -31,7 +31,7 @@ export interface EduState {
   difficulty: Difficulty;
   muted: boolean;
   perTopic: Record<string, TopicProgress>;
-  /** Recently-served English bank question ids, most-recent-last, capped at
+  /** Recently-served language-bank question ids, most-recent-last, capped at
    * ENGLISH_HISTORY_LIMIT. Optional/defaulted so old saved blobs still load. */
   englishServedIds?: string[];
   /** Best result for each day's Daily Challenge, keyed by date. Optional/
@@ -138,12 +138,12 @@ export function recordSession(topicId: string, correctCount: number, totalCount:
   return next;
 }
 
-/** Recently-served English question ids, oldest first, for the anti-repeat sampler. */
+/** Recently-served language-bank question ids, oldest first, for the anti-repeat sampler. */
 export function getEnglishServedIds(): string[] {
   return loadState().englishServedIds ?? [];
 }
 
-/** Append newly-served English question ids, trimming to ENGLISH_HISTORY_LIMIT. */
+/** Append newly-served language-bank question ids, trimming to ENGLISH_HISTORY_LIMIT. */
 export function recordEnglishServedIds(ids: readonly string[]): EduState {
   const state = loadState();
   const merged = [...(state.englishServedIds ?? []), ...ids].slice(-ENGLISH_HISTORY_LIMIT);

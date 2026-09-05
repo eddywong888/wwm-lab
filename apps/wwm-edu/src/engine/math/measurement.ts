@@ -194,7 +194,7 @@ function mixedUnitArithmeticQuestion(rng: Rng): Question {
 }
 
 function multiStepWordProblem(rng: Rng): Question {
-  const pair = rng.pick(allPairs());
+  const pair = rng.pick(LENGTH_PAIRS);
   const bigAmount1 = rng.int(2, 15);
   const bigAmount2 = rng.int(1, 10);
   const totalBig = bigAmount1 + bigAmount2;
