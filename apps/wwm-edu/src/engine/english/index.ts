@@ -1,33 +1,21 @@
 import type { Rng } from '../rng';
 import type { Difficulty, GeneratorMeta, Question } from '../types';
 import { normalizeText, validatePack, type BankQuestion, type QuestionPack } from '../../content/schema';
-import grammar1 from '../../content/english/grammar-1.json';
-import vocabulary1 from '../../content/english/vocabulary-1.json';
-import sentences1 from '../../content/english/sentences-1.json';
-import comprehension1 from '../../content/english/comprehension-1.json';
-import chineseVocabulary from '../../content/chinese/vocabulary-1.json';
-import chineseSentences from '../../content/chinese/sentences-1.json';
-import chineseComprehension from '../../content/chinese/comprehension-1.json';
-import chineseWriting from '../../content/chinese/writing-1.json';
 
 const CONTENT_CACHE_KEY = 'wwm-edu:v1:content-overrides';
-const RAW_REPO_PACKS: unknown[] = [grammar1, vocabulary1, sentences1, comprehension1, chineseVocabulary, chineseSentences, chineseComprehension, chineseWriting];
-const BASE_TOPIC_META: Record<string, GeneratorMeta> = {
-  grammar: { id: 'grammar', name: { en: 'Grammar', zh: '语法' }, icon: '📗' },
-  vocabulary: { id: 'vocabulary', name: { en: 'Vocabulary', zh: '词汇' }, icon: '📘' },
-  sentences: { id: 'sentences', name: { en: 'Sentences', zh: '句子' }, icon: '✍️' },
-  comprehension: { id: 'comprehension', name: { en: 'Comprehension', zh: '阅读理解' }, icon: '📖' },
-  'chinese-vocabulary': { id: 'chinese-vocabulary', name: { en: 'Chinese Words', zh: '字词运用' }, icon: '📙' },
-  'chinese-sentences': { id: 'chinese-sentences', name: { en: 'Chinese Sentences', zh: '句子与标点' }, icon: '✍️' },
-  'chinese-comprehension': { id: 'chinese-comprehension', name: { en: 'Chinese Reading', zh: '阅读理解' }, icon: '📖' },
-  'chinese-writing': { id: 'chinese-writing', name: { en: 'Writing Foundations', zh: '习作基础' }, icon: '📝' },
-};
-
-export const REPO_PACKS: QuestionPack[] = RAW_REPO_PACKS.map((raw) => {
-  const result = validatePack(raw);
-  if (!result.ok) throw new Error(`Invalid question pack:\n${result.errors.join('\n')}`);
-  return result.pack;
-});
+const BASE_ENGLISH_TOPICS: GeneratorMeta[] = [
+  { id: 'grammar', name: { en: 'Grammar', zh: '语法' }, icon: '📗' },
+  { id: 'vocabulary', name: { en: 'Vocabulary', zh: '词汇' }, icon: '📘' },
+  { id: 'sentences', name: { en: 'Sentences', zh: '句子' }, icon: '✍️' },
+  { id: 'comprehension', name: { en: 'Comprehension', zh: '阅读理解' }, icon: '📖' },
+];
+const BASE_CHINESE_TOPICS: GeneratorMeta[] = [
+  { id: 'chinese-vocabulary', name: { en: 'Chinese Words', zh: '字词运用' }, icon: '📙' },
+  { id: 'chinese-sentences', name: { en: 'Chinese Sentences', zh: '句子与标点' }, icon: '✍️' },
+  { id: 'chinese-comprehension', name: { en: 'Chinese Reading', zh: '阅读理解' }, icon: '📖' },
+  { id: 'chinese-writing', name: { en: 'Writing Foundations', zh: '习作基础' }, icon: '📝' },
+];
+const BASE_TOPIC_META = new Map([...BASE_ENGLISH_TOPICS, ...BASE_CHINESE_TOPICS].map((topic) => [topic.id, topic]));
 
 export function mergePacks(repo: QuestionPack[], overrides: QuestionPack[]): QuestionPack[] {
   const merged = new Map(repo.map((pack) => [pack.id, pack]));
@@ -56,9 +44,20 @@ function cachedPacks(): QuestionPack[] {
   }
 }
 
-let packs = mergePacks(REPO_PACKS, cachedPacks());
+let repoPacks: QuestionPack[] = [];
+let overridePacks = cachedPacks();
+export let REPO_PACKS: QuestionPack[] = [];
+let packs = mergePacks(repoPacks, overridePacks);
+const loadedSubjects = new Set<QuestionPack['subject']>();
+const pendingLoads = new Map<QuestionPack['subject'], Promise<void>>();
+
 function topics(subject: QuestionPack['subject']): GeneratorMeta[] {
-  return [...new Map(packs.filter((pack) => pack.subject === subject).map((pack) => [pack.topic, BASE_TOPIC_META[pack.topic] ?? { id: pack.topic, name: pack.title, icon: '📦' }])).values()];
+  const base = subject === 'english' ? BASE_ENGLISH_TOPICS : BASE_CHINESE_TOPICS;
+  const topicMap = new Map(base.map((topic) => [topic.id, topic]));
+  for (const pack of packs.filter((item) => item.subject === subject)) {
+    topicMap.set(pack.topic, BASE_TOPIC_META.get(pack.topic) ?? { id: pack.topic, name: pack.title, icon: '📦' });
+  }
+  return [...topicMap.values()];
 }
 export let ENGLISH_TOPICS = topics('english');
 export let CHINESE_TOPICS = topics('chinese');
@@ -66,19 +65,57 @@ export let ENGLISH_TOPIC_IDS = ENGLISH_TOPICS.map((topic) => topic.id);
 export let CHINESE_TOPIC_IDS = CHINESE_TOPICS.map((topic) => topic.id);
 export const ENGLISH_ALL = 'all';
 
+function rebuildPacks() {
+  REPO_PACKS = [...repoPacks];
+  packs = mergePacks(repoPacks, overridePacks);
+  ENGLISH_TOPICS = topics('english');
+  CHINESE_TOPICS = topics('chinese');
+  ENGLISH_TOPIC_IDS = ENGLISH_TOPICS.map((topic) => topic.id);
+  CHINESE_TOPIC_IDS = CHINESE_TOPICS.map((topic) => topic.id);
+}
+
+export function isSubjectContentLoaded(subject: QuestionPack['subject']): boolean {
+  return loadedSubjects.has(subject);
+}
+
+export async function ensureSubjectContent(subject: QuestionPack['subject']): Promise<void> {
+  if (loadedSubjects.has(subject)) return;
+  const pending = pendingLoads.get(subject);
+  if (pending) return pending;
+  const load = (async () => {
+    const module = subject === 'english'
+      ? await import('../../content/english/index')
+      : await import('../../content/chinese/index');
+    const loaded = module.default.map((raw) => {
+      const result = validatePack(raw);
+      if (!result.ok) throw new Error(`Invalid ${subject} question pack:\n${result.errors.join('\n')}`);
+      return result.pack;
+    });
+    repoPacks = [...repoPacks.filter((pack) => pack.subject !== subject), ...loaded];
+    loadedSubjects.add(subject);
+    rebuildPacks();
+  })();
+  pendingLoads.set(subject, load);
+  try {
+    await load;
+  } finally {
+    pendingLoads.delete(subject);
+  }
+}
+
+export async function ensureAllLanguageContent(): Promise<void> {
+  await Promise.all([ensureSubjectContent('english'), ensureSubjectContent('chinese')]);
+}
+
 export async function refreshEnglishContent(): Promise<boolean> {
   try {
     const response = await fetch('/api/edu/content');
     if (!response.ok) return false;
     const body = await response.json() as { packs?: unknown };
     if (!Array.isArray(body.packs)) return false;
-    const overrides = validatedPacks(body.packs);
-    packs = mergePacks(REPO_PACKS, overrides);
-    ENGLISH_TOPICS = topics('english');
-    CHINESE_TOPICS = topics('chinese');
-    ENGLISH_TOPIC_IDS = ENGLISH_TOPICS.map((topic) => topic.id);
-    CHINESE_TOPIC_IDS = CHINESE_TOPICS.map((topic) => topic.id);
-    try { localStorage.setItem(CONTENT_CACHE_KEY, JSON.stringify(overrides)); } catch { /* Offline storage may be unavailable. */ }
+    overridePacks = validatedPacks(body.packs);
+    rebuildPacks();
+    try { localStorage.setItem(CONTENT_CACHE_KEY, JSON.stringify(overridePacks)); } catch { /* Offline storage may be unavailable. */ }
     return true;
   } catch {
     return false;
@@ -89,6 +126,7 @@ export function isEnglishTopic(id: string): boolean { return ENGLISH_TOPIC_IDS.i
 export function isChineseTopic(id: string): boolean { return CHINESE_TOPIC_IDS.includes(id); }
 
 export function sampleBank(subject: QuestionPack['subject'], topic: string, difficulty: Difficulty, count: number, rng: Rng, excludeIds: readonly string[] = []): Question[] {
+  if (!loadedSubjects.has(subject)) throw new Error(`${subject} content must be loaded before starting practice`);
   const pool = packs.filter((pack) => pack.subject === subject && (topic === ENGLISH_ALL || pack.topic === topic)).flatMap((pack) => pack.questions.filter((q) => q.difficulty === difficulty).map((q) => ({ ...q, id: `${subject}:${pack.id}:${q.id}`, topic: pack.topic })));
   const excluded = new Set(excludeIds);
   const selected: (BankQuestion & { topic: string })[] = [];

@@ -53,8 +53,23 @@ export function generateDailySession(date: string = todayDateString()): Question
   ]).map((q, i) => ({ ...q, id: `${q.id}-daily-${i}`, difficulty: 'standard' as const }));
 }
 
+export function generateMixedSession(difficulty: Difficulty, seed: string | number = Date.now()): Question[] {
+  const rng = makeRng(`mixed-three-subjects-${seed}`);
+  const history = getEnglishServedIds();
+  const language = [
+    ...sampleBank('english', ENGLISH_ALL, difficulty, 3, rng, history),
+    ...sampleBank('chinese', ENGLISH_ALL, difficulty, 3, rng, history),
+  ];
+  recordEnglishServedIds(language.map((question) => question.id));
+  return rng.shuffle([
+    ...mathQuestions(MIXED_TOPIC_ID, difficulty, 4, rng),
+    ...language,
+  ]).map((question, index) => ({ ...question, id: `${question.id}-mixed-${index}`, difficulty }));
+}
+
 export function generateSession(topicId: string, difficulty: Difficulty, seed: string | number = Date.now()): Question[] {
   if (topicId === DAILY_TOPIC_ID) return generateDailySession();
+  if (topicId === MIXED_TOPIC_ID) return generateMixedSession(difficulty, seed);
   const rng = makeRng(seed);
   const chinese = isChineseTopic(topicId) || topicId === CHINESE_MIXED_TOPIC_ID;
   if (chinese || isEnglishTopic(topicId) || topicId === ENGLISH_MIXED_TOPIC_ID) {

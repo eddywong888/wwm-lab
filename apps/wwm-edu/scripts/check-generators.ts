@@ -9,12 +9,14 @@ import { validatePack } from '../src/content/schema';
 import { BADGE_DEFS, computeBadges, newlyEarnedBadges } from '../src/engine/badges';
 import type { EduState, TopicProgress } from '../src/store/local';
 
-import { REPO_PACKS } from '../src/engine/english';
+import { ensureAllLanguageContent, REPO_PACKS } from '../src/engine/english';
 import { checkContentIntegrity } from './check-content';
 
 const ITERATIONS = 1000;
 const DIFFICULTIES: Difficulty[] = ['standard', 'advanced'];
 const MIN_QUESTIONS_PER_PACK = 60;
+
+await ensureAllLanguageContent();
 
 let failures = 0;
 let totalChecked = 0;
@@ -126,6 +128,7 @@ function progress(attempts: number, correct: number, bestStreak: number, stars: 
 function baseState(overrides: Partial<EduState> = {}): EduState {
   return {
     lang: 'en',
+    subject: 'math',
     difficulty: 'standard',
     muted: false,
     perTopic: {},
@@ -153,6 +156,7 @@ function badgeCheck(label: string, condition: boolean) {
 // Real topic ids to use as fixtures (excludes mixed/english-mixed/daily pseudo-ids).
 const mathIds = MATH_GENERATORS.map((g) => g.meta.id);
 const englishIds = ['grammar', 'vocabulary', 'sentences', 'comprehension'];
+const chineseIds = ['chinese-vocabulary', 'chinese-sentences', 'chinese-comprehension', 'chinese-writing'];
 
 function stateForTopicMaster(masteredCount: number): EduState {
   const ids = [...mathIds, ...englishIds].slice(0, masteredCount);
@@ -203,6 +207,12 @@ function stateForWordWizard(topicCount: number): EduState {
   return baseState({ perTopic });
 }
 
+function stateForChineseChampion(topicCount: number): EduState {
+  const perTopic: Record<string, TopicProgress> = {};
+  for (const id of chineseIds.slice(0, topicCount)) perTopic[id] = progress(1, 1, 1, 0);
+  return baseState({ perTopic });
+}
+
 function tierOf(state: EduState, badgeId: string) {
   return computeBadges(state).find((b) => b.def.id === badgeId)!;
 }
@@ -221,6 +231,7 @@ function badgeDef(badgeId: string) {
     ['question-crusher', stateForQuestionCrusher],
     ['math-explorer', stateForMathExplorer],
     ['word-wizard', stateForWordWizard],
+    ['chinese-champion', stateForChineseChampion],
   ];
   for (const [id, build] of cases) {
     const bronze = badgeDef(id).tiers[0].threshold;
@@ -243,6 +254,7 @@ function badgeDef(badgeId: string) {
     ['question-crusher', stateForQuestionCrusher],
     ['math-explorer', stateForMathExplorer],
     ['word-wizard', stateForWordWizard],
+    ['chinese-champion', stateForChineseChampion],
   ];
   for (const [id, build] of cases) {
     const gold = badgeDef(id).tiers[2].threshold;
@@ -334,7 +346,7 @@ function badgeDef(badgeId: string) {
   );
 }
 
-console.log(`Badge checks complete (${BADGE_DEFS.length} badge defs, ${mathIds.length} math topics, ${englishIds.length} English topics considered).`);
+console.log(`Badge checks complete (${BADGE_DEFS.length} badge defs, ${mathIds.length} math topics, ${englishIds.length} English topics, ${chineseIds.length} Chinese topics considered).`);
 
 checkContentIntegrity();
 

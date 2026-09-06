@@ -1,4 +1,4 @@
-import type { AnswerRecord, Difficulty, Lang } from '../engine/types';
+import type { AnswerRecord, Difficulty, Lang, Subject } from '../engine/types';
 
 const STORAGE_KEY = 'wwm-edu:v1';
 
@@ -38,6 +38,7 @@ export interface ReviewSkillProgress {
 
 export interface EduState {
   lang: Lang;
+  subject: Subject;
   difficulty: Difficulty;
   muted: boolean;
   perTopic: Record<string, TopicProgress>;
@@ -56,6 +57,7 @@ export interface EduState {
 
 const DEFAULT_STATE: EduState = {
   lang: 'en',
+  subject: 'math',
   difficulty: 'standard',
   muted: false,
   perTopic: {},
@@ -102,6 +104,7 @@ function sanitize(raw: unknown): EduState {
   if (!raw || typeof raw !== 'object') return { ...DEFAULT_STATE, perTopic: {}, englishServedIds: [], dailyResults: {}, reviewSkills: {} };
   const o = raw as Record<string, unknown>;
   const lang: Lang = o.lang === 'zh' ? 'zh' : 'en';
+  const subject: Subject = o.subject === 'english' || o.subject === 'chinese' ? o.subject : 'math';
   const difficulty: Difficulty = o.difficulty === 'advanced' ? 'advanced' : 'standard';
   const muted = typeof o.muted === 'boolean' ? o.muted : false;
   const perTopic: Record<string, TopicProgress> = {};
@@ -126,7 +129,7 @@ function sanitize(raw: unknown): EduState {
     }
   }
   const account: Account | undefined = isAccount(o.account) ? o.account : undefined;
-  return { lang, difficulty, muted, perTopic, englishServedIds, dailyResults, reviewSkills, account };
+  return { lang, subject, difficulty, muted, perTopic, englishServedIds, dailyResults, reviewSkills, account };
 }
 
 export function loadState(): EduState {

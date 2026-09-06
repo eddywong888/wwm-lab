@@ -7,13 +7,14 @@ import Leaderboard from './screens/Leaderboard';
 import Badges from './screens/Badges';
 import Admin from './screens/Admin';
 import { getDueReviewSkills, loadState, updateState, recordSession, recordDailyResult, recordReviewProgress } from './store/local';
-import type { AnswerRecord, Difficulty, Lang, Question } from './engine/types';
+import type { AnswerRecord, Difficulty, Lang, Question, Subject } from './engine/types';
 import { unlockAudio } from './audio/sfx';
-import { DAILY_TOPIC_ID, generateReviewSession, REVIEW_TOPIC_ID, todayDateString } from './engine/session';
+import { DAILY_TOPIC_ID, generateReviewSession, MIXED_TOPIC_ID, REVIEW_TOPIC_ID, todayDateString } from './engine/session';
 import { pushProgress, pushLeaderboard } from './store/sync';
 import { signIn, signOut } from './store/account';
-import { refreshEnglishContent } from './engine/english';
+import { ensureAllLanguageContent, ensureSubjectContent, isChineseTopic, isEnglishTopic, refreshEnglishContent } from './engine/english';
 import { computeBadges, newlyEarnedBadges, type EarnedBadge } from './engine/badges';
+import { t, UI_STRINGS } from './engine/i18n';
 
 type Screen = 'home' | 'exercise' | 'results' | 'leaderboard' | 'admin' | 'badges';
 
@@ -29,6 +30,7 @@ export default function App() {
   const [lastResult, setLastResult] = useState<{ answers: AnswerRecord[]; correct: number; total: number; bestStreak: number } | null>(null);
   const [newBadges, setNewBadges] = useState<EarnedBadge[]>([]);
   const [reviewQuestions, setReviewQuestions] = useState<Question[] | null>(null);
+  const [contentStatus, setContentStatus] = useState<'idle' | 'loading' | 'error'>('idle');
 
   // Hash-based route for the hidden admin content-override page — never
   // linked from any UI, reachable only by visiting #admin directly.
@@ -39,6 +41,16 @@ export default function App() {
     window.addEventListener('hashchange', onHashChange);
     return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = state.lang === 'zh' ? 'zh-Hans' : 'en';
+  }, [state.lang]);
+
+  useEffect(() => {
+    if (state.subject !== 'math') {
+      void ensureSubjectContent(state.subject).catch(() => setContentStatus('error'));
+    }
+  }, [state.subject]);
 
   // Content overrides (Phase 3 KV packs) and, if already signed in,
   // server progress — both fire-and-forget, the app works fully offline.
@@ -57,6 +69,13 @@ export default function App() {
     setState(updateState({ difficulty }));
   }
 
+  function changeSubject(subject: Subject) {
+    setState(updateState({ subject }));
+    if (subject !== 'math') {
+      void ensureSubjectContent(subject).catch(() => setContentStatus('error'));
+    }
+  }
+
   function handleMuteChange(muted: boolean) {
     setState(updateState({ muted }));
   }
@@ -70,7 +89,24 @@ export default function App() {
     setState(signOut());
   }
 
-  function selectTopic(id: string) {
+  async function prepareTopicContent(id: string): Promise<boolean> {
+    const needsBoth = id === MIXED_TOPIC_ID || id === DAILY_TOPIC_ID;
+    const subject = isEnglishTopic(id) ? 'english' : isChineseTopic(id) ? 'chinese' : null;
+    if (!needsBoth && !subject) return true;
+    setContentStatus('loading');
+    try {
+      if (needsBoth) await ensureAllLanguageContent();
+      else if (subject) await ensureSubjectContent(subject);
+      setContentStatus('idle');
+      return true;
+    } catch {
+      setContentStatus('error');
+      return false;
+    }
+  }
+
+  async function selectTopic(id: string) {
+    if (!await prepareTopicContent(id)) return;
     unlockAudio();
     setReviewQuestions(null);
     setTopicId(id);
@@ -118,8 +154,19 @@ export default function App() {
     setScreen('results');
   }
 
-  function practiceWeakAreas() {
+  async function practiceWeakAreas() {
     const skills = getDueReviewSkills(state);
+    setContentStatus('loading');
+    try {
+      await Promise.all([
+        skills.some((skill) => isEnglishTopic(skill.topicId)) ? ensureSubjectContent('english') : Promise.resolve(),
+        skills.some((skill) => isChineseTopic(skill.topicId)) ? ensureSubjectContent('chinese') : Promise.resolve(),
+      ]);
+      setContentStatus('idle');
+    } catch {
+      setContentStatus('error');
+      return;
+    }
     const questions = generateReviewSession(skills);
     if (questions.length === 0) return;
     unlockAudio();
@@ -131,7 +178,7 @@ export default function App() {
 
   function retrySameTopic() {
     if (topicId === REVIEW_TOPIC_ID) {
-      practiceWeakAreas();
+      void practiceWeakAreas();
       return;
     }
     setSessionKey((k) => k + 1);
@@ -146,12 +193,18 @@ export default function App() {
   }
 
   return (
-    <main className="app" onPointerDownCapture={unlockAudio}>
+    <main className="app" onPointerDownCapture={unlockAudio} aria-busy={contentStatus === 'loading'}>
+      {contentStatus !== 'idle' && (
+        <div className={`app__content-status app__content-status--${contentStatus}`} role={contentStatus === 'error' ? 'alert' : 'status'}>
+          {t(contentStatus === 'loading' ? UI_STRINGS.loadingPractice : UI_STRINGS.loadingPracticeError, state.lang)}
+        </div>
+      )}
       {screen === 'home' && (
         <Home
           state={state}
           onChangeLang={changeLang}
           onChangeDifficulty={changeDifficulty}
+          onChangeSubject={changeSubject}
           onSelectTopic={selectTopic}
           onMuteChange={handleMuteChange}
           onSignIn={handleSignIn}

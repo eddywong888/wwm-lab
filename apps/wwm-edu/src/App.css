@@ -17,6 +17,28 @@
   pointer-events: none;
 }
 
+.app__content-status {
+  position: fixed;
+  z-index: 20;
+  top: 1rem;
+  left: 50%;
+  max-width: calc(100% - 2rem);
+  padding: 0.65rem 1rem;
+  transform: translateX(-50%);
+  border: 2px solid var(--edu-primary);
+  border-radius: 999px;
+  background: var(--edu-surface);
+  box-shadow: 0 5px 0 var(--edu-shadow);
+  color: var(--edu-primary-dark);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.app__content-status--error {
+  border-color: var(--edu-danger);
+  color: var(--edu-danger);
+}
+
 .app::before {
   top: 12rem;
   left: -6rem;

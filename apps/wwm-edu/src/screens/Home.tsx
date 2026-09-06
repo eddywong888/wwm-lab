@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './Home.css';
-import type { Difficulty, Lang } from '../engine/types';
+import type { Difficulty, Lang, Subject } from '../engine/types';
 import { MATH_GENERATORS } from '../engine/math';
 import { ENGLISH_TOPICS, CHINESE_TOPICS } from '../engine/english';
 import { DAILY_TOPIC_ID, MIXED_TOPIC_ID, QUESTIONS_PER_SESSION, todayDateString } from '../engine/session';
@@ -16,6 +16,7 @@ interface HomeProps {
   state: EduState;
   onChangeLang: (lang: Lang) => void;
   onChangeDifficulty: (difficulty: Difficulty) => void;
+  onChangeSubject: (subject: Subject) => void;
   onSelectTopic: (topicId: string) => void;
   onMuteChange: (muted: boolean) => void;
   onSignIn: (nickname: string, pin: string) => Promise<void>;
@@ -25,8 +26,6 @@ interface HomeProps {
   dueReviewCount: number;
   onPracticeWeakAreas: () => void;
 }
-
-type Subject = 'math' | 'english' | 'chinese';
 
 function starsForScore(score: number): number {
   if (score >= 9) return 3;
@@ -39,6 +38,7 @@ export default function Home({
   state,
   onChangeLang,
   onChangeDifficulty,
+  onChangeSubject,
   onSelectTopic,
   onMuteChange,
   onSignIn,
@@ -48,9 +48,8 @@ export default function Home({
   dueReviewCount,
   onPracticeWeakAreas,
 }: HomeProps) {
-  const { lang, difficulty, perTopic, muted, account } = state;
+  const { lang, subject, difficulty, perTopic, muted, account } = state;
   const [showAccountModal, setShowAccountModal] = useState(false);
-  const [subject, setSubject] = useState<Subject>('math');
   const termOneGenerators = MATH_GENERATORS.filter((generator) => generator.meta.term !== 2);
   const termTwoGenerators = MATH_GENERATORS.filter((generator) => generator.meta.term === 2);
   const today = todayDateString();
@@ -64,7 +63,7 @@ export default function Home({
 
   function chooseSubject(next: Subject) {
     playButtonTap();
-    setSubject(next);
+    onChangeSubject(next);
   }
 
   return (

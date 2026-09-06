@@ -1,4 +1,5 @@
 export type Lang = 'en' | 'zh';
+export type Subject = 'math' | 'english' | 'chinese';
 
 export interface Bilingual {
   en: string;

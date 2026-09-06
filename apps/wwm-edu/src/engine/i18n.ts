@@ -55,6 +55,8 @@ export const UI_STRINGS = {
   recommendedNext: { en: 'Recommended next', zh: '下一步建议' } satisfies Bilingual,
   practiceWeakAreas: { en: 'Practice weak areas', zh: '练习薄弱项目' } satisfies Bilingual,
   weakAreaPractice: { en: 'Weak-area practice', zh: '薄弱项目练习' } satisfies Bilingual,
+  loadingPractice: { en: 'Preparing your practice…', zh: '正在准备练习…' } satisfies Bilingual,
+  loadingPracticeError: { en: 'Practice could not load. Please try again.', zh: '练习载入失败，请重试。' } satisfies Bilingual,
 
   // Phase 3 — accounts
   profile: { en: 'Profile', zh: '账户' } satisfies Bilingual,

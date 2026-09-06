@@ -10,10 +10,10 @@ interface EduCard {
 
 const EDU_CARDS: EduCard[] = [
   {
-    title: 'WWM Edu — Standard 4 Math & English',
+    title: 'WWM Edu — Standard 4 Math, English & Chinese',
     description:
-      'Daily bilingual practice exercises aligned to the Malaysian KSSR Standard 4 syllabus. Procedurally generated questions (never a fixed worksheet), English + Simplified Chinese toggle, standard and advanced difficulty tiers, streaks and sound effects to keep kids motivated.',
-    tags: ['education', 'kssr', 'bilingual'],
+      'Daily Mathematics, English, and Chinese practice for Malaysian KSSR Standard 4. Includes procedural maths, curated language questions, bilingual guidance, standard and advanced tiers, mistake review, and weak-area practice.',
+    tags: ['education', 'kssr', 'three subjects'],
     liveUrl: '/apps/wwm-edu/',
     status: 'live',
   },

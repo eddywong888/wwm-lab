@@ -15,7 +15,7 @@
 import type { Bilingual } from './types';
 import type { EduState } from '../store/local';
 import { MATH_GENERATORS } from './math';
-import { ENGLISH_TOPICS } from './english';
+import { CHINESE_TOPICS, ENGLISH_TOPICS } from './english';
 import { MIXED_TOPIC_ID, ENGLISH_MIXED_TOPIC_ID, CHINESE_MIXED_TOPIC_ID, DAILY_TOPIC_ID, REVIEW_TOPIC_ID, QUESTIONS_PER_SESSION } from './session';
 
 export type BadgeTier = 'bronze' | 'silver' | 'gold';
@@ -207,6 +207,24 @@ export const BADGE_DEFS: BadgeDef[] = [
     progress: (state) => {
       const englishIds = new Set(ENGLISH_TOPICS.map((t) => t.id));
       return realTopicEntries(state).filter(([id, p]) => englishIds.has(id) && p.attempts > 0).length;
+    },
+  },
+  {
+    id: 'chinese-champion',
+    icon: '📙',
+    name: { en: 'Chinese Champion', zh: '华文小达人' },
+    description: {
+      en: 'Try more Chinese topics at least once to earn the next tier!',
+      zh: '尝试更多不同的华文课题，即可解锁下一等级！',
+    },
+    tiers: [
+      { tier: 'bronze', threshold: 1 },
+      { tier: 'silver', threshold: 2 },
+      { tier: 'gold', threshold: 4 },
+    ],
+    progress: (state) => {
+      const chineseIds = new Set(CHINESE_TOPICS.map((t) => t.id));
+      return realTopicEntries(state).filter(([id, p]) => chineseIds.has(id) && p.attempts > 0).length;
     },
   },
 ];

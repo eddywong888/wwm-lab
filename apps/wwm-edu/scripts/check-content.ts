@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { REPO_PACKS, sampleBank, ENGLISH_TOPICS, CHINESE_TOPICS, mergePacks } from '../src/engine/english';
 import { validatePack, normalizeText } from '../src/content/schema';
 import { makeRng } from '../src/engine/rng';
-import { generateSession, generateDailySession, generateReviewSession, questionFingerprint } from '../src/engine/session';
+import { generateSession, generateDailySession, generateReviewSession, MIXED_TOPIC_ID, questionFingerprint } from '../src/engine/session';
 import { MATH_GENERATORS } from '../src/engine/math';
 import type { AnswerRecord, Question } from '../src/engine/types';
 import { applyReviewProgress, getDueReviewSkills, type EduState } from '../src/store/local';
@@ -165,6 +165,14 @@ export function checkContentIntegrity() {
     assert.equal(daily.filter((q) => CHINESE_TOPICS.some((t) => t.id === q.topic)).length, 3);
     assert.equal(new Set(daily.map(questionFingerprint)).size, 10);
   }
+  for (const difficulty of ['standard', 'advanced'] as const) {
+    const mixed = generateSession(MIXED_TOPIC_ID, difficulty, `three-subject-mixed-${difficulty}`);
+    assert.equal(mixed.length, 10);
+    assert.equal(mixed.filter((q) => MATH_GENERATORS.some((generator) => generator.meta.id === q.topic)).length, 4);
+    assert.equal(mixed.filter((q) => ENGLISH_TOPICS.some((topic) => topic.id === q.topic)).length, 3);
+    assert.equal(mixed.filter((q) => CHINESE_TOPICS.some((topic) => topic.id === q.topic)).length, 3);
+    assert.ok(mixed.every((question) => question.difficulty === difficulty));
+  }
   const good = structuredClone(REPO_PACKS[0]);
   for (const mutate of [
     (p: typeof good) => { p.questions[0].choices[1] = ` ${p.questions[0].choices[0]} `; },
@@ -186,6 +194,7 @@ export function checkContentIntegrity() {
   const reviewNow = Date.UTC(2026, 8, 5);
   const reviewState: EduState = {
     lang: 'en',
+    subject: 'math',
     difficulty: 'standard',
     muted: true,
     perTopic: {},

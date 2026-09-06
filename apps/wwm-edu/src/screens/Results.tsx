@@ -6,6 +6,7 @@ import { playSessionFanfare, playBadgeUnlock } from '../audio/sfx';
 import type { EarnedBadge } from '../engine/badges';
 import type { ReviewSkillProgress } from '../store/local';
 import { topicDetails } from '../engine/topic-meta';
+import { isChineseTopic, isEnglishTopic } from '../engine/english';
 
 interface ResultsProps {
   lang: Lang;
@@ -110,18 +111,18 @@ export default function Results({ lang, correctCount, totalCount, bestStreak, ne
               {mistakes.map((answer, index) => (
                 <article className="results__mistake" key={`${answer.question.id}-${index}`}>
                   <p className="results__mistake-topic">{t(topicDetails(answer.question.topic).name, lang)}</p>
-                  <p className="results__mistake-prompt">{t(answer.question.prompt, lang)}</p>
+                  <p className="results__mistake-prompt" lang={isChineseTopic(answer.question.topic) || lang === 'zh' ? 'zh-Hans' : 'en'}>{t(answer.question.prompt, lang)}</p>
                   <dl>
                     <div>
                       <dt>{t(UI_STRINGS.yourAnswer, lang)}</dt>
-                      <dd>{answer.givenAnswer || '—'}</dd>
+                      <dd lang={isChineseTopic(answer.question.topic) ? 'zh-Hans' : isEnglishTopic(answer.question.topic) ? 'en' : undefined}>{answer.givenAnswer || '—'}</dd>
                     </div>
                     <div>
                       <dt>{t(UI_STRINGS.correctAnswerWas, lang)}</dt>
-                      <dd>{answer.question.answer}</dd>
+                      <dd lang={isChineseTopic(answer.question.topic) ? 'zh-Hans' : isEnglishTopic(answer.question.topic) ? 'en' : undefined}>{answer.question.answer}</dd>
                     </div>
                   </dl>
-                  {answer.question.explain && <p className="results__mistake-explain">💡 {t(answer.question.explain, lang)}</p>}
+                  {answer.question.explain && <p className="results__mistake-explain" lang={isChineseTopic(answer.question.topic) || lang === 'zh' ? 'zh-Hans' : 'en'}>💡 {t(answer.question.explain, lang)}</p>}
                 </article>
               ))}
             </div>

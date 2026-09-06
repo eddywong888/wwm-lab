@@ -5,6 +5,27 @@ Version scheme: `0.<phase>.<patch>` until the full 4-phase plan is complete, the
 
 ---
 
+## v1.4.0 — Three-subject polish and lazy content loading (2026-09-06)
+
+- Mixed Practice now matches its label: every session contains four Mathematics, three English,
+  and three Chinese questions at the selected difficulty. Daily Challenge remains its separate,
+  deterministic Standard-tier session.
+- The selected subject tab is stored with the existing local preferences, so returning from a
+  topic no longer resets English or Chinese learners to Mathematics.
+- Added Chinese Champion / 华文小达人 with bronze, silver, and gold progress across the four
+  Chinese topics. Review and mixed pseudo-topics remain excluded from achievement counts.
+- Updated the landing-page card to advertise Mathematics, English, and Chinese as three complete
+  subjects, including mistake review and weak-area practice.
+- The document language now follows the interface (`en` or `zh-Hans`), with question-level
+  language hints for assessed English and Chinese text to improve screen-reader pronunciation.
+- Split the bundled language banks into on-demand English and Chinese chunks. The initial
+  production JavaScript fell from 703.16 kB to 311.86 kB (190.79 kB to 98.97 kB gzip), and the
+  previous large-chunk build warning is gone. Selecting a language preloads its bank; mixed,
+  daily, and weak-area sessions await every subject they need and show a bilingual loading status.
+- Verified all 24,000 generated Mathematics questions, 600 curated language questions, 4/3/3
+  mixed-session composition in both tiers, nine badge definitions, TypeScript, app and landing
+  lint, production chunk output, and interactive browser flows.
+
 ## v1.3.0 — Mistake review and weak-area practice (2026-09-05)
 
 - Results now retain the completed session long enough to show every missed question, the

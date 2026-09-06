@@ -4,6 +4,7 @@ import type { Lang, Question } from '../engine/types';
 import { t, UI_STRINGS } from '../engine/i18n';
 import Keypad from './Keypad';
 import { playButtonTap } from '../audio/sfx';
+import { isChineseTopic, isEnglishTopic } from '../engine/english';
 
 interface QuestionCardProps {
   question: Question;
@@ -19,6 +20,8 @@ export default function QuestionCard({ question, lang, onAnswer, onNext, nextLab
   const [feedback, setFeedback] = useState<FeedbackState>('none');
   const [selected, setSelected] = useState<string | null>(null);
   const [numericValue, setNumericValue] = useState('');
+  const promptLang = isChineseTopic(question.topic) || lang === 'zh' ? 'zh-Hans' : 'en';
+  const answerLang = isChineseTopic(question.topic) ? 'zh-Hans' : isEnglishTopic(question.topic) ? 'en' : promptLang;
 
   function answersMatch(given: string, expected: string): boolean {
     if (given === expected) return true;
@@ -39,7 +42,7 @@ export default function QuestionCard({ question, lang, onAnswer, onNext, nextLab
 
   return (
     <div className={`question-card ${feedback === 'correct' ? 'edu-bounce' : ''} ${feedback === 'wrong' ? 'edu-shake' : ''}`}>
-      <p className="question-card__prompt">{t(question.prompt, lang)}</p>
+      <p className="question-card__prompt" lang={promptLang}>{t(question.prompt, lang)}</p>
 
       {question.kind === 'mcq' && question.choices && (
         <div className="question-card__choices">
@@ -58,7 +61,7 @@ export default function QuestionCard({ question, lang, onAnswer, onNext, nextLab
                 onClick={() => { playButtonTap(); submit(choice); }}
               >
                 <span className="question-card__choice-key" aria-hidden="true">{String.fromCharCode(65 + index)}</span>
-                <span>{choice}</span>
+                <span lang={answerLang}>{choice}</span>
               </button>
             );
           })}
@@ -84,11 +87,11 @@ export default function QuestionCard({ question, lang, onAnswer, onNext, nextLab
             </p>
             {feedback === 'wrong' && (
               <p className="question-card__feedback-answer">
-                {t(UI_STRINGS.correctAnswerWas, lang)}: <strong>{question.answer}</strong>
+                {t(UI_STRINGS.correctAnswerWas, lang)}: <strong lang={answerLang}>{question.answer}</strong>
               </p>
             )}
             {question.explain && (
-              <p className="question-card__feedback-explain">{t(question.explain, lang)}</p>
+              <p className="question-card__feedback-explain" lang={promptLang}>{t(question.explain, lang)}</p>
             )}
           </div>
           <button type="button" className="question-card__next" onClick={() => { playButtonTap(); onNext(); }}>
