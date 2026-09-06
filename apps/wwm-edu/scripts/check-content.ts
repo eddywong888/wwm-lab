@@ -2,10 +2,11 @@ import assert from 'node:assert/strict';
 import { REPO_PACKS, sampleBank, ENGLISH_TOPICS, CHINESE_TOPICS, mergePacks } from '../src/engine/english';
 import { validatePack, normalizeText } from '../src/content/schema';
 import { makeRng } from '../src/engine/rng';
-import { generateSession, generateDailySession, generateReviewSession, MIXED_TOPIC_ID, questionFingerprint } from '../src/engine/session';
+import { generateSession, generateDailySession, generateReviewSession, MIXED_TOPIC_ID, questionFingerprint, scoredSessionAnswers } from '../src/engine/session';
 import { MATH_GENERATORS } from '../src/engine/math';
 import type { AnswerRecord, Question } from '../src/engine/types';
-import { applyReviewProgress, getDueReviewSkills, type EduState } from '../src/store/local';
+import { applyReviewProgress, getDueReviewSkills, starsForSession, type EduState } from '../src/store/local';
+import { CONSTRUCTED_TOPICS, validateConstructedContent } from '../src/engine/constructed';
 
 function numeric(text: string): number {
   return Number(text.replace(/RM|,/g, ''));
@@ -128,6 +129,20 @@ export function checkContentIntegrity() {
       assert.ok(pool.length >= 30, `${pack.id}/${tier}: inadequate bank depth`);
     }
   }
+  const chineseQuestions = REPO_PACKS.filter((pack) => pack.subject === 'chinese').flatMap((pack) => pack.questions);
+  assert.equal(chineseQuestions.length, 240, 'Expected all 240 Chinese bank questions in the editorial audit');
+  for (const question of chineseQuestions) {
+    assert.equal(question.prompt.en, question.prompt.zh, `${question.id}: assessed Chinese must remain unchanged across interface languages`);
+    assert.equal(question.explain?.en, question.explain?.zh, `${question.id}: Chinese explanation must remain unchanged across interface languages`);
+    assert.doesNotMatch(question.prompt.zh, /是因为怎样？|周一|教室|橡皮和尺/, `${question.id}: non-preferred or non-idiomatic wording`);
+    assert.ok(/[？。：“”……）]$/.test(question.prompt.zh), `${question.id}: prompt needs terminal punctuation`);
+  }
+  assert.deepEqual(validateConstructedContent(), []);
+  assert.equal(starsForSession(7, 7), 3);
+  assert.equal(starsForSession(5, 7), 2);
+  assert.equal(starsForSession(4, 7), 1);
+  assert.equal(starsForSession(3, 7), 0);
+  assert.equal(starsForSession(9, 10), 3);
   let sessions = 0;
   for (const subject of ['english', 'chinese'] as const) {
     const topics = subject === 'english' ? ENGLISH_TOPICS : CHINESE_TOPICS;
@@ -172,6 +187,45 @@ export function checkContentIntegrity() {
     assert.equal(mixed.filter((q) => ENGLISH_TOPICS.some((topic) => topic.id === q.topic)).length, 3);
     assert.equal(mixed.filter((q) => CHINESE_TOPICS.some((topic) => topic.id === q.topic)).length, 3);
     assert.ok(mixed.every((question) => question.difficulty === difficulty));
+  }
+  for (const topic of CONSTRUCTED_TOPICS) for (const difficulty of ['standard', 'advanced'] as const) {
+    const one = generateSession(topic.id, difficulty, `studio:${topic.id}:${difficulty}:1`);
+    const two = generateSession(topic.id, difficulty, `studio:${topic.id}:${difficulty}:2`);
+    for (const questions of [one, two]) {
+      assert.equal(questions.length, 10);
+      assert.equal(questions.filter((question) => question.kind === 'self-check').length, 3);
+      assert.equal(questions.filter((question) => question.kind !== 'self-check').length, 7);
+      assert.equal(new Set(questions.map((question) => question.id)).size, 10);
+      for (const question of questions.filter((item) => item.kind === 'self-check')) {
+        assert.ok(question.selfReview && question.selfReview.criteria.length >= 3);
+        assert.ok(question.selfReview.criteria.every((criterion) => criterion.en.trim() && criterion.zh.trim()));
+      }
+      const records = questions.map((question): AnswerRecord => ({ question, givenAnswer: question.answer, correct: true, scored: question.kind !== 'self-check', difficulty }));
+      assert.equal(scoredSessionAnswers(records).length, 7, 'Self-checks must be excluded from objective score calculations');
+      assert.ok(scoredSessionAnswers(records).every((record) => record.question.kind !== 'self-check'));
+    }
+    const promptById = new Map(one.filter((question) => question.kind === 'self-check').map((question) => [question.id, question.prompt]));
+    for (const question of two.filter((item) => item.kind === 'self-check')) {
+      const earlier = promptById.get(question.id);
+      if (earlier) assert.deepEqual(question.prompt, earlier, `${question.id}: stable id changed prompt`);
+    }
+    assert.ok(new Set([...one, ...two].filter((question) => question.kind === 'self-check').map((question) => normalizeText(question.prompt.en))).size >= 3);
+  }
+
+  for (const topic of ['data', 'time', 'measurement', 'shapes'] as const) {
+    let visualCount = 0;
+    for (let seed = 0; seed < 100; seed++) for (const question of generateSession(topic, 'standard', `visual:${topic}:${seed}`)) {
+      if (!question.visual) continue;
+      visualCount++;
+      assert.ok(question.visual.label.en.trim() && question.visual.label.zh.trim());
+      if (question.kind === 'mcq') {
+        assert.equal(question.choices?.length, 4);
+        assert.equal(new Set(question.choices).size, 4);
+        assert.ok(question.choices.includes(question.answer));
+      }
+      if (question.visual.type === 'ruler') assert.equal(Number(question.answer), question.visual.endCm - question.visual.startCm);
+    }
+    assert.ok(visualCount > 50, `${topic}: visual generator was not exercised enough`);
   }
   const good = structuredClone(REPO_PACKS[0]);
   for (const mutate of [

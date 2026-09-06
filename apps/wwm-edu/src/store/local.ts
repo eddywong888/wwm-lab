@@ -157,10 +157,16 @@ export function updateState(patch: Partial<EduState>): EduState {
   return next;
 }
 
+export function starsForSession(correctCount: number, totalCount: number): number {
+  if (totalCount <= 0) return 0;
+  const ratio = correctCount / totalCount;
+  return ratio >= 0.9 ? 3 : ratio >= 0.7 ? 2 : ratio >= 0.5 ? 1 : 0;
+}
+
 export function recordSession(topicId: string, correctCount: number, totalCount: number, bestStreakThisSession: number): EduState {
   const state = loadState();
   const prev: TopicProgress = state.perTopic[topicId] ?? { attempts: 0, correct: 0, bestStreak: 0, stars: 0 };
-  const stars = correctCount >= 9 ? 3 : correctCount >= 7 ? 2 : correctCount >= 5 ? 1 : 0;
+  const stars = starsForSession(correctCount, totalCount);
   const updated: TopicProgress = {
     attempts: prev.attempts + totalCount,
     correct: prev.correct + correctCount,

@@ -83,7 +83,9 @@ export function extensionQuestion(topic: string, rng: Rng, difficulty: Difficult
       const saved = a + b;
       const weeks = c;
       answer = String(advanced ? saved * weeks - b : saved * weeks);
-      prompt = { en: `Mei saves RM${saved} each week for ${weeks} weeks.${advanced ? ` She then spends RM${b} on a notebook.` : ''} How much of this money remains, in RM?`, zh: `美玲每星期存 RM${saved}，连续存了 ${weeks} 星期。${advanced ? `她接着花 RM${b} 买笔记本。` : ''}这笔钱还剩多少令吉？` };
+      prompt = advanced
+        ? { en: `Mei saves RM${saved} each week for ${weeks} weeks. She then spends RM${b} on a notebook. How much money remains, in RM?`, zh: `美玲每星期存RM${saved}，连续存了${weeks}个星期。她接着花RM${b}买笔记本。这笔钱还剩多少令吉？` }
+        : { en: `Mei saves RM${saved} each week for ${weeks} weeks. How much has she saved altogether, in RM?`, zh: `美玲每星期存RM${saved}，连续存了${weeks}个星期。她一共存了多少令吉？` };
       explain = { en: `Savings = ${saved} × ${weeks} = RM${saved * weeks}.${advanced ? ` Subtract the expense: ${saved * weeks} − ${b} = RM${answer}.` : 'Keeping a savings record helps track a goal.'}`, zh: `存款为 ${saved} × ${weeks} = RM${saved * weeks}。${advanced ? `减去支出：${saved * weeks} − ${b} = RM${answer}。` : '记录储蓄能帮助我们了解目标进度。'}` };
       break;
     }

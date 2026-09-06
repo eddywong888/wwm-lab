@@ -6,7 +6,7 @@
     "en": "Chinese: Words in Context",
     "zh": "华文：字词运用"
   },
-  "version": 1,
+  "version": 2,
   "questions": [
     {
       "id": "zh-vocab-001",
@@ -145,8 +145,8 @@
       "id": "zh-vocab-008",
       "difficulty": "standard",
       "prompt": {
-        "en": "选词填空：今天轮到伟杰（ ）教室，他拿起扫帚开始扫地。",
-        "zh": "选词填空：今天轮到伟杰（ ）教室，他拿起扫帚开始扫地。"
+        "en": "选词填空：今天轮到伟杰（ ）课室，他拿起扫帚开始扫地。",
+        "zh": "选词填空：今天轮到伟杰（ ）课室，他拿起扫帚开始扫地。"
       },
       "choices": [
         "打扮",

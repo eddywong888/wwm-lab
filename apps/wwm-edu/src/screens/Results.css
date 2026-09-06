@@ -71,6 +71,8 @@
   margin-bottom: 1.35rem;
 }
 
+.results__self-check { margin: -0.55rem 0 1.35rem; padding: 0.7rem; border-radius: 12px; background: var(--edu-primary-soft); color: var(--edu-primary-dark); font-size: 0.78rem; font-weight: 800; }
+
 .results__summary-item {
   padding: 0.85rem 0.55rem;
   border-radius: 16px;

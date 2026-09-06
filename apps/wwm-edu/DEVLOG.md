@@ -5,6 +5,26 @@ Version scheme: `0.<phase>.<patch>` until the full 4-phase plan is complete, the
 
 ---
 
+## v1.5.0 — Constructed response and visual Mathematics (2026-09-06)
+
+- Added Maths Reasoning, English Writing, and Chinese Writing studios in the existing topic-card
+  interface. Each ten-item session combines three drafted self-checks with seven objectively
+  marked questions, so learners practise explaining and composing without losing normal practice.
+- Self-checks use a write-first flow, then reveal an age-appropriate example and a three-point
+  rubric. Learners may honestly leave unmet criteria unticked. These items are explicitly
+  unscored and excluded from accuracy, stars, streaks, badges, leaderboards, mistake review, and
+  weak-area scheduling; Results reports them separately.
+- Added dependency-free, accessible SVG bar charts, analogue clocks, angle diagrams, and
+  ruler-measurement questions. Every visual carries a bilingual text alternative, and its answer
+  is calculated from the same typed values used to draw it.
+- Completed an internal editorial audit of all 240 Chinese questions. Corrected concrete
+  clarity and consistency issues involving idiomatic question wording, direct-speech punctuation,
+  `而是`, answer-format cues, and Malaysian school terms such as `课室`, `橡皮擦`, and `星期一`.
+  This is an internal content review, not a credentialed teacher endorsement.
+- Added regression coverage for constructed prompt/model/rubric integrity, requested sentence
+  counts, stable IDs, unscored-answer filtering, session composition, four-choice visual
+  uniqueness, visual accessibility labels, and ruler answer calculations.
+
 ## v1.4.0 — Three-subject polish and lazy content loading (2026-09-06)
 
 - Mixed Practice now matches its label: every session contains four Mathematics, three English,

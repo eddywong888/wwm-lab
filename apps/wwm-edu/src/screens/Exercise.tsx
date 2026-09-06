@@ -34,10 +34,13 @@ export default function Exercise({ topicId, difficulty, lang, onFinish, onBackHo
 
   function handleAnswer(givenAnswer: string, correct: boolean) {
     const nextResults = [...results];
-    nextResults[index] = { question: current, givenAnswer, correct, difficulty: current.difficulty ?? difficulty };
+    const scored = current.kind !== 'self-check';
+    nextResults[index] = { question: current, givenAnswer, correct, scored, difficulty: current.difficulty ?? difficulty };
     setResults(nextResults);
 
-    if (correct) {
+    if (!scored) {
+      return;
+    } else if (correct) {
       playCorrectDing();
       setStreak((currentStreak) => {
         const next = currentStreak + 1;
@@ -70,7 +73,7 @@ export default function Exercise({ topicId, difficulty, lang, onFinish, onBackHo
             <span>{topic.icon} {t(topic.name, lang)}</span>
             <strong>{t(UI_STRINGS.question, lang)} {index + 1}/{questions.length}</strong>
           </div>
-          <ProgressDots total={questions.length} current={index} results={results.map((result) => result?.correct ?? null)} />
+          <ProgressDots total={questions.length} current={index} results={results.map((result) => result?.scored === false ? null : result?.correct ?? null)} />
         </div>
         <StreakBadge streak={streak} />
       </header>

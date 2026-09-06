@@ -1,7 +1,7 @@
 # WWM Edu Year 4 curriculum and content audit
 
-Audit date: 2026-09-05  
-Release reviewed: v1.2.0
+Audit date: 2026-09-06  
+Release reviewed: v1.5.0
 
 WWM Edu is an independent practice resource. It is not endorsed, approved, or
 published by Malaysia's Ministry of Education (KPM) or Examination Board. Topic
@@ -137,17 +137,37 @@ it is not a substitute for producing and receiving feedback on a full compositio
 
 ## Final audit result
 
+### v1.5 constructed-response and visual follow-up
+
+The app now covers a limited but meaningful part of the previously documented open-response
+gap. Three practice studios ask pupils to draft short English and Chinese messages, descriptions,
+narratives, explanations, and comparisons, or to show Mathematics reasoning and working. Each
+task provides a model response and concrete checklist after the learner writes. The app does not
+claim to understand or objectively mark free text: self-checks never enter scores, accuracy,
+stars, streaks, badges, leaderboards, mistake review, or weak-area scheduling. Seven conventional
+questions remain in each studio session so its objective result is still meaningful.
+
+Visual Mathematics now includes generated bar charts, clocks, angle diagrams, and ruler tasks.
+The SVGs use the same typed values as their answers and expose bilingual text alternatives. This
+improves interpretation of representations, but it still does not assess pupils drawing their own
+graphs or constructions.
+
+All 240 Chinese bank questions received a first-pass internal editorial review for idiomatic
+Mandarin, Malaysian school usage, punctuation, answer ambiguity, explanation quality, and Year 4
+reading load. The review corrected concrete wording and formatting issues and added automated
+guards for the full audited set. It was performed as an internal editorial and technical review;
+it is not a credentialed SJK(C) teacher endorsement, and classroom teacher review remains advised.
+
 | Audit dimension | Result | Evidence / limit |
 | --- | --- | --- |
-| Syllabus/topic coverage | Pass with stated gaps | 12 mathematics topics, four English topics, and four Chinese topics cover the major engine-compatible Year 4 strands above. Listening, speaking, handwriting, full compositions, drawing, and open investigations remain outside this engine. |
+| Syllabus/topic coverage | Pass with stated gaps | 12 mathematics topics, four English topics, four Chinese topics, and three response studios cover the major engine-compatible Year 4 strands above. Listening, speaking, handwriting assessment, learner-created diagrams, extended marked compositions, and open investigations remain outside this engine. |
 | Language quality | Pass | English ambiguity and explanation fixes were reviewed; Chinese uses simplified Malaysian school contexts and complete Chinese assessed text. Browser checks confirmed readable Chinese passages and feedback. |
-| Answer correctness | Pass | 24,000 generator invariant runs plus 8,652 independently recalculated maths answers passed. The check also rejects numerically equivalent fraction answer choices. |
+| Answer correctness | Pass | 24,000 generator invariant runs plus 7,940 independently recalculated maths answers passed. The check also rejects numerically equivalent fraction answer choices and verifies visual values from their typed source data. |
 | Duplication | Pass | No duplicate IDs or normalised prompts within a pack; complete sessions contain ten distinct questions. Deliberate reuse of one reading passage for different skills is retained, but each question stem and answer task is distinct. |
 | Difficulty balance | Pass with interpretation boundary | Curated banks total 300 Standard and 300 Advanced. Procedural generators run 1,000 times per topic per tier. Advanced means more context, inference, steps, or larger values within Year 4 limits; it is not an official grade. |
 | Assessment suitability | Pass for practice | Functional texts, retrieval, application, reasoning, and explanations support preparation. Exact MPT4 paper structure and marking are not claimed. |
-| Technical integrity | Pass | 576 complete language/maths session checks, 31 daily dates, malformed-pack cases, override precedence, TypeScript, app/API lint, production build, and browser checks passed. |
+| Technical integrity | Pass | 576 complete language/maths session checks, 31 daily dates, studio composition and unscored-boundary checks, visual accessibility and calculation checks, malformed-pack cases, override precedence, TypeScript, app lint, production build, and browser checks passed. |
 
-The production bundle is larger because 600 curated questions ship offline with
-the app. The build reports a chunk-size advisory, not a build failure. Keeping the
-banks bundled preserves offline availability; future code-splitting is an optional
-performance improvement rather than a content-correctness requirement.
+The 600 curated questions remain available offline after their subject chunk has loaded. English
+and Chinese banks are split into on-demand chunks, so the initial production bundle stays compact
+and the build completes without a chunk-size warning.

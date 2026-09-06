@@ -9,12 +9,13 @@ import Admin from './screens/Admin';
 import { getDueReviewSkills, loadState, updateState, recordSession, recordDailyResult, recordReviewProgress } from './store/local';
 import type { AnswerRecord, Difficulty, Lang, Question, Subject } from './engine/types';
 import { unlockAudio } from './audio/sfx';
-import { DAILY_TOPIC_ID, generateReviewSession, MIXED_TOPIC_ID, REVIEW_TOPIC_ID, todayDateString } from './engine/session';
+import { DAILY_TOPIC_ID, generateReviewSession, MIXED_TOPIC_ID, REVIEW_TOPIC_ID, scoredSessionAnswers, todayDateString } from './engine/session';
 import { pushProgress, pushLeaderboard } from './store/sync';
 import { signIn, signOut } from './store/account';
 import { ensureAllLanguageContent, ensureSubjectContent, isChineseTopic, isEnglishTopic, refreshEnglishContent } from './engine/english';
 import { computeBadges, newlyEarnedBadges, type EarnedBadge } from './engine/badges';
 import { t, UI_STRINGS } from './engine/i18n';
+import { constructedSubject } from './engine/constructed';
 
 type Screen = 'home' | 'exercise' | 'results' | 'leaderboard' | 'admin' | 'badges';
 
@@ -91,7 +92,8 @@ export default function App() {
 
   async function prepareTopicContent(id: string): Promise<boolean> {
     const needsBoth = id === MIXED_TOPIC_ID || id === DAILY_TOPIC_ID;
-    const subject = isEnglishTopic(id) ? 'english' : isChineseTopic(id) ? 'chinese' : null;
+    const studioSubject = constructedSubject(id);
+    const subject = isEnglishTopic(id) ? 'english' : isChineseTopic(id) ? 'chinese' : studioSubject === 'english' || studioSubject === 'chinese' ? studioSubject : null;
     if (!needsBoth && !subject) return true;
     setContentStatus('loading');
     try {
@@ -123,8 +125,9 @@ export default function App() {
   }
 
   function finishExercise(answers: AnswerRecord[], bestStreak: number) {
-    const correctCount = answers.filter((answer) => answer.correct).length;
-    const totalCount = answers.length;
+    const scoredAnswers = scoredSessionAnswers(answers);
+    const correctCount = scoredAnswers.filter((answer) => answer.correct).length;
+    const totalCount = scoredAnswers.length;
     const badgesBefore = computeBadges(state);
 
     if (topicId === DAILY_TOPIC_ID) {
@@ -132,7 +135,7 @@ export default function App() {
     } else if (topicId && topicId !== REVIEW_TOPIC_ID) {
       recordSession(topicId, correctCount, totalCount, bestStreak);
     }
-    const nextState = recordReviewProgress(answers, topicId === REVIEW_TOPIC_ID);
+    const nextState = recordReviewProgress(scoredAnswers, topicId === REVIEW_TOPIC_ID);
     setState(nextState);
     setNewBadges(newlyEarnedBadges(badgesBefore, computeBadges(nextState)));
 

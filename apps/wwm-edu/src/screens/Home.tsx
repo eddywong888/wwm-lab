@@ -11,6 +11,7 @@ import BadgeShelf from '../components/BadgeShelf';
 import type { EduState } from '../store/local';
 import { computeBadges } from '../engine/badges';
 import { playButtonTap, toggleMuted } from '../audio/sfx';
+import { CONSTRUCTED_TOPICS } from '../engine/constructed';
 
 interface HomeProps {
   state: EduState;
@@ -52,6 +53,7 @@ export default function Home({
   const [showAccountModal, setShowAccountModal] = useState(false);
   const termOneGenerators = MATH_GENERATORS.filter((generator) => generator.meta.term !== 2);
   const termTwoGenerators = MATH_GENERATORS.filter((generator) => generator.meta.term === 2);
+  const constructedForSubject = CONSTRUCTED_TOPICS.filter((topic) => topic.subject === subject);
   const today = todayDateString();
   const todayResult = state.dailyResults?.[today];
   const earnedBadges = computeBadges(state).filter((badge) => badge.tier !== null).length;
@@ -200,6 +202,9 @@ export default function Home({
                     lang={lang}
                   />
                 ))}
+                {constructedForSubject.map((topic) => (
+                  <TopicCard key={topic.id} icon={topic.icon} name={topic.name} bestStreak={perTopic[topic.id]?.bestStreak ?? 0} stars={perTopic[topic.id]?.stars ?? 0} onClick={() => onSelectTopic(topic.id)} lang={lang} />
+                ))}
               </div>
             </div>
           ) : (
@@ -215,6 +220,9 @@ export default function Home({
                     onClick={() => onSelectTopic(topic.id)}
                     lang={lang}
                   />
+                ))}
+                {constructedForSubject.map((topic) => (
+                  <TopicCard key={topic.id} icon={topic.icon} name={topic.name} bestStreak={perTopic[topic.id]?.bestStreak ?? 0} stars={perTopic[topic.id]?.stars ?? 0} onClick={() => onSelectTopic(topic.id)} lang={lang} />
                 ))}
               </div>
             </div>

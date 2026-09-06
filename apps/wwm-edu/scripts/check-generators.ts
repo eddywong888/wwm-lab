@@ -63,6 +63,8 @@ function checkQuestion(q: Question, generatorId: string, difficulty: Difficulty,
   } else if (q.kind === 'numeric') {
     if (q.choices) fail(`${ctx}: numeric question should not have choices`);
     if (!/^-?\d+(\.\d+)?$/.test(q.answer)) fail(`${ctx}: numeric answer "${q.answer}" is not a plain number string`);
+  } else if (q.kind === 'self-check') {
+    if (!q.selfReview || q.selfReview.criteria.length < 3) fail(`${ctx}: incomplete self-review guide`);
   } else {
     fail(`${ctx}: unknown kind "${q.kind}"`);
   }

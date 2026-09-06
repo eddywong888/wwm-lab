@@ -28,10 +28,12 @@ const TIER_LABEL_KEY = {
   gold: 'badgeTierGold',
 } as const;
 
-function starsFor(correctCount: number): number {
-  if (correctCount >= 9) return 3;
-  if (correctCount >= 7) return 2;
-  if (correctCount >= 5) return 1;
+function starsFor(correctCount: number, totalCount: number = 10): number {
+  if (totalCount <= 0) return 0;
+  const ratio = correctCount / totalCount;
+  if (ratio >= 0.9) return 3;
+  if (ratio >= 0.7) return 2;
+  if (ratio >= 0.5) return 1;
   return 0;
 }
 
@@ -43,8 +45,9 @@ function encouragement(stars: number) {
 }
 
 export default function Results({ lang, correctCount, totalCount, bestStreak, newBadges, answers, weakAreas, isReview, onPracticeWeakAreas, onRetry, onBackHome }: ResultsProps) {
-  const stars = starsFor(correctCount);
-  const mistakes = answers.filter((answer) => !answer.correct);
+  const stars = starsFor(correctCount, totalCount);
+  const mistakes = answers.filter((answer) => answer.scored !== false && !answer.correct);
+  const selfChecked = answers.filter((answer) => answer.scored === false).length;
 
   useEffect(() => {
     playSessionFanfare();
@@ -82,6 +85,8 @@ export default function Results({ lang, correctCount, totalCount, bestStreak, ne
             <span>{t(UI_STRINGS.stars, lang)}</span>
           </div>
         </div>
+
+        {selfChecked > 0 && <p className="results__self-check">📝 {lang === 'zh' ? `已完成 ${selfChecked} 项自我检查；这些项目不计分。` : `${selfChecked} self-checks completed; these are not scored.`}</p>}
 
         {newBadges.length > 0 && (
           <div className="results__badges edu-pop-in">

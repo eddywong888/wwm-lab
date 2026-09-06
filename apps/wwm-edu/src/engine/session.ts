@@ -1,10 +1,11 @@
 import { makeRng, type Rng } from './rng';
-import type { Difficulty, Question } from './types';
+import type { AnswerRecord, Difficulty, Question } from './types';
 import { MATH_GENERATORS } from './math';
 import { ENGLISH_ALL, ENGLISH_TOPIC_IDS, isEnglishTopic, isChineseTopic, sampleBank } from './english';
 import { getEnglishServedIds, recordEnglishServedIds } from '../store/local';
 import type { ReviewSkillProgress } from '../store/local';
 import { normalizeText } from '../content/schema';
+import { generateConstructedSession, isConstructedTopic } from './constructed';
 
 export const QUESTIONS_PER_SESSION = 10;
 export const MIXED_TOPIC_ID = 'mixed';
@@ -12,6 +13,10 @@ export const ENGLISH_MIXED_TOPIC_ID = 'english-mixed';
 export const CHINESE_MIXED_TOPIC_ID = 'chinese-mixed';
 export const DAILY_TOPIC_ID = 'daily';
 export const REVIEW_TOPIC_ID = 'review';
+
+export function scoredSessionAnswers(answers: readonly AnswerRecord[]): AnswerRecord[] {
+  return answers.filter((answer) => answer.scored !== false && answer.question.kind !== 'self-check');
+}
 
 export function todayDateString(d: Date = new Date()): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -71,6 +76,14 @@ export function generateSession(topicId: string, difficulty: Difficulty, seed: s
   if (topicId === DAILY_TOPIC_ID) return generateDailySession();
   if (topicId === MIXED_TOPIC_ID) return generateMixedSession(difficulty, seed);
   const rng = makeRng(seed);
+  if (isConstructedTopic(topicId)) {
+    const selfChecks = generateConstructedSession(topicId, difficulty, rng);
+    const scored = topicId === 'math-reasoning-studio'
+      ? mathQuestions(MIXED_TOPIC_ID, difficulty, QUESTIONS_PER_SESSION - selfChecks.length, rng)
+      : sampleBank(topicId === 'chinese-writing-studio' ? 'chinese' : 'english', topicId === 'chinese-writing-studio' ? 'chinese-writing' : 'sentences', difficulty, QUESTIONS_PER_SESSION - selfChecks.length, rng, getEnglishServedIds());
+    recordEnglishServedIds(scored.filter((question) => question.id.includes(':')).map((question) => question.id));
+    return rng.shuffle([...selfChecks, ...scored]);
+  }
   const chinese = isChineseTopic(topicId) || topicId === CHINESE_MIXED_TOPIC_ID;
   if (chinese || isEnglishTopic(topicId) || topicId === ENGLISH_MIXED_TOPIC_ID) {
     const mixed = topicId === ENGLISH_MIXED_TOPIC_ID || topicId === CHINESE_MIXED_TOPIC_ID;
