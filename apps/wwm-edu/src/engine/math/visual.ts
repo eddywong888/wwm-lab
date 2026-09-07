@@ -15,11 +15,11 @@ export function visualMathQuestion(topic: 'data' | 'time' | 'measurement' | 'sha
       explain: askTotal ? { en: `${values.join(' + ')} = ${answer}. Add all three bars.`, zh: `${values.join(' + ')} = ${answer}。把三条柱形的数量相加。` } : { en: `The tallest bar has a value of ${answer}.`, zh: `最高的柱形表示${answer}本。` } };
   }
   if (topic === 'time') {
-    const hour = rng.int(1, 11); const minute = rng.pick(difficulty === 'standard' ? [0, 15, 30, 45] : [5, 10, 20, 25, 35, 40, 50, 55]);
+    const hour = rng.int(1, 12); const minute = rng.pick(difficulty === 'standard' ? [0, 15, 30, 45] : [5, 10, 20, 25, 35, 40, 50, 55]);
     const answer = `${hour}:${String(minute).padStart(2, '0')}`;
     const candidates = [`${hour}:${String((minute + 30) % 60).padStart(2, '0')}`, `${hour % 12 + 1}:${String(minute).padStart(2, '0')}`, `${hour === 1 ? 12 : hour - 1}:${String(minute).padStart(2, '0')}`, `${hour}:${String((minute + 15) % 60).padStart(2, '0')}`, `${hour}:${String((minute + 45) % 60).padStart(2, '0')}`];
     const choices = [...new Set([answer, ...candidates])].slice(0, 4);
-    return { id: `visual-clock-${hour}-${minute}`, topic, kind: 'mcq', difficulty, prompt: { en: 'What time does the clock show?', zh: '时钟显示什么时间？' }, visual: { type: 'clock', hour, minute, label: { en: `An analogue clock showing ${answer}.`, zh: `显示${answer}的指针时钟。` } }, choices: rng.shuffle(choices), answer, explain: { en: `The minute hand shows ${minute} minutes and the hour hand shows the hour after ${hour}.`, zh: `分针表示${minute}分，时针表示${hour}时之后的位置。` } };
+    return { id: `visual-clock-${hour}-${minute}`, topic, kind: 'mcq', difficulty, prompt: { en: 'What time does the clock show?', zh: '时钟显示什么时间？' }, visual: { type: 'clock', hour, minute, label: { en: `An analogue clock showing ${answer}.`, zh: `显示${answer}的指针时钟。` } }, choices: rng.shuffle(choices), answer, explain: { en: `The hour hand has passed ${hour}, and the minute hand points to ${minute} minutes, so the time is ${answer}.`, zh: `时针已过${hour}时，分针指向${minute}分，所以时间是${answer}。` } };
   }
   if (topic === 'shapes') {
     const degrees = rng.pick(difficulty === 'standard' ? [45, 90, 120] : [35, 75, 110, 145]);
@@ -30,5 +30,5 @@ export function visualMathQuestion(topic: 'data' | 'time' | 'measurement' | 'sha
   const startCm = rng.int(1, difficulty === 'standard' ? 3 : 5);
   const endCm = rng.int(startCm + 2, rulerCm);
   const lengthCm = endCm - startCm;
-  return { id: `visual-ruler-${startCm}-${endCm}`, topic, kind: 'numeric', difficulty, prompt: { en: 'The pencil begins and ends at the ruler marks shown. What is its length in centimetres?', zh: '铅笔的两端对着图中的尺刻度。铅笔长多少厘米？' }, visual: { type: 'ruler', rulerCm, startCm, endCm, label: { en: `A pencil extends from the ${startCm} cm mark to the ${endCm} cm mark on a ruler.`, zh: `一支铅笔从尺上的${startCm}厘米刻度延伸到${endCm}厘米刻度。` } }, answer: String(lengthCm), explain: { en: `End mark ${endCm} − start mark ${startCm} = ${lengthCm} cm.`, zh: `末端刻度${endCm} − 起点刻度${startCm} = ${lengthCm}厘米。` } };
+  return { id: `visual-ruler-${startCm}-${endCm}`, topic, kind: 'numeric', difficulty, prompt: { en: 'The line above the ruler begins and ends at the marks shown. What is its length in centimetres?', zh: '尺上方的线段两端对着图中的刻度。这条线段长多少厘米？' }, visual: { type: 'ruler', rulerCm, startCm, endCm, label: { en: `A line above a ruler extends from the ${startCm} cm mark to the ${endCm} cm mark.`, zh: `尺上方的一条线段从${startCm}厘米刻度延伸到${endCm}厘米刻度。` } }, answer: String(lengthCm), explain: { en: `End mark ${endCm} − start mark ${startCm} = ${lengthCm} cm.`, zh: `末端刻度${endCm} − 起点刻度${startCm} = ${lengthCm}厘米。` } };
 }

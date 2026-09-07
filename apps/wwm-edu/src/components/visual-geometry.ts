@@ -43,17 +43,42 @@ export interface ClockGeometry extends VisualGeometry {
   centre: { x: number; y: number };
   hourHand: { x: number; y: number };
   minuteHand: { x: number; y: number };
+  /** One tick per minute; `major` marks the twelve hour positions. */
+  ticks: { x1: number; y1: number; x2: number; y2: number; major: boolean }[];
+  /** The 12/3/6/9 numerals, inside the tick ring and clear of the hands. */
+  numerals: { n: number; x: number; y: number }[];
 }
 
 export function clockGeometry(hour: number, minute: number): ClockGeometry {
   const centre = { x: 110, y: 110 };
-  const hand = (angle: number, length: number) => ({
+  const at = (angle: number, length: number) => ({
     x: centre.x + Math.sin(angle * Math.PI / 180) * length,
     y: centre.y - Math.cos(angle * Math.PI / 180) * length,
   });
-  const minuteHand = hand(minute * 6, 70);
-  const hourHand = hand((hour % 12) * 30 + minute / 2, 48);
-  return { width: 220, height: 220, centre, hourHand, minuteHand, points: [centre, hourHand, minuteHand] };
+  const minuteHand = at(minute * 6, 62);
+  const hourHand = at((hour % 12) * 30 + minute / 2, 42);
+  // Minute ticks: advanced questions ask for times like 10:50, which cannot be
+  // read off a face that only carries the 12/3/6/9 numerals.
+  const ticks = Array.from({ length: 60 }, (_, i) => {
+    const major = i % 5 === 0;
+    const outer = at(i * 6, 92);
+    const inner = at(i * 6, major ? 81 : 86);
+    return { x1: outer.x, y1: outer.y, x2: inner.x, y2: inner.y, major };
+  });
+  const numerals = [12, 3, 6, 9].map((n) => {
+    const seat = at(n * 30, 68);
+    return { n, x: seat.x, y: seat.y + 5 }; // +5 shifts the text baseline onto the seat
+  });
+  return {
+    width: 220,
+    height: 220,
+    centre,
+    hourHand,
+    minuteHand,
+    ticks,
+    numerals,
+    points: [centre, hourHand, minuteHand, ...numerals.map(({ x, y }) => ({ x, y }))],
+  };
 }
 
 export interface BarGeometry extends VisualGeometry {

@@ -47,7 +47,7 @@ function encouragement(stars: number) {
 export default function Results({ lang, correctCount, totalCount, bestStreak, newBadges, answers, weakAreas, isReview, onPracticeWeakAreas, onRetry, onBackHome }: ResultsProps) {
   const stars = starsFor(correctCount, totalCount);
   const mistakes = answers.filter((answer) => answer.scored !== false && !answer.correct);
-  const selfChecked = answers.filter((answer) => answer.scored === false).length;
+  const selfChecks = answers.filter((answer) => answer.scored === false);
 
   useEffect(() => {
     playSessionFanfare();
@@ -86,7 +86,41 @@ export default function Results({ lang, correctCount, totalCount, bestStreak, ne
           </div>
         </div>
 
-        {selfChecked > 0 && <p className="results__self-check">📝 {lang === 'zh' ? `已完成 ${selfChecked} 项自我检查；这些项目不计分。` : `${selfChecked} self-checks completed; these are not scored.`}</p>}
+        {selfChecks.length > 0 && <p className="results__self-check">📝 {lang === 'zh' ? `已完成 ${selfChecks.length} 项自我检查；这些项目不计分。` : `${selfChecks.length} self-checks completed; these are not scored.`}</p>}
+
+        {selfChecks.length > 0 && (
+          <section className="results__writing">
+            <div className="results__section-head">
+              <span aria-hidden="true">📝</span>
+              <div>
+                <h2>{lang === 'zh' ? '你写的内容' : 'What you wrote'}</h2>
+                <p>{lang === 'zh' ? '和示例比一比；这些内容不计分，也不会上传。' : 'Compare it with the example — unscored, and never uploaded.'}</p>
+              </div>
+            </div>
+            <div className="results__writing-list">
+              {selfChecks.map((answer, index) => {
+                const responseLang = answer.question.topic === 'chinese-writing-studio' ? 'zh-Hans' : answer.question.topic === 'english-writing-studio' ? 'en' : lang === 'zh' ? 'zh-Hans' : 'en';
+                return (
+                  <article className="results__writing-item" key={`${answer.question.id}-${index}`}>
+                    <p className="results__writing-prompt" lang={responseLang}>{t(answer.question.prompt, lang)}</p>
+                    <dl>
+                      <div>
+                        <dt>{t(UI_STRINGS.yourAnswer, lang)}</dt>
+                        <dd lang={responseLang}>{answer.givenAnswer || (lang === 'zh' ? '（已跳过）' : '(skipped)')}</dd>
+                      </div>
+                      {answer.question.selfReview && (
+                        <div>
+                          <dt>{lang === 'zh' ? '示例答案' : 'Example response'}</dt>
+                          <dd lang={responseLang}>{t(answer.question.selfReview.modelAnswer, lang)}</dd>
+                        </div>
+                      )}
+                    </dl>
+                  </article>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         {newBadges.length > 0 && (
           <div className="results__badges edu-pop-in">

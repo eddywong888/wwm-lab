@@ -5,6 +5,21 @@ Version scheme: `0.<phase>.<patch>` until the full 4-phase plan is complete, the
 
 ---
 
+## v1.5.2 — Readable clock faces, skippable self-checks, drafts on Results (2026-09-07)
+
+- Clock diagrams now carry all sixty minute ticks with the twelve hour positions marked, and the
+  numerals moved inside the tick ring clear of the hands. Advanced questions ask for times such as
+  10:50, which could not be read off a face carrying only the 12/3/6/9 numerals.
+- The clock generator now includes 12 o'clock (it drew hours 1–11 only), and its explanation names
+  the resulting time instead of describing the hour hand as "the hour after 11".
+- A learner stuck on a writing prompt can choose "Skip this one and see the example". The example
+  and rubric still appear, the item stays unscored, and Results marks it "(skipped)" — previously
+  the only way past a blank draft was to abandon the session.
+- Results now shows what the learner actually wrote beside each model response. Drafts stay in
+  memory for that screen only: they are never written to local storage and never uploaded.
+- The ruler question referred to a pencil while the diagram drew a plain line; the prompt and its
+  text alternative now both describe the line above the ruler.
+
 ## v1.5.1 — Angle diagram fix and lazily loaded studio banks (2026-09-07)
 
 - Fixed obtuse angle diagrams. The arm of a 145° angle ended at x = −29 in a 230-wide viewBox, so

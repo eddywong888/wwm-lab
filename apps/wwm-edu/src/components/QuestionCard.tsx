@@ -44,8 +44,10 @@ export default function QuestionCard({ question, lang, onAnswer, onNext, nextLab
     onAnswer(givenAnswer.trim(), isCorrect);
   }
 
-  function revealReview() {
-    if (!draft.trim() || !question.selfReview) return;
+  // `skipped` lets a learner who is stuck move on: they still see the example
+  // and rubric, and the item stays unscored either way.
+  function revealReview(skipped = false) {
+    if ((!skipped && !draft.trim()) || !question.selfReview) return;
     setCheckedCriteria(new Array(question.selfReview.criteria.length).fill(false));
     setFeedback('review');
   }
@@ -100,6 +102,7 @@ export default function QuestionCard({ question, lang, onAnswer, onNext, nextLab
           <textarea id={`draft-${question.id}`} value={draft} onChange={(event) => setDraft(event.target.value)} rows={7} maxLength={900} />
           <small>{draft.length}/900</small>
           <button type="button" className="question-card__review-button" disabled={!draft.trim()} onClick={() => { playButtonTap(); revealReview(); }}>{lang === 'zh' ? '查看示例与检查表' : 'Reveal example and checklist'}</button>
+          <button type="button" className="question-card__skip" onClick={() => { playButtonTap(); revealReview(true); }}>{lang === 'zh' ? '这题先跳过，看看示例' : 'Skip this one and see the example'}</button>
         </div>
       )}
 

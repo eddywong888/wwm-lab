@@ -24,8 +24,8 @@ export default function QuestionVisual({ visual, lang }: Props) {
     );
   }
   if (visual.type === 'clock') {
-    const { width, height, centre, hourHand, minuteHand } = clockGeometry(visual.hour, visual.minute);
-    return <svg className="question-visual question-visual--compact" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={label}><title>{label}</title><circle cx={centre.x} cy={centre.y} r="94" />{[12, 3, 6, 9].map((n, i) => <text key={n} x={[110, 190, 110, 30][i]} y={[31, 116, 202, 116][i]} textAnchor="middle">{n}</text>)}<line className="question-visual__hour" x1={centre.x} y1={centre.y} x2={hourHand.x} y2={hourHand.y} /><line className="question-visual__minute" x1={centre.x} y1={centre.y} x2={minuteHand.x} y2={minuteHand.y} /><circle cx={centre.x} cy={centre.y} r="5" /></svg>;
+    const { width, height, centre, hourHand, minuteHand, ticks, numerals } = clockGeometry(visual.hour, visual.minute);
+    return <svg className="question-visual question-visual--compact" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={label}><title>{label}</title><circle cx={centre.x} cy={centre.y} r="94" />{ticks.map((tick, i) => <line key={i} className={`question-visual__tick${tick.major ? ' question-visual__tick--major' : ''}`} x1={tick.x1} y1={tick.y1} x2={tick.x2} y2={tick.y2} />)}{numerals.map(({ n, x, y }) => <text key={n} x={x} y={y} textAnchor="middle">{n}</text>)}<line className="question-visual__hour" x1={centre.x} y1={centre.y} x2={hourHand.x} y2={hourHand.y} /><line className="question-visual__minute" x1={centre.x} y1={centre.y} x2={minuteHand.x} y2={minuteHand.y} /><circle cx={centre.x} cy={centre.y} r="5" /></svg>;
   }
   if (visual.type === 'angle') {
     const { width, height, vertex, armEnd, ray, arcStart, arcEnd, label: labelPoint } = angleGeometry(visual.degrees);

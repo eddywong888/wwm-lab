@@ -9,6 +9,10 @@ import { applyReviewProgress, getDueReviewSkills, starsForSession, type EduState
 import { CONSTRUCTED_TOPICS, validateConstructedContent } from '../src/engine/constructed';
 import { visualGeometry } from '../src/components/visual-geometry';
 
+function emptyState(): EduState {
+  return { lang: 'en', subject: 'math', difficulty: 'standard', muted: true, perTopic: {}, englishServedIds: [], dailyResults: {}, reviewSkills: {} };
+}
+
 function numeric(text: string): number {
   return Number(text.replace(/RM|,/g, ''));
 }
@@ -203,6 +207,18 @@ export function checkContentIntegrity() {
       }
       const records = questions.map((question): AnswerRecord => ({ question, givenAnswer: question.answer, correct: true, scored: question.kind !== 'self-check', difficulty }));
       assert.equal(scoredSessionAnswers(records).length, 7, 'Self-checks must be excluded from objective score calculations');
+      // A skipped self-check (empty draft, correct=false) must stay out of both the
+      // score and the weak-area queue, exactly as App.tsx pipes a finished session.
+      const skipped = records.map((record, index) => record.question.kind === 'self-check'
+        ? { ...record, givenAnswer: '', correct: false }
+        : { ...record, correct: index !== 0 });
+      const scoredSkipped = scoredSessionAnswers(skipped);
+      assert.equal(scoredSkipped.length, 7, 'Skipped self-checks must stay out of the score');
+      const queue = applyReviewProgress(emptyState(), scoredSkipped, false).reviewSkills ?? {};
+      assert.ok(
+        Object.values(queue).every((skill) => !CONSTRUCTED_TOPICS.some((studio) => studio.id === skill.topicId)),
+        'Skipped self-checks must not seed the weak-area queue',
+      );
       assert.ok(scoredSessionAnswers(records).every((record) => record.question.kind !== 'self-check'));
     }
     const promptById = new Map(one.filter((question) => question.kind === 'self-check').map((question) => [question.id, question.prompt]));
@@ -257,16 +273,7 @@ export function checkContentIntegrity() {
   assert.equal(mergePacks([good], [{ ...good, version: good.version + 1 }])[0].version, good.version + 1);
 
   const reviewNow = Date.UTC(2026, 8, 5);
-  const reviewState: EduState = {
-    lang: 'en',
-    subject: 'math',
-    difficulty: 'standard',
-    muted: true,
-    perTopic: {},
-    englishServedIds: [],
-    dailyResults: {},
-    reviewSkills: {},
-  };
+  const reviewState: EduState = emptyState();
   const missedQuestion = generateSession('fractions', 'standard', 'review-miss')[0];
   const missed: AnswerRecord = { question: missedQuestion, givenAnswer: 'wrong', correct: false, difficulty: 'standard' };
   const queued = applyReviewProgress(reviewState, [missed], false, reviewNow);

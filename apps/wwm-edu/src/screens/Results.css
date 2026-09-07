@@ -244,6 +244,59 @@
   line-height: 1.5;
 }
 
+/* Self-check drafts: same card language as the mistake list, but the learner's
+   own writing needs a single full-width column and preserved line breaks. */
+.results__writing {
+  margin: 0 0 1.4rem;
+  text-align: left;
+}
+
+.results__writing-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.results__writing-item {
+  padding: 0.9rem;
+  border: 2px solid var(--edu-border);
+  border-radius: 16px;
+  background: var(--edu-surface-soft);
+}
+
+.results__writing-prompt {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.results__writing-item dl {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.7rem 0 0;
+}
+
+.results__writing-item dl div {
+  padding: 0.55rem 0.65rem;
+  border-radius: 12px;
+  background: var(--edu-surface);
+}
+
+.results__writing-item dt {
+  color: var(--edu-ink-soft);
+  font-size: 0.62rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.results__writing-item dd {
+  margin: 0.15rem 0 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
 .results__recommendation {
   display: flex;
   align-items: center;
