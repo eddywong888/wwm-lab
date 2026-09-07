@@ -5,6 +5,21 @@ Version scheme: `0.<phase>.<patch>` until the full 4-phase plan is complete, the
 
 ---
 
+## v1.5.1 — Angle diagram fix and lazily loaded studio banks (2026-09-07)
+
+- Fixed obtuse angle diagrams. The arm of a 145° angle ended at x = −29 in a 230-wide viewBox, so
+  the browser clipped it at the card edge; 120° sat on the boundary. The vertex moved to (110, 170)
+  with a shorter 100-unit arm in a 260-wide viewBox, and the degree label now sits on the angle's
+  bisector instead of a fixed point, clear of both arms at every angle in use.
+- Extracted every data-dependent diagram coordinate into `src/components/visual-geometry.ts`, a
+  pure module shared by `QuestionVisual` and the checks. `scripts/check-content.ts` now asserts
+  that no generated visual places a point outside its own viewBox, and exercises both difficulty
+  tiers — the widest angles and finest clock times are advanced-only, so the previous
+  standard-tier-only sweep could not have caught this.
+- The three studio banks moved to `src/content/constructed/drafts.ts` and load on demand, like the
+  English and Chinese banks. The initial production JavaScript fell from 344.63 kB to 324.38 kB
+  (110.37 kB to 103.18 kB gzip), with the studio prompts in their own 21.59 kB chunk.
+
 ## v1.5.0 — Constructed response and visual Mathematics (2026-09-06)
 
 - Added Maths Reasoning, English Writing, and Chinese Writing studios in the existing topic-card

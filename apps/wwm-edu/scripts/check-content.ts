@@ -7,6 +7,7 @@ import { MATH_GENERATORS } from '../src/engine/math';
 import type { AnswerRecord, Question } from '../src/engine/types';
 import { applyReviewProgress, getDueReviewSkills, starsForSession, type EduState } from '../src/store/local';
 import { CONSTRUCTED_TOPICS, validateConstructedContent } from '../src/engine/constructed';
+import { visualGeometry } from '../src/components/visual-geometry';
 
 function numeric(text: string): number {
   return Number(text.replace(/RM|,/g, ''));
@@ -214,7 +215,9 @@ export function checkContentIntegrity() {
 
   for (const topic of ['data', 'time', 'measurement', 'shapes'] as const) {
     let visualCount = 0;
-    for (let seed = 0; seed < 100; seed++) for (const question of generateSession(topic, 'standard', `visual:${topic}:${seed}`)) {
+    // Both tiers: the widest angles and finest clock times are advanced-only.
+    for (const tier of ['standard', 'advanced'] as const)
+    for (let seed = 0; seed < 100; seed++) for (const question of generateSession(topic, tier, `visual:${topic}:${tier}:${seed}`)) {
       if (!question.visual) continue;
       visualCount++;
       assert.ok(question.visual.label.en.trim() && question.visual.label.zh.trim());
@@ -224,6 +227,14 @@ export function checkContentIntegrity() {
         assert.ok(question.choices.includes(question.answer));
       }
       if (question.visual.type === 'ruler') assert.equal(Number(question.answer), question.visual.endCm - question.visual.startCm);
+      // An out-of-viewBox coordinate is clipped silently in the browser.
+      const geometry = visualGeometry(question.visual);
+      for (const point of geometry.points) {
+        assert.ok(
+          point.x >= 0 && point.x <= geometry.width && point.y >= 0 && point.y <= geometry.height,
+          `${question.id}: ${question.visual.type} draws (${point.x.toFixed(1)}, ${point.y.toFixed(1)}) outside its ${geometry.width}x${geometry.height} viewBox`,
+        );
+      }
     }
     assert.ok(visualCount > 50, `${topic}: visual generator was not exercised enough`);
   }

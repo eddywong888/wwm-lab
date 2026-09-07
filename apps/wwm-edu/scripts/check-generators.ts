@@ -10,6 +10,7 @@ import { BADGE_DEFS, computeBadges, newlyEarnedBadges } from '../src/engine/badg
 import type { EduState, TopicProgress } from '../src/store/local';
 
 import { ensureAllLanguageContent, REPO_PACKS } from '../src/engine/english';
+import { ensureConstructedContent } from '../src/engine/constructed';
 import { checkContentIntegrity } from './check-content';
 
 const ITERATIONS = 1000;
@@ -17,6 +18,7 @@ const DIFFICULTIES: Difficulty[] = ['standard', 'advanced'];
 const MIN_QUESTIONS_PER_PACK = 60;
 
 await ensureAllLanguageContent();
+await ensureConstructedContent();
 
 let failures = 0;
 let totalChecked = 0;

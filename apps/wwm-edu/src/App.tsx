@@ -15,7 +15,7 @@ import { signIn, signOut } from './store/account';
 import { ensureAllLanguageContent, ensureSubjectContent, isChineseTopic, isEnglishTopic, refreshEnglishContent } from './engine/english';
 import { computeBadges, newlyEarnedBadges, type EarnedBadge } from './engine/badges';
 import { t, UI_STRINGS } from './engine/i18n';
-import { constructedSubject } from './engine/constructed';
+import { constructedSubject, ensureConstructedContent, isConstructedTopic } from './engine/constructed';
 
 type Screen = 'home' | 'exercise' | 'results' | 'leaderboard' | 'admin' | 'badges';
 
@@ -92,11 +92,15 @@ export default function App() {
 
   async function prepareTopicContent(id: string): Promise<boolean> {
     const needsBoth = id === MIXED_TOPIC_ID || id === DAILY_TOPIC_ID;
+    const studio = isConstructedTopic(id);
     const studioSubject = constructedSubject(id);
     const subject = isEnglishTopic(id) ? 'english' : isChineseTopic(id) ? 'chinese' : studioSubject === 'english' || studioSubject === 'chinese' ? studioSubject : null;
-    if (!needsBoth && !subject) return true;
+    if (!needsBoth && !subject && !studio) return true;
     setContentStatus('loading');
     try {
+      // Studio banks are lazily chunked too — load them alongside the bank the
+      // studio's seven marked questions come from.
+      if (studio) await ensureConstructedContent();
       if (needsBoth) await ensureAllLanguageContent();
       else if (subject) await ensureSubjectContent(subject);
       setContentStatus('idle');
