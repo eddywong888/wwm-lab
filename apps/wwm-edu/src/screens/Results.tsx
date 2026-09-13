@@ -20,6 +20,7 @@ interface ResultsProps {
   onPracticeWeakAreas: () => void;
   onRetry: () => void;
   onBackHome: () => void;
+  retryLabel?: string;
 }
 
 const TIER_LABEL_KEY = {
@@ -44,7 +45,7 @@ function encouragement(stars: number) {
   return UI_STRINGS.encourageTryAgain;
 }
 
-export default function Results({ lang, correctCount, totalCount, bestStreak, newBadges, answers, weakAreas, isReview, onPracticeWeakAreas, onRetry, onBackHome }: ResultsProps) {
+export default function Results({ lang, correctCount, totalCount, bestStreak, newBadges, answers, weakAreas, isReview, onPracticeWeakAreas, onRetry, onBackHome, retryLabel }: ResultsProps) {
   const stars = starsFor(correctCount, totalCount);
   const mistakes = answers.filter((answer) => answer.scored !== false && !answer.correct);
   const selfChecks = answers.filter((answer) => answer.scored === false);
@@ -186,7 +187,7 @@ export default function Results({ lang, correctCount, totalCount, bestStreak, ne
           )}
           {!isReview && (
             <button type="button" className={`results__btn ${weakAreas.length === 0 ? 'results__btn--primary' : ''}`} onClick={onRetry}>
-              {t(UI_STRINGS.retrySameTopic, lang)}
+              {retryLabel ?? t(UI_STRINGS.retrySameTopic, lang)}
             </button>
           )}
           <button type="button" className="results__btn" onClick={onBackHome}>

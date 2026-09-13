@@ -1,7 +1,7 @@
 # WWM Edu Year 4 curriculum and content audit
 
-Audit date: 2026-09-06  
-Release reviewed: v1.5.0
+Audit date: 2026-09-13
+Release reviewed: v1.6.0
 
 WWM Edu is an independent practice resource. It is not endorsed, approved, or
 published by Malaysia's Ministry of Education (KPM) or Examination Board. Topic
@@ -15,6 +15,11 @@ referenced curriculum documents; it does not certify complete syllabus coverage.
 - KPM's launch material says the Malaysian Learning Matrix measures Year 4 and
   Form 3 achievement centrally. It does not give an item-by-item paper format:
   <https://www.moe.gov.my/majlis-peluncuran-rancangan-pendidikan-negara-2026>
+- KPM's official Parliamentary reply dated 24 February 2026 describes the Year 4
+  measure as assessing literacy, numeracy, and basic scientific skills so schools
+  can plan earlier, targeted intervention. It likewise does not publish a paper
+  blueprint:
+  <https://www.parlimen.gov.my/files/jindex/pdf/JDR24022026.pdf>
 - Parliament's official 3 March 2026 record identifies Bahasa Melayu, English,
   Science, and Mathematics as the Year 4 core subjects. It also says Chinese is
   included for SJK(C) pupils as part of the schools' intervention needs, and
@@ -44,9 +49,11 @@ referenced curriculum documents; it does not certify complete syllabus coverage.
 
 ### Inferred practice design
 
-The exact current MPT4 question count, section weights, time limit, marking rules,
-and complete item specification were not verified from a current public KPM or
-Examination Board document. WWM Edu therefore uses "assessment-style practice"
+The official sources found use the name Malaysian Learning Matrix / Matriks
+Pembelajaran Malaysia (MPM), not "MPT4". The exact current Year 4 question count,
+section weights, time limit, marking rules, and complete item specification were
+not verified from a current public KPM or Examination Board document. WWM Edu
+therefore uses "assessment-style practice"
 to mean short, age-appropriate selected-response and numeric items with Malaysian
 contexts, functional texts, information retrieval, application, and supported
 reasoning. `Standard` and `Advanced` are internal practice tiers, not official
@@ -171,3 +178,36 @@ it is not a credentialed SJK(C) teacher endorsement, and classroom teacher revie
 The 600 curated questions remain available offline after their subject chunk has loaded. English
 and Chinese banks are split into on-demand chunks, so the initial production bundle stays compact
 and the build completes without a chunk-size warning.
+
+### v1.6 Assessment Practice follow-up
+
+Assessment Practice is a separate, internal paper mode for the subject and difficulty selected on
+Home. It contains 20 objectively marked questions, hides correctness until submission, supports
+back-and-forward review, and warns about blank answers before marking. Mathematics papers include
+all 12 generator topics; English and Chinese papers include exactly five items from each of their
+four topic banks. The format and count are product design choices for balanced practice. They are
+not represented as an official MPM/MPT4 blueprint, duration, weighting, or performance standard.
+
+The mode uses only item types the current engine can mark reliably. Constructed-response studios
+remain available as separate unscored self-checks and do not enter assessment scores. Assessment
+results update per-topic attempt and accuracy totals and the weak-area queue, while remaining
+outside the Daily leaderboard. The small per-topic groups do not award topic stars or overwrite
+best-streak mastery; those signals still come from focused ten-question sessions.
+
+Validation now covers 120 deterministic assessment papers across three subjects and two tiers.
+Checks require 20 unique, objectively marked items per paper; exact language-topic balance; all
+Mathematics topics; one-tier isolation; deterministic regeneration; correct perfect and blank
+marking; correct streak calculation; preserved topic mastery; per-topic totals; weak-area updates;
+and clean anti-repeat history IDs. This technical validation complements, but does not replace,
+the editorial limits and curriculum boundaries documented above.
+
+| v1.6 final audit dimension | Result | Evidence / limit |
+| --- | --- | --- |
+| Syllabus/topic coverage | Pass for engine-compatible practice | Every Mathematics paper reaches all 12 generator topics. English and Chinese papers use five questions from each of the four core bank topics. Listening, speaking, handwriting, extended marked writing, and learner-created diagrams remain outside this objective paper. |
+| Language quality | Pass within the audited banks | Assessment reuses the previously audited 360 English and 240 Chinese questions without rewriting or translating assessed text. Bilingual navigation and the internal-format disclaimer were checked in source. |
+| Answer correctness | Pass | The existing 24,000 generator invariant runs and 7,940 independent Mathematics recalculations pass. Assessment marking adds perfect, blank, zero-answer, and streak regressions. |
+| Duplication and repetition | Pass | Each generated paper requires unique IDs and normalised prompts. Language papers prefer items outside the recent-history snapshot and record clean source IDs after submission. |
+| Difficulty balance | Pass with interpretation boundary | All six subject/tier combinations were generated across 20 seeds. Each paper stays entirely Standard or Advanced; these remain internal tiers. |
+| Assessment suitability | Pass for independent practice | Delayed marking, answer navigation, blank review, and post-submit explanations support assessment-style practice. The 20-item count and topic weights are internal product choices, not an official MPM/MPT4 specification. |
+| Technical integrity | Pass with rendered-test limit | `npm run check --prefix apps/wwm-edu`, root `npx tsc -b --force`, scoped ESLint, and the app production build pass. The built page was served and fetched locally. No compatible browser surface was available for a rendered interaction pass in this environment. |
+| Independent review | Pass after fixes | A Codex review found and prompted fixes for undersized-group mastery and navigation focus. A read-only Gemini 3.1 Pro High review then found four concrete edge cases; all were fixed, and its second full pass reported no material findings. Neither review is an official or credentialed educational endorsement. |

@@ -5,9 +5,10 @@ import { makeRng } from '../src/engine/rng';
 import { generateSession, generateDailySession, generateReviewSession, MIXED_TOPIC_ID, questionFingerprint, scoredSessionAnswers } from '../src/engine/session';
 import { MATH_GENERATORS } from '../src/engine/math';
 import type { AnswerRecord, Question } from '../src/engine/types';
-import { applyReviewProgress, getDueReviewSkills, starsForSession, type EduState } from '../src/store/local';
+import { applyAssessmentProgress, applyReviewProgress, getDueReviewSkills, starsForSession, type EduState } from '../src/store/local';
 import { CONSTRUCTED_TOPICS, validateConstructedContent } from '../src/engine/constructed';
 import { visualGeometry } from '../src/components/visual-geometry';
+import { ASSESSMENT_QUESTION_COUNT, assessmentSourceId, generateAssessmentPaper, markAssessment, validateAssessmentPaper } from '../src/engine/assessment';
 
 function emptyState(): EduState {
   return { lang: 'en', subject: 'math', difficulty: 'standard', muted: true, perTopic: {}, englishServedIds: [], dailyResults: {}, reviewSkills: {} };
@@ -192,6 +193,30 @@ export function checkContentIntegrity() {
     assert.equal(mixed.filter((q) => ENGLISH_TOPICS.some((topic) => topic.id === q.topic)).length, 3);
     assert.equal(mixed.filter((q) => CHINESE_TOPICS.some((topic) => topic.id === q.topic)).length, 3);
     assert.ok(mixed.every((question) => question.difficulty === difficulty));
+  }
+  for (const subject of ['math', 'english', 'chinese'] as const) for (const difficulty of ['standard', 'advanced'] as const) {
+    for (let seed = 0; seed < 20; seed++) {
+      const paper = generateAssessmentPaper(subject, difficulty, `assessment:${subject}:${difficulty}:${seed}`);
+      assert.equal(paper.length, ASSESSMENT_QUESTION_COUNT);
+      assert.deepEqual(validateAssessmentPaper(paper, subject, difficulty), []);
+      assert.deepEqual(paper, generateAssessmentPaper(subject, difficulty, `assessment:${subject}:${difficulty}:${seed}`));
+      const perfect = markAssessment(paper, paper.map((question) => question.answer), difficulty);
+      assert.equal(perfect.correct, ASSESSMENT_QUESTION_COUNT);
+      assert.equal(perfect.bestStreak, ASSESSMENT_QUESTION_COUNT);
+      const blank = markAssessment(paper, [], difficulty);
+      assert.equal(blank.correct, 0);
+      assert.equal(blank.bestStreak, 0);
+      assert.ok(blank.answers.every((answer) => answer.scored && answer.givenAnswer === ''));
+      const progressed = applyAssessmentProgress(emptyState(), perfect.answers, 1_000);
+      assert.equal(Object.values(progressed.perTopic).reduce((sum, topic) => sum + topic.attempts, 0), ASSESSMENT_QUESTION_COUNT);
+      assert.equal(Object.values(progressed.perTopic).reduce((sum, topic) => sum + topic.correct, 0), ASSESSMENT_QUESTION_COUNT);
+      assert.ok(Object.values(progressed.perTopic).every((topic) => topic.stars === 0 && topic.bestStreak === 0), 'Assessment must not award topic mastery from small paper groups');
+      const missed = applyAssessmentProgress(emptyState(), blank.answers, 1_000);
+      assert.equal(Object.values(missed.reviewSkills ?? {}).reduce((sum, skill) => sum + skill.misses, 0), ASSESSMENT_QUESTION_COUNT);
+      if (subject !== 'math') assert.ok(paper.every((question) => !assessmentSourceId(question.id).includes('-assessment-')));
+      const zeroQuestion: Question = { ...paper[0], kind: 'numeric', choices: undefined, answer: '0' };
+      assert.equal(markAssessment([zeroQuestion], [''], difficulty).correct, 0, 'A blank numeric response must not equal zero');
+    }
   }
   for (const topic of CONSTRUCTED_TOPICS) for (const difficulty of ['standard', 'advanced'] as const) {
     const one = generateSession(topic.id, difficulty, `studio:${topic.id}:${difficulty}:1`);

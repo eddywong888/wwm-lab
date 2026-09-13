@@ -182,6 +182,7 @@
 
 .home__welcome,
 .home__daily-card,
+.home__assessment-card,
 .home__topics {
   border: 2px solid var(--edu-border);
   border-radius: var(--edu-radius-lg);
@@ -345,6 +346,32 @@
   text-align: left;
   transition: transform 0.17s ease, box-shadow 0.17s ease, border-color 0.17s ease;
 }
+
+.home__assessment-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+  padding: 1rem 1.15rem;
+  border: 2px solid var(--edu-border);
+  border-radius: var(--edu-radius-lg);
+  background: var(--edu-surface);
+  color: var(--edu-ink);
+  box-shadow: 0 8px 0 var(--edu-shadow), 0 18px 42px rgba(46, 35, 80, 0.08);
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.17s ease, box-shadow 0.17s ease, border-color 0.17s ease;
+}
+
+.home__assessment-card:hover { transform: translateY(-3px); border-color: var(--edu-primary); box-shadow: 0 11px 0 var(--edu-shadow); }
+.home__assessment-card:active { transform: translateY(3px); box-shadow: 0 4px 0 var(--edu-shadow); }
+.home__assessment-icon { display: grid; width: 3.6rem; height: 3.6rem; place-items: center; border-radius: 16px; background: var(--edu-primary-soft); font-size: 1.45rem; }
+.home__assessment-copy small, .home__assessment-copy strong, .home__assessment-copy span, .home__assessment-copy em { display: block; }
+.home__assessment-copy small { color: var(--edu-primary-dark); font-size: 0.67rem; font-weight: 800; }
+.home__assessment-copy strong { margin-top: 0.1rem; font-family: var(--edu-font-display); font-size: 1.02rem; }
+.home__assessment-copy span { margin-top: 0.2rem; color: var(--edu-ink-soft); font-size: 0.7rem; font-weight: 700; }
+.home__assessment-copy em { margin-top: 0.25rem; color: var(--edu-ink-soft); font-size: 0.64rem; font-style: normal; }
 
 .home__daily-card:hover {
   transform: translateY(-3px) rotate(-0.15deg);

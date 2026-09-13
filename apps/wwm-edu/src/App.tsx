@@ -6,7 +6,8 @@ import Results from './screens/Results';
 import Leaderboard from './screens/Leaderboard';
 import Badges from './screens/Badges';
 import Admin from './screens/Admin';
-import { getDueReviewSkills, loadState, updateState, recordSession, recordDailyResult, recordReviewProgress } from './store/local';
+import Assessment from './screens/Assessment';
+import { getDueReviewSkills, getEnglishServedIds, loadState, updateState, recordSession, recordDailyResult, recordAssessmentProgress, recordEnglishServedIds, recordReviewProgress } from './store/local';
 import type { AnswerRecord, Difficulty, Lang, Question, Subject } from './engine/types';
 import { unlockAudio } from './audio/sfx';
 import { DAILY_TOPIC_ID, generateReviewSession, MIXED_TOPIC_ID, REVIEW_TOPIC_ID, scoredSessionAnswers, todayDateString } from './engine/session';
@@ -16,8 +17,9 @@ import { ensureAllLanguageContent, ensureSubjectContent, isChineseTopic, isEngli
 import { computeBadges, newlyEarnedBadges, type EarnedBadge } from './engine/badges';
 import { t, UI_STRINGS } from './engine/i18n';
 import { constructedSubject, ensureConstructedContent, isConstructedTopic } from './engine/constructed';
+import { assessmentSourceId } from './engine/assessment';
 
-type Screen = 'home' | 'exercise' | 'results' | 'leaderboard' | 'admin' | 'badges';
+type Screen = 'home' | 'exercise' | 'assessment' | 'results' | 'leaderboard' | 'admin' | 'badges';
 
 function screenFromHash(): Screen {
   return window.location.hash === '#admin' ? 'admin' : 'home';
@@ -31,6 +33,9 @@ export default function App() {
   const [lastResult, setLastResult] = useState<{ answers: AnswerRecord[]; correct: number; total: number; bestStreak: number } | null>(null);
   const [newBadges, setNewBadges] = useState<EarnedBadge[]>([]);
   const [reviewQuestions, setReviewQuestions] = useState<Question[] | null>(null);
+  const [assessmentSubject, setAssessmentSubject] = useState<Subject | null>(null);
+  const [assessmentHistory, setAssessmentHistory] = useState<string[]>([]);
+  const [lastWasAssessment, setLastWasAssessment] = useState(false);
   const [contentStatus, setContentStatus] = useState<'idle' | 'loading' | 'error'>('idle');
 
   // Hash-based route for the hidden admin content-override page — never
@@ -115,9 +120,28 @@ export default function App() {
     if (!await prepareTopicContent(id)) return;
     unlockAudio();
     setReviewQuestions(null);
+    setLastWasAssessment(false);
     setTopicId(id);
     setSessionKey((k) => k + 1);
     setScreen('exercise');
+  }
+
+  async function startAssessment() {
+    const subject = state.subject;
+    setContentStatus('loading');
+    try {
+      if (subject !== 'math') await ensureSubjectContent(subject);
+      setContentStatus('idle');
+    } catch {
+      setContentStatus('error');
+      return;
+    }
+    unlockAudio();
+    setAssessmentSubject(subject);
+    setAssessmentHistory(getEnglishServedIds());
+    setLastWasAssessment(true);
+    setSessionKey((key) => key + 1);
+    setScreen('assessment');
   }
 
   function openLeaderboard() {
@@ -161,6 +185,21 @@ export default function App() {
     setScreen('results');
   }
 
+  function finishAssessment(answers: AnswerRecord[], bestStreak: number) {
+    const correctCount = answers.filter((answer) => answer.correct).length;
+    const badgesBefore = computeBadges(state);
+    const nextState = recordAssessmentProgress(answers);
+    if (assessmentSubject !== 'math') {
+      recordEnglishServedIds(answers.map((answer) => assessmentSourceId(answer.question.id)));
+    }
+    const finalState = loadState();
+    setState(finalState);
+    setNewBadges(newlyEarnedBadges(badgesBefore, computeBadges(finalState)));
+    if (nextState.account) void pushProgress(nextState.account.userKey);
+    setLastResult({ answers, correct: correctCount, total: answers.length, bestStreak });
+    setScreen('results');
+  }
+
   async function practiceWeakAreas() {
     const skills = getDueReviewSkills(state);
     setContentStatus('loading');
@@ -184,6 +223,10 @@ export default function App() {
   }
 
   function retrySameTopic() {
+    if (lastWasAssessment) {
+      void startAssessment();
+      return;
+    }
     if (topicId === REVIEW_TOPIC_ID) {
       void practiceWeakAreas();
       return;
@@ -195,6 +238,9 @@ export default function App() {
   function backHome() {
     setTopicId(null);
     setReviewQuestions(null);
+    setAssessmentSubject(null);
+    setAssessmentHistory([]);
+    setLastWasAssessment(false);
     if (window.location.hash === '#admin') window.location.hash = '';
     setScreen('home');
   }
@@ -220,6 +266,7 @@ export default function App() {
           onOpenBadges={openBadges}
           dueReviewCount={getDueReviewSkills(state).length}
           onPracticeWeakAreas={practiceWeakAreas}
+          onStartAssessment={startAssessment}
         />
       )}
       {screen === 'exercise' && topicId && (
@@ -231,6 +278,17 @@ export default function App() {
           onBackHome={backHome}
           sessionKey={sessionKey}
           questionsOverride={topicId === REVIEW_TOPIC_ID ? reviewQuestions ?? undefined : undefined}
+        />
+      )}
+      {screen === 'assessment' && assessmentSubject && (
+        <Assessment
+          subject={assessmentSubject}
+          difficulty={state.difficulty}
+          lang={state.lang}
+          sessionKey={sessionKey}
+          excludeIds={assessmentHistory}
+          onFinish={finishAssessment}
+          onBackHome={backHome}
         />
       )}
       {screen === 'results' && lastResult && (
@@ -246,6 +304,7 @@ export default function App() {
           onPracticeWeakAreas={practiceWeakAreas}
           onRetry={retrySameTopic}
           onBackHome={backHome}
+          retryLabel={lastWasAssessment ? (state.lang === 'zh' ? '再做一份评估' : 'New assessment paper') : undefined}
         />
       )}
       {screen === 'leaderboard' && (

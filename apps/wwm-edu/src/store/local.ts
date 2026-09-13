@@ -295,3 +295,24 @@ export function recordReviewProgress(answers: readonly AnswerRecord[], reviewSes
   saveState(next);
   return next;
 }
+
+export function applyAssessmentProgress(state: EduState, answers: readonly AnswerRecord[], now: number = Date.now()): EduState {
+  const perTopic = { ...state.perTopic };
+  const groups = new Map<string, AnswerRecord[]>();
+  for (const answer of answers) groups.set(answer.question.topic, [...(groups.get(answer.question.topic) ?? []), answer]);
+  for (const [topicId, topicAnswers] of groups) {
+    const previous = perTopic[topicId] ?? { attempts: 0, correct: 0, bestStreak: 0, stars: 0 };
+    perTopic[topicId] = {
+      ...previous,
+      attempts: previous.attempts + topicAnswers.length,
+      correct: previous.correct + topicAnswers.filter((answer) => answer.correct).length,
+    };
+  }
+  return applyReviewProgress({ ...state, perTopic }, answers, false, now);
+}
+
+export function recordAssessmentProgress(answers: readonly AnswerRecord[]): EduState {
+  const next = applyAssessmentProgress(loadState(), answers);
+  saveState(next);
+  return next;
+}

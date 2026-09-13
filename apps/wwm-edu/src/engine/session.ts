@@ -27,7 +27,7 @@ export function questionFingerprint(q: Question): string {
   return normalizeText(`${q.prompt.en}|${q.prompt.zh}|${[...(q.choices ?? [])].sort().join('|')}`);
 }
 
-function mathQuestions(topic: string, difficulty: Difficulty, count: number, rng: Rng): Question[] {
+export function mathQuestions(topic: string, difficulty: Difficulty, count: number, rng: Rng): Question[] {
   const result: Question[] = [];
   const seen = new Set<string>();
   const schedule = rng.shuffle(MATH_GENERATORS);

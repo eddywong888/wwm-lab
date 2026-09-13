@@ -5,6 +5,35 @@ Version scheme: `0.<phase>.<patch>` until the full 4-phase plan is complete, the
 
 ---
 
+## v1.6.0 — Assessment Practice papers (2026-09-13)
+
+- Added a separate Assessment Practice mode for Mathematics, English, and Chinese while keeping
+  Daily Challenge, topic practice, and the v1.1.1 visual system intact. The selected Home subject
+  and difficulty determine the paper.
+- Each paper contains 20 objectively marked questions. Mathematics covers all 12 topic generators;
+  English and Chinese use exactly five questions from each of their four topics. Every paper stays
+  within one internal difficulty tier and rejects duplicate prompts and IDs.
+- Assessment answers stay hidden until submission. Learners can move backwards and forwards, use
+  a numbered answered-item navigator, and review a clear warning before submitting unanswered
+  items. Results then show the score, mistakes, correct answers, and explanations through the
+  existing feedback screen.
+- Assessment attempts update per-topic practice totals and the weak-area queue, but do not award
+  topic stars from the paper's small per-topic groups or enter the Daily leaderboard. Existing
+  constructed-response studios remain separate and unscored.
+- The mode calls itself an internal practice format and does not claim an official paper structure,
+  time limit, weighting, or KPM endorsement. Official 2026 material verifies a central Year 4
+  Malaysian Learning Matrix and its literacy/numeracy purpose, but no public official blueprint
+  was found for the item-level format.
+- Added deterministic checks for 120 generated papers across three subjects and both tiers,
+  including paper length, topic balance, tier isolation, unique prompts and IDs, objective-only
+  marking, blank submissions, perfect submissions, and streak calculations.
+- Question navigation moves keyboard and screen-reader focus to the new prompt. Progress checks
+  also guard per-topic totals, preserved star/streak mastery, weak-area misses, and history IDs.
+- Blank numeric answers cannot equal zero, the four core language-topic slots stay fixed when a
+  custom KV pack is present, and each paper keeps one stable anti-repeat snapshot for its lifetime.
+  Leaving after answering now requires a deliberate choice so an accidental tap cannot discard
+  a partly completed 20-question paper.
+
 ## v1.5.2 — Readable clock faces, skippable self-checks, drafts on Results (2026-09-07)
 
 - Clock diagrams now carry all sixty minute ticks with the twelve hour positions marked, and the

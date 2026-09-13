@@ -26,6 +26,7 @@ interface HomeProps {
   onOpenBadges: () => void;
   dueReviewCount: number;
   onPracticeWeakAreas: () => void;
+  onStartAssessment: () => void;
 }
 
 function starsForScore(score: number): number {
@@ -48,6 +49,7 @@ export default function Home({
   onOpenBadges,
   dueReviewCount,
   onPracticeWeakAreas,
+  onStartAssessment,
 }: HomeProps) {
   const { lang, subject, difficulty, perTopic, muted, account } = state;
   const [showAccountModal, setShowAccountModal] = useState(false);
@@ -144,6 +146,16 @@ export default function Home({
                   ? `${t(UI_STRINGS.playedToday, lang)}: ${todayResult.score}/${QUESTIONS_PER_SESSION} ${'⭐'.repeat(starsForScore(todayResult.score))}`
                   : `${QUESTIONS_PER_SESSION} ${t(UI_STRINGS.questionsToday, lang)} · ${t(UI_STRINGS.start, lang)} →`}
               </span>
+            </span>
+          </button>
+
+          <button type="button" className="home__assessment-card" onClick={() => { playButtonTap(); onStartAssessment(); }}>
+            <span className="home__assessment-icon" aria-hidden="true">📝</span>
+            <span className="home__assessment-copy">
+              <small>{subject === 'math' ? t(UI_STRINGS.math, lang) : subject === 'english' ? t(UI_STRINGS.englishSection, lang) : t(UI_STRINGS.chineseSection, lang)} · {t(UI_STRINGS[difficulty], lang)}</small>
+              <strong>{lang === 'zh' ? '学习评估练习' : 'Assessment Practice'}</strong>
+              <span>{lang === 'zh' ? '20 题 · 交卷后查看答案与讲解' : '20 questions · answers and explanations after submission'}</span>
+              <em>{lang === 'zh' ? '内部练习格式，并非官方试卷。' : 'Internal practice format; not an official paper.'}</em>
             </span>
           </button>
 
