@@ -40,7 +40,8 @@
   border: 2px solid var(--edu-border);
   border-radius: 50%;
   background: var(--edu-surface-soft);
-  font-size: 1.2rem;
+  color: var(--edu-primary-dark);
+  font-size: 1.25rem;
   line-height: 1;
 }
 
@@ -48,9 +49,9 @@
   margin-left: 0;
 }
 
-.badge-shelf__icon--bronze { border-color: var(--edu-bronze); }
-.badge-shelf__icon--silver { border-color: var(--edu-silver); }
-.badge-shelf__icon--gold { border-color: var(--edu-gold); }
+.badge-shelf__icon--bronze { border-color: var(--edu-bronze); color: var(--edu-bronze); }
+.badge-shelf__icon--silver { border-color: var(--edu-silver); color: var(--edu-silver); }
+.badge-shelf__icon--gold { border-color: var(--edu-gold); color: var(--edu-gold); }
 
 .badge-shelf__count {
   color: var(--edu-primary-dark);

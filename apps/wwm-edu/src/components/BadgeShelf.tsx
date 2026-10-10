@@ -4,6 +4,7 @@ import type { EduState } from '../store/local';
 import { computeBadges, type BadgeTier } from '../engine/badges';
 import { t, UI_STRINGS } from '../engine/i18n';
 import { playButtonTap } from '../audio/sfx';
+import Icon from './Icon';
 
 interface BadgeShelfProps {
   lang: Lang;
@@ -22,13 +23,13 @@ export default function BadgeShelf({ lang, state, onOpenBadges }: BadgeShelfProp
   return (
     <button type="button" className="badge-shelf" onClick={() => { playButtonTap(); onOpenBadges(); }}>
       {shown.length === 0 ? (
-        <p className="badge-shelf__empty">🎖️ {t(UI_STRINGS.badgeShelfEmpty, lang)}</p>
+        <p className="badge-shelf__empty"><Icon name="medal" /> {t(UI_STRINGS.badgeShelfEmpty, lang)}</p>
       ) : (
         <>
           <div className="badge-shelf__icons">
             {shown.map((b) => (
               <span key={b.def.id} className={`badge-shelf__icon badge-shelf__icon--${b.tier}`} aria-hidden="true">
-                {b.def.icon}
+                <Icon name={b.def.icon} />
               </span>
             ))}
           </div>

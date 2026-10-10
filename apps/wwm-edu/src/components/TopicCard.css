@@ -39,7 +39,8 @@
   height: 2.7rem;
   border-radius: 14px;
   background: var(--edu-surface-soft);
-  font-size: 1.45rem;
+  color: var(--edu-primary);
+  font-size: 1.55rem;
   line-height: 1;
 }
 
@@ -72,6 +73,10 @@
   color: var(--edu-secondary);
   letter-spacing: 0;
 }
+
+.topic-card__stars { display: inline-flex; gap: 0.08rem; vertical-align: middle; }
+.topic-card__stars .edu-icon { color: var(--edu-border); }
+.topic-card__stars .topic-card__star--filled { color: var(--edu-star); }
 
 .topic-card__mastery {
   position: absolute;

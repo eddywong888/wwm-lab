@@ -2,7 +2,7 @@ import type { Rng } from '../rng';
 import type { Difficulty, GeneratorMeta, Question } from '../types';
 import { buildChoices } from '../distractors';
 
-export const meta: GeneratorMeta = { id: 'data', name: { en: 'Data Handling', zh: '数据处理' }, icon: '📊', term: 2 };
+export const meta: GeneratorMeta = { id: 'data', name: { en: 'Data Handling', zh: '数据处理' }, icon: 'chart', term: 2 };
 export function generate(rng: Rng, difficulty: Difficulty): Question {
   const counts = rng.shuffle([rng.int(1, 3), rng.int(4, 6), rng.int(7, 9)]);
   const scale = difficulty === 'standard' ? rng.pick([2, 5]) : rng.pick([5, 10, 20]);

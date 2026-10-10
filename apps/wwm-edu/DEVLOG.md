@@ -5,6 +5,31 @@ Version scheme: `0.<phase>.<patch>` until the full 4-phase plan is complete, the
 
 ---
 
+## v1.6.1 — Coherent vector icon system (2026-09-13)
+
+- Replaced every active-interface emoji with a locally bundled SVG icon system informed by
+  Lucide's consistent 24×24 stroke language. The adapted icons use rounded 1.9-pixel strokes,
+  a restrained secondary fill, `currentColor`, and the existing WWM Edu palette.
+- Added purpose-drawn icons for all Mathematics and language topics, subject tabs, Daily and
+  Assessment cards, mixed and weak-area practice, profile, audio, leaderboard, navigation,
+  feedback, explanations, and the owl guide. No package, webfont, runtime request, or external
+  asset was added.
+- Rebuilt all nine badge symbols as tier-coloured vector marks. Badge shelf, unlock notice,
+  gallery, result stars, streaks, and leaderboard activity now share the same sharp visual style
+  at mobile and desktop sizes.
+- Icon names are a typed union, so question generators, remotely added topic fallbacks, and badge
+  definitions cannot silently reference an unsupported icon. The content check rejects emoji in
+  active TypeScript, TSX, and CSS source.
+- Design reference and licensing context are recorded in `ICON-SOURCES.md`, with the full upstream
+  notice in `LUCIDE-LICENSE.txt`. WWM Edu's local icon implementation is dependency-free and
+  adapted to this app's two-tone theme.
+- Refined geometry, stroke completeness, and visual balance across the icon set: restored stroked
+  outer contours to owl, medal, brain, calendar, clipboard, calculator, book, and multiply; aligned
+  check and x as matched twin circles; harmonised arithmetic topic tiles (hash, plus-minus, multiply)
+  with consistent footprints; perfected symmetric decimal numerals; eliminated ray clipping in
+  lightbulb; and balanced the clock timepiece.
+
+
 ## v1.6.0 — Assessment Practice papers (2026-09-13)
 
 - Added a separate Assessment Practice mode for Mathematics, English, and Chinese while keeping

@@ -7,6 +7,7 @@ import type { EarnedBadge } from '../engine/badges';
 import type { ReviewSkillProgress } from '../store/local';
 import { topicDetails } from '../engine/topic-meta';
 import { isChineseTopic, isEnglishTopic } from '../engine/english';
+import Icon from '../components/Icon';
 
 interface ResultsProps {
   lang: Lang;
@@ -62,13 +63,13 @@ export default function Results({ lang, correctCount, totalCount, bestStreak, ne
   return (
     <div className="results">
       <div className="results__card edu-pop-in">
-        <div className="results__mascot" aria-hidden="true">🦉</div>
+        <div className="results__mascot"><Icon name="owl" /></div>
         <h1 className="results__encourage">{t(encouragement(stars), lang)}</h1>
         <p className="results__label">{t(UI_STRINGS.yourScore, lang)}</p>
 
-        <div className="results__stars" aria-label={`${stars} stars`}>
+        <div className="results__stars" aria-label={`${stars} ${t(UI_STRINGS.stars, lang)}`}>
           {[0, 1, 2].map((i) => (
-            <span key={i} className={`results__star ${i < stars ? 'results__star--filled' : ''}`}>★</span>
+            <span key={i} className={`results__star ${i < stars ? 'results__star--filled' : ''}`}><Icon name="star" /></span>
           ))}
         </div>
 
@@ -78,21 +79,21 @@ export default function Results({ lang, correctCount, totalCount, bestStreak, ne
             <span>{t(UI_STRINGS.yourScore, lang)}</span>
           </div>
           <div className="results__summary-item">
-            <strong>🔥 {bestStreak}</strong>
+            <strong><Icon name="flame" /> {bestStreak}</strong>
             <span>{t(UI_STRINGS.bestStreak, lang)}</span>
           </div>
           <div className="results__summary-item">
-            <strong>⭐ {stars}</strong>
+            <strong><Icon name="star" /> {stars}</strong>
             <span>{t(UI_STRINGS.stars, lang)}</span>
           </div>
         </div>
 
-        {selfChecks.length > 0 && <p className="results__self-check">📝 {lang === 'zh' ? `已完成 ${selfChecks.length} 项自我检查；这些项目不计分。` : `${selfChecks.length} self-checks completed; these are not scored.`}</p>}
+        {selfChecks.length > 0 && <p className="results__self-check"><Icon name="clipboard" /> {lang === 'zh' ? `已完成 ${selfChecks.length} 项自我检查；这些项目不计分。` : `${selfChecks.length} self-checks completed; these are not scored.`}</p>}
 
         {selfChecks.length > 0 && (
           <section className="results__writing">
             <div className="results__section-head">
-              <span aria-hidden="true">📝</span>
+              <span><Icon name="clipboard" /></span>
               <div>
                 <h2>{lang === 'zh' ? '你写的内容' : 'What you wrote'}</h2>
                 <p>{lang === 'zh' ? '和示例比一比；这些内容不计分，也不会上传。' : 'Compare it with the example — unscored, and never uploaded.'}</p>
@@ -125,11 +126,11 @@ export default function Results({ lang, correctCount, totalCount, bestStreak, ne
 
         {newBadges.length > 0 && (
           <div className="results__badges edu-pop-in">
-            <p className="results__badges-title">🎉 {t(UI_STRINGS.newBadgeUnlocked, lang)}</p>
+            <p className="results__badges-title"><Icon name="sparkles" /> {t(UI_STRINGS.newBadgeUnlocked, lang)}</p>
             <div className="results__badges-list">
               {newBadges.map((b) => (
                 <div key={b.def.id} className={`results__badge results__badge--${b.tier}`}>
-                  <span className="results__badge-icon" aria-hidden="true">{b.def.icon}</span>
+                  <span className="results__badge-icon"><Icon name={b.def.icon} /></span>
                   <span className="results__badge-name">{t(b.def.name, lang)}</span>
                   <span className="results__badge-tier">{b.tier ? t(UI_STRINGS[TIER_LABEL_KEY[b.tier]], lang) : ''}</span>
                 </div>
@@ -141,7 +142,7 @@ export default function Results({ lang, correctCount, totalCount, bestStreak, ne
         {mistakes.length > 0 && (
           <section className="results__mistakes">
             <div className="results__section-head">
-              <span aria-hidden="true">🧩</span>
+              <span><Icon name="puzzle" /></span>
               <div>
                 <h2>{t(UI_STRINGS.reviewMistakes, lang)}</h2>
                 <p>{t(UI_STRINGS.reviewMistakesHint, lang)}</p>
@@ -162,7 +163,7 @@ export default function Results({ lang, correctCount, totalCount, bestStreak, ne
                       <dd lang={isChineseTopic(answer.question.topic) ? 'zh-Hans' : isEnglishTopic(answer.question.topic) ? 'en' : undefined}>{answer.question.answer}</dd>
                     </div>
                   </dl>
-                  {answer.question.explain && <p className="results__mistake-explain" lang={isChineseTopic(answer.question.topic) || lang === 'zh' ? 'zh-Hans' : 'en'}>💡 {t(answer.question.explain, lang)}</p>}
+                  {answer.question.explain && <p className="results__mistake-explain" lang={isChineseTopic(answer.question.topic) || lang === 'zh' ? 'zh-Hans' : 'en'}><Icon name="lightbulb" /> {t(answer.question.explain, lang)}</p>}
                 </article>
               ))}
             </div>
@@ -172,7 +173,7 @@ export default function Results({ lang, correctCount, totalCount, bestStreak, ne
         {weakAreas.length > 0 && (
           <section className="results__recommendation">
             <div>
-              <strong>🧠 {t(UI_STRINGS.recommendedNext, lang)}</strong>
+              <strong><Icon name="brain" /> {t(UI_STRINGS.recommendedNext, lang)}</strong>
               <p>{weakAreas.slice(0, 3).map((skill) => `${t(topicDetails(skill.topicId).name, lang)} · ${t(UI_STRINGS[skill.difficulty], lang)}`).join(' • ')}</p>
             </div>
             <span>{weakAreas.length}</span>

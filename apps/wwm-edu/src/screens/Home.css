@@ -66,7 +66,8 @@
   border-radius: 18px 18px 22px 22px;
   background: var(--edu-star);
   box-shadow: 0 4px 0 rgba(41, 35, 61, 0.22);
-  font-size: 1.75rem;
+  color: var(--edu-ink);
+  font-size: 2rem;
   animation: edu-mascot-float 3.2s ease-in-out infinite;
 }
 
@@ -115,6 +116,7 @@
   color: white;
   font-family: var(--edu-font-display);
   font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 800;
 }
 
@@ -277,6 +279,9 @@
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
+.home__welcome-action .edu-icon,
+.home__review-action .edu-icon { font-size: 1.15rem; }
+
 .home__review-action {
   border: 2px solid rgba(255, 255, 255, 0.64);
   border-radius: 16px;
@@ -366,7 +371,7 @@
 
 .home__assessment-card:hover { transform: translateY(-3px); border-color: var(--edu-primary); box-shadow: 0 11px 0 var(--edu-shadow); }
 .home__assessment-card:active { transform: translateY(3px); box-shadow: 0 4px 0 var(--edu-shadow); }
-.home__assessment-icon { display: grid; width: 3.6rem; height: 3.6rem; place-items: center; border-radius: 16px; background: var(--edu-primary-soft); font-size: 1.45rem; }
+.home__assessment-icon { display: grid; width: 3.6rem; height: 3.6rem; place-items: center; border-radius: 16px; background: var(--edu-primary-soft); color: var(--edu-primary); font-size: 1.55rem; }
 .home__assessment-copy small, .home__assessment-copy strong, .home__assessment-copy span, .home__assessment-copy em { display: block; }
 .home__assessment-copy small { color: var(--edu-primary-dark); font-size: 0.67rem; font-weight: 800; }
 .home__assessment-copy strong { margin-top: 0.1rem; font-family: var(--edu-font-display); font-size: 1.02rem; }
@@ -404,7 +409,8 @@
   height: 3.35rem;
   border-radius: 50%;
   background: var(--edu-surface);
-  font-size: 1.55rem;
+  color: var(--edu-secondary);
+  font-size: 1.7rem;
 }
 
 .home__daily-copy,
@@ -413,6 +419,8 @@
 .home__daily-status {
   display: block;
 }
+
+.home__daily-stars { display: inline-flex; gap: 0.08rem; color: var(--edu-star); vertical-align: middle; }
 
 .home__daily-copy small {
   color: var(--edu-ink-soft);
@@ -491,6 +499,10 @@
 }
 
 .home__subject-tabs button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
   min-width: 8rem;
   padding: 0.65rem 1rem;
   font-size: 0.84rem;

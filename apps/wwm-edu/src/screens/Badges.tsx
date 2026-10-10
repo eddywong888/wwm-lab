@@ -3,6 +3,7 @@ import type { Lang } from '../engine/types';
 import type { EduState } from '../store/local';
 import { computeBadges, BADGE_DEFS, type BadgeTier } from '../engine/badges';
 import { t, UI_STRINGS } from '../engine/i18n';
+import Icon from '../components/Icon';
 
 interface BadgesProps {
   lang: Lang;
@@ -32,7 +33,7 @@ export default function Badges({ lang, state, onBackHome }: BadgesProps) {
         <button type="button" className="badges__back" onClick={onBackHome}>
           ← {t(UI_STRINGS.backHome, lang)}
         </button>
-        <h1 className="badges__title">🎖️ {t(UI_STRINGS.badges, lang)}</h1>
+        <h1 className="badges__title"><Icon name="medal" /> {t(UI_STRINGS.badges, lang)}</h1>
         <p className="badges__subtitle">
           {earnedTiers} / {totalTiers} {t(UI_STRINGS.badgesEarnedCount, lang)}
         </p>
@@ -50,13 +51,13 @@ export default function Badges({ lang, state, onBackHome }: BadgesProps) {
                 className={`badges__item ${locked ? 'badges__item--locked' : `badges__item--${b.tier}`}`}
               >
                 <div className="badges__icon-wrap">
-                  <span className="badges__icon" aria-hidden="true">{b.def.icon}</span>
+                  <span className="badges__icon"><Icon name={b.def.icon} /></span>
                 </div>
                 <p className="badges__name">{t(b.def.name, lang)}</p>
                 {b.tier && <p className="badges__tier-label">{t(UI_STRINGS[TIER_LABEL[b.tier]], lang)}</p>}
                 <p className="badges__desc">{t(b.def.description, lang)}</p>
                 {isMaxed ? (
-                  <p className="badges__max">✨ {t(UI_STRINGS.badgeMax, lang)}</p>
+                  <p className="badges__max"><Icon name="sparkles" /> {t(UI_STRINGS.badgeMax, lang)}</p>
                 ) : (
                   <div className="badges__progress">
                     <div className="badges__progress-bar">

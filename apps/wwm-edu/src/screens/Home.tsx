@@ -12,6 +12,7 @@ import type { EduState } from '../store/local';
 import { computeBadges } from '../engine/badges';
 import { playButtonTap, toggleMuted } from '../audio/sfx';
 import { CONSTRUCTED_TOPICS } from '../engine/constructed';
+import Icon from '../components/Icon';
 
 interface HomeProps {
   state: EduState;
@@ -75,7 +76,7 @@ export default function Home({
       <header className="home__header">
         <div className="home__brand">
           <a className="home__site-back" href="/" aria-label={t(UI_STRINGS.backToLab, lang)} title={t(UI_STRINGS.backToLab, lang)}>←</a>
-          <span className="home__mascot" aria-hidden="true">🦉</span>
+          <span className="home__mascot"><Icon name="owl" /></span>
           <div>
             <h1 className="home__title">{t(UI_STRINGS.appTitle, lang)}</h1>
             <p className="home__tagline">{t(UI_STRINGS.tagline, lang)}</p>
@@ -88,7 +89,7 @@ export default function Home({
           onClick={() => { playButtonTap(); setShowAccountModal(true); }}
           aria-label={t(UI_STRINGS.profile, lang)}
         >
-          <span className="home__profile-avatar" aria-hidden="true">{account ? account.nickname.charAt(0).toUpperCase() : '👤'}</span>
+          <span className="home__profile-avatar">{account ? account.nickname.charAt(0).toUpperCase() : <Icon name="user" />}</span>
           <span className="home__profile-copy">
             <strong>{account?.nickname ?? t(UI_STRINGS.profile, lang)}</strong>
             <small>{earnedBadges} {t(UI_STRINGS.badgeShelfCount, lang)}</small>
@@ -96,13 +97,13 @@ export default function Home({
         </button>
 
         <div className="home__controls">
-          <button type="button" className="home__icon-toggle" onClick={() => { playButtonTap(); onOpenLeaderboard(); }} aria-label={t(UI_STRINGS.leaderboard, lang)}>🏆</button>
-          <button type="button" className="home__icon-toggle" onClick={() => { playButtonTap(); onOpenBadges(); }} aria-label={t(UI_STRINGS.badges, lang)}>🏅</button>
+          <button type="button" className="home__icon-toggle" onClick={() => { playButtonTap(); onOpenLeaderboard(); }} aria-label={t(UI_STRINGS.leaderboard, lang)}><Icon name="trophy" /></button>
+          <button type="button" className="home__icon-toggle" onClick={() => { playButtonTap(); onOpenBadges(); }} aria-label={t(UI_STRINGS.badges, lang)}><Icon name="medal" /></button>
           <button type="button" className="home__icon-toggle home__lang-toggle" onClick={() => { playButtonTap(); onChangeLang(lang === 'en' ? 'zh' : 'en'); }} aria-label={lang === 'en' ? '切换到中文' : 'Switch to English'}>
             {lang === 'en' ? '中' : 'EN'}
           </button>
           <button type="button" className="home__icon-toggle" onClick={handleToggleMute} aria-label={muted ? t(UI_STRINGS.mute, lang) : t(UI_STRINGS.unmute, lang)}>
-            {muted ? '🔇' : '🔊'}
+            <Icon name={muted ? 'volume-off' : 'volume'} />
           </button>
         </div>
       </header>
@@ -119,38 +120,38 @@ export default function Home({
 
       <main className="home__main">
         <section className="home__welcome">
-          <p className="home__eyebrow">✨ {t(UI_STRINGS.learningSpace, lang)}</p>
+          <p className="home__eyebrow"><Icon name="sparkles" /> {t(UI_STRINGS.learningSpace, lang)}</p>
           <h2>{t(UI_STRINGS.welcomeTitle, lang)}</h2>
           <p className="home__welcome-copy">{t(UI_STRINGS.welcomeBody, lang)}</p>
           <div className="home__welcome-actions">
             <button type="button" className="home__welcome-action" onClick={() => { playButtonTap(); onSelectTopic(MIXED_TOPIC_ID); }}>
-              🎲 {t(UI_STRINGS.mixedPractice, lang)} <span aria-hidden="true">→</span>
+              <Icon name="shuffle" /> {t(UI_STRINGS.mixedPractice, lang)} <span aria-hidden="true">→</span>
             </button>
             {dueReviewCount > 0 && (
               <button type="button" className="home__review-action" onClick={() => { playButtonTap(); onPracticeWeakAreas(); }}>
-                🧠 {t(UI_STRINGS.practiceWeakAreas, lang)} <span>{dueReviewCount}</span>
+                <Icon name="brain" /> {t(UI_STRINGS.practiceWeakAreas, lang)} <span>{dueReviewCount}</span>
               </button>
             )}
           </div>
-          <span className="home__welcome-orbit" aria-hidden="true">★</span>
+          <span className="home__welcome-orbit"><Icon name="star" /></span>
         </section>
 
         <div className="home__quick-stack">
           <button type="button" className="home__daily-card" onClick={() => { playButtonTap(); onSelectTopic(DAILY_TOPIC_ID); }}>
-            <span className={`home__daily-ring ${todayResult ? 'home__daily-ring--done' : ''}`} aria-hidden="true"><span>🗓️</span></span>
+            <span className={`home__daily-ring ${todayResult ? 'home__daily-ring--done' : ''}`}><span><Icon name="calendar" /></span></span>
             <span className="home__daily-copy">
               <small>{today}</small>
               <strong>{t(UI_STRINGS.dailyChallenge, lang)}</strong>
               <span className="home__daily-status">
                 {todayResult
-                  ? `${t(UI_STRINGS.playedToday, lang)}: ${todayResult.score}/${QUESTIONS_PER_SESSION} ${'⭐'.repeat(starsForScore(todayResult.score))}`
+                  ? <>{t(UI_STRINGS.playedToday, lang)}: {todayResult.score}/{QUESTIONS_PER_SESSION} <span className="home__daily-stars" aria-label={`${starsForScore(todayResult.score)} ${t(UI_STRINGS.stars, lang)}`}>{Array.from({ length: starsForScore(todayResult.score) }, (_, item) => <Icon name="star" key={item} />)}</span></>
                   : `${QUESTIONS_PER_SESSION} ${t(UI_STRINGS.questionsToday, lang)} · ${t(UI_STRINGS.start, lang)} →`}
               </span>
             </span>
           </button>
 
           <button type="button" className="home__assessment-card" onClick={() => { playButtonTap(); onStartAssessment(); }}>
-            <span className="home__assessment-icon" aria-hidden="true">📝</span>
+            <span className="home__assessment-icon"><Icon name="clipboard" /></span>
             <span className="home__assessment-copy">
               <small>{subject === 'math' ? t(UI_STRINGS.math, lang) : subject === 'english' ? t(UI_STRINGS.englishSection, lang) : t(UI_STRINGS.chineseSection, lang)} · {t(UI_STRINGS[difficulty], lang)}</small>
               <strong>{lang === 'zh' ? '学习评估练习' : 'Assessment Practice'}</strong>
@@ -179,9 +180,9 @@ export default function Home({
           </div>
 
           <div className="home__subject-tabs" role="group" aria-label={t(UI_STRINGS.subject, lang)}>
-            <button type="button" aria-pressed={subject === 'math'} onClick={() => chooseSubject('math')}>🔢 {t(UI_STRINGS.math, lang)}</button>
-            <button type="button" aria-pressed={subject === 'english'} onClick={() => chooseSubject('english')}>📚 {t(UI_STRINGS.englishSection, lang)}</button>
-            <button type="button" aria-pressed={subject === 'chinese'} onClick={() => chooseSubject('chinese')}>📙 {t(UI_STRINGS.chineseSection, lang)}</button>
+            <button type="button" aria-pressed={subject === 'math'} onClick={() => chooseSubject('math')}><Icon name="calculator" /> {t(UI_STRINGS.math, lang)}</button>
+            <button type="button" aria-pressed={subject === 'english'} onClick={() => chooseSubject('english')}><Icon name="book" /> {t(UI_STRINGS.englishSection, lang)}</button>
+            <button type="button" aria-pressed={subject === 'chinese'} onClick={() => chooseSubject('chinese')}><Icon name="book-text" /> {t(UI_STRINGS.chineseSection, lang)}</button>
           </div>
 
           {subject === 'math' ? (

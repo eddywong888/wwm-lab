@@ -6,7 +6,7 @@ import { buildChoices } from '../distractors';
 export const meta: GeneratorMeta = {
   id: 'money',
   name: { en: 'Money (RM)', zh: '金钱（RM）' },
-  icon: '💰',
+  icon: 'wallet',
   term: 1,
 };
 

@@ -9,6 +9,8 @@ import { applyAssessmentProgress, applyReviewProgress, getDueReviewSkills, stars
 import { CONSTRUCTED_TOPICS, validateConstructedContent } from '../src/engine/constructed';
 import { visualGeometry } from '../src/components/visual-geometry';
 import { ASSESSMENT_QUESTION_COUNT, assessmentSourceId, generateAssessmentPaper, markAssessment, validateAssessmentPaper } from '../src/engine/assessment';
+import { readdirSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
 
 function emptyState(): EduState {
   return { lang: 'en', subject: 'math', difficulty: 'standard', muted: true, perTopic: {}, englishServedIds: [], dailyResults: {}, reviewSkills: {} };
@@ -115,6 +117,16 @@ export function verifyMathAnswer(q: Question): boolean {
 }
 
 export function checkContentIntegrity() {
+  function sourceFiles(directory: string): string[] {
+    return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+      const path = join(directory, entry.name);
+      return entry.isDirectory() ? sourceFiles(path) : /\.(?:css|ts|tsx)$/.test(entry.name) ? [path] : [];
+    });
+  }
+  const sourceDirectory = new URL('../src', import.meta.url).pathname;
+  for (const file of sourceFiles(sourceDirectory)) {
+    assert.doesNotMatch(readFileSync(file, 'utf8'), /\p{Extended_Pictographic}/u, `${file}: active UI source must use the SVG icon system instead of emoji`);
+  }
   const ids = new Set<string>();
   const prompts = { en: new Set<string>(), zh: new Set<string>() };
   for (const pack of REPO_PACKS) {

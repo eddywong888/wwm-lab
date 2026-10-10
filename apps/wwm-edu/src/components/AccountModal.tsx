@@ -5,6 +5,7 @@ import type { Account } from '../store/local';
 import { validateNickname, validatePin } from '../store/account';
 import { t, UI_STRINGS } from '../engine/i18n';
 import { playButtonTap } from '../audio/sfx';
+import Icon from './Icon';
 
 interface AccountModalProps {
   lang: Lang;
@@ -52,14 +53,14 @@ export default function AccountModal({ lang, account, onSignIn, onSignOut, onClo
     <div className="account-modal__overlay" onClick={onClose}>
       <div className="account-modal__card edu-pop-in" role="dialog" aria-modal="true" aria-labelledby="account-modal-title" onClick={(e) => e.stopPropagation()}>
         <button type="button" className="account-modal__close" onClick={onClose} aria-label={t(UI_STRINGS.close, lang)}>
-          ✕
+          <span aria-hidden="true">×</span>
         </button>
         <h2 className="account-modal__title" id="account-modal-title">{t(UI_STRINGS.profile, lang)}</h2>
 
         {account ? (
           <div className="account-modal__signed-in">
             <p className="account-modal__signed-in-label">{t(UI_STRINGS.signedInAs, lang)}</p>
-            <p className="account-modal__nickname">👤 {account.nickname}</p>
+            <p className="account-modal__nickname"><Icon name="user" /> {account.nickname}</p>
             <button
               type="button"
               className="account-modal__btn account-modal__btn--secondary"

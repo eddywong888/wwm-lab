@@ -5,7 +5,7 @@ import { buildChoices } from '../distractors';
 export const meta: GeneratorMeta = {
   id: 'percentages',
   name: { en: 'Percentages', zh: '百分比' },
-  icon: '💯',
+  icon: 'percent',
   term: 2,
 };
 

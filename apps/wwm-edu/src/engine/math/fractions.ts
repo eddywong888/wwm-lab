@@ -5,7 +5,7 @@ import { buildChoices } from '../distractors';
 export const meta: GeneratorMeta = {
   id: 'fractions',
   name: { en: 'Fractions', zh: '分数' },
-  icon: '🍕',
+  icon: 'pie',
   term: 2,
 };
 

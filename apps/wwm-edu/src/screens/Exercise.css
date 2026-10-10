@@ -82,6 +82,7 @@
 }
 
 .exercise__coach-mascot {
+  color: var(--edu-ink);
   font-size: 3.5rem;
   animation: edu-mascot-float 3s ease-in-out infinite;
 }

@@ -2,7 +2,7 @@ import type { Rng } from '../rng';
 import type { Difficulty, GeneratorMeta, Question } from '../types';
 import { buildChoices } from '../distractors';
 
-export const meta: GeneratorMeta = { id: 'coordinates-ratio', name: { en: 'Coordinates & Ratio', zh: '坐标与比' }, icon: '🧭', term: 2 };
+export const meta: GeneratorMeta = { id: 'coordinates-ratio', name: { en: 'Coordinates & Ratio', zh: '坐标与比' }, icon: 'map', term: 2 };
 export function generate(rng: Rng, difficulty: Difficulty): Question {
   const mode = rng.int(0, 3);
   const a = rng.int(1, 9);

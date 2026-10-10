@@ -25,7 +25,8 @@
   border-radius: 2.1rem;
   background: var(--edu-star);
   box-shadow: 0 7px 0 #cf9215;
-  font-size: 3.8rem;
+  color: var(--edu-ink);
+  font-size: 4.35rem;
   animation: edu-star-in 0.62s cubic-bezier(0.2, 0.9, 0.3, 1.25) both;
 }
 
@@ -133,7 +134,10 @@
 .results__badge--bronze { border-color: var(--edu-bronze); }
 .results__badge--silver { border-color: var(--edu-silver); }
 .results__badge--gold { border-color: var(--edu-gold); }
-.results__badge-icon { font-size: 1.5rem; }
+.results__badge-icon { color: var(--edu-primary); font-size: 1.5rem; }
+.results__badge--bronze .results__badge-icon { color: var(--edu-bronze); }
+.results__badge--silver .results__badge-icon { color: var(--edu-silver); }
+.results__badge--gold .results__badge-icon { color: var(--edu-gold); }
 .results__badge-name { min-width: 0; flex: 1; font-size: 0.82rem; font-weight: 800; }
 .results__badge-tier { color: var(--edu-ink-soft); font-size: 0.65rem; font-weight: 800; text-transform: uppercase; }
 

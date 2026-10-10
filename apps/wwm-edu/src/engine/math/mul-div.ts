@@ -6,7 +6,7 @@ import { buildChoices } from '../distractors';
 export const meta: GeneratorMeta = {
   id: 'mul-div',
   name: { en: 'Multiplication & Division', zh: '乘法与除法' },
-  icon: '✖️',
+  icon: 'multiply',
   term: 1,
 };
 

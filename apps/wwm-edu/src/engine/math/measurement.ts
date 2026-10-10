@@ -5,7 +5,7 @@ import { buildChoices } from '../distractors';
 export const meta: GeneratorMeta = {
   id: 'measurement',
   name: { en: 'Measurement', zh: '测量' },
-  icon: '📏',
+  icon: 'ruler',
   term: 2,
 };
 

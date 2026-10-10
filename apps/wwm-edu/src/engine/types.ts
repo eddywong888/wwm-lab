@@ -1,5 +1,7 @@
 export type Lang = 'en' | 'zh';
 export type Subject = 'math' | 'english' | 'chinese';
+export const ICON_NAMES = ['owl', 'user', 'trophy', 'medal', 'volume', 'volume-off', 'sparkles', 'shuffle', 'brain', 'calendar', 'clipboard', 'calculator', 'book', 'book-text', 'pen', 'package', 'flame', 'puzzle', 'lightbulb', 'target', 'dumbbell', 'hash', 'plus-minus', 'multiply', 'wallet', 'pie', 'decimal', 'percent', 'clock', 'ruler', 'shapes', 'map', 'chart', 'check', 'x', 'star', 'languages'] as const;
+export type IconName = (typeof ICON_NAMES)[number];
 
 export interface Bilingual {
   en: string;
@@ -48,7 +50,7 @@ export interface GeneratorMeta {
   id: string;
   name: Bilingual;
   /** Emoji icon representing the topic */
-  icon: string;
+  icon: IconName;
   /** Practice grouping: numbers/operations (1), measures/space/data (2); not an official term sequence. */
   term?: 1 | 2;
 }

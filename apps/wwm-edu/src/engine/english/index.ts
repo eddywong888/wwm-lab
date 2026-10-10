@@ -4,16 +4,16 @@ import { normalizeText, validatePack, type BankQuestion, type QuestionPack } fro
 
 const CONTENT_CACHE_KEY = 'wwm-edu:v1:content-overrides';
 const BASE_ENGLISH_TOPICS: GeneratorMeta[] = [
-  { id: 'grammar', name: { en: 'Grammar', zh: '语法' }, icon: '📗' },
-  { id: 'vocabulary', name: { en: 'Vocabulary', zh: '词汇' }, icon: '📘' },
-  { id: 'sentences', name: { en: 'Sentences', zh: '句子' }, icon: '✍️' },
-  { id: 'comprehension', name: { en: 'Comprehension', zh: '阅读理解' }, icon: '📖' },
+  { id: 'grammar', name: { en: 'Grammar', zh: '语法' }, icon: 'book-text' },
+  { id: 'vocabulary', name: { en: 'Vocabulary', zh: '词汇' }, icon: 'languages' },
+  { id: 'sentences', name: { en: 'Sentences', zh: '句子' }, icon: 'pen' },
+  { id: 'comprehension', name: { en: 'Comprehension', zh: '阅读理解' }, icon: 'book' },
 ];
 const BASE_CHINESE_TOPICS: GeneratorMeta[] = [
-  { id: 'chinese-vocabulary', name: { en: 'Chinese Words', zh: '字词运用' }, icon: '📙' },
-  { id: 'chinese-sentences', name: { en: 'Chinese Sentences', zh: '句子与标点' }, icon: '✍️' },
-  { id: 'chinese-comprehension', name: { en: 'Chinese Reading', zh: '阅读理解' }, icon: '📖' },
-  { id: 'chinese-writing', name: { en: 'Writing Foundations', zh: '习作基础' }, icon: '📝' },
+  { id: 'chinese-vocabulary', name: { en: 'Chinese Words', zh: '字词运用' }, icon: 'languages' },
+  { id: 'chinese-sentences', name: { en: 'Chinese Sentences', zh: '句子与标点' }, icon: 'pen' },
+  { id: 'chinese-comprehension', name: { en: 'Chinese Reading', zh: '阅读理解' }, icon: 'book' },
+  { id: 'chinese-writing', name: { en: 'Writing Foundations', zh: '习作基础' }, icon: 'clipboard' },
 ];
 const BASE_TOPIC_META = new Map([...BASE_ENGLISH_TOPICS, ...BASE_CHINESE_TOPICS].map((topic) => [topic.id, topic]));
 
@@ -55,7 +55,7 @@ function topics(subject: QuestionPack['subject']): GeneratorMeta[] {
   const base = subject === 'english' ? BASE_ENGLISH_TOPICS : BASE_CHINESE_TOPICS;
   const topicMap = new Map(base.map((topic) => [topic.id, topic]));
   for (const pack of packs.filter((item) => item.subject === subject)) {
-    topicMap.set(pack.topic, BASE_TOPIC_META.get(pack.topic) ?? { id: pack.topic, name: pack.title, icon: '📦' });
+    topicMap.set(pack.topic, BASE_TOPIC_META.get(pack.topic) ?? { id: pack.topic, name: pack.title, icon: 'package' });
   }
   return [...topicMap.values()];
 }

@@ -4,7 +4,7 @@ import type { Difficulty, GeneratorMeta, Question } from '../types';
 export const meta: GeneratorMeta = {
   id: 'decimals',
   name: { en: 'Decimals', zh: '小数' },
-  icon: '🔟',
+  icon: 'decimal',
   term: 2,
 };
 

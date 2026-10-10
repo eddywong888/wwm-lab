@@ -6,7 +6,7 @@ import { buildChoices } from '../distractors';
 export const meta: GeneratorMeta = {
   id: 'whole-numbers',
   name: { en: 'Whole Numbers', zh: '整数' },
-  icon: '🔢',
+  icon: 'hash',
   term: 1,
 };
 

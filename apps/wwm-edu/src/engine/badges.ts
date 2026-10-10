@@ -12,7 +12,7 @@
 // No React imports here — this module must stay pure/testable from a plain
 // Node script (see scripts/check-generators.ts).
 
-import type { Bilingual } from './types';
+import type { Bilingual, IconName } from './types';
 import type { EduState } from '../store/local';
 import { MATH_GENERATORS } from './math';
 import { CHINESE_TOPICS, ENGLISH_TOPICS } from './english';
@@ -22,7 +22,7 @@ export type BadgeTier = 'bronze' | 'silver' | 'gold';
 
 export interface BadgeDef {
   id: string;
-  icon: string;
+  icon: IconName;
   name: Bilingual;
   /** Describes what earns the NEXT tier, phrased for a 10-year-old. */
   description: Bilingual;
@@ -81,7 +81,7 @@ function bestStreakAnywhere(state: EduState): number {
 export const BADGE_DEFS: BadgeDef[] = [
   {
     id: 'topic-master',
-    icon: '🏅',
+    icon: 'medal',
     name: { en: 'Topic Master', zh: '课题大师' },
     description: {
       en: 'Get 3 stars on more topics to earn the next tier!',
@@ -96,7 +96,7 @@ export const BADGE_DEFS: BadgeDef[] = [
   },
   {
     id: 'streak-hero',
-    icon: '🔥',
+    icon: 'flame',
     name: { en: 'Streak Hero', zh: '连胜英雄' },
     description: {
       en: 'Answer more questions in a row correctly to earn the next tier!',
@@ -111,7 +111,7 @@ export const BADGE_DEFS: BadgeDef[] = [
   },
   {
     id: 'daily-regular',
-    icon: '🗓️',
+    icon: 'calendar',
     name: { en: 'Daily Regular', zh: '每日常客' },
     description: {
       en: 'Play the Daily Challenge on more days to earn the next tier!',
@@ -126,7 +126,7 @@ export const BADGE_DEFS: BadgeDef[] = [
   },
   {
     id: 'daily-perfect',
-    icon: '🌟',
+    icon: 'star',
     name: { en: 'Perfect Day', zh: '完美一天' },
     description: {
       en: 'Get a perfect 10/10 on more Daily Challenges to earn the next tier!',
@@ -141,7 +141,7 @@ export const BADGE_DEFS: BadgeDef[] = [
   },
   {
     id: 'question-crusher',
-    icon: '💪',
+    icon: 'dumbbell',
     name: { en: 'Question Crusher', zh: '题目高手' },
     description: {
       en: 'Answer more questions overall to earn the next tier!',
@@ -156,7 +156,7 @@ export const BADGE_DEFS: BadgeDef[] = [
   },
   {
     id: 'sharp-shooter',
-    icon: '🎯',
+    icon: 'target',
     name: { en: 'Sharp Shooter', zh: '神射手' },
     description: {
       en: 'Keep your overall accuracy high (after at least 100 questions) to earn the next tier!',
@@ -175,7 +175,7 @@ export const BADGE_DEFS: BadgeDef[] = [
   },
   {
     id: 'math-explorer',
-    icon: '🔢',
+    icon: 'calculator',
     name: { en: 'Math Explorer', zh: '数学探索家' },
     description: {
       en: 'Try more math topics at least once to earn the next tier!',
@@ -193,7 +193,7 @@ export const BADGE_DEFS: BadgeDef[] = [
   },
   {
     id: 'word-wizard',
-    icon: '📖',
+    icon: 'book',
     name: { en: 'Word Wizard', zh: '词汇达人' },
     description: {
       en: 'Try more English topics at least once to earn the next tier!',
@@ -211,7 +211,7 @@ export const BADGE_DEFS: BadgeDef[] = [
   },
   {
     id: 'chinese-champion',
-    icon: '📙',
+    icon: 'book-text',
     name: { en: 'Chinese Champion', zh: '华文小达人' },
     description: {
       en: 'Try more Chinese topics at least once to earn the next tier!',

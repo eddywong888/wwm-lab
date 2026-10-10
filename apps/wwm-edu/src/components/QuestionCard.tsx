@@ -6,6 +6,7 @@ import Keypad from './Keypad';
 import { playButtonTap } from '../audio/sfx';
 import { isChineseTopic, isEnglishTopic } from '../engine/english';
 import QuestionVisual from './QuestionVisual';
+import Icon from './Icon';
 
 interface QuestionCardProps {
   question: Question;
@@ -118,14 +119,14 @@ export default function QuestionCard({ question, lang, onAnswer, onNext, nextLab
 
       {question.kind === 'self-check' && feedback === 'complete' && (
         <div className="question-card__self-complete" role="status">
-          <p>✓ {lang === 'zh' ? '自我检查已完成（不计分）' : 'Self-check complete (unscored)'}</p>
+          <p><Icon name="check" /> {lang === 'zh' ? '自我检查已完成（不计分）' : 'Self-check complete (unscored)'}</p>
           <button type="button" className="question-card__next" onClick={() => { playButtonTap(); onNext(); }}>{nextLabel} <span aria-hidden="true">→</span></button>
         </div>
       )}
 
       {feedback !== 'none' && feedback !== 'review' && feedback !== 'complete' && (
         <div className={`question-card__feedback question-card__feedback--${feedback}`} role="status" aria-live="polite">
-          <span className="question-card__feedback-icon" aria-hidden="true">{feedback === 'correct' ? '✓' : '↗'}</span>
+          <span className="question-card__feedback-icon"><Icon name={feedback === 'correct' ? 'check' : 'x'} /></span>
           <div className="question-card__feedback-copy">
             <p className="question-card__feedback-title">
               {feedback === 'correct' ? t(UI_STRINGS.correct, lang) : t(UI_STRINGS.incorrect, lang)}

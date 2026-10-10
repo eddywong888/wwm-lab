@@ -5,7 +5,7 @@ import { buildChoices } from '../distractors';
 export const meta: GeneratorMeta = {
   id: 'time',
   name: { en: 'Time', zh: '时间' },
-  icon: '⏰',
+  icon: 'clock',
   term: 2,
 };
 

@@ -8,6 +8,7 @@ import QuestionCard from '../components/QuestionCard';
 import ProgressDots from '../components/ProgressDots';
 import StreakBadge from '../components/StreakBadge';
 import { playButtonTap, playCorrectDing, playWrongBuzz } from '../audio/sfx';
+import Icon from '../components/Icon';
 
 interface ExerciseProps {
   topicId: string;
@@ -70,7 +71,7 @@ export default function Exercise({ topicId, difficulty, lang, onFinish, onBackHo
         <button type="button" className="exercise__back" onClick={() => { playButtonTap(); onBackHome(); }} aria-label={t(UI_STRINGS.leavePractice, lang)}>←</button>
         <div className="exercise__progress-wrap">
           <div className="exercise__progress-copy">
-            <span>{topic.icon} {t(topic.name, lang)}</span>
+            <span><Icon name={topic.icon} /> {t(topic.name, lang)}</span>
             <strong>{t(UI_STRINGS.question, lang)} {index + 1}/{questions.length}</strong>
           </div>
           <ProgressDots total={questions.length} current={index} results={results.map((result) => result?.scored === false ? null : result?.correct ?? null)} />
@@ -80,7 +81,7 @@ export default function Exercise({ topicId, difficulty, lang, onFinish, onBackHo
 
       <main className="exercise__workspace">
         <aside className="exercise__coach" aria-label={t(UI_STRINGS.takeYourTime, lang)}>
-          <span className="exercise__coach-mascot" aria-hidden="true">🦉</span>
+          <span className="exercise__coach-mascot"><Icon name="owl" /></span>
           <p>{t(UI_STRINGS.takeYourTime, lang)}</p>
         </aside>
 
@@ -95,7 +96,7 @@ export default function Exercise({ topicId, difficulty, lang, onFinish, onBackHo
               nextLabel={isLast ? t(UI_STRINGS.finish, lang) : t(UI_STRINGS.next, lang)}
             />
           )}
-          <p className="exercise__score-hint">{correctSoFar} ✓</p>
+          <p className="exercise__score-hint">{correctSoFar} <Icon name="check" /></p>
         </div>
       </main>
     </div>

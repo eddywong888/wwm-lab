@@ -6,7 +6,7 @@ import { buildChoices, forgotCarry, transposeDigits, wrongPlaceValue } from '../
 export const meta: GeneratorMeta = {
   id: 'add-sub',
   name: { en: 'Addition & Subtraction', zh: '加法与减法' },
-  icon: '➕',
+  icon: 'plus-minus',
   term: 1,
 };
 

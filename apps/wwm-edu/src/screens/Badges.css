@@ -37,6 +37,8 @@
   text-align: center;
 }
 
+.badges__title .edu-icon { color: var(--edu-gold); }
+
 .badges__subtitle {
   margin: 0 0 1.45rem;
   color: var(--edu-ink-soft);
@@ -85,7 +87,10 @@
   box-shadow: 0 4px 0 var(--edu-shadow);
 }
 
-.badges__icon { font-size: 2rem; line-height: 1; }
+.badges__icon { color: var(--edu-primary); font-size: 2.15rem; line-height: 1; }
+.badges__item--bronze .badges__icon { color: var(--edu-bronze); }
+.badges__item--silver .badges__icon { color: var(--edu-silver); }
+.badges__item--gold .badges__icon { color: var(--edu-gold); }
 .badges__item--locked .badges__icon { filter: grayscale(1); opacity: 0.35; }
 .badges__item--locked { opacity: 0.78; }
 

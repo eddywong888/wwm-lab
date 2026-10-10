@@ -36,6 +36,8 @@
   text-align: center;
 }
 
+.leaderboard__title .edu-icon { color: var(--edu-gold); }
+
 .leaderboard__subtitle {
   margin: 0 0 1.3rem;
   color: var(--edu-ink-soft);
@@ -88,7 +90,8 @@
 
 .leaderboard__row--me .leaderboard__rank { color: white; }
 .leaderboard__nickname { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 800; }
-.leaderboard__days { font-size: 0.65rem; letter-spacing: -0.12em; }
+.leaderboard__days { display: flex; gap: 0.18rem; }
+.leaderboard__days i { width: 0.42rem; height: 0.42rem; border-radius: 50%; background: var(--edu-accent); box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.14); }
 .leaderboard__total { font-family: var(--edu-font-display); font-size: 0.8rem; font-weight: 800; white-space: nowrap; }
 
 .leaderboard__hint {

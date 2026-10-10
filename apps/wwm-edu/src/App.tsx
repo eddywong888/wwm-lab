@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import './components/Icon.css';
 import Home from './screens/Home';
 import Exercise from './screens/Exercise';
 import Results from './screens/Results';

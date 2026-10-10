@@ -7,6 +7,7 @@ import { topicDetails } from '../engine/topic-meta';
 import { isChineseTopic, isEnglishTopic } from '../engine/english';
 import QuestionVisual from '../components/QuestionVisual';
 import { playButtonTap } from '../audio/sfx';
+import Icon from '../components/Icon';
 
 interface AssessmentProps {
   subject: Subject;
@@ -97,7 +98,7 @@ export default function Assessment({ subject, difficulty, lang, sessionKey, excl
 
         <section className="assessment__paper">
           <div className="assessment__question-meta">
-            <span>{topicDetails(current.topic).icon} {t(topicDetails(current.topic).name, lang)}</span>
+            <span><Icon name={topicDetails(current.topic).icon} /> {t(topicDetails(current.topic).name, lang)}</span>
             <strong>{lang === 'zh' ? `第 ${index + 1} 题，共 ${questions.length} 题` : `Question ${index + 1} of ${questions.length}`}</strong>
           </div>
           <div className="assessment__question">

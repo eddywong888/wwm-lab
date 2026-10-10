@@ -5,9 +5,9 @@ import type { Draft } from '../content/constructed/drafts';
 
 export const CONSTRUCTED_SESSION_SIZE = 3;
 export const CONSTRUCTED_TOPICS: (GeneratorMeta & { subject: 'math' | 'english' | 'chinese' })[] = [
-  { id: 'math-reasoning-studio', subject: 'math', icon: '🧠', name: { en: 'Maths Reasoning Studio', zh: '数学思考练习' }, term: 2 },
-  { id: 'english-writing-studio', subject: 'english', icon: '✏️', name: { en: 'English Writing Studio', zh: '英语写作练习' } },
-  { id: 'chinese-writing-studio', subject: 'chinese', icon: '🖊️', name: { en: 'Chinese Writing Studio', zh: '华文写作练习' } },
+  { id: 'math-reasoning-studio', subject: 'math', icon: 'brain', name: { en: 'Maths Reasoning Studio', zh: '数学思考练习' }, term: 2 },
+  { id: 'english-writing-studio', subject: 'english', icon: 'pen', name: { en: 'English Writing Studio', zh: '英语写作练习' } },
+  { id: 'chinese-writing-studio', subject: 'chinese', icon: 'pen', name: { en: 'Chinese Writing Studio', zh: '华文写作练习' } },
 ];
 
 // The three studio banks are long bilingual prompts, models and rubrics. They

@@ -4,6 +4,7 @@ import type { Lang } from '../engine/types';
 import type { Account } from '../store/local';
 import { fetchLeaderboard, type LeaderboardEntry } from '../store/sync';
 import { t, UI_STRINGS } from '../engine/i18n';
+import Icon from '../components/Icon';
 
 interface LeaderboardProps {
   lang: Lang;
@@ -41,7 +42,7 @@ export default function Leaderboard({ lang, account, onBackHome }: LeaderboardPr
         <button type="button" className="leaderboard__back" onClick={onBackHome}>
           ← {t(UI_STRINGS.backHome, lang)}
         </button>
-        <h1 className="leaderboard__title">🏆 {t(UI_STRINGS.leaderboard, lang)}</h1>
+        <h1 className="leaderboard__title"><Icon name="trophy" /> {t(UI_STRINGS.leaderboard, lang)}</h1>
         <p className="leaderboard__subtitle">{t(UI_STRINGS.thisWeek, lang)}{week ? ` (${week})` : ''}</p>
 
         {loadState === 'loading' && <p className="leaderboard__status">…</p>}
@@ -60,8 +61,8 @@ export default function Leaderboard({ lang, account, onBackHome }: LeaderboardPr
                 <li key={`${entry.nickname}-${i}`} className={`leaderboard__row ${isMe ? 'leaderboard__row--me' : ''}`}>
                   <span className="leaderboard__rank">#{i + 1}</span>
                   <span className="leaderboard__nickname">{entry.nickname}</span>
-                  <span className="leaderboard__days" aria-hidden="true">
-                    {'🟢'.repeat(Object.keys(entry.days).length)}
+                  <span className="leaderboard__days" aria-label={`${Object.keys(entry.days).length} ${lang === 'zh' ? '天' : 'days'}`}>
+                    {Array.from({ length: Object.keys(entry.days).length }, (_, day) => <i key={day} />)}
                   </span>
                   <span className="leaderboard__total">{entry.total} {t(UI_STRINGS.points, lang)}</span>
                 </li>
